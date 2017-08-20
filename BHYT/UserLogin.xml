@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<login>
+  <user>admin</user>
+  <pass>admin</pass>
+  <check>1</check>
+</login>
