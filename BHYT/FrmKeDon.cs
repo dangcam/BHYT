@@ -37,6 +37,26 @@ namespace BHYT
             searchLookUpEditView.Appearance.SelectedRow.Options.UseBackColor = true;
             duongdung = thongtinCT.DSDuongDung ().AsEnumerable ().ToDictionary<DataRow, string, string>
                 (row => row.Field<string> (0), row => row.Field<string> (1));
+
+            lookUpMaKhoa.Properties.DataSource = thuoc.DSKhoa ();
+            lookUpMaKhoa.Properties.DisplayMember = "TEN_KHOA";
+            lookUpMaKhoa.Properties.ValueMember = "MA_KHOA";
+            lookUpMaKhoa.EditValue = thongtinBN.MaKhoa;
+
+            lookUpMaBS.Properties.DataSource = thuoc.DSNhanVien ();
+            lookUpMaBS.Properties.DisplayMember = "TEN_NHANVIEN";
+            lookUpMaBS.Properties.ValueMember = "MA_NHANVIEN";
+
+            dataBenh = thongtinCT.DSBenh ();
+
+            lookUpMaBenh.Properties.DataSource = dataBenh;
+            lookUpMaBenh.Properties.DisplayMember = "MA_BENH";
+            lookUpMaBenh.Properties.ValueMember = "MA_BENH";
+
+
+            lookUpMaBenhKhac.Properties.DataSource = dataBenh;
+            lookUpMaBenhKhac.Properties.DisplayMember = "MA_BENH";
+            lookUpMaBenhKhac.Properties.ValueMember = "MA_BENH";
         }
 
         private void lookUpMaBenh_EditValueChanged (object sender, EventArgs e)
@@ -248,6 +268,7 @@ namespace BHYT
             thongtinBN.MaKhoa = (lookUpMaKhoa.GetSelectedDataRow () as DataRowView)[0].ToString ();
             thongtinBN.MaBenh = maBenhChinh;
             thongtinBN.MaBenhKhac = txtMaBenhKhac.Text;
+            thongtinBN.TenBenh = txtTenBenh.Text;
 
             thongtinCT.SuaThongTinCT (ref err, thongtinBN);// cập nhật
             if (!string.IsNullOrEmpty (err))
@@ -340,34 +361,18 @@ namespace BHYT
                 thongtinBN = thongtinCT.getThongTin (MaLienKet);
                 if (thongtinBN != null)
                 {
-                    lookUpMaKhoa.Properties.DataSource = thuoc.DSKhoa ();
-                    lookUpMaKhoa.Properties.DisplayMember = "TEN_KHOA";
-                    lookUpMaKhoa.Properties.ValueMember = "MA_KHOA";
-                    lookUpMaKhoa.EditValue = thongtinBN.MaKhoa;
-
-                    lookUpMaBS.Properties.DataSource = thuoc.DSNhanVien ();
-                    lookUpMaBS.Properties.DisplayMember = "TEN_NHANVIEN";
-                    lookUpMaBS.Properties.ValueMember = "MA_NHANVIEN";
-                    lookUpMaBS.EditValue = thongtinBN.MaBS;
-                    if (thongtinBN.MaBS == "")
+                    
+                    if (thongtinBN.MaBS != "")
                     {
-                        lookUpMaBS.ItemIndex = 0;
+                        lookUpMaBS.EditValue = thongtinBN.MaBS;
                     }
 
-                    dataBenh = thongtinCT.DSBenh ();
 
-                    lookUpMaBenh.Properties.DataSource = dataBenh;
-                    lookUpMaBenh.Properties.DisplayMember = "MA_BENH";
-                    lookUpMaBenh.Properties.ValueMember = "MA_BENH";
-
-
-                    lookUpMaBenhKhac.Properties.DataSource = dataBenh;
-                    lookUpMaBenhKhac.Properties.DisplayMember = "MA_BENH";
-                    lookUpMaBenhKhac.Properties.ValueMember = "MA_BENH";
                     //
                     txtTenBenh.Text = thongtinBN.TenBenh;
                     txtMaBenhKhac.Text = thongtinBN.MaBenhKhac;
                     lookUpMaBenh.EditValue = thongtinBN.MaBenh;
+                    txtHoTen.Text = thongtinBN.HoTen;
                     //
                     dvTienThuoc = thongtinCT.DSNhomThuoc (thongtinBN.MaLK).AsDataView ();
                     gridControlThuoc.DataSource = dvTienThuoc;
@@ -379,7 +384,8 @@ namespace BHYT
                     }
                 }
             }
-
+            this.ActiveControl = lookUpMaBenh;
+            txtSoLuong.ResetText ();
         }
 
         private void cbLoaiChiPhi_SelectedIndexChanged (object sender, EventArgs e)
@@ -470,7 +476,7 @@ namespace BHYT
             rpt.lblKCB.Text = thongtinBN.MaDKBD + " - " + thongtinCT.getCoSoKCB(thongtinBN.MaDKBD).Ten;
             rpt.lblHanDung.Text = Utils.ParseDate (thongtinBN.GtTheTu, true) + " đến " + Utils.ParseDate (thongtinBN.GtTheDen, true);
             rpt.lblDinhBenh.Text = txtTenBenh.Text;
-            rpt.lblNgayTT.Text = DateTime.Now.ToString("Ngày dd tháng MM năm yyyy");
+            rpt.lblNgayTT.Text ="Ngày "+ DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year;
             rpt.lblBacSi.Text = (lookUpMaBS.GetSelectedDataRow () as DataRowView)[1].ToString ();
             rpt.xrTable.Rows.Clear ();
             //
@@ -499,7 +505,7 @@ namespace BHYT
             XRTableRow row;
             XRTableCell cell;
             int i = 1;
-            foreach (DataRow drv in (gridControlThuoc.DataSource as DataView).Table.Rows)
+            foreach (DataRowView drv in dvTienThuoc)
             {
                 row = new XRTableRow ();
                 cell = new XRTableCell ();

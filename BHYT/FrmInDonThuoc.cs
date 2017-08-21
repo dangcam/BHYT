@@ -53,7 +53,7 @@ namespace BHYT
                     try
                     {
                         dr["LAN_NGAY_DUNG"] = lieudung.Split (' ')[2];
-                        dr["LAN_DUNG"] = lieudung.Split (' ')[6];
+                        dr["LAN_DUNG"] = lieudung.Split (' ')[5];
                     }
                     catch { }
                 }
