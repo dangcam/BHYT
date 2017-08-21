@@ -2252,6 +2252,7 @@ namespace BHYT
                     dvCongKham = thongtinCT.DSNhomDVKT (thongtinBN.MaLK, "13").AsDataView ();
                     dvTienDVKT = thongtinCT.DSNhomDVKT (thongtinBN.MaLK).AsDataView ();
                     dvTienThuoc = thongtinCT.DSNhomThuoc (thongtinBN.MaLK).AsDataView ();
+                    dvTienVTYT = thongtinCT.DSNhomDVKT (thongtinBN.MaLK, "10").AsDataView ();
                     reLoadData (true);
 
                     dateGTBD.Text = Utils.ParseDate (thongtinBN.GtTheTu, true);
@@ -2300,6 +2301,7 @@ namespace BHYT
                     dvCongKham = thongtinCT.DSNhomDVKT (thongtinBN.MaLK, "13").AsDataView ();
                     dvTienDVKT = thongtinCT.DSNhomDVKT (thongtinBN.MaLK).AsDataView ();
                     dvTienThuoc = thongtinCT.DSNhomThuoc (thongtinBN.MaLK).AsDataView ();
+                    dvTienVTYT = thongtinCT.DSNhomDVKT (thongtinBN.MaLK, "10").AsDataView ();
                     reLoadData (true);
 
                     dateGTBD.Text = Utils.ParseDate (thongtinBN.GtTheTu, true);
