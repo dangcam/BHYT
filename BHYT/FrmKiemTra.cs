@@ -45,9 +45,10 @@ namespace BHYT
                             {
                                 //MessageBox.Show (content.Headers.ToString ());
                                 string mycontent = await content.ReadAsStringAsync ();
+                                int iErro = mycontent.IndexOf ("erro");
                                 int iMessage = mycontent.IndexOf ("message");
                                 int iCode = mycontent.IndexOf ("code");
-                                string code = mycontent.Substring (iCode + 4, iMessage - (iCode + 4));
+                                string code = mycontent.Substring (iCode + 4, iErro - (iCode + 4));
                                 code = code.Replace ("\"", "").Replace (":", "").Replace (",", "");
                                 string message = mycontent.Substring (iMessage + 7);
                                 StringBuilder sMessage = new StringBuilder (message);

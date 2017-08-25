@@ -58,6 +58,11 @@
             this.STTPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnKeDonThuoc = new System.Windows.Forms.Button();
             this.btnChuyenNoiTru = new System.Windows.Forms.Button();
+            this.btnPhongKham4 = new System.Windows.Forms.Button();
+            this.btnPhongKham3 = new System.Windows.Forms.Button();
+            this.btnPhongKham2 = new System.Windows.Forms.Button();
+            this.btnPhongKham1 = new System.Windows.Forms.Button();
+            this.MA_BENH = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.SuspendLayout();
@@ -242,9 +247,12 @@
             this.NGAY_SINH,
             this.NGAY_VAO,
             this.PHONG,
-            this.STTPHONG});
+            this.STTPHONG,
+            this.MA_BENH});
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
+            this.gridView.OptionsFind.AlwaysVisible = true;
+            this.gridView.OptionsView.ShowAutoFilterRow = true;
             this.gridView.OptionsView.ShowGroupPanel = false;
             this.gridView.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridView_CustomColumnDisplayText);
             // 
@@ -364,8 +372,8 @@
             // 
             // btnKeDonThuoc
             // 
-            this.btnKeDonThuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKeDonThuoc.Location = new System.Drawing.Point(442, 50);
+            this.btnKeDonThuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeDonThuoc.Location = new System.Drawing.Point(77, 46);
             this.btnKeDonThuoc.Name = "btnKeDonThuoc";
             this.btnKeDonThuoc.Size = new System.Drawing.Size(114, 30);
             this.btnKeDonThuoc.TabIndex = 94;
@@ -376,7 +384,7 @@
             // btnChuyenNoiTru
             // 
             this.btnChuyenNoiTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChuyenNoiTru.Location = new System.Drawing.Point(608, 50);
+            this.btnChuyenNoiTru.Location = new System.Drawing.Point(223, 46);
             this.btnChuyenNoiTru.Name = "btnChuyenNoiTru";
             this.btnChuyenNoiTru.Size = new System.Drawing.Size(114, 30);
             this.btnChuyenNoiTru.TabIndex = 94;
@@ -384,11 +392,65 @@
             this.btnChuyenNoiTru.UseVisualStyleBackColor = true;
             this.btnChuyenNoiTru.Click += new System.EventHandler(this.btnChuyenNoiTru_Click);
             // 
+            // btnPhongKham4
+            // 
+            this.btnPhongKham4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhongKham4.Location = new System.Drawing.Point(1044, 46);
+            this.btnPhongKham4.Name = "btnPhongKham4";
+            this.btnPhongKham4.Size = new System.Drawing.Size(170, 30);
+            this.btnPhongKham4.TabIndex = 98;
+            this.btnPhongKham4.Text = "Chuyển Phòng Khám 4";
+            this.btnPhongKham4.UseVisualStyleBackColor = true;
+            this.btnPhongKham4.Click += new System.EventHandler(this.btnPhongKham4_Click);
+            // 
+            // btnPhongKham3
+            // 
+            this.btnPhongKham3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhongKham3.Location = new System.Drawing.Point(845, 46);
+            this.btnPhongKham3.Name = "btnPhongKham3";
+            this.btnPhongKham3.Size = new System.Drawing.Size(170, 30);
+            this.btnPhongKham3.TabIndex = 97;
+            this.btnPhongKham3.Text = "Chuyển Phòng Khám 3";
+            this.btnPhongKham3.UseVisualStyleBackColor = true;
+            this.btnPhongKham3.Click += new System.EventHandler(this.btnPhongKham3_Click);
+            // 
+            // btnPhongKham2
+            // 
+            this.btnPhongKham2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhongKham2.Location = new System.Drawing.Point(644, 46);
+            this.btnPhongKham2.Name = "btnPhongKham2";
+            this.btnPhongKham2.Size = new System.Drawing.Size(170, 30);
+            this.btnPhongKham2.TabIndex = 96;
+            this.btnPhongKham2.Text = "Chuyển Phòng Khám 2";
+            this.btnPhongKham2.UseVisualStyleBackColor = true;
+            this.btnPhongKham2.Click += new System.EventHandler(this.btnPhongKham2_Click);
+            // 
+            // btnPhongKham1
+            // 
+            this.btnPhongKham1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhongKham1.Location = new System.Drawing.Point(445, 46);
+            this.btnPhongKham1.Name = "btnPhongKham1";
+            this.btnPhongKham1.Size = new System.Drawing.Size(170, 30);
+            this.btnPhongKham1.TabIndex = 95;
+            this.btnPhongKham1.Text = "Chuyển Phòng Khám 1";
+            this.btnPhongKham1.UseVisualStyleBackColor = true;
+            this.btnPhongKham1.Click += new System.EventHandler(this.btnPhongKham1_Click);
+            // 
+            // MA_BENH
+            // 
+            this.MA_BENH.Caption = "MA_BENH";
+            this.MA_BENH.FieldName = "MA_BENH";
+            this.MA_BENH.Name = "MA_BENH";
+            // 
             // FrmDSTiepNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1246, 491);
+            this.Controls.Add(this.btnPhongKham4);
+            this.Controls.Add(this.btnPhongKham3);
+            this.Controls.Add(this.btnPhongKham2);
+            this.Controls.Add(this.btnPhongKham1);
             this.Controls.Add(this.btnChuyenNoiTru);
             this.Controls.Add(this.btnKeDonThuoc);
             this.Controls.Add(this.gridControl);
@@ -450,5 +512,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn NGAY_VAO;
         private DevExpress.XtraGrid.Columns.GridColumn PHONG;
         private DevExpress.XtraGrid.Columns.GridColumn STTPHONG;
+        private System.Windows.Forms.Button btnPhongKham4;
+        private System.Windows.Forms.Button btnPhongKham3;
+        private System.Windows.Forms.Button btnPhongKham2;
+        private System.Windows.Forms.Button btnPhongKham1;
+        private DevExpress.XtraGrid.Columns.GridColumn MA_BENH;
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent ()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKeDon));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lookUpMaBS = new DevExpress.XtraEditors.LookUpEdit();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -154,6 +154,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MA_KHOA", "Mã Khoa"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TEN_KHOA", "Tên Khoa")});
             this.lookUpMaKhoa.Properties.NullText = "";
+            this.lookUpMaKhoa.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.lookUpMaKhoa.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lookUpMaKhoa.Size = new System.Drawing.Size(161, 22);
             this.lookUpMaKhoa.TabIndex = 5;
@@ -214,6 +215,7 @@
             this.lookUpLoaiChiPhi.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.lookUpLoaiChiPhi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpLoaiChiPhi.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.lookUpLoaiChiPhi.Properties.PopupFormSize = new System.Drawing.Size(600, 400);
             this.lookUpLoaiChiPhi.Properties.View = this.searchLookUpEditView;
             this.lookUpLoaiChiPhi.Size = new System.Drawing.Size(333, 22);
@@ -261,6 +263,7 @@
             this.gridCThuoc.Name = "gridCThuoc";
             this.gridCThuoc.OptionsColumn.AllowEdit = false;
             this.gridCThuoc.OptionsColumn.FixedWidth = true;
+            this.gridCThuoc.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridCThuoc.Visible = true;
             this.gridCThuoc.VisibleIndex = 1;
             this.gridCThuoc.Width = 100;
@@ -294,6 +297,7 @@
             this.TenDVKT.Name = "TenDVKT";
             this.TenDVKT.OptionsColumn.AllowEdit = false;
             this.TenDVKT.OptionsColumn.FixedWidth = true;
+            this.TenDVKT.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.TenDVKT.Visible = true;
             this.TenDVKT.VisibleIndex = 4;
             this.TenDVKT.Width = 100;
@@ -503,7 +507,7 @@
             // btnXoaThuoc
             // 
             this.btnXoaThuoc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoaThuoc.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoaThuoc.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.btnXoaThuoc.Name = "btnXoaThuoc";
             this.btnXoaThuoc.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnXoaThuoc.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnXoaThuoc_ButtonClick);
@@ -702,6 +706,7 @@
             this.TenBenh.FieldName = "TEN_BENH";
             this.TenBenh.Name = "TenBenh";
             this.TenBenh.OptionsColumn.AllowEdit = false;
+            this.TenBenh.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.TenBenh.Visible = true;
             this.TenBenh.VisibleIndex = 1;
             this.TenBenh.Width = 322;
@@ -769,6 +774,7 @@
             this.TenBenhKhac.FieldName = "TEN_BENH";
             this.TenBenhKhac.Name = "TenBenhKhac";
             this.TenBenhKhac.OptionsColumn.AllowEdit = false;
+            this.TenBenhKhac.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.TenBenhKhac.Visible = true;
             this.TenBenhKhac.VisibleIndex = 1;
             this.TenBenhKhac.Width = 314;

@@ -281,7 +281,11 @@ namespace BHYT.DAO
                 }
                 if (!string.IsNullOrEmpty (loaiKCB))
                 {
-                    sql += " MA_LOAI_KCB='"+loaiKCB+"' AND ";
+                    sql += " MA_LOAI_KCB='"+loaiKCB+"' ";
+                }
+                if(tinhTrang>0)
+                {
+                    sql += " AND ";
                 }
             }
 
@@ -566,6 +570,13 @@ namespace BHYT.DAO
                 new SqlParameter ("@MA_LK", MaLK),
                 new SqlParameter ("@MA_LOAI_KCB", MaLoaiKCB),
                 new SqlParameter ("@MA_KHOA", MaKhoa));
+        }
+        public bool ChuyenPhongKCB (ref string err, string MaLK, int SoPhong)
+        {
+            return db.MyExecuteNonQuery ("SpChuyenPhongKCB",
+                CommandType.StoredProcedure, ref err,
+                new SqlParameter ("@MA_LK", MaLK),
+                new SqlParameter ("@PHONG", SoPhong));
         }
     }
 

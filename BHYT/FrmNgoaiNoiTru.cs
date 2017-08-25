@@ -161,7 +161,7 @@ namespace BHYT
             }
             if (lookUpMaBS.ItemIndex < 0)
             {
-                MessageBox.Show ("Chưa chọn bác sĩ!");
+                MessageBox.Show ("Vui lòng chọn bác sĩ!");
                 lookUpMaBS.Focus ();
                 return false;
             }
@@ -1395,10 +1395,10 @@ namespace BHYT
 
             //([012][1-9]|[123]0|31)/([0][1-9]|1[012])/([123][0-9][0-9][0-9]) (0[0-9]|1[0-9]|2[0-3])\:[0-5]\d
 
-            searchLookUpEditView.Appearance.FocusedRow.BackColor = Color.FromArgb (128, 255, 128);
-            searchLookUpEditView.Appearance.FocusedRow.Options.UseBackColor = true;
-            searchLookUpEditView.Appearance.SelectedRow.BackColor = Color.FromArgb (128, 255, 128);
-            searchLookUpEditView.Appearance.SelectedRow.Options.UseBackColor = true;
+            gridViewMaBenh.Appearance.FocusedRow.BackColor = Color.FromArgb (128, 255, 128);
+            gridViewMaBenh.Appearance.FocusedRow.Options.UseBackColor = true;
+            gridViewMaBenh.Appearance.SelectedRow.BackColor = Color.FromArgb (128, 255, 128);
+            gridViewMaBenh.Appearance.SelectedRow.Options.UseBackColor = true;
             // Phòng khám
             //enableButton ();
         }
@@ -2505,9 +2505,10 @@ namespace BHYT
                             {
                                 //MessageBox.Show (content.Headers.ToString ());
                                 string mycontent = await content.ReadAsStringAsync ();
+                                int iErro = mycontent.IndexOf ("erro");
                                 int iMessage = mycontent.IndexOf ("message");
                                 int iCode = mycontent.IndexOf ("code");
-                                string code = mycontent.Substring (iCode + 4, iMessage - (iCode + 4));
+                                string code = mycontent.Substring (iCode + 4, iErro - (iCode + 4));
                                 code = code.Replace ("\"", "").Replace (":", "").Replace (",", "");
                                 string message = mycontent.Substring (iMessage + 7);
                                 StringBuilder sMessage = new StringBuilder (message);

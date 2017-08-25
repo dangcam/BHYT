@@ -29,10 +29,6 @@
         private void InitializeComponent ()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNgoaiNoiTru));
-            this.lookUpMaBenh = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.searchLookUpEditView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.MaBenh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TenBenh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaBN = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -131,9 +127,13 @@
             this.cbPhong = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
             this.lookUpMaBenhKhac = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBenh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditView)).BeginInit();
+            this.gridViewMaBenhKhac = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MaKhac = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenKhac = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridViewMaBenh = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MaBenh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lookUpMaBenh = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.TenBenh = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaTaiNan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpNoiChuyenDen.Properties)).BeginInit();
@@ -145,67 +145,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateGTKT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDu5Nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBenhKhac.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMaBenhKhac)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMaBenh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBenh.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lookUpMaBenh
-            // 
-            this.lookUpMaBenh.EditValue = "";
-            this.lookUpMaBenh.Location = new System.Drawing.Point(114, 115);
-            this.lookUpMaBenh.Name = "lookUpMaBenh";
-            this.lookUpMaBenh.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lookUpMaBenh.Properties.Appearance.Options.UseFont = true;
-            this.lookUpMaBenh.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lookUpMaBenh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpMaBenh.Properties.View = this.searchLookUpEditView;
-            this.lookUpMaBenh.Size = new System.Drawing.Size(278, 22);
-            this.lookUpMaBenh.TabIndex = 19;
-            this.lookUpMaBenh.EditValueChanged += new System.EventHandler(this.lookUpMaBenh_EditValueChanged);
-            this.lookUpMaBenh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lookUpMaBenh_KeyPress);
-            // 
-            // searchLookUpEditView
-            // 
-            this.searchLookUpEditView.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.searchLookUpEditView.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.searchLookUpEditView.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.searchLookUpEditView.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.searchLookUpEditView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.searchLookUpEditView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.MaBenh,
-            this.TenBenh});
-            this.searchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEditView.Name = "searchLookUpEditView";
-            this.searchLookUpEditView.OptionsFilter.DefaultFilterEditorView = DevExpress.XtraEditors.FilterEditorViewMode.Text;
-            this.searchLookUpEditView.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
-            this.searchLookUpEditView.OptionsFilter.UseNewCustomFilterDialog = true;
-            this.searchLookUpEditView.OptionsFind.FindNullPrompt = "";
-            this.searchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEditView.OptionsView.ShowAutoFilterRow = true;
-            this.searchLookUpEditView.OptionsView.ShowGroupPanel = false;
-            // 
-            // MaBenh
-            // 
-            this.MaBenh.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaBenh.AppearanceCell.Options.UseFont = true;
-            this.MaBenh.Caption = "Mã Bệnh";
-            this.MaBenh.FieldName = "MA_BENH";
-            this.MaBenh.Name = "MaBenh";
-            this.MaBenh.OptionsColumn.AllowEdit = false;
-            this.MaBenh.Visible = true;
-            this.MaBenh.VisibleIndex = 0;
-            this.MaBenh.Width = 30;
-            // 
-            // TenBenh
-            // 
-            this.TenBenh.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TenBenh.AppearanceCell.Options.UseFont = true;
-            this.TenBenh.Caption = "Tên Bệnh";
-            this.TenBenh.FieldName = "TEN_BENH";
-            this.TenBenh.Name = "TenBenh";
-            this.TenBenh.OptionsColumn.AllowEdit = false;
-            this.TenBenh.Visible = true;
-            this.TenBenh.VisibleIndex = 1;
             // 
             // label1
             // 
@@ -1343,19 +1286,93 @@
             this.lookUpMaBenhKhac.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpMaBenhKhac.Properties.NullText = "";
-            this.lookUpMaBenhKhac.Properties.View = this.searchLookUpEdit1View;
+            this.lookUpMaBenhKhac.Properties.View = this.gridViewMaBenhKhac;
             this.lookUpMaBenhKhac.Size = new System.Drawing.Size(165, 22);
             this.lookUpMaBenhKhac.TabIndex = 20;
             this.lookUpMaBenhKhac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lookUpMaBenhKhac_KeyPress);
             // 
-            // searchLookUpEdit1View
+            // gridViewMaBenhKhac
             // 
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsFind.AlwaysVisible = true;
-            this.searchLookUpEdit1View.OptionsFind.FindNullPrompt = "Nhập thông tin cần tìm";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.gridViewMaBenhKhac.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MaKhac,
+            this.TenKhac});
+            this.gridViewMaBenhKhac.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridViewMaBenhKhac.Name = "gridViewMaBenhKhac";
+            this.gridViewMaBenhKhac.OptionsFind.AlwaysVisible = true;
+            this.gridViewMaBenhKhac.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridViewMaBenhKhac.OptionsView.ShowAutoFilterRow = true;
+            this.gridViewMaBenhKhac.OptionsView.ShowGroupPanel = false;
+            // 
+            // MaKhac
+            // 
+            this.MaKhac.Caption = "Mã";
+            this.MaKhac.FieldName = "MA_BENH";
+            this.MaKhac.Name = "MaKhac";
+            this.MaKhac.OptionsColumn.AllowEdit = false;
+            this.MaKhac.OptionsColumn.FixedWidth = true;
+            this.MaKhac.Visible = true;
+            this.MaKhac.VisibleIndex = 0;
+            this.MaKhac.Width = 50;
+            // 
+            // TenKhac
+            // 
+            this.TenKhac.Caption = "Tên";
+            this.TenKhac.FieldName = "TEN_BENH";
+            this.TenKhac.Name = "TenKhac";
+            this.TenKhac.OptionsColumn.AllowEdit = false;
+            this.TenKhac.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.TenKhac.Visible = true;
+            this.TenKhac.VisibleIndex = 1;
+            // 
+            // gridViewMaBenh
+            // 
+            this.gridViewMaBenh.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MaBenh,
+            this.TenBenh});
+            this.gridViewMaBenh.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridViewMaBenh.Name = "gridViewMaBenh";
+            this.gridViewMaBenh.OptionsFind.AlwaysVisible = true;
+            this.gridViewMaBenh.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridViewMaBenh.OptionsView.ShowAutoFilterRow = true;
+            this.gridViewMaBenh.OptionsView.ShowGroupPanel = false;
+            // 
+            // MaBenh
+            // 
+            this.MaBenh.Caption = "Mã";
+            this.MaBenh.FieldName = "MA_BENH";
+            this.MaBenh.Name = "MaBenh";
+            this.MaBenh.OptionsColumn.AllowEdit = false;
+            this.MaBenh.OptionsColumn.FixedWidth = true;
+            this.MaBenh.Visible = true;
+            this.MaBenh.VisibleIndex = 0;
+            this.MaBenh.Width = 60;
+            // 
+            // lookUpMaBenh
+            // 
+            this.lookUpMaBenh.EditValue = "";
+            this.lookUpMaBenh.Location = new System.Drawing.Point(114, 115);
+            this.lookUpMaBenh.Name = "lookUpMaBenh";
+            this.lookUpMaBenh.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpMaBenh.Properties.Appearance.Options.UseFont = true;
+            this.lookUpMaBenh.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lookUpMaBenh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpMaBenh.Properties.NullText = "";
+            this.lookUpMaBenh.Properties.View = this.gridViewMaBenh;
+            this.lookUpMaBenh.Size = new System.Drawing.Size(278, 22);
+            this.lookUpMaBenh.TabIndex = 19;
+            this.lookUpMaBenh.EditValueChanged += new System.EventHandler(this.lookUpMaBenh_EditValueChanged);
+            this.lookUpMaBenh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lookUpMaBenh_KeyPress);
+            // 
+            // TenBenh
+            // 
+            this.TenBenh.Caption = "Tên";
+            this.TenBenh.FieldName = "TEN_BENH";
+            this.TenBenh.Name = "TenBenh";
+            this.TenBenh.OptionsColumn.AllowEdit = false;
+            this.TenBenh.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.TenBenh.Visible = true;
+            this.TenBenh.VisibleIndex = 1;
             // 
             // FrmNgoaiNoiTru
             // 
@@ -1366,7 +1383,6 @@
             this.Controls.Add(this.cbPhong);
             this.Controls.Add(this.btnKiemTra);
             this.Controls.Add(this.checkBDu5Nam);
-            this.Controls.Add(this.lookUpMaBenh);
             this.Controls.Add(this.txtDu5Nam);
             this.Controls.Add(this.dateGTKT);
             this.Controls.Add(this.dateGTBD);
@@ -1440,6 +1456,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lookUpMaKhoa);
             this.Controls.Add(this.lookUpMaBenhKhac);
+            this.Controls.Add(this.lookUpMaBenh);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "FrmNgoaiNoiTru";
@@ -1447,8 +1464,6 @@
             this.Load += new System.EventHandler(this.FrmNgoaiNoiTru_Load);
             this.Shown += new System.EventHandler(this.FrmNgoaiNoiTru_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmNgoaiNoiTru_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBenh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaTaiNan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBS.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpNoiChuyenDen.Properties)).EndInit();
@@ -1460,7 +1475,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateGTKT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDu5Nam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBenhKhac.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMaBenhKhac)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMaBenh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBenh.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1551,10 +1568,6 @@
         private System.Windows.Forms.TextBox txtTenBV;
         private DevExpress.XtraEditors.TextEdit dateGTBD;
         private DevExpress.XtraEditors.TextEdit dateGTKT;
-        private DevExpress.XtraEditors.SearchLookUpEdit lookUpMaBenh;
-        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEditView;
-        private DevExpress.XtraGrid.Columns.GridColumn MaBenh;
-        private DevExpress.XtraGrid.Columns.GridColumn TenBenh;
         private DevExpress.XtraEditors.SimpleButton btnCuoi;
         private DevExpress.XtraEditors.SimpleButton btnTien;
         private DevExpress.XtraEditors.SimpleButton btnLui;
@@ -1570,6 +1583,12 @@
         private System.Windows.Forms.ComboBox cbPhong;
         private System.Windows.Forms.Label label35;
         private DevExpress.XtraEditors.SearchLookUpEdit lookUpMaBenhKhac;
-        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraEditors.SearchLookUpEdit lookUpMaBenh;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewMaBenh;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewMaBenhKhac;
+        private DevExpress.XtraGrid.Columns.GridColumn MaKhac;
+        private DevExpress.XtraGrid.Columns.GridColumn TenKhac;
+        private DevExpress.XtraGrid.Columns.GridColumn MaBenh;
+        private DevExpress.XtraGrid.Columns.GridColumn TenBenh;
     }
 }

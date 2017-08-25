@@ -38,25 +38,7 @@ namespace BHYT
             duongdung = thongtinCT.DSDuongDung ().AsEnumerable ().ToDictionary<DataRow, string, string>
                 (row => row.Field<string> (0), row => row.Field<string> (1));
 
-            lookUpMaKhoa.Properties.DataSource = thuoc.DSKhoa ();
-            lookUpMaKhoa.Properties.DisplayMember = "TEN_KHOA";
-            lookUpMaKhoa.Properties.ValueMember = "MA_KHOA";
-            lookUpMaKhoa.EditValue = thongtinBN.MaKhoa;
-
-            lookUpMaBS.Properties.DataSource = thuoc.DSNhanVien ();
-            lookUpMaBS.Properties.DisplayMember = "TEN_NHANVIEN";
-            lookUpMaBS.Properties.ValueMember = "MA_NHANVIEN";
-
-            dataBenh = thongtinCT.DSBenh ();
-
-            lookUpMaBenh.Properties.DataSource = dataBenh;
-            lookUpMaBenh.Properties.DisplayMember = "MA_BENH";
-            lookUpMaBenh.Properties.ValueMember = "MA_BENH";
-
-
-            lookUpMaBenhKhac.Properties.DataSource = dataBenh;
-            lookUpMaBenhKhac.Properties.DisplayMember = "MA_BENH";
-            lookUpMaBenhKhac.Properties.ValueMember = "MA_BENH";
+           
         }
 
         private void lookUpMaBenh_EditValueChanged (object sender, EventArgs e)
@@ -192,6 +174,18 @@ namespace BHYT
 
         private void btnChon_Click (object sender, EventArgs e)
         {
+            if (lookUpMaBenh.EditValue.ToString ().Length < 1)
+            {
+                MessageBox.Show ("Vui lòng chọn mã bệnh!");
+                lookUpMaBenh.Focus ();
+                return;
+            }
+            if (lookUpMaBS.ItemIndex < 0)
+            {
+                MessageBox.Show ("Vui lòng chọn bác sĩ!");
+                lookUpMaBS.Focus ();
+                return;
+            }
             if (cbLoaiChiPhi.SelectedIndex == 0)
             {
                 try
@@ -251,12 +245,7 @@ namespace BHYT
 
         private void btnInDon_Click (object sender, EventArgs e)
         {
-            if (lookUpMaBenh.EditValue.ToString ().Length < 1)
-            {
-                MessageBox.Show ("Vui lòng chọn mã bệnh!");
-                lookUpMaBenh.Focus ();
-                return;
-            }
+           
             createReport ();
             string err = "";
             thongtinBN.MaBS = lookUpMaBS.EditValue.ToString ();
@@ -361,7 +350,26 @@ namespace BHYT
                 thongtinBN = thongtinCT.getThongTin (MaLienKet);
                 if (thongtinBN != null)
                 {
-                    
+                    lookUpMaKhoa.Properties.DataSource = thuoc.DSKhoa ();
+                    lookUpMaKhoa.Properties.DisplayMember = "TEN_KHOA";
+                    lookUpMaKhoa.Properties.ValueMember = "MA_KHOA";
+                    lookUpMaKhoa.EditValue = thongtinBN.MaKhoa;
+
+                    lookUpMaBS.Properties.DataSource = thuoc.DSNhanVien ();
+                    lookUpMaBS.Properties.DisplayMember = "TEN_NHANVIEN";
+                    lookUpMaBS.Properties.ValueMember = "MA_NHANVIEN";
+
+                    dataBenh = thongtinCT.DSBenh ();
+
+                    lookUpMaBenh.Properties.DataSource = dataBenh;
+                    lookUpMaBenh.Properties.DisplayMember = "MA_BENH";
+                    lookUpMaBenh.Properties.ValueMember = "MA_BENH";
+
+
+                    lookUpMaBenhKhac.Properties.DataSource = dataBenh;
+                    lookUpMaBenhKhac.Properties.DisplayMember = "MA_BENH";
+                    lookUpMaBenhKhac.Properties.ValueMember = "MA_BENH";
+                    lookUpMaBenhKhac.EditValue = null;
                     if (thongtinBN.MaBS != "")
                     {
                         lookUpMaBS.EditValue = thongtinBN.MaBS;

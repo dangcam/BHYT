@@ -702,6 +702,7 @@
             this.gridCThuoc.Name = "gridCThuoc";
             this.gridCThuoc.OptionsColumn.AllowEdit = false;
             this.gridCThuoc.OptionsColumn.FixedWidth = true;
+            this.gridCThuoc.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridCThuoc.Visible = true;
             this.gridCThuoc.VisibleIndex = 1;
             this.gridCThuoc.Width = 100;
@@ -735,6 +736,7 @@
             this.TenDVKT.Name = "TenDVKT";
             this.TenDVKT.OptionsColumn.AllowEdit = false;
             this.TenDVKT.OptionsColumn.FixedWidth = true;
+            this.TenDVKT.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.TenDVKT.Visible = true;
             this.TenDVKT.VisibleIndex = 4;
             this.TenDVKT.Width = 100;
@@ -770,6 +772,7 @@
             this.TenVTYT.Name = "TenVTYT";
             this.TenVTYT.OptionsColumn.AllowEdit = false;
             this.TenVTYT.OptionsColumn.FixedWidth = true;
+            this.TenVTYT.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.TenVTYT.Visible = true;
             this.TenVTYT.VisibleIndex = 7;
             this.TenVTYT.Width = 100;

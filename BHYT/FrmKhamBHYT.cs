@@ -209,8 +209,9 @@ namespace BHYT
                                 //MessageBox.Show (content.Headers.ToString ());
                                 string mycontent = await content.ReadAsStringAsync ();
                                 int iMessage = mycontent.IndexOf ("message");
+                                int iErro = mycontent.IndexOf ("erro");
                                 int iCode = mycontent.IndexOf ("code");
-                                string code = mycontent.Substring (iCode + 4, iMessage - (iCode + 4));
+                                string code = mycontent.Substring (iCode + 4, iErro - (iCode + 4));
                                 code = code.Replace ("\"", "").Replace (":", "").Replace (",", "");
                                 string message = mycontent.Substring (iMessage + 7);
                                 StringBuilder sMessage = new StringBuilder (message);
@@ -226,6 +227,7 @@ namespace BHYT
                                         break;
                                     case "31":
                                         hienThongBao ("#DF0101", sMessage.ToString ());
+                                        txtNgaySinh.Text = txtNgaySinh.Text.Substring (txtNgaySinh.Text.Length - 4, 4);
                                         break;
                                     case "32":
                                         hienThongBao ("#134F5C", sMessage.ToString ());
@@ -345,7 +347,7 @@ namespace BHYT
 
         private void txtBHYT_TextChanged (object sender, EventArgs e)
         {
-            if (txtBHYT.Text.Length == 15 && them == true)
+            if (txtBHYT.Text.Length == 15)
             {
                 try
                 {
