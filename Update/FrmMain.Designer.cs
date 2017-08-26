@@ -28,36 +28,51 @@
         /// </summary>
         private void InitializeComponent ()
         {
-            this.richTextBox = new System.Windows.Forms.RichTextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.lblTienTrinh = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // richTextBox
+            // progressBar
             // 
-            this.richTextBox.Location = new System.Drawing.Point(12, 12);
-            this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(657, 312);
-            this.richTextBox.TabIndex = 0;
-            this.richTextBox.Text = "";
+            this.progressBar.Location = new System.Drawing.Point(12, 39);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(390, 25);
+            this.progressBar.TabIndex = 0;
+            // 
+            // lblTienTrinh
+            // 
+            this.lblTienTrinh.AutoSize = true;
+            this.lblTienTrinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTienTrinh.Location = new System.Drawing.Point(12, 13);
+            this.lblTienTrinh.Name = "lblTienTrinh";
+            this.lblTienTrinh.Size = new System.Drawing.Size(0, 16);
+            this.lblTienTrinh.TabIndex = 1;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 336);
-            this.Controls.Add(this.richTextBox);
+            this.ClientSize = new System.Drawing.Size(414, 76);
+            this.ControlBox = false;
+            this.Controls.Add(this.lblTienTrinh);
+            this.Controls.Add(this.progressBar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cập nhật phần mềm";
+            this.Text = "Cập nhật phần mềm BHYT";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Label lblTienTrinh;
     }
 }
 

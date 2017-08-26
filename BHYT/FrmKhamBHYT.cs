@@ -366,7 +366,7 @@ namespace BHYT
                             if (thongtinThe != null)
                             {
                                 // gan tri Benh nhan
-                                if (!string.IsNullOrEmpty (thongtinThe.MaLK))
+                                if (!string.IsNullOrEmpty (thongtinThe.MaLK)&&them==true)
                                 {
                                     MessageBox.Show ("Bệnh nhân này hôm nay đã khám!");
                                     txtBHYT.ResetText ();

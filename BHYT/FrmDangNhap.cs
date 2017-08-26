@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,13 @@ namespace BHYT
 
         private void FrmDangNhap_Load (object sender, EventArgs e)
         {
+            //
+            Process p = new Process ();
+            p.StartInfo = new ProcessStartInfo ("Update.exe");
+            p.StartInfo.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            p.StartInfo.CreateNoWindow = true;
+            p.Start ();
+            //
             read = new ReadConfig ();
             read.ReadLogin ();
             if(AppConfig.Code_user == "1")

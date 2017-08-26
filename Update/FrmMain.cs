@@ -5,11 +5,14 @@ using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
+using Tulpep.NotificationWindow;
 
 namespace Update
 {
@@ -19,32 +22,57 @@ namespace Update
         const string FILEVERSIONNEW = "versionnew.xml";
         const string IDFILE = "0B4c2YR2ND8EZTG5oTEJET2J4cG8";
         const string IDFOLDER = "0B4c2YR2ND8EZU01QUTdXdEY4ekE";
-        public FrmMain ()
-        {
-            InitializeComponent ();
-        }
+        BackgroundWorker bw = new BackgroundWorker ();
         static string[] Scopes = { DriveService.Scope.Drive };
         static string ApplicationName = "UpdateBHYT";
         string VersionCurrent = "";
         string VersionNew = "";
+        DriveService service = null;
+        public FrmMain ()
+        {
+            InitializeComponent ();
+            bw.WorkerSupportsCancellation = true;
+            bw.WorkerReportsProgress = true;
+            bw.DoWork += new DoWorkEventHandler (bw_DoWork);
+            bw.ProgressChanged += new ProgressChangedEventHandler (bw_ProgressChanged);
+            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler (bw_RunWorkerCompleted);
+        }
+
         private void FrmMain_Load (object sender, EventArgs e)
         {
             VersionCurrent = ReadVerison (FILEVERSION);
             UserCredential credential = GetCredentials ();
             // Create Drive API service.
-            var service = new DriveService (new BaseClientService.Initializer ()
+            service = new DriveService (new BaseClientService.Initializer ()
             {
                 HttpClientInitializer = credential,
                 ApplicationName = ApplicationName,
             });
             DownLoadFile (service, IDFILE);
             VersionNew = ReadVerison (FILEVERSIONNEW);
-            if(VersionNew != VersionCurrent)
+            if (VersionNew != VersionCurrent)
             {
-                PrintFilesInFolder (service, IDFOLDER);
-                
+                Notification ();
+                DialogResult traloi;
+                traloi = MessageBox.Show ("BHYT có phiên bản mới, bạn có muốn cập nhật?", "Trả lời",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (traloi == DialogResult.Yes)
+                {
+                    if (bw.IsBusy != true)
+                    {
+                        TatBHYT ();
+                        bw.RunWorkerAsync ();
+                    }
+                }
+                else
+                {
+                    this.Close ();
+                }
             }
-            
+            else
+            {
+                this.Close ();
+            }
         }
         public void PrintFilesInFolder (DriveService service, String folderId)
         {
@@ -54,10 +82,13 @@ namespace Update
                 try
                 {
                     ChildList children = request.Execute ();
-
+                    int i = 0;
+                    float len = children.Items.Count;
                     foreach (ChildReference child in children.Items)
                     {
                         DownLoadFile (service, child.Id);
+                        i++;
+                        bw.ReportProgress ((int)(100 / len * i));
                     }
                     request.PageToken = children.NextPageToken;
                 }
@@ -68,7 +99,6 @@ namespace Update
                     return;
                 }
             } while (!String.IsNullOrEmpty (request.PageToken));
-            WriteVersion ();
         }
         private UserCredential GetCredentials ()
         {
@@ -88,7 +118,6 @@ namespace Update
                     new FileDataStore (credPath, true)).Result;
                 string t = string.Format ("Credential file saved to: " + credPath);
             }
-
             return credential;
         }
         private void DownLoadFile(DriveService service, string id)
@@ -132,6 +161,62 @@ namespace Update
             xmlfile.SelectSingleNode ("version").InnerText = VersionNew;
             xmlfile.Save (FILEVERSION);
 
+        }
+        private void bw_DoWork (object sender, DoWorkEventArgs e)
+        {
+            PrintFilesInFolder (service, IDFOLDER);
+        }
+        private void bw_ProgressChanged (object sender, ProgressChangedEventArgs e)
+        {
+            lblTienTrinh.Text = "Đang tải: " + e.ProgressPercentage + "%";
+            progressBar.Value = (e.ProgressPercentage);
+        }
+        private void bw_RunWorkerCompleted (object sender, RunWorkerCompletedEventArgs e)
+        {
+            if ((e.Cancelled == true))
+            {
+                ChayLai ();
+            }
+
+            else if (!(e.Error == null))
+            {
+                ChayLai ();
+            }
+            else
+            {
+                DialogResult traloi;
+                traloi = MessageBox.Show ("BHYT cập nhật hoàn tất, chạy lại ứng dụng?", "Trả lời",
+                  MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (traloi == DialogResult.Yes)
+                {
+                    ChayLai ();
+                }
+            }
+            WriteVersion ();
+            this.Close ();
+        }
+        private void TatBHYT()
+        {
+            Process[] processes = Process.GetProcessesByName ("BHYT");
+            if (processes.Length > 0)
+                processes[0].Kill ();
+        }
+        private void ChayLai()
+        {
+            Process p = new Process ();
+            p.StartInfo = new ProcessStartInfo ("BHYT.exe");
+            p.StartInfo.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            p.StartInfo.CreateNoWindow = true;
+            p.Start ();
+            this.Close ();
+        }
+        private void Notification()
+        {
+            PopupNotifier popup = new PopupNotifier ();
+            popup.Image = Properties.Resources.Notifications;
+            popup.TitleText = "BHYT";
+            popup.ContentText = "BHYT có phiên bản mới!";
+            popup.Popup ();
         }
     }
 }
