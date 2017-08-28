@@ -341,6 +341,23 @@ namespace BHYT
             return true;
         }
 
+        private void gridViewThuoc_CellValueChanged (object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column.FieldName == "SO_LUONG")
+            {
+                this.gridViewThuoc.CellValueChanged -= new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler (this.gridViewThuoc_CellValueChanged);
+                int index = gridViewThuoc.GetFocusedDataSourceRowIndex ();
+                try
+                {
+                    int soluong = int.Parse ((gridControlThuoc.DataSource as DataView)[index]["SO_LUONG"].ToString ());
+                    int dongia = int.Parse ((gridControlThuoc.DataSource as DataView)[index]["DON_GIA"].ToString ());
+                    (gridControlThuoc.DataSource as DataView)[index]["THANH_TIEN"] = soluong * dongia;
+                }
+                catch { }
+                this.gridViewThuoc.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler (this.gridViewThuoc_CellValueChanged);
+            }
+        }
+
         private void FrmKeDon_Load (object sender, EventArgs e)
         {
             dataThuoc = thuoc.DSThuoc ();

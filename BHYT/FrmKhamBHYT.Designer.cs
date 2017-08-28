@@ -559,7 +559,6 @@
             this.label17.Size = new System.Drawing.Size(94, 16);
             this.label17.TabIndex = 77;
             this.label17.Text = "Phòng khám 4:";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label16
             // 
@@ -581,7 +580,6 @@
             this.label15.Size = new System.Drawing.Size(94, 16);
             this.label15.TabIndex = 77;
             this.label15.Text = "Phòng khám 2:";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // label14
             // 
@@ -592,7 +590,6 @@
             this.label14.Size = new System.Drawing.Size(94, 16);
             this.label14.TabIndex = 77;
             this.label14.Text = "Phòng khám 1:";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // lblPhongKham4
             // 
@@ -603,7 +600,6 @@
             this.lblPhongKham4.Size = new System.Drawing.Size(16, 16);
             this.lblPhongKham4.TabIndex = 76;
             this.lblPhongKham4.Text = "0";
-            this.lblPhongKham4.Click += new System.EventHandler(this.lblPhongKham4_Click);
             // 
             // lblPhongKham3
             // 
@@ -614,7 +610,6 @@
             this.lblPhongKham3.Size = new System.Drawing.Size(16, 16);
             this.lblPhongKham3.TabIndex = 76;
             this.lblPhongKham3.Text = "0";
-            this.lblPhongKham3.Click += new System.EventHandler(this.lblPhongKham3_Click);
             // 
             // lblPhongKham2
             // 
@@ -625,7 +620,6 @@
             this.lblPhongKham2.Size = new System.Drawing.Size(16, 16);
             this.lblPhongKham2.TabIndex = 76;
             this.lblPhongKham2.Text = "0";
-            this.lblPhongKham2.Click += new System.EventHandler(this.lblPhongKham2_Click);
             // 
             // lblPhongKham1
             // 
@@ -636,7 +630,6 @@
             this.lblPhongKham1.Size = new System.Drawing.Size(16, 16);
             this.lblPhongKham1.TabIndex = 76;
             this.lblPhongKham1.Text = "0";
-            this.lblPhongKham1.Click += new System.EventHandler(this.lblPhongKham1_Click);
             // 
             // gridControl
             // 
@@ -813,7 +806,6 @@
             this.cbPhong.Name = "cbPhong";
             this.cbPhong.Size = new System.Drawing.Size(91, 24);
             this.cbPhong.TabIndex = 73;
-            this.cbPhong.SelectedIndexChanged += new System.EventHandler(this.cbPhong_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -824,7 +816,6 @@
             this.label11.Size = new System.Drawing.Size(86, 16);
             this.label11.TabIndex = 72;
             this.label11.Text = "Phòng khám:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label13
             // 
@@ -835,7 +826,6 @@
             this.label13.Size = new System.Drawing.Size(31, 16);
             this.label13.TabIndex = 71;
             this.label13.Text = "đến";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // dateDen
             // 
@@ -847,7 +837,6 @@
             this.dateDen.Name = "dateDen";
             this.dateDen.Size = new System.Drawing.Size(129, 22);
             this.dateDen.TabIndex = 68;
-            this.dateDen.ValueChanged += new System.EventHandler(this.dateDen_ValueChanged);
             // 
             // dateTu
             // 
@@ -859,7 +848,6 @@
             this.dateTu.Name = "dateTu";
             this.dateTu.Size = new System.Drawing.Size(129, 22);
             this.dateTu.TabIndex = 69;
-            this.dateTu.ValueChanged += new System.EventHandler(this.dateTu_ValueChanged);
             // 
             // label25
             // 
@@ -870,7 +858,6 @@
             this.label25.Size = new System.Drawing.Size(70, 16);
             this.label25.TabIndex = 70;
             this.label25.Text = "Ngày vào:";
-            this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
             // btnIn
             // 

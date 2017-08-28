@@ -29,7 +29,7 @@
         private void InitializeComponent ()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKeDon));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lookUpMaBS = new DevExpress.XtraEditors.LookUpEdit();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -493,6 +493,7 @@
             this.gridViewThuoc.GridControl = this.gridControlThuoc;
             this.gridViewThuoc.Name = "gridViewThuoc";
             this.gridViewThuoc.OptionsView.ShowGroupPanel = false;
+            this.gridViewThuoc.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridViewThuoc_CellValueChanged);
             // 
             // Delete
             // 
@@ -507,7 +508,7 @@
             // btnXoaThuoc
             // 
             this.btnXoaThuoc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoaThuoc.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoaThuoc.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.btnXoaThuoc.Name = "btnXoaThuoc";
             this.btnXoaThuoc.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnXoaThuoc.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnXoaThuoc_ButtonClick);
@@ -544,7 +545,6 @@
             this.SoLuong.ColumnEdit = this.repositoryItemSpinEdit;
             this.SoLuong.FieldName = "SO_LUONG";
             this.SoLuong.Name = "SoLuong";
-            this.SoLuong.OptionsColumn.AllowEdit = false;
             this.SoLuong.Visible = true;
             this.SoLuong.VisibleIndex = 3;
             this.SoLuong.Width = 61;

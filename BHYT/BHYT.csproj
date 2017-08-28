@@ -132,6 +132,12 @@
     <Compile Include="DAO\ThuocDAO.cs" />
     <Compile Include="DAO\TienGiuongDAO.cs" />
     <Compile Include="DAO\VTYTDAO.cs" />
+    <Compile Include="FrmCanLamSan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCanLamSan.Designer.cs">
+      <DependentUpon>FrmCanLamSan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCauHinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -364,6 +370,9 @@
     <Compile Include="VO\VTYTVO.cs" />
     <EmbeddedResource Include="FrmBenhICD.resx">
       <DependentUpon>FrmBenhICD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCanLamSan.resx">
+      <DependentUpon>FrmCanLamSan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCauHinh.resx">
       <DependentUpon>FrmCauHinh.cs</DependentUpon>

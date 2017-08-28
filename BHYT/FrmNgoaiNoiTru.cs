@@ -2531,6 +2531,12 @@ namespace BHYT
                                     case "33":
                                         hienThongBao ("#BF9000", sMessage.ToString ());
                                         break;
+                                    case "34":
+                                        hienThongBao ("#DF0101", sMessage.ToString ());
+                                        break;
+                                    case "35":
+                                        hienThongBao ("#DF0101", sMessage.ToString ());
+                                        break;
                                     case "4":
                                         hienThongBao ("#DF0101", sMessage.ToString ());
                                         break;
@@ -2539,6 +2545,9 @@ namespace BHYT
                                         break;
                                     case "false":
                                         hienThongBao ("#DF0101", "Không có thông tin!");
+                                        break;
+                                    default:
+                                        hienThongBao ("#FF0000", sMessage.ToString ());
                                         break;
                                 }
                             }

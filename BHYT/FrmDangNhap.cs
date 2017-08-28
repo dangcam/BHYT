@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BHYT
@@ -24,11 +17,15 @@ namespace BHYT
         private void FrmDangNhap_Load (object sender, EventArgs e)
         {
             //
-            Process p = new Process ();
-            p.StartInfo = new ProcessStartInfo ("Update.exe");
-            p.StartInfo.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            p.StartInfo.CreateNoWindow = true;
-            p.Start ();
+            try
+            {
+                Process p = new Process ();
+                p.StartInfo = new ProcessStartInfo ("Update.exe");
+                p.StartInfo.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                p.StartInfo.CreateNoWindow = true;
+                p.Start ();
+            }
+            catch { }
             //
             read = new ReadConfig ();
             read.ReadLogin ();

@@ -282,5 +282,11 @@ namespace BHYT
             frmDSTiepNhan.WindowState = FormWindowState.Normal;
             frmDSTiepNhan.Show ();
         }
+
+        private void canLamSanToolStripMenuItem_Click (object sender, EventArgs e)
+        {
+            FrmCanLamSan frmCanLamSan = new FrmCanLamSan (db);
+            frmCanLamSan.ShowDialog ();
+        }
     }
 }

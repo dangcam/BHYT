@@ -50,7 +50,7 @@ namespace Update
             });
             DownLoadFile (service, IDFILE);
             VersionNew = ReadVerison (FILEVERSIONNEW);
-            if (VersionNew != VersionCurrent)
+            if (VersionNew != VersionCurrent && VersionNew != null)
             {
                 Notification ();
                 DialogResult traloi;
@@ -136,12 +136,13 @@ namespace Update
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine ("An error occurred: " + e.Message);
+                        MessageBox.Show("An error occurred: " + e.Message);
                     }
                 }
             }
-            catch (IOException e)
+            catch
             {
+                return;
             }
         }
         private string ReadVerison (string name)

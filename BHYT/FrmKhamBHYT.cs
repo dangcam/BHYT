@@ -220,20 +220,25 @@ namespace BHYT
                                 {
                                     case "1":
                                         hienThongTin (true, sMessage.ToString ());
-                                        btnPhongKham1.Focus ();
+                                        txtDiaChi.Focus ();
                                         break;
                                     case "2":
                                         hienThongTin (false, sMessage.ToString ());
                                         break;
                                     case "31":
                                         hienThongBao ("#DF0101", sMessage.ToString ());
-                                        txtNgaySinh.Text = txtNgaySinh.Text.Substring (txtNgaySinh.Text.Length - 4, 4);
                                         break;
                                     case "32":
                                         hienThongBao ("#134F5C", sMessage.ToString ());
                                         break;
                                     case "33":
                                         hienThongBao ("#BF9000", sMessage.ToString ());
+                                        break;
+                                    case "34":
+                                        hienThongBao ("#DF0101", sMessage.ToString ());
+                                        break;
+                                    case "35":
+                                        hienThongBao ("#DF0101", sMessage.ToString ());
                                         break;
                                     case "4":
                                         hienThongBao ("#DF0101", sMessage.ToString ());
@@ -243,6 +248,9 @@ namespace BHYT
                                         break;
                                     case "false":
                                         hienThongBao ("#DF0101", "Không có thông tin!");
+                                        break;
+                                    default:
+                                        hienThongBao ("#FF0000", sMessage.ToString ());
                                         break;
                                 }
                             }
@@ -722,69 +730,6 @@ namespace BHYT
 
         }
 
-        private void label15_Click (object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click (object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPhongKham4_Click (object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPhongKham3_Click (object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPhongKham2_Click (object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPhongKham1_Click (object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click (object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbPhong_SelectedIndexChanged (object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click (object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click (object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateDen_ValueChanged (object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTu_ValueChanged (object sender, EventArgs e)
-        {
-
-        }
-
-        private void label25_Click (object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }
