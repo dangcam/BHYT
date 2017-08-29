@@ -228,6 +228,43 @@ namespace BHYT
                     MessageBox.Show (ex.Message);
                 }
             }
+            if(cbLoaiChiPhi.SelectedIndex == 1)
+            {
+                try
+                {
+                    // chỉnh sửa làm tiếp
+                    string maDichVu = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[1].ToString ();
+                    string tenDV = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[2].ToString ();
+                    foreach (DataRowView dr in (gridControlDVKT.DataSource as DataView))
+                    {
+                        if (dr["MA_DICH_VU"].ToString () == maDichVu && dr["TEN_DICH_VU"].ToString () == tenDV)
+                        {
+                            MessageBox.Show ("Dịch vụ đã chọn, nhập lại số lượng!");
+                            return;
+                        }
+                    }
+                    DataRowView drNew = (gridControlDVKT.DataSource as DataView).AddNew ();
+                    drNew["MA_DICH_VU"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[1].ToString ();
+                    drNew["TEN_DICH_VU"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[2].ToString ();
+                    drNew["DON_GIA"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[4].ToString ();
+                    drNew["DON_VI_TINH"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[8].ToString ();
+                    drNew["MA_NHOM"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[0].ToString ();
+                    drNew["MA_KHOA"] = (lookUpMaKhoa.GetSelectedDataRow () as DataRowView)[0].ToString ();
+                    drNew["MA_BAC_SI"] = (lookUpMaBS.GetSelectedDataRow () as DataRowView)[0].ToString ();
+                    drNew["NGAY_YL"] = dateNgayYLenh.Text;
+                    drNew["SO_LUONG"] = txtSoLuong.Value;
+                    drNew["TYLE_TT"] = 100;
+                    drNew["THANH_TIEN"] = txtSoLuong.Value * Convert.ToDecimal (drNew["DON_GIA"]);
+
+
+                    lookUpLoaiChiPhi.Focus ();
+                    txtSoLuong.ResetText ();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show (ex.Message);
+                }
+            }
         }
 
         private void btnXoaThuoc_ButtonClick (object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -361,6 +398,7 @@ namespace BHYT
         private void FrmKeDon_Load (object sender, EventArgs e)
         {
             dataThuoc = thuoc.DSThuoc ();
+            dataDVKT = thuoc.DSCanLamSan ();
             cbLoaiChiPhi.SelectedIndex = 0;
             if (!string.IsNullOrEmpty (MaLienKet))
             {
@@ -447,17 +485,13 @@ namespace BHYT
 
                 this.searchLookUpEditView.Columns.AddRange (new DevExpress.XtraGrid.Columns.GridColumn[] {
                 this.MaDVKT,
-                this.TenDVKT,
-                this.gridCDonGia});
+                this.TenDVKT});
                 this.MaDVKT.Visible = true;
                 this.MaDVKT.VisibleIndex = 0;
                 this.MaDVKT.Width = 40;
                 this.TenDVKT.Visible = true;
                 this.TenDVKT.VisibleIndex = 1;
                 this.TenDVKT.Width = 160;
-                this.gridCDonGia.Visible = true;
-                this.gridCDonGia.VisibleIndex = 2;
-                this.gridCDonGia.Width = 50;
 
 
                 lookUpLoaiChiPhi.Properties.DataSource = dataDVKT;

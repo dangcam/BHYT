@@ -57,7 +57,6 @@ namespace BHYT
                                 {
                                     case "1":
                                         hienThongTin (true, sMessage.ToString ());
-                                        txtDiaChi.Focus ();
                                         break;
                                     case "2":
                                         hienThongTin (false, sMessage.ToString ());

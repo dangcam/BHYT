@@ -21,6 +21,11 @@ namespace BHYT.DAO
                 CommandType.Text, null);
         }
 
+        public DataTable DSCanLamSan ()
+        {
+            return db.ExcuteQuery ("Select ID AS MA_DVKT,TEN AS TEN_DVKT From CANLAMSAN",
+                CommandType.Text, null);
+        }
         public DataTable DSDVKT ()
         {
             return db.ExcuteQuery ("Select * From DVKT",

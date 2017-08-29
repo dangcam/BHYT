@@ -88,7 +88,7 @@ namespace Update
                     {
                         DownLoadFile (service, child.Id);
                         i++;
-                        bw.ReportProgress ((int)(100 / len * i));
+                        bw.ReportProgress ((int) (100 / len * i));
                     }
                     request.PageToken = children.NextPageToken;
                 }
@@ -136,7 +136,7 @@ namespace Update
                     }
                     catch (Exception e)
                     {
-                        MessageBox.Show("An error occurred: " + e.Message);
+                        //MessageBox.Show("An error occurred: " + e.Message);
                     }
                 }
             }

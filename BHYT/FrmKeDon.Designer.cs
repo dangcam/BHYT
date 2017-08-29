@@ -29,6 +29,7 @@
         private void InitializeComponent ()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKeDon));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lookUpMaBS = new DevExpress.XtraEditors.LookUpEdit();
             this.label14 = new System.Windows.Forms.Label();
@@ -87,6 +88,20 @@
             this.txtTenBenh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtHoTen = new System.Windows.Forms.TextBox();
+            this.gridControlDVKT = new DevExpress.XtraGrid.GridControl();
+            this.gridViewDVKT = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btnXoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnXoaDVKT = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.NgayYLenh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenDichVu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SoLuongDVKT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.KhoaMa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.BacSi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DonGiaDVKT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Muc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Tien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MaNhom = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaKhoa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpLoaiChiPhi.Properties)).BeginInit();
@@ -102,6 +117,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBenhKhac.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDVKT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewDVKT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnXoaDVKT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // lookUpMaBS
@@ -467,7 +486,7 @@
             this.gridControlThuoc.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnXoaThuoc,
             this.repositoryItemSpinEdit});
-            this.gridControlThuoc.Size = new System.Drawing.Size(1047, 358);
+            this.gridControlThuoc.Size = new System.Drawing.Size(1047, 243);
             this.gridControlThuoc.TabIndex = 57;
             this.gridControlThuoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewThuoc});
@@ -508,7 +527,7 @@
             // btnXoaThuoc
             // 
             this.btnXoaThuoc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoaThuoc.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoaThuoc.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.btnXoaThuoc.Name = "btnXoaThuoc";
             this.btnXoaThuoc.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnXoaThuoc.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnXoaThuoc_ButtonClick);
@@ -817,11 +836,199 @@
             this.txtHoTen.Size = new System.Drawing.Size(490, 22);
             this.txtHoTen.TabIndex = 63;
             // 
+            // gridControlDVKT
+            // 
+            this.gridControlDVKT.Location = new System.Drawing.Point(12, 403);
+            this.gridControlDVKT.MainView = this.gridViewDVKT;
+            this.gridControlDVKT.Name = "gridControlDVKT";
+            this.gridControlDVKT.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnXoaDVKT,
+            this.repositoryItemSpinEdit1});
+            this.gridControlDVKT.Size = new System.Drawing.Size(1047, 201);
+            this.gridControlDVKT.TabIndex = 64;
+            this.gridControlDVKT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewDVKT});
+            // 
+            // gridViewDVKT
+            // 
+            this.gridViewDVKT.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.gridViewDVKT.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gridViewDVKT.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.gridViewDVKT.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.gridViewDVKT.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.btnXoa,
+            this.NgayYLenh,
+            this.TenDichVu,
+            this.SoLuongDVKT,
+            this.KhoaMa,
+            this.BacSi,
+            this.DonGiaDVKT,
+            this.Muc,
+            this.Tien,
+            this.MaNhom});
+            this.gridViewDVKT.GridControl = this.gridControlDVKT;
+            this.gridViewDVKT.Name = "gridViewDVKT";
+            this.gridViewDVKT.OptionsView.ShowGroupPanel = false;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Caption = "#";
+            this.btnXoa.ColumnEdit = this.btnXoaDVKT;
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.OptionsColumn.FixedWidth = true;
+            this.btnXoa.Visible = true;
+            this.btnXoa.VisibleIndex = 0;
+            this.btnXoa.Width = 20;
+            // 
+            // btnXoaDVKT
+            // 
+            this.btnXoaDVKT.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoaDVKT.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            this.btnXoaDVKT.Name = "btnXoaDVKT";
+            this.btnXoaDVKT.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // NgayYLenh
+            // 
+            this.NgayYLenh.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NgayYLenh.AppearanceCell.Options.UseFont = true;
+            this.NgayYLenh.Caption = "Ngày y lệnh";
+            this.NgayYLenh.FieldName = "NGAY_YL";
+            this.NgayYLenh.Name = "NgayYLenh";
+            this.NgayYLenh.OptionsColumn.FixedWidth = true;
+            this.NgayYLenh.Visible = true;
+            this.NgayYLenh.VisibleIndex = 1;
+            this.NgayYLenh.Width = 50;
+            // 
+            // TenDichVu
+            // 
+            this.TenDichVu.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenDichVu.AppearanceCell.Options.UseFont = true;
+            this.TenDichVu.Caption = "Tên Dịch Vụ";
+            this.TenDichVu.FieldName = "TEN_DICH_VU";
+            this.TenDichVu.Name = "TenDichVu";
+            this.TenDichVu.OptionsColumn.AllowEdit = false;
+            this.TenDichVu.OptionsColumn.FixedWidth = true;
+            this.TenDichVu.Visible = true;
+            this.TenDichVu.VisibleIndex = 2;
+            this.TenDichVu.Width = 150;
+            // 
+            // SoLuongDVKT
+            // 
+            this.SoLuongDVKT.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SoLuongDVKT.AppearanceCell.Options.UseFont = true;
+            this.SoLuongDVKT.Caption = "Số lượng";
+            this.SoLuongDVKT.ColumnEdit = this.repositoryItemSpinEdit1;
+            this.SoLuongDVKT.FieldName = "SO_LUONG";
+            this.SoLuongDVKT.Name = "SoLuongDVKT";
+            this.SoLuongDVKT.OptionsColumn.FixedWidth = true;
+            this.SoLuongDVKT.Visible = true;
+            this.SoLuongDVKT.VisibleIndex = 3;
+            this.SoLuongDVKT.Width = 30;
+            // 
+            // repositoryItemSpinEdit1
+            // 
+            this.repositoryItemSpinEdit1.AutoHeight = false;
+            this.repositoryItemSpinEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSpinEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryItemSpinEdit1.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.repositoryItemSpinEdit1.MaxLength = 3;
+            this.repositoryItemSpinEdit1.MaxValue = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.repositoryItemSpinEdit1.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
+            // 
+            // KhoaMa
+            // 
+            this.KhoaMa.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KhoaMa.AppearanceCell.Options.UseFont = true;
+            this.KhoaMa.Caption = "Khoa";
+            this.KhoaMa.FieldName = "MA_KHOA";
+            this.KhoaMa.Name = "KhoaMa";
+            this.KhoaMa.OptionsColumn.AllowEdit = false;
+            this.KhoaMa.OptionsColumn.FixedWidth = true;
+            this.KhoaMa.Visible = true;
+            this.KhoaMa.VisibleIndex = 4;
+            this.KhoaMa.Width = 30;
+            // 
+            // BacSi
+            // 
+            this.BacSi.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BacSi.AppearanceCell.Options.UseFont = true;
+            this.BacSi.Caption = "Bác sĩ";
+            this.BacSi.FieldName = "MA_BAC_SI";
+            this.BacSi.Name = "BacSi";
+            this.BacSi.OptionsColumn.FixedWidth = true;
+            this.BacSi.Visible = true;
+            this.BacSi.VisibleIndex = 5;
+            this.BacSi.Width = 60;
+            // 
+            // DonGiaDVKT
+            // 
+            this.DonGiaDVKT.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DonGiaDVKT.AppearanceCell.Options.UseFont = true;
+            this.DonGiaDVKT.Caption = "Đơn giá";
+            this.DonGiaDVKT.DisplayFormat.FormatString = "#,###";
+            this.DonGiaDVKT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.DonGiaDVKT.FieldName = "DON_GIA";
+            this.DonGiaDVKT.Name = "DonGiaDVKT";
+            this.DonGiaDVKT.OptionsColumn.AllowEdit = false;
+            this.DonGiaDVKT.OptionsColumn.FixedWidth = true;
+            this.DonGiaDVKT.Visible = true;
+            this.DonGiaDVKT.VisibleIndex = 6;
+            // 
+            // Muc
+            // 
+            this.Muc.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Muc.AppearanceCell.Options.UseFont = true;
+            this.Muc.Caption = "Mức thanh toán";
+            this.Muc.FieldName = "TYLE_TT";
+            this.Muc.Name = "Muc";
+            this.Muc.OptionsColumn.FixedWidth = true;
+            this.Muc.Visible = true;
+            this.Muc.VisibleIndex = 7;
+            this.Muc.Width = 50;
+            // 
+            // Tien
+            // 
+            this.Tien.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tien.AppearanceCell.Options.UseFont = true;
+            this.Tien.Caption = "Thành tiền";
+            this.Tien.DisplayFormat.FormatString = "#,###";
+            this.Tien.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.Tien.FieldName = "THANH_TIEN";
+            this.Tien.Name = "Tien";
+            this.Tien.OptionsColumn.AllowEdit = false;
+            this.Tien.OptionsColumn.FixedWidth = true;
+            this.Tien.Visible = true;
+            this.Tien.VisibleIndex = 8;
+            // 
+            // MaNhom
+            // 
+            this.MaNhom.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaNhom.AppearanceCell.Options.UseFont = true;
+            this.MaNhom.Caption = "Mã Nhóm";
+            this.MaNhom.FieldName = "MA_NHOM";
+            this.MaNhom.Name = "MaNhom";
+            this.MaNhom.OptionsColumn.AllowEdit = false;
+            this.MaNhom.OptionsColumn.FixedWidth = true;
+            this.MaNhom.Visible = true;
+            this.MaNhom.VisibleIndex = 9;
+            this.MaNhom.Width = 30;
+            // 
             // FrmKeDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1071, 521);
+            this.ClientSize = new System.Drawing.Size(1071, 616);
+            this.Controls.Add(this.gridControlDVKT);
             this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtTenBenh);
@@ -869,6 +1076,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBenhKhac.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDVKT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewDVKT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnXoaDVKT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -933,5 +1144,19 @@
         private DevExpress.XtraGrid.Columns.GridColumn LieuDung;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtHoTen;
+        private DevExpress.XtraGrid.GridControl gridControlDVKT;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewDVKT;
+        private DevExpress.XtraGrid.Columns.GridColumn btnXoa;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoaDVKT;
+        private DevExpress.XtraGrid.Columns.GridColumn NgayYLenh;
+        private DevExpress.XtraGrid.Columns.GridColumn TenDichVu;
+        private DevExpress.XtraGrid.Columns.GridColumn SoLuongDVKT;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn KhoaMa;
+        private DevExpress.XtraGrid.Columns.GridColumn BacSi;
+        private DevExpress.XtraGrid.Columns.GridColumn DonGiaDVKT;
+        private DevExpress.XtraGrid.Columns.GridColumn Muc;
+        private DevExpress.XtraGrid.Columns.GridColumn Tien;
+        private DevExpress.XtraGrid.Columns.GridColumn MaNhom;
     }
 }
