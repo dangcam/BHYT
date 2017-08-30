@@ -246,6 +246,12 @@
     <Compile Include="FrmThemThuoc.Designer.cs">
       <DependentUpon>FrmThemThuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmThongKeBNTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThongKeBNTT.Designer.cs">
+      <DependentUpon>FrmThongKeBNTT.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmThongKeSoLieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,6 +312,12 @@
     </Compile>
     <Compile Include="rptSoPhieu.Designer.cs">
       <DependentUpon>rptSoPhieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptThongKeBNTT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptThongKeBNTT.Designer.cs">
+      <DependentUpon>rptThongKeBNTT.cs</DependentUpon>
     </Compile>
     <Compile Include="rptThongKeSoLuong.cs">
       <SubType>Component</SubType>
@@ -438,6 +450,9 @@
     <EmbeddedResource Include="FrmThemThuoc.resx">
       <DependentUpon>FrmThemThuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmThongKeBNTT.resx">
+      <DependentUpon>FrmThongKeBNTT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmThongKeSoLieu.resx">
       <DependentUpon>FrmThongKeSoLieu.cs</DependentUpon>
     </EmbeddedResource>
@@ -478,6 +493,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rptSoPhieu.resx">
       <DependentUpon>rptSoPhieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptThongKeBNTT.resx">
+      <DependentUpon>rptThongKeBNTT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptThongKeSoLuong.resx">
       <DependentUpon>rptThongKeSoLuong.cs</DependentUpon>

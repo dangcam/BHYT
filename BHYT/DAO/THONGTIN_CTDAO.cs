@@ -258,6 +258,21 @@ namespace BHYT.DAO
             return db.ExcuteQuery (sql,
                 CommandType.Text, null);
         }
+        public DataTable DSThongTinBN (int loaiKCB, string ngayBD, string ngayKT)
+        {
+            string sql = "";
+            if (loaiKCB == 0)
+            {
+                sql = "SELECT * FROM getBNTT('" + ngayBD + "','" + ngayKT + "') ORDER BY MA_BN ASC";
+            }
+            else
+            {
+                sql = "SELECT * FROM getBNTT('" + ngayBD + "','" + ngayKT + "') WHERE MA_LOAI_KCB = "+loaiKCB+" ORDER BY MA_BN ASC";
+            }
+
+            return db.ExcuteQuery (sql,
+                CommandType.Text, null);
+        }
         public DataTable DSTiepNhan  (string ngayBD, string ngayKT, int phong, int tinhTrang = 0, string loaiKCB = null)
         {
             string sql = "";

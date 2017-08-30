@@ -195,10 +195,10 @@
             this.BottomMargin});
             this.Dpi = 254F;
             this.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
-            this.PageHeight = 350;
+            this.PageHeight = 2969;
             this.PageWidth = 480;
             this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
-            this.PaperName = "Custom";
+            this.PaperName = "58(48) x 297 mm";
             this.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter;
             this.SnapGridSize = 25F;
             this.Version = "16.2";

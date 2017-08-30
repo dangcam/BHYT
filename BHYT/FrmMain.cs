@@ -288,5 +288,11 @@ namespace BHYT
             FrmCanLamSan frmCanLamSan = new FrmCanLamSan (db);
             frmCanLamSan.ShowDialog ();
         }
+
+        private void thongKeBNTTToolStripMenuItem_Click (object sender, EventArgs e)
+        {
+            FrmThongKeBNTT frmBNTT = new FrmThongKeBNTT (db);
+            frmBNTT.ShowDialog ();
+        }
     }
 }

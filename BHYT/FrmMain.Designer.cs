@@ -52,13 +52,14 @@
             this.thuocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coSoKCBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.luongCoBanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.canLamSanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.baoCaoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thongKeSoLieuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thongKeSoLuongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.huongDanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.canLamSanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thongKeBNTTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -250,11 +251,19 @@
             this.luongCoBanToolStripMenuItem.Text = "Lương Cơ Bản";
             this.luongCoBanToolStripMenuItem.Click += new System.EventHandler(this.luongCoBanToolStripMenuItem_Click);
             // 
+            // canLamSanToolStripMenuItem
+            // 
+            this.canLamSanToolStripMenuItem.Name = "canLamSanToolStripMenuItem";
+            this.canLamSanToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.canLamSanToolStripMenuItem.Text = "Cận Lâm Sàn";
+            this.canLamSanToolStripMenuItem.Click += new System.EventHandler(this.canLamSanToolStripMenuItem_Click);
+            // 
             // baoCaoToolStripMenuItem
             // 
             this.baoCaoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thongKeSoLieuToolStripMenuItem,
-            this.thongKeSoLuongToolStripMenuItem});
+            this.thongKeSoLuongToolStripMenuItem,
+            this.thongKeBNTTToolStripMenuItem});
             this.baoCaoToolStripMenuItem.Name = "baoCaoToolStripMenuItem";
             this.baoCaoToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.baoCaoToolStripMenuItem.Text = "Báo Cáo";
@@ -296,12 +305,12 @@
             this.panelMain.Size = new System.Drawing.Size(931, 478);
             this.panelMain.TabIndex = 1;
             // 
-            // canLamSanToolStripMenuItem
+            // thongKeBNTTToolStripMenuItem
             // 
-            this.canLamSanToolStripMenuItem.Name = "canLamSanToolStripMenuItem";
-            this.canLamSanToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.canLamSanToolStripMenuItem.Text = "Cận Lâm Sàn";
-            this.canLamSanToolStripMenuItem.Click += new System.EventHandler(this.canLamSanToolStripMenuItem_Click);
+            this.thongKeBNTTToolStripMenuItem.Name = "thongKeBNTTToolStripMenuItem";
+            this.thongKeBNTTToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.thongKeBNTTToolStripMenuItem.Text = "Thống Kê BNTT";
+            this.thongKeBNTTToolStripMenuItem.Click += new System.EventHandler(this.thongKeBNTTToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -355,6 +364,7 @@
         private System.Windows.Forms.ToolStripMenuItem khamBHYTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dSTiepNhanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem canLamSanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thongKeBNTTToolStripMenuItem;
     }
 }
 
