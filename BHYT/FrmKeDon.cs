@@ -17,6 +17,7 @@ namespace BHYT
     {
         ThuocDAO thuoc;
         DataView dvTienThuoc = new DataView ();
+        DataView dvTienDVKT = new DataView ();
         DataTable dataThuoc = null, dataDVKT = null, dataVTYT = null, dataBenh = null;
         THONGTIN_CTVO thongtinBN = new THONGTIN_CTVO ();
         THONGTIN_CTDAO thongtinCT = null;
@@ -26,6 +27,7 @@ namespace BHYT
         string[] gioitinh = new string[] { "Nữ", "Nam" };
         System.Drawing.Font font = new System.Drawing.Font ("Times New Roman", 11);
         Dictionary<string, bool> dsThuoc = new Dictionary<string, bool> ();
+        Dictionary<string, bool> dsDVKT = new Dictionary<string, bool> ();
         public FrmKeDon (Connection db)
         {
             InitializeComponent ();
@@ -232,33 +234,40 @@ namespace BHYT
             {
                 try
                 {
-                    // chỉnh sửa làm tiếp
-                    string maDichVu = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[1].ToString ();
-                    string tenDV = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[2].ToString ();
-                    foreach (DataRowView dr in (gridControlDVKT.DataSource as DataView))
+                    int IdCLS = Utils.ToInt((lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[0].ToString ());
+                    if (IdCLS > 0)
                     {
-                        if (dr["MA_DICH_VU"].ToString () == maDichVu && dr["TEN_DICH_VU"].ToString () == tenDV)
+                        DataTable dtDVKT = thongtinCT.DSNhomCanLamSan (IdCLS);
+                        foreach (DataRow drow in dtDVKT.Rows)
                         {
-                            MessageBox.Show ("Dịch vụ đã chọn, nhập lại số lượng!");
-                            return;
+                            string maDichVu = drow["MA_DVKT"].ToString();
+                            string tenDV = drow["TEN_DVKT"].ToString ();
+                            foreach (DataRowView dr in (gridControlDVKT.DataSource as DataView))
+                            {
+                                if (dr["MA_DICH_VU"].ToString () == maDichVu && dr["TEN_DICH_VU"].ToString () == tenDV)
+                                {
+                                    MessageBox.Show ("Dịch vụ đã chọn, nhập lại số lượng!");
+                                    return;
+                                }
+                            }
+
+                            DataRowView drNew = (gridControlDVKT.DataSource as DataView).AddNew ();
+                            drNew["MA_DICH_VU"] = maDichVu;
+                            drNew["TEN_DICH_VU"] = tenDV;
+                            drNew["DON_GIA"] = drow["DON_GIA"];
+                            drNew["DON_VI_TINH"] = drow["DON_VI_TINH"];
+                            drNew["MA_NHOM"] = drow["MA_NHOM"];
+                            drNew["MA_KHOA"] = (lookUpMaKhoa.GetSelectedDataRow () as DataRowView)[0].ToString ();
+                            drNew["MA_BAC_SI"] = (lookUpMaBS.GetSelectedDataRow () as DataRowView)[0].ToString ();
+                            drNew["NGAY_YL"] = dateNgayYLenh.Text;
+                            drNew["SO_LUONG"] = 1;
+                            drNew["TYLE_TT"] = 100;
+                            drNew["THANH_TIEN"] = Convert.ToDecimal (drNew["DON_GIA"]);
+
                         }
+                        lookUpLoaiChiPhi.Focus ();
+                        txtSoLuong.ResetText ();
                     }
-                    DataRowView drNew = (gridControlDVKT.DataSource as DataView).AddNew ();
-                    drNew["MA_DICH_VU"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[1].ToString ();
-                    drNew["TEN_DICH_VU"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[2].ToString ();
-                    drNew["DON_GIA"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[4].ToString ();
-                    drNew["DON_VI_TINH"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[8].ToString ();
-                    drNew["MA_NHOM"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[0].ToString ();
-                    drNew["MA_KHOA"] = (lookUpMaKhoa.GetSelectedDataRow () as DataRowView)[0].ToString ();
-                    drNew["MA_BAC_SI"] = (lookUpMaBS.GetSelectedDataRow () as DataRowView)[0].ToString ();
-                    drNew["NGAY_YL"] = dateNgayYLenh.Text;
-                    drNew["SO_LUONG"] = txtSoLuong.Value;
-                    drNew["TYLE_TT"] = 100;
-                    drNew["THANH_TIEN"] = txtSoLuong.Value * Convert.ToDecimal (drNew["DON_GIA"]);
-
-
-                    lookUpLoaiChiPhi.Focus ();
-                    txtSoLuong.ResetText ();
                 }
                 catch (Exception ex)
                 {
@@ -282,7 +291,7 @@ namespace BHYT
 
         private void btnInDon_Click (object sender, EventArgs e)
         {
-           
+
             createReport ();
             string err = "";
             thongtinBN.MaBS = lookUpMaBS.EditValue.ToString ();
@@ -332,7 +341,6 @@ namespace BHYT
                 thuoc.Nhom = drView["NHOM"].ToString ();
                 err = "";
 
-
                 if (dsThuoc.ContainsKey (thuoc.MaThuoc + "|" + thuoc.TenThuoc))
                 {
                     thongtinCT.SuaThuocCT (ref err, thuoc); //sửa tiền thuốc
@@ -367,6 +375,65 @@ namespace BHYT
                     MessageBox.Show (err);
                 }
             }
+            //
+            DVKT_CTVO dvkt;
+            foreach (DataRowView drView in dvTienDVKT) // dịch vụ kỹ thuật
+            {
+                dvkt = new DVKT_CTVO ();
+                dvkt.MaLK = thongtinBN.MaLK;
+                dvkt.MaDichVu = drView["MA_DICH_VU"].ToString ();
+                dvkt.MaVatTu = drView["MA_VAT_TU"].ToString ();
+                dvkt.MaNhom = drView["MA_NHOM"].ToString ();
+                dvkt.TenDichVu = drView["TEN_DICH_VU"].ToString ();
+                dvkt.DonViTinh = drView["DON_VI_TINH"].ToString ();
+                dvkt.SoLuong = Convert.ToInt32 (drView["SO_LUONG"].ToString ());
+                dvkt.DonGia = Convert.ToInt32 (drView["DON_GIA"].ToString ());
+                dvkt.TyLeTT = 100;
+                dvkt.ThanhTien = Convert.ToInt32 (drView["THANH_TIEN"].ToString ());
+                dvkt.MaKhoa = drView["MA_KHOA"].ToString ();
+                dvkt.MaBacSi = drView["MA_BAC_SI"].ToString ();
+                dvkt.MaBenh = maBenhChinh + ";" + thongtinBN.MaBenhKhac;
+                if (drView["NGAY_YL"].ToString ().Contains ("/"))
+                {
+                    dvkt.NgayYLenh = DateTime.ParseExact (drView["NGAY_YL"].ToString (), "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture).ToString ("yyyyMMddHHmm");
+                }
+                else
+                {
+                    dvkt.NgayYLenh = drView["NGAY_YL"].ToString ();
+                }
+                dvkt.NgayQK = dvkt.NgayYLenh;
+                dvkt.MaPTTT = 0;
+                //
+                err = "";
+
+                if (dsDVKT.ContainsKey (dvkt.MaDichVu))
+                {
+                    thongtinCT.SuaDVKTCT (ref err, dvkt);
+                    dsDVKT[dvkt.MaDichVu] = true;
+                }
+                else
+                {
+                    thongtinCT.ThemDVKTCT (ref err, dvkt);
+                    dsDVKT.Add (dvkt.MaDichVu, true);
+                    if (!string.IsNullOrEmpty (err))
+                    {
+                        MessageBox.Show (err);
+                    }
+                }
+            }
+            keys = new List<string> (dsDVKT.Keys);
+            foreach (var key in keys)
+            {
+                if (dsDVKT[key] == false)
+                {
+                    thongtinCT.XoaDVKTCT (ref err, thongtinBN.MaLK, key);
+                    dsDVKT.Remove (key);
+                }
+                else
+                {
+                    dsDVKT[key] = false;
+                }
+            }
         }
 
         private bool checkMaBenh (string ma)
@@ -393,6 +460,11 @@ namespace BHYT
                 catch { }
                 this.gridViewThuoc.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler (this.gridViewThuoc_CellValueChanged);
             }
+        }
+
+        private void btnXoaDVKT_ButtonClick (object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            (gridControlDVKT.DataSource as DataView).Delete (gridViewDVKT.GetFocusedDataSourceRowIndex ());
         }
 
         private void FrmKeDon_Load (object sender, EventArgs e)
@@ -439,11 +511,18 @@ namespace BHYT
                     //
                     dvTienThuoc = thongtinCT.DSNhomThuoc (thongtinBN.MaLK).AsDataView ();
                     gridControlThuoc.DataSource = dvTienThuoc;
+                    dvTienDVKT = thongtinCT.DSNhomDVKT (thongtinBN.MaLK).AsDataView ();
+                    gridControlDVKT.DataSource = dvTienDVKT;
                     dsThuoc.Clear ();
+                    dsDVKT.Clear ();
                     foreach (DataRowView drView in dvTienThuoc)
                     {
 
                         dsThuoc.Add (drView["MA_THUOC"].ToString () + "|" + drView["TEN_THUOC"], false);
+                    }
+                    foreach(DataRowView drView in dvTienDVKT)
+                    {
+                        dsDVKT.Add(drView["MA_DICH_VU"].ToString (), false);
                     }
                 }
             }

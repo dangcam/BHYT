@@ -357,6 +357,11 @@ namespace BHYT.DAO
             return db.ExcuteQuery ("Select * From NHOM order by cast(MAU_01 as float) asc",
                 CommandType.Text, null);
         }
+        public DataTable DSNhomCanLamSan (int id)
+        {
+            return db.ExcuteQuery ("Select * From DVKT Where CLS = "+id,
+                CommandType.Text, null);
+        }
         public bool ThemThongTinCT (ref string err, THONGTIN_CTVO thongtin)
         {
             return db.MyExecuteNonQuery ("SpThemThongTinCT",
