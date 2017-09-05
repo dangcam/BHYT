@@ -264,6 +264,12 @@
     <Compile Include="FrmThongKeSoLuong.Designer.cs">
       <DependentUpon>FrmThongKeSoLuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmThongKeThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThongKeThuoc.Designer.cs">
+      <DependentUpon>FrmThongKeThuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +330,12 @@
     </Compile>
     <Compile Include="rptThongKeSoLuong.Designer.cs">
       <DependentUpon>rptThongKeSoLuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptThongKeThuoc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptThongKeThuoc.Designer.cs">
+      <DependentUpon>rptThongKeThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="rptTongHopChiPhi.cs">
       <SubType>Component</SubType>
@@ -459,6 +471,9 @@
     <EmbeddedResource Include="FrmThongKeSoLuong.resx">
       <DependentUpon>FrmThongKeSoLuong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmThongKeThuoc.resx">
+      <DependentUpon>FrmThongKeThuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmThuoc.resx">
       <DependentUpon>FrmThuoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -499,6 +514,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rptThongKeSoLuong.resx">
       <DependentUpon>rptThongKeSoLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptThongKeThuoc.resx">
+      <DependentUpon>rptThongKeThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptTongHopChiPhi.resx">
       <DependentUpon>rptTongHopChiPhi.cs</DependentUpon>

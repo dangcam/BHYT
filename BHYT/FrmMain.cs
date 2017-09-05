@@ -294,5 +294,11 @@ namespace BHYT
             FrmThongKeBNTT frmBNTT = new FrmThongKeBNTT (db);
             frmBNTT.ShowDialog ();
         }
+
+        private void thongKeThuocToolStripMenuItem_Click (object sender, EventArgs e)
+        {
+            FrmThongKeThuoc frmThuoc = new FrmThongKeThuoc (db);
+            frmThuoc.ShowDialog ();
+        }
     }
 }
