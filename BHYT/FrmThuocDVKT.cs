@@ -223,8 +223,8 @@ namespace BHYT
                 try
                 {
                     string maDichVu = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[0].ToString ();
-                    string tenDV = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[1].ToString ();
-                    foreach (DataRowView dr in (gridControlDVKT.DataSource as DataView))
+                    string tenDV = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[2].ToString ();
+                    foreach (DataRowView dr in (gridControlVTYT.DataSource as DataView))
                     {
                         if (dr["MA_DICH_VU"].ToString () == maDichVu && dr["TEN_DICH_VU"].ToString () == tenDV)
                         {
@@ -234,7 +234,7 @@ namespace BHYT
                     }
                     DataRowView drNew = (gridControlVTYT.DataSource as DataView).AddNew ();
                     drNew["MA_DICH_VU"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[0].ToString ();
-                    drNew["TEN_DICH_VU"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[1].ToString ();
+                    drNew["TEN_DICH_VU"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[2].ToString ();
                     drNew["DON_GIA"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[3].ToString ();
                     drNew["DON_VI_TINH"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[4].ToString ();
                     drNew["MA_NHOM"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[7].ToString ();
