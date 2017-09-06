@@ -305,7 +305,7 @@ namespace BHYT
                 try
                 {
                     string[] tmp = thongtin2.Split (';');
-                    string diaChi = tmp[0].Split (':')[1].TrimStart ().TrimEnd ();
+                    string diaChi = tmp[0].Split (':')[1].TrimStart ().TrimEnd ().Replace("\\u0027","'");
                     if (txtDiaChi.Text != diaChi)
                     {
                         txtDiaChi.Text = diaChi;
