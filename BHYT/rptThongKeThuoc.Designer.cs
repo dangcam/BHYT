@@ -376,10 +376,12 @@
             // lblNgay
             // 
             this.lblNgay.Dpi = 100F;
+            this.lblNgay.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNgay.LocationFloat = new DevExpress.Utils.PointFloat(426.0417F, 22.99999F);
             this.lblNgay.Name = "lblNgay";
             this.lblNgay.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblNgay.SizeF = new System.Drawing.SizeF(558.9999F, 23F);
+            this.lblNgay.StylePriority.UseFont = false;
             this.lblNgay.StylePriority.UseTextAlignment = false;
             this.lblNgay.Text = "Từ ngày 30/08/2017 đến ngày 30/08/2017";
             this.lblNgay.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
