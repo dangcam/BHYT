@@ -300,5 +300,11 @@ namespace BHYT
             FrmThongKeThuoc frmThuoc = new FrmThongKeThuoc (db);
             frmThuoc.ShowDialog ();
         }
+
+        private void tongHopVienPhiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTongHopVienPhi frmTongHop = new FrmTongHopVienPhi(db);
+            frmTongHop.ShowDialog();
+        }
     }
 }

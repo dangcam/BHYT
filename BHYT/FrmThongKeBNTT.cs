@@ -40,6 +40,7 @@ namespace BHYT
 
                 rptThongKeBNTT rpt = new rptThongKeBNTT ();
                 rpt.lblNgay.Text = "Từ ngày " + dateTuNgay.Text + " đến ngày " + dateDenNgay.Text;
+                rpt.xrTable.Rows.Clear();
                 XRTableRow row;
                 XRTableCell cell;
                 int i = 0;
@@ -69,6 +70,13 @@ namespace BHYT
                     cell.WidthF = 250;
                     row.Cells.Add (cell);
 
+                    cell = new XRTableCell();
+                    cell.Text = dr["NGAY_SINH"].ToString();
+                    cell.Font = font;
+                    cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+                    cell.WidthF = 80;
+                    row.Cells.Add(cell);
+
                     cell = new XRTableCell ();
                     cell.Text = dr["MUC_HUONG"].ToString ();
                     cell.Font = font;
@@ -82,7 +90,7 @@ namespace BHYT
                     cell.Text = tmp.ToString ("0,0", elGR);
                     cell.Font = font;
                     cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-                    cell.WidthF = 217;
+                    cell.WidthF = 137;
                     row.Cells.Add (cell);
 
                     rpt.xrTable.Rows.Add (row);
@@ -97,14 +105,14 @@ namespace BHYT
                 cell.Text = "Tổng cộng";
                 cell.Font = fontB;
                 cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-                cell.WidthF = 500;
+                cell.WidthF = 580;
                 row.Cells.Add (cell);
 
                 cell = new XRTableCell ();
                 cell.Text = t.ToString ("0,0", elGR);
                 cell.Font = fontB;
                 cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-                cell.WidthF = 217;
+                cell.WidthF = 137;
                 row.Cells.Add (cell);
 
                 rpt.xrTable.Rows.Add (row);

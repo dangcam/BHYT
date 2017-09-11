@@ -30,14 +30,14 @@
         {
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrPivotGrid = new DevExpress.XtraReports.UI.XRPivotGrid();
-            this.pivotGridFieldSTT = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.pivotGridFieldHoTen = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.pivotGridFieldNam = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.pivotGridFieldDiaChi = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.pivotGridFieldTheBHYT = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.pivotGridFieldNgayKham = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.xrPivotGridField41 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.xrPivotGridField42 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.xrPivotGridField43 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.xrPivotGridField44 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.xrPivotGridField45 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.xrPivotGridField46 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.pivotGridField8 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.pivotGridFieldTenThuoc = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.xrPivotGridField24 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.pivotGridField10 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
@@ -46,6 +46,15 @@
             this.lblNgay = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
+            this.xrPageInfo = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.pivotGridFieldSTT = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.pivotGridFieldHoTen = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.pivotGridFieldNam = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.pivotGridFieldDiaChi = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.pivotGridFieldTheBHYT = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.pivotGridFieldNgayKham = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
+            this.pivotGridFieldTenThuoc = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.xrPivotGridField1 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.xrPivotGridField2 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.xrPivotGridField3 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
@@ -69,7 +78,6 @@
             this.xrPivotGridField21 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.xrPivotGridFieldSTT = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.xrPivotGridFieldHoTen = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.xrPivotGridField24 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.xrPivotGridField22 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.xrPivotGridField23 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.xrPivotGridField25 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
@@ -88,12 +96,6 @@
             this.xrPivotGridField38 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.xrPivotGridField39 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             this.xrPivotGridField40 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.xrPivotGridField41 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.xrPivotGridField42 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.xrPivotGridField43 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.xrPivotGridField44 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.xrPivotGridField45 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
-            this.xrPivotGridField46 = new DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -145,6 +147,295 @@
             this.xrPivotGrid.OptionsView.ShowRowGrandTotals = false;
             this.xrPivotGrid.OptionsView.ShowRowTotals = false;
             this.xrPivotGrid.SizeF = new System.Drawing.SizeF(1109F, 80F);
+            // 
+            // xrPivotGridField41
+            // 
+            this.xrPivotGridField41.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrPivotGridField41.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
+            this.xrPivotGridField41.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.xrPivotGridField41.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.xrPivotGridField41.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.xrPivotGridField41.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
+            this.xrPivotGridField41.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrPivotGridField41.Appearance.FieldValue.ForeColor = System.Drawing.Color.White;
+            this.xrPivotGridField41.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.xrPivotGridField41.AreaIndex = 0;
+            this.xrPivotGridField41.Caption = "Số TT";
+            this.xrPivotGridField41.FieldName = "MA_BN";
+            this.xrPivotGridField41.MinWidth = 40;
+            this.xrPivotGridField41.Name = "xrPivotGridField41";
+            this.xrPivotGridField41.Options.ShowCustomTotals = false;
+            this.xrPivotGridField41.Options.ShowGrandTotal = false;
+            this.xrPivotGridField41.Options.ShowTotals = false;
+            this.xrPivotGridField41.Width = 76;
+            // 
+            // xrPivotGridField42
+            // 
+            this.xrPivotGridField42.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrPivotGridField42.Appearance.Cell.WordWrap = true;
+            this.xrPivotGridField42.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
+            this.xrPivotGridField42.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.xrPivotGridField42.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.xrPivotGridField42.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.xrPivotGridField42.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
+            this.xrPivotGridField42.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrPivotGridField42.Appearance.FieldValue.WordWrap = true;
+            this.xrPivotGridField42.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.xrPivotGridField42.AreaIndex = 1;
+            this.xrPivotGridField42.Caption = "Họ Tên";
+            this.xrPivotGridField42.FieldName = "HO_TEN";
+            this.xrPivotGridField42.MinWidth = 100;
+            this.xrPivotGridField42.Name = "xrPivotGridField42";
+            this.xrPivotGridField42.Options.ShowCustomTotals = false;
+            this.xrPivotGridField42.Options.ShowGrandTotal = false;
+            this.xrPivotGridField42.Options.ShowTotals = false;
+            this.xrPivotGridField42.Width = 170;
+            // 
+            // xrPivotGridField43
+            // 
+            this.xrPivotGridField43.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrPivotGridField43.Appearance.Cell.WordWrap = true;
+            this.xrPivotGridField43.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
+            this.xrPivotGridField43.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.xrPivotGridField43.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.xrPivotGridField43.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.xrPivotGridField43.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
+            this.xrPivotGridField43.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrPivotGridField43.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.xrPivotGridField43.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.xrPivotGridField43.AreaIndex = 2;
+            this.xrPivotGridField43.Caption = "Năm Sinh";
+            this.xrPivotGridField43.FieldName = "NGAY_SINH";
+            this.xrPivotGridField43.MinWidth = 30;
+            this.xrPivotGridField43.Name = "xrPivotGridField43";
+            this.xrPivotGridField43.Options.ShowCustomTotals = false;
+            this.xrPivotGridField43.Options.ShowGrandTotal = false;
+            this.xrPivotGridField43.Options.ShowTotals = false;
+            this.xrPivotGridField43.Width = 60;
+            // 
+            // xrPivotGridField44
+            // 
+            this.xrPivotGridField44.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrPivotGridField44.Appearance.Cell.WordWrap = true;
+            this.xrPivotGridField44.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
+            this.xrPivotGridField44.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.xrPivotGridField44.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.xrPivotGridField44.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.xrPivotGridField44.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
+            this.xrPivotGridField44.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrPivotGridField44.Appearance.FieldValue.WordWrap = true;
+            this.xrPivotGridField44.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.xrPivotGridField44.AreaIndex = 3;
+            this.xrPivotGridField44.Caption = "Địa Chỉ";
+            this.xrPivotGridField44.FieldName = "DIA_CHI";
+            this.xrPivotGridField44.MinWidth = 100;
+            this.xrPivotGridField44.Name = "xrPivotGridField44";
+            this.xrPivotGridField44.Options.ShowGrandTotal = false;
+            this.xrPivotGridField44.Options.ShowTotals = false;
+            this.xrPivotGridField44.Width = 144;
+            // 
+            // xrPivotGridField45
+            // 
+            this.xrPivotGridField45.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrPivotGridField45.Appearance.Cell.WordWrap = true;
+            this.xrPivotGridField45.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
+            this.xrPivotGridField45.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.xrPivotGridField45.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.xrPivotGridField45.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.xrPivotGridField45.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
+            this.xrPivotGridField45.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrPivotGridField45.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.xrPivotGridField45.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.xrPivotGridField45.AreaIndex = 4;
+            this.xrPivotGridField45.Caption = "Thẻ BHYT";
+            this.xrPivotGridField45.FieldName = "MA_THE";
+            this.xrPivotGridField45.MinWidth = 100;
+            this.xrPivotGridField45.Name = "xrPivotGridField45";
+            this.xrPivotGridField45.Options.ShowGrandTotal = false;
+            this.xrPivotGridField45.Options.ShowTotals = false;
+            this.xrPivotGridField45.Width = 129;
+            // 
+            // xrPivotGridField46
+            // 
+            this.xrPivotGridField46.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrPivotGridField46.Appearance.Cell.WordWrap = true;
+            this.xrPivotGridField46.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
+            this.xrPivotGridField46.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.xrPivotGridField46.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.xrPivotGridField46.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.xrPivotGridField46.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
+            this.xrPivotGridField46.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrPivotGridField46.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.xrPivotGridField46.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.xrPivotGridField46.AreaIndex = 5;
+            this.xrPivotGridField46.Caption = "Ngày";
+            this.xrPivotGridField46.FieldName = "NGAY_VAO";
+            this.xrPivotGridField46.MinWidth = 30;
+            this.xrPivotGridField46.Name = "xrPivotGridField46";
+            this.xrPivotGridField46.Options.ShowGrandTotal = false;
+            this.xrPivotGridField46.Options.ShowTotals = false;
+            this.xrPivotGridField46.Width = 63;
+            // 
+            // pivotGridField8
+            // 
+            this.pivotGridField8.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.pivotGridField8.Appearance.Cell.WordWrap = true;
+            this.pivotGridField8.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
+            this.pivotGridField8.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.pivotGridField8.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.pivotGridField8.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.pivotGridField8.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
+            this.pivotGridField8.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.pivotGridField8.Appearance.FieldValue.WordWrap = true;
+            this.pivotGridField8.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.pivotGridField8.AreaIndex = 6;
+            this.pivotGridField8.Caption = "Chuẩn Đoán";
+            this.pivotGridField8.FieldName = "TEN_BENH";
+            this.pivotGridField8.MinWidth = 100;
+            this.pivotGridField8.Name = "pivotGridField8";
+            this.pivotGridField8.Options.ShowGrandTotal = false;
+            this.pivotGridField8.Options.ShowTotals = false;
+            this.pivotGridField8.Width = 144;
+            // 
+            // xrPivotGridField24
+            // 
+            this.xrPivotGridField24.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrPivotGridField24.Appearance.Cell.WordWrap = true;
+            this.xrPivotGridField24.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
+            this.xrPivotGridField24.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.xrPivotGridField24.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.xrPivotGridField24.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.xrPivotGridField24.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
+            this.xrPivotGridField24.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrPivotGridField24.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.xrPivotGridField24.AreaIndex = 7;
+            this.xrPivotGridField24.Caption = "Tên Thuốc";
+            this.xrPivotGridField24.FieldName = "TEN_THUOC";
+            this.xrPivotGridField24.MinWidth = 100;
+            this.xrPivotGridField24.Name = "xrPivotGridField24";
+            this.xrPivotGridField24.Options.ShowGrandTotal = false;
+            this.xrPivotGridField24.Options.ShowTotals = false;
+            this.xrPivotGridField24.Width = 218;
+            // 
+            // pivotGridField10
+            // 
+            this.pivotGridField10.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.pivotGridField10.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
+            this.pivotGridField10.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.pivotGridField10.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
+            this.pivotGridField10.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.pivotGridField10.Appearance.FieldValueGrandTotal.BackColor = System.Drawing.Color.White;
+            this.pivotGridField10.Appearance.FieldValueGrandTotal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.pivotGridField10.Appearance.FieldValueTotal.BackColor = System.Drawing.Color.White;
+            this.pivotGridField10.Appearance.FieldValueTotal.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.pivotGridField10.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.pivotGridField10.AreaIndex = 0;
+            this.pivotGridField10.Caption = "S Lượng";
+            this.pivotGridField10.FieldName = "SO_LUONG";
+            this.pivotGridField10.Name = "pivotGridField10";
+            this.pivotGridField10.Options.ShowGrandTotal = false;
+            this.pivotGridField10.Options.ShowTotals = false;
+            this.pivotGridField10.Width = 58;
+            // 
+            // TopMargin
+            // 
+            this.TopMargin.Dpi = 100F;
+            this.TopMargin.HeightF = 30F;
+            this.TopMargin.Name = "TopMargin";
+            this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // BottomMargin
+            // 
+            this.BottomMargin.Dpi = 100F;
+            this.BottomMargin.HeightF = 30.62502F;
+            this.BottomMargin.Name = "BottomMargin";
+            this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // ReportHeader
+            // 
+            this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel1,
+            this.lblNgay,
+            this.xrLabel2,
+            this.xrLabel3});
+            this.ReportHeader.Dpi = 100F;
+            this.ReportHeader.HeightF = 60F;
+            this.ReportHeader.Name = "ReportHeader";
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.Dpi = 100F;
+            this.xrLabel1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(426.0417F, 0F);
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(558.9999F, 23F);
+            this.xrLabel1.StylePriority.UseFont = false;
+            this.xrLabel1.StylePriority.UseTextAlignment = false;
+            this.xrLabel1.Text = "SỔ THEO DÕI KHÁM CHỮA BỆNH NGOẠI TRÚ";
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // lblNgay
+            // 
+            this.lblNgay.Dpi = 100F;
+            this.lblNgay.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgay.LocationFloat = new DevExpress.Utils.PointFloat(426.0417F, 22.99999F);
+            this.lblNgay.Name = "lblNgay";
+            this.lblNgay.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblNgay.SizeF = new System.Drawing.SizeF(558.9999F, 23F);
+            this.lblNgay.StylePriority.UseFont = false;
+            this.lblNgay.StylePriority.UseTextAlignment = false;
+            this.lblNgay.Text = "Từ ngày 30/08/2017 đến ngày 30/08/2017";
+            this.lblNgay.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel2
+            // 
+            this.xrLabel2.Dpi = 100F;
+            this.xrLabel2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(123.9584F, 0F);
+            this.xrLabel2.Name = "xrLabel2";
+            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(276.0417F, 23F);
+            this.xrLabel2.StylePriority.UseFont = false;
+            this.xrLabel2.StylePriority.UseTextAlignment = false;
+            this.xrLabel2.Text = "SỞ Y TẾ BÌNH PHƯỚC";
+            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel3
+            // 
+            this.xrLabel3.Dpi = 100F;
+            this.xrLabel3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(123.9584F, 22.99999F);
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(276.0417F, 23F);
+            this.xrLabel3.StylePriority.UseFont = false;
+            this.xrLabel3.StylePriority.UseTextAlignment = false;
+            this.xrLabel3.Text = "BỆNH VIỆN ĐA KHOA CAO SU PHÚ RIỀNG";
+            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // PageFooter
+            // 
+            this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrPageInfo});
+            this.PageFooter.Dpi = 100F;
+            this.PageFooter.HeightF = 23F;
+            this.PageFooter.Name = "PageFooter";
+            // 
+            // xrPageInfo
+            // 
+            this.xrPageInfo.Dpi = 100F;
+            this.xrPageInfo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrPageInfo.Format = "Trang {0} của {1}";
+            this.xrPageInfo.LocationFloat = new DevExpress.Utils.PointFloat(959F, 0F);
+            this.xrPageInfo.Name = "xrPageInfo";
+            this.xrPageInfo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrPageInfo.SizeF = new System.Drawing.SizeF(150F, 23F);
+            this.xrPageInfo.StylePriority.UseFont = false;
+            this.xrPageInfo.StylePriority.UseTextAlignment = false;
+            this.xrPageInfo.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // pivotGridFieldSTT
             // 
@@ -272,27 +563,6 @@
             this.pivotGridFieldNgayKham.Options.ShowTotals = false;
             this.pivotGridFieldNgayKham.Width = 63;
             // 
-            // pivotGridField8
-            // 
-            this.pivotGridField8.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.pivotGridField8.Appearance.Cell.WordWrap = true;
-            this.pivotGridField8.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
-            this.pivotGridField8.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.pivotGridField8.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.pivotGridField8.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.pivotGridField8.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
-            this.pivotGridField8.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.pivotGridField8.Appearance.FieldValue.WordWrap = true;
-            this.pivotGridField8.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.pivotGridField8.AreaIndex = 6;
-            this.pivotGridField8.Caption = "Chuẩn Đoán";
-            this.pivotGridField8.FieldName = "TEN_BENH";
-            this.pivotGridField8.MinWidth = 100;
-            this.pivotGridField8.Name = "pivotGridField8";
-            this.pivotGridField8.Options.ShowGrandTotal = false;
-            this.pivotGridField8.Options.ShowTotals = false;
-            this.pivotGridField8.Width = 144;
-            // 
             // pivotGridFieldTenThuoc
             // 
             this.pivotGridFieldTenThuoc.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -312,105 +582,6 @@
             this.pivotGridFieldTenThuoc.Options.ShowGrandTotal = false;
             this.pivotGridFieldTenThuoc.Options.ShowTotals = false;
             this.pivotGridFieldTenThuoc.Width = 240;
-            // 
-            // pivotGridField10
-            // 
-            this.pivotGridField10.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.pivotGridField10.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
-            this.pivotGridField10.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.pivotGridField10.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
-            this.pivotGridField10.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.pivotGridField10.Appearance.FieldValueGrandTotal.BackColor = System.Drawing.Color.White;
-            this.pivotGridField10.Appearance.FieldValueGrandTotal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.pivotGridField10.Appearance.FieldValueTotal.BackColor = System.Drawing.Color.White;
-            this.pivotGridField10.Appearance.FieldValueTotal.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.pivotGridField10.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.pivotGridField10.AreaIndex = 0;
-            this.pivotGridField10.Caption = "S Lượng";
-            this.pivotGridField10.FieldName = "SO_LUONG";
-            this.pivotGridField10.Name = "pivotGridField10";
-            this.pivotGridField10.Options.ShowGrandTotal = false;
-            this.pivotGridField10.Options.ShowTotals = false;
-            this.pivotGridField10.Width = 58;
-            // 
-            // TopMargin
-            // 
-            this.TopMargin.Dpi = 100F;
-            this.TopMargin.HeightF = 30F;
-            this.TopMargin.Name = "TopMargin";
-            this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // BottomMargin
-            // 
-            this.BottomMargin.Dpi = 100F;
-            this.BottomMargin.HeightF = 30.62502F;
-            this.BottomMargin.Name = "BottomMargin";
-            this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // ReportHeader
-            // 
-            this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel1,
-            this.lblNgay,
-            this.xrLabel2,
-            this.xrLabel3});
-            this.ReportHeader.Dpi = 100F;
-            this.ReportHeader.HeightF = 60F;
-            this.ReportHeader.Name = "ReportHeader";
-            // 
-            // xrLabel1
-            // 
-            this.xrLabel1.Dpi = 100F;
-            this.xrLabel1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(426.0417F, 0F);
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(558.9999F, 23F);
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "SỔ THEO DÕI KHÁM CHỮA BỆNH NGOẠI TRÚ";
-            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // lblNgay
-            // 
-            this.lblNgay.Dpi = 100F;
-            this.lblNgay.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgay.LocationFloat = new DevExpress.Utils.PointFloat(426.0417F, 22.99999F);
-            this.lblNgay.Name = "lblNgay";
-            this.lblNgay.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblNgay.SizeF = new System.Drawing.SizeF(558.9999F, 23F);
-            this.lblNgay.StylePriority.UseFont = false;
-            this.lblNgay.StylePriority.UseTextAlignment = false;
-            this.lblNgay.Text = "Từ ngày 30/08/2017 đến ngày 30/08/2017";
-            this.lblNgay.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel2
-            // 
-            this.xrLabel2.Dpi = 100F;
-            this.xrLabel2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(123.9584F, 0F);
-            this.xrLabel2.Name = "xrLabel2";
-            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(276.0417F, 23F);
-            this.xrLabel2.StylePriority.UseFont = false;
-            this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "SỞ Y TẾ BÌNH PHƯỚC";
-            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel3
-            // 
-            this.xrLabel3.Dpi = 100F;
-            this.xrLabel3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(123.9584F, 22.99999F);
-            this.xrLabel3.Name = "xrLabel3";
-            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(276.0417F, 23F);
-            this.xrLabel3.StylePriority.UseFont = false;
-            this.xrLabel3.StylePriority.UseTextAlignment = false;
-            this.xrLabel3.Text = "BỆNH VIỆN ĐA KHOA CAO SU PHÚ RIỀNG";
-            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrPivotGridField1
             // 
@@ -886,26 +1057,6 @@
             this.xrPivotGridFieldHoTen.Options.ShowTotals = false;
             this.xrPivotGridFieldHoTen.Width = 170;
             // 
-            // xrPivotGridField24
-            // 
-            this.xrPivotGridField24.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.xrPivotGridField24.Appearance.Cell.WordWrap = true;
-            this.xrPivotGridField24.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
-            this.xrPivotGridField24.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.xrPivotGridField24.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.xrPivotGridField24.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.xrPivotGridField24.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
-            this.xrPivotGridField24.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.xrPivotGridField24.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.xrPivotGridField24.AreaIndex = 7;
-            this.xrPivotGridField24.Caption = "Tên Thuốc";
-            this.xrPivotGridField24.FieldName = "TEN_THUOC";
-            this.xrPivotGridField24.MinWidth = 100;
-            this.xrPivotGridField24.Name = "xrPivotGridField24";
-            this.xrPivotGridField24.Options.ShowGrandTotal = false;
-            this.xrPivotGridField24.Options.ShowTotals = false;
-            this.xrPivotGridField24.Width = 218;
-            // 
             // xrPivotGridField22
             // 
             this.xrPivotGridField22.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -1287,140 +1438,14 @@
             this.xrPivotGridField40.Options.ShowTotals = false;
             this.xrPivotGridField40.Width = 63;
             // 
-            // xrPivotGridField41
-            // 
-            this.xrPivotGridField41.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.xrPivotGridField41.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
-            this.xrPivotGridField41.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.xrPivotGridField41.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.xrPivotGridField41.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.xrPivotGridField41.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
-            this.xrPivotGridField41.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.xrPivotGridField41.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.xrPivotGridField41.AreaIndex = 0;
-            this.xrPivotGridField41.Caption = "Số TT";
-            this.xrPivotGridField41.FieldName = "STT";
-            this.xrPivotGridField41.MinWidth = 40;
-            this.xrPivotGridField41.Name = "xrPivotGridField41";
-            this.xrPivotGridField41.Options.ShowCustomTotals = false;
-            this.xrPivotGridField41.Options.ShowGrandTotal = false;
-            this.xrPivotGridField41.Options.ShowTotals = false;
-            this.xrPivotGridField41.Width = 76;
-            // 
-            // xrPivotGridField42
-            // 
-            this.xrPivotGridField42.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.xrPivotGridField42.Appearance.Cell.WordWrap = true;
-            this.xrPivotGridField42.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
-            this.xrPivotGridField42.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.xrPivotGridField42.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.xrPivotGridField42.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.xrPivotGridField42.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
-            this.xrPivotGridField42.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.xrPivotGridField42.Appearance.FieldValue.WordWrap = true;
-            this.xrPivotGridField42.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.xrPivotGridField42.AreaIndex = 1;
-            this.xrPivotGridField42.Caption = "Họ Tên";
-            this.xrPivotGridField42.FieldName = "HO_TEN";
-            this.xrPivotGridField42.MinWidth = 100;
-            this.xrPivotGridField42.Name = "xrPivotGridField42";
-            this.xrPivotGridField42.Options.ShowCustomTotals = false;
-            this.xrPivotGridField42.Options.ShowGrandTotal = false;
-            this.xrPivotGridField42.Options.ShowTotals = false;
-            this.xrPivotGridField42.Width = 170;
-            // 
-            // xrPivotGridField43
-            // 
-            this.xrPivotGridField43.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.xrPivotGridField43.Appearance.Cell.WordWrap = true;
-            this.xrPivotGridField43.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
-            this.xrPivotGridField43.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.xrPivotGridField43.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.xrPivotGridField43.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.xrPivotGridField43.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
-            this.xrPivotGridField43.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.xrPivotGridField43.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.xrPivotGridField43.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.xrPivotGridField43.AreaIndex = 2;
-            this.xrPivotGridField43.Caption = "Năm Sinh";
-            this.xrPivotGridField43.FieldName = "NGAY_SINH";
-            this.xrPivotGridField43.MinWidth = 30;
-            this.xrPivotGridField43.Name = "xrPivotGridField43";
-            this.xrPivotGridField43.Options.ShowCustomTotals = false;
-            this.xrPivotGridField43.Options.ShowGrandTotal = false;
-            this.xrPivotGridField43.Options.ShowTotals = false;
-            this.xrPivotGridField43.Width = 60;
-            // 
-            // xrPivotGridField44
-            // 
-            this.xrPivotGridField44.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.xrPivotGridField44.Appearance.Cell.WordWrap = true;
-            this.xrPivotGridField44.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
-            this.xrPivotGridField44.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.xrPivotGridField44.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.xrPivotGridField44.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.xrPivotGridField44.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
-            this.xrPivotGridField44.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.xrPivotGridField44.Appearance.FieldValue.WordWrap = true;
-            this.xrPivotGridField44.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.xrPivotGridField44.AreaIndex = 3;
-            this.xrPivotGridField44.Caption = "Địa Chỉ";
-            this.xrPivotGridField44.FieldName = "DIA_CHI";
-            this.xrPivotGridField44.MinWidth = 100;
-            this.xrPivotGridField44.Name = "xrPivotGridField44";
-            this.xrPivotGridField44.Options.ShowGrandTotal = false;
-            this.xrPivotGridField44.Options.ShowTotals = false;
-            this.xrPivotGridField44.Width = 144;
-            // 
-            // xrPivotGridField45
-            // 
-            this.xrPivotGridField45.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.xrPivotGridField45.Appearance.Cell.WordWrap = true;
-            this.xrPivotGridField45.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
-            this.xrPivotGridField45.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.xrPivotGridField45.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.xrPivotGridField45.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.xrPivotGridField45.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
-            this.xrPivotGridField45.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.xrPivotGridField45.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.xrPivotGridField45.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.xrPivotGridField45.AreaIndex = 4;
-            this.xrPivotGridField45.Caption = "Thẻ BHYT";
-            this.xrPivotGridField45.FieldName = "MA_THE";
-            this.xrPivotGridField45.MinWidth = 100;
-            this.xrPivotGridField45.Name = "xrPivotGridField45";
-            this.xrPivotGridField45.Options.ShowGrandTotal = false;
-            this.xrPivotGridField45.Options.ShowTotals = false;
-            this.xrPivotGridField45.Width = 129;
-            // 
-            // xrPivotGridField46
-            // 
-            this.xrPivotGridField46.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.xrPivotGridField46.Appearance.Cell.WordWrap = true;
-            this.xrPivotGridField46.Appearance.FieldHeader.BackColor = System.Drawing.Color.White;
-            this.xrPivotGridField46.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.xrPivotGridField46.Appearance.FieldHeader.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.xrPivotGridField46.Appearance.FieldHeader.TextVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.xrPivotGridField46.Appearance.FieldValue.BackColor = System.Drawing.Color.White;
-            this.xrPivotGridField46.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.xrPivotGridField46.Appearance.FieldValue.TextHorizontalAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.xrPivotGridField46.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.xrPivotGridField46.AreaIndex = 5;
-            this.xrPivotGridField46.Caption = "Ngày";
-            this.xrPivotGridField46.FieldName = "NGAY_VAO";
-            this.xrPivotGridField46.MinWidth = 30;
-            this.xrPivotGridField46.Name = "xrPivotGridField46";
-            this.xrPivotGridField46.Options.ShowGrandTotal = false;
-            this.xrPivotGridField46.Options.ShowTotals = false;
-            this.xrPivotGridField46.Width = 63;
-            // 
             // rptThongKeThuoc
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,
             this.TopMargin,
             this.BottomMargin,
-            this.ReportHeader});
+            this.ReportHeader,
+            this.PageFooter});
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(30, 30, 30, 31);
             this.PageHeight = 827;
@@ -1501,5 +1526,7 @@
         private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField xrPivotGridField44;
         private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField xrPivotGridField45;
         private DevExpress.XtraReports.UI.PivotGrid.XRPivotGridField xrPivotGridField46;
+        private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
+        private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo;
     }
 }

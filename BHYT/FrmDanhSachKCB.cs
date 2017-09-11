@@ -23,7 +23,7 @@ namespace BHYT
         {
             string ngayBD = DateTime.ParseExact (dateTu.Text.ToString (), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString ("yyyyMMdd");
             string ngayKT = DateTime.ParseExact (dateDen.Text.ToString (), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString ("yyyyMMdd");
-            gridControl.DataSource = thongTinKCB.DSThongTinBN ((cbLoaiKCB.SelectedIndex + 1).ToString (), ngayBD, ngayKT,cbPhong.SelectedIndex, cbLoaiNgay.SelectedIndex);
+            gridControl.DataSource = thongTinKCB.DSThongTinBN ((cbLoaiKCB.SelectedIndex + 1).ToString (), ngayBD, ngayKT,cbTinhTrang.SelectedIndex, cbLoaiNgay.SelectedIndex);
             lblTong.Text = "Tổng : " + (gridControl.DataSource as DataTable).Rows.Count;
         }
 
@@ -31,7 +31,7 @@ namespace BHYT
         {
             FrmNgoaiNoiTru.MaLienKet = string.Empty;
             cbLoaiKCB.SelectedIndex = 0;
-            cbPhong.SelectedIndex = 0;
+            cbTinhTrang.SelectedIndex = 0;
             cbLoaiNgay.SelectedIndex = 0;
         }
 

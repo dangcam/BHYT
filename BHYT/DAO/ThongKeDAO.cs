@@ -32,6 +32,14 @@ namespace BHYT.DAO
             return db.ExcuteQuery (sql,
                 CommandType.Text, null);
         }
+        public DataTable DSVienPhi(int loaiKCB, string ngayBD, string ngayKT)
+        {
+            string sql = "";
+            sql = "EXEC SpgetVienPhi "+ loaiKCB +" ,'" + ngayBD + "','" + ngayKT + "'";
+            return db.ExcuteQuery(sql,
+                CommandType.Text, null);
+        }
+
         public DataTable DSThuoc (string maLK)
         {
             return db.ExcuteQuery ("Select TEN_THUOC,SO_LUONG From THUOC_CT Where MA_LK = '" + maLK + "'",

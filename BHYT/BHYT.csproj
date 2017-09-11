@@ -74,6 +74,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Charts.v16.2.Core, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -297,6 +298,12 @@
     <Compile Include="FrmTienGiuongChiTiet.Designer.cs">
       <DependentUpon>FrmTienGiuongChiTiet.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTongHopVienPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTongHopVienPhi.Designer.cs">
+      <DependentUpon>FrmTongHopVienPhi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVTYT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,6 +352,12 @@
     </Compile>
     <Compile Include="rptTongHopChiPhi.Designer.cs">
       <DependentUpon>rptTongHopChiPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptVienPhi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptVienPhi.Designer.cs">
+      <DependentUpon>rptVienPhi.cs</DependentUpon>
     </Compile>
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Utils.cs" />
@@ -489,6 +502,9 @@
     <EmbeddedResource Include="FrmTienGiuongChiTiet.resx">
       <DependentUpon>FrmTienGiuongChiTiet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmTongHopVienPhi.resx">
+      <DependentUpon>FrmTongHopVienPhi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmVTYT.resx">
       <DependentUpon>FrmVTYT.cs</DependentUpon>
     </EmbeddedResource>
@@ -523,6 +539,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rptTongHopChiPhi.resx">
       <DependentUpon>rptTongHopChiPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptVienPhi.resx">
+      <DependentUpon>rptVienPhi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BHYT_TemporaryKey.pfx" />
     <None Include="packages.config" />

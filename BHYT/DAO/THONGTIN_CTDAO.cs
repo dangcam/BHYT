@@ -243,18 +243,29 @@ namespace BHYT.DAO
             }
             return null;
         }
-        public DataTable DSThongTinBN (string loaiKCB, string ngayBD,string ngayKT, int phong, int loaiNgay)
+        public DataTable DSThongTinBN (string loaiKCB, string ngayBD,string ngayKT, int tinhTrang, int loaiNgay)
         {
             string sql = "";
-            if(phong==0)
+            if(tinhTrang==0)
             {
                 sql = "SELECT * FROM getThongtin('" + loaiKCB + "','" + ngayBD + "','" + ngayKT + "'," + loaiNgay + ") ORDER BY MA_BN ASC";
             }
             else
             {
-                sql = "SELECT * FROM getThongtin('" + loaiKCB + "','" + ngayBD + "','" + ngayKT + "'," + loaiNgay + ") WHERE PHONG = " + phong+" ORDER BY MA_BN ASC";
+                sql = "SELECT * FROM getThongtin('" + loaiKCB + "','" + ngayBD + "','" + ngayKT + "'," + loaiNgay + ") WHERE ";
             }
-           
+            if (tinhTrang == 1)
+            {
+                sql += " TEN_BENH = '' AND NGAY_RA = '' ORDER BY MA_BN ASC";
+            }
+            if (tinhTrang == 2)
+            {
+                sql += " TEN_BENH != '' AND NGAY_RA = '' ORDER BY MA_BN ASC";
+            }
+            if (tinhTrang == 3)
+            {
+                sql += " TEN_BENH != '' AND NGAY_RA != '' ORDER BY MA_BN ASC";
+            }
             return db.ExcuteQuery (sql,
                 CommandType.Text, null);
         }

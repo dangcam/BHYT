@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <config>
-  <server>DANGCAM</server>
+  <server>BVDK-PC\SQLEXPRESS</server>
   <batabase>BV_KHAM_CHUA_BENH</batabase>
   <user>sa</user>
   <password>123456</password>

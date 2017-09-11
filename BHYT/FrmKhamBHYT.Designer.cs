@@ -452,6 +452,7 @@
             // 
             // lookUpMaKhoa
             // 
+            this.lookUpMaKhoa.Enabled = false;
             this.lookUpMaKhoa.Location = new System.Drawing.Point(111, 81);
             this.lookUpMaKhoa.Name = "lookUpMaKhoa";
             this.lookUpMaKhoa.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

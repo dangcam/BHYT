@@ -57,10 +57,11 @@
             this.thongKeSoLieuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thongKeSoLuongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thongKeBNTTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thongKeThuocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.huongDanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.thongKeThuocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tongHopVienPhiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -265,7 +266,8 @@
             this.thongKeSoLieuToolStripMenuItem,
             this.thongKeSoLuongToolStripMenuItem,
             this.thongKeBNTTToolStripMenuItem,
-            this.thongKeThuocToolStripMenuItem});
+            this.thongKeThuocToolStripMenuItem,
+            this.tongHopVienPhiToolStripMenuItem});
             this.baoCaoToolStripMenuItem.Name = "baoCaoToolStripMenuItem";
             this.baoCaoToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.baoCaoToolStripMenuItem.Text = "Báo Cáo";
@@ -291,12 +293,19 @@
             this.thongKeBNTTToolStripMenuItem.Text = "Thống Kê BNTT";
             this.thongKeBNTTToolStripMenuItem.Click += new System.EventHandler(this.thongKeBNTTToolStripMenuItem_Click);
             // 
+            // thongKeThuocToolStripMenuItem
+            // 
+            this.thongKeThuocToolStripMenuItem.Name = "thongKeThuocToolStripMenuItem";
+            this.thongKeThuocToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.thongKeThuocToolStripMenuItem.Text = "Thống Kê Thuốc";
+            this.thongKeThuocToolStripMenuItem.Click += new System.EventHandler(this.thongKeThuocToolStripMenuItem_Click);
+            // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.huongDanToolStripMenuItem});
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.trợGiúpToolStripMenuItem.Text = "Trợ Giúp";
             // 
             // huongDanToolStripMenuItem
@@ -314,12 +323,12 @@
             this.panelMain.Size = new System.Drawing.Size(931, 478);
             this.panelMain.TabIndex = 1;
             // 
-            // thongKeThuocToolStripMenuItem
+            // tongHopVienPhiToolStripMenuItem
             // 
-            this.thongKeThuocToolStripMenuItem.Name = "thongKeThuocToolStripMenuItem";
-            this.thongKeThuocToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.thongKeThuocToolStripMenuItem.Text = "Thống Kê Thuốc";
-            this.thongKeThuocToolStripMenuItem.Click += new System.EventHandler(this.thongKeThuocToolStripMenuItem_Click);
+            this.tongHopVienPhiToolStripMenuItem.Name = "tongHopVienPhiToolStripMenuItem";
+            this.tongHopVienPhiToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.tongHopVienPhiToolStripMenuItem.Text = "Tổng Hợp Viện Phí";
+            this.tongHopVienPhiToolStripMenuItem.Click += new System.EventHandler(this.tongHopVienPhiToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -375,6 +384,7 @@
         private System.Windows.Forms.ToolStripMenuItem canLamSanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thongKeBNTTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thongKeThuocToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tongHopVienPhiToolStripMenuItem;
     }
 }
 

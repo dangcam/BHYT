@@ -52,7 +52,7 @@
             this.repositoryItemCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.lblTong = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbPhong = new System.Windows.Forms.ComboBox();
+            this.cbTinhTrang = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbLoaiNgay = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
@@ -70,7 +70,7 @@
             "3. Điều trị nội trú"});
             this.cbLoaiKCB.Location = new System.Drawing.Point(87, 12);
             this.cbLoaiKCB.Name = "cbLoaiKCB";
-            this.cbLoaiKCB.Size = new System.Drawing.Size(163, 24);
+            this.cbLoaiKCB.Size = new System.Drawing.Size(151, 24);
             this.cbLoaiKCB.TabIndex = 58;
             // 
             // label31
@@ -89,7 +89,7 @@
             this.dateTu.CustomFormat = "dd/MM/yyyy";
             this.dateTu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTu.Location = new System.Drawing.Point(658, 14);
+            this.dateTu.Location = new System.Drawing.Point(692, 14);
             this.dateTu.Name = "dateTu";
             this.dateTu.Size = new System.Drawing.Size(129, 22);
             this.dateTu.TabIndex = 60;
@@ -98,7 +98,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(629, 17);
+            this.label25.Location = new System.Drawing.Point(663, 17);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(24, 16);
             this.label25.TabIndex = 61;
@@ -110,7 +110,7 @@
             this.dateDen.CustomFormat = "dd/MM/yyyy";
             this.dateDen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateDen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateDen.Location = new System.Drawing.Point(825, 14);
+            this.dateDen.Location = new System.Drawing.Point(859, 14);
             this.dateDen.Name = "dateDen";
             this.dateDen.Size = new System.Drawing.Size(129, 22);
             this.dateDen.TabIndex = 60;
@@ -119,7 +119,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(790, 17);
+            this.label1.Location = new System.Drawing.Point(824, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 16);
             this.label1.TabIndex = 62;
@@ -129,7 +129,7 @@
             // 
             this.btnOK.Image = ((System.Drawing.Image)(resources.GetObject("btnOK.Image")));
             this.btnOK.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnOK.Location = new System.Drawing.Point(973, 8);
+            this.btnOK.Location = new System.Drawing.Point(1007, 8);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(51, 33);
             this.btnOK.TabIndex = 63;
@@ -138,12 +138,12 @@
             // gridControl
             // 
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl.Location = new System.Drawing.Point(0, 56);
+            this.gridControl.Location = new System.Drawing.Point(0, 57);
             this.gridControl.MainView = this.gridView;
             this.gridControl.Name = "gridControl";
             this.gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheck});
-            this.gridControl.Size = new System.Drawing.Size(1120, 515);
+            this.gridControl.Size = new System.Drawing.Size(1154, 515);
             this.gridControl.TabIndex = 64;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -215,6 +215,7 @@
             this.HoTen.FieldName = "HO_TEN";
             this.HoTen.Name = "HoTen";
             this.HoTen.OptionsColumn.AllowEdit = false;
+            this.HoTen.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.HoTen.Visible = true;
             this.HoTen.VisibleIndex = 2;
             this.HoTen.Width = 199;
@@ -291,7 +292,7 @@
             // 
             // Phong
             // 
-            this.Phong.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Phong.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Phong.AppearanceCell.Options.UseFont = true;
             this.Phong.Caption = "Phòng khám";
             this.Phong.FieldName = "PHONG";
@@ -321,7 +322,7 @@
             // 
             this.lblTong.AutoSize = true;
             this.lblTong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTong.Location = new System.Drawing.Point(1032, 16);
+            this.lblTong.Location = new System.Drawing.Point(1066, 16);
             this.lblTong.Name = "lblTong";
             this.lblTong.Size = new System.Drawing.Size(53, 16);
             this.lblTong.TabIndex = 65;
@@ -331,32 +332,31 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(256, 16);
+            this.label2.Location = new System.Drawing.Point(252, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 16);
+            this.label2.Size = new System.Drawing.Size(76, 16);
             this.label2.TabIndex = 66;
-            this.label2.Text = "Phòng khám:";
+            this.label2.Text = "Tình Trạng:";
             // 
-            // cbPhong
+            // cbTinhTrang
             // 
-            this.cbPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPhong.FormattingEnabled = true;
-            this.cbPhong.Items.AddRange(new object[] {
-            "Tất cả",
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.cbPhong.Location = new System.Drawing.Point(348, 12);
-            this.cbPhong.Name = "cbPhong";
-            this.cbPhong.Size = new System.Drawing.Size(71, 24);
-            this.cbPhong.TabIndex = 67;
+            this.cbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTinhTrang.FormattingEnabled = true;
+            this.cbTinhTrang.Items.AddRange(new object[] {
+            "0. Tất cả",
+            "1. Tiếp nhận",
+            "2. Đã khám",
+            "3. Ra viện"});
+            this.cbTinhTrang.Location = new System.Drawing.Point(334, 12);
+            this.cbTinhTrang.Name = "cbTinhTrang";
+            this.cbTinhTrang.Size = new System.Drawing.Size(125, 24);
+            this.cbTinhTrang.TabIndex = 67;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(431, 17);
+            this.label3.Location = new System.Drawing.Point(465, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 16);
             this.label3.TabIndex = 68;
@@ -369,7 +369,7 @@
             this.cbLoaiNgay.Items.AddRange(new object[] {
             "Ngày vào",
             "Ngày thanh toán"});
-            this.cbLoaiNgay.Location = new System.Drawing.Point(499, 12);
+            this.cbLoaiNgay.Location = new System.Drawing.Point(533, 12);
             this.cbLoaiNgay.Name = "cbLoaiNgay";
             this.cbLoaiNgay.Size = new System.Drawing.Size(124, 24);
             this.cbLoaiNgay.TabIndex = 67;
@@ -378,10 +378,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 571);
+            this.ClientSize = new System.Drawing.Size(1154, 572);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbLoaiNgay);
-            this.Controls.Add(this.cbPhong);
+            this.Controls.Add(this.cbTinhTrang);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblTong);
             this.Controls.Add(this.gridControl);
@@ -432,7 +432,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheck;
         private DevExpress.XtraGrid.Columns.GridColumn Phong;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbPhong;
+        private System.Windows.Forms.ComboBox cbTinhTrang;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbLoaiNgay;
     }
