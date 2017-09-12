@@ -80,6 +80,9 @@
     <Reference Include="DevExpress.Data.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Diagram.v16.2.Core, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="DevExpress.Office.v16.2.Core, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v16.2.Core, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v16.2.Core, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -165,6 +168,12 @@
     </Compile>
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDSCanLamSan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDSCanLamSan.Designer.cs">
+      <DependentUpon>FrmDSCanLamSan.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDSTiepNhan.cs">
       <SubType>Form</SubType>
@@ -428,6 +437,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDanhSachKCB.resx">
       <DependentUpon>FrmDanhSachKCB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDSCanLamSan.resx">
+      <DependentUpon>FrmDSCanLamSan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDSTiepNhan.resx">
       <DependentUpon>FrmDSTiepNhan.cs</DependentUpon>

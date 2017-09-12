@@ -58,10 +58,11 @@
             this.thongKeSoLuongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thongKeBNTTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thongKeThuocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tongHopVienPhiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.huongDanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.tongHopVienPhiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.canLamSanToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,7 +139,7 @@
             // khamBHYTToolStripMenuItem
             // 
             this.khamBHYTToolStripMenuItem.Name = "khamBHYTToolStripMenuItem";
-            this.khamBHYTToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.khamBHYTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.khamBHYTToolStripMenuItem.Text = "Khám BHYT";
             this.khamBHYTToolStripMenuItem.Click += new System.EventHandler(this.khamBHYTToolStripMenuItem_Click);
             // 
@@ -147,7 +148,8 @@
             this.khámChữaBệnhToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dSTiepNhanToolStripMenuItem,
             this.MenuItemNgoaiTru,
-            this.kiemTraTheToolStripMenuItem});
+            this.kiemTraTheToolStripMenuItem,
+            this.canLamSanToolStripMenuItem1});
             this.khámChữaBệnhToolStripMenuItem.Name = "khámChữaBệnhToolStripMenuItem";
             this.khámChữaBệnhToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
             this.khámChữaBệnhToolStripMenuItem.Text = "Khám Chữa Bệnh";
@@ -300,6 +302,13 @@
             this.thongKeThuocToolStripMenuItem.Text = "Thống Kê Thuốc";
             this.thongKeThuocToolStripMenuItem.Click += new System.EventHandler(this.thongKeThuocToolStripMenuItem_Click);
             // 
+            // tongHopVienPhiToolStripMenuItem
+            // 
+            this.tongHopVienPhiToolStripMenuItem.Name = "tongHopVienPhiToolStripMenuItem";
+            this.tongHopVienPhiToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.tongHopVienPhiToolStripMenuItem.Text = "Tổng Hợp Viện Phí";
+            this.tongHopVienPhiToolStripMenuItem.Click += new System.EventHandler(this.tongHopVienPhiToolStripMenuItem_Click);
+            // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -323,12 +332,12 @@
             this.panelMain.Size = new System.Drawing.Size(931, 478);
             this.panelMain.TabIndex = 1;
             // 
-            // tongHopVienPhiToolStripMenuItem
+            // canLamSanToolStripMenuItem1
             // 
-            this.tongHopVienPhiToolStripMenuItem.Name = "tongHopVienPhiToolStripMenuItem";
-            this.tongHopVienPhiToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.tongHopVienPhiToolStripMenuItem.Text = "Tổng Hợp Viện Phí";
-            this.tongHopVienPhiToolStripMenuItem.Click += new System.EventHandler(this.tongHopVienPhiToolStripMenuItem_Click);
+            this.canLamSanToolStripMenuItem1.Name = "canLamSanToolStripMenuItem1";
+            this.canLamSanToolStripMenuItem1.Size = new System.Drawing.Size(188, 22);
+            this.canLamSanToolStripMenuItem1.Text = "Cận Lâm Sàn";
+            this.canLamSanToolStripMenuItem1.Click += new System.EventHandler(this.dsCanLamSanToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -385,6 +394,7 @@
         private System.Windows.Forms.ToolStripMenuItem thongKeBNTTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thongKeThuocToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tongHopVienPhiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem canLamSanToolStripMenuItem1;
     }
 }
 

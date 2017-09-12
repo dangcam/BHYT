@@ -840,6 +840,7 @@ namespace BHYT
                     dvkt.MaKhoa = drView["MA_KHOA"].ToString ();
                     dvkt.MaBacSi = drView["MA_BAC_SI"].ToString ();
                     dvkt.MaBenh = maBenhChinh + ";" + thongtinBN.MaBenhKhac;
+                    dvkt.KetQua = Utils.ToString(drView["KET_QUA"]);
                     if (drView["NGAY_YL"].ToString ().Contains ("/"))
                     {
                         dvkt.NgayYLenh = DateTime.ParseExact (drView["NGAY_YL"].ToString (), "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture).ToString ("yyyyMMddHHmm");

@@ -33,25 +33,11 @@ namespace BHYT
             string ngayBD = DateTime.ParseExact(dateTuNgay.Text.ToString(), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyyMMdd");
             string ngayKT = DateTime.ParseExact(dateDenNgay.Text.ToString(), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyyMMdd");
             DataTable data = thongke.DSVienPhi(cbLoaiKCB.SelectedIndex, ngayBD, ngayKT);
+
             if (data != null)
             {
                 rptVienPhi rpt = new rptVienPhi();
-                int tong = 0;
-                int dem = 0;
-                bool[] EnableCell = new bool[16];
-                for(int i=1;i<16;i++)
-                {
-                    tong = Utils.ToInt(data.Compute("SUM(["+i+"])","").ToString());
-                    if(tong>0)
-                    {
-                        dem++;
-                        EnableCell[i] = true;
-                    }
-                    else
-                    {
-                        EnableCell[i] = false;
-                    }
-                }
+                rpt.lblNgay.Text = "Từ ngày " + dateTuNgay.Text + " đến ngày " + dateDenNgay.Text;
                 rpt.DataSource = data;
 
                 rpt.CreateDocument();

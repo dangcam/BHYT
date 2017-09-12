@@ -65,5 +65,16 @@ namespace BHYT
             }
             catch { return defaultvalue; }
         }
+        public static string ToString(object value, string defaultvalue = null)
+        {
+            try
+            {
+                return value.ToString();
+            }
+            catch
+            {
+                return defaultvalue;
+            }
+        }
     }
 }

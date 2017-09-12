@@ -11,6 +11,7 @@ namespace BHYT
         public Connection db = null;
 
         ReadConfig readConfig;
+        FrmDSCanLamSan frmCanLamSan;
         FrmNgoaiNoiTru frmNgoaiTru;
         FrmNhanVien frmNhanVien;
         FrmDSTiepNhan frmDSTiepNhan;
@@ -305,6 +306,20 @@ namespace BHYT
         {
             FrmTongHopVienPhi frmTongHop = new FrmTongHopVienPhi(db);
             frmTongHop.ShowDialog();
+        }
+
+        private void dsCanLamSanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!this.panelMain.Controls.Contains(frmCanLamSan))
+            {
+                frmCanLamSan = new FrmDSCanLamSan(db);
+                frmCanLamSan.TopLevel = false;
+                frmCanLamSan.AutoScroll = true;
+                frmCanLamSan.StartPosition = FormStartPosition.CenterScreen;
+                this.panelMain.Controls.Add(frmCanLamSan);
+            }
+            frmCanLamSan.WindowState = FormWindowState.Normal;
+            frmCanLamSan.Show();
         }
     }
 }

@@ -284,6 +284,12 @@ namespace BHYT.DAO
             return db.ExcuteQuery (sql,
                 CommandType.Text, null);
         }
+        public DataTable DSCanLamSan(string ngayBD, string ngayKT, int tinhTrang = 0)
+        {
+            string sql = "";
+            return db.ExcuteQuery(sql,
+                CommandType.Text, null);
+        }
         public DataTable DSTiepNhan  (string ngayBD, string ngayKT, int phong, int tinhTrang = 0, string loaiKCB = null)
         {
             string sql = "";
@@ -571,7 +577,8 @@ namespace BHYT.DAO
                 new SqlParameter ("@MA_BENH", dvkt.MaBenh),
                 new SqlParameter ("@NGAY_YL", dvkt.NgayYLenh),
                 new SqlParameter ("@NGAY_QK", dvkt.NgayQK),
-                new SqlParameter ("@MA_PTTT", dvkt.MaPTTT));
+                new SqlParameter ("@MA_PTTT", dvkt.MaPTTT),
+                new SqlParameter("@KET_QUA", dvkt.KetQua));
         }
         public bool SuaDVKTCT (ref string err, DVKT_CTVO dvkt)
         {
@@ -592,7 +599,8 @@ namespace BHYT.DAO
                 new SqlParameter ("@MA_BENH", dvkt.MaBenh),
                 new SqlParameter ("@NGAY_YL", dvkt.NgayYLenh),
                 new SqlParameter ("@NGAY_QK", dvkt.NgayQK),
-                new SqlParameter ("@MA_PTTT", dvkt.MaPTTT));
+                new SqlParameter ("@MA_PTTT", dvkt.MaPTTT),
+                new SqlParameter("@KET_QUA", dvkt.KetQua));
         }
         public bool ChuyenLoaiKCB (ref string err, string MaLK, int MaLoaiKCB,string MaKhoa)
         {

@@ -23,6 +23,7 @@ namespace BHYT.VO
         private string ngayYLenh;
         private string ngayQK;
         private int maPTTT;
+        private string ketQua=null;
         public string MaLK
         {
             get
@@ -228,6 +229,19 @@ namespace BHYT.VO
             set
             {
                 maPTTT = value;
+            }
+        }
+
+        public string KetQua
+        {
+            get
+            {
+                return ketQua;
+            }
+
+            set
+            {
+                ketQua = value;
             }
         }
     }

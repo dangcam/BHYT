@@ -322,185 +322,190 @@ namespace BHYT
         {
 
             createReport ();
+            Luu();
+        }
+        private void Luu()
+        {
             string err = "";
-            thongtinBN.MaBS = lookUpMaBS.EditValue.ToString ();
+            thongtinBN.MaBS = lookUpMaBS.EditValue.ToString();
             //thongtinBN.MucHuong
             //thongtinBN.TienThuoc = t_thuoc;
             //thongtinBN.TienTongChiPhi = thongtinBN.TienVTYT + t_thuoc;
             //thongtinBN.TienBNTT
             //thongtinBN.TienBHTT
-            thongtinBN.MaKhoa = (lookUpMaKhoa.GetSelectedDataRow () as DataRowView)[0].ToString ();
+            thongtinBN.MaKhoa = (lookUpMaKhoa.GetSelectedDataRow() as DataRowView)[0].ToString();
             thongtinBN.MaBenh = maBenhChinh;
             thongtinBN.MaBenhKhac = txtMaBenhKhac.Text;
             thongtinBN.TenBenh = txtTenBenh.Text;
 
-            thongtinCT.SuaThongTinCT (ref err, thongtinBN);// cập nhật
-            if (!string.IsNullOrEmpty (err))
+            thongtinCT.SuaThongTinCT(ref err, thongtinBN);// cập nhật
+            if (!string.IsNullOrEmpty(err))
             {
-                MessageBox.Show (err);
+                MessageBox.Show(err);
             }
             Thuoc_CTVO thuoc;
             foreach (DataRowView drView in dvTienThuoc)
             {
-                thuoc = new Thuoc_CTVO ();
+                thuoc = new Thuoc_CTVO();
                 thuoc.MaLK = thongtinBN.MaLK;
-                thuoc.MaThuoc = drView["MA_THUOC"].ToString ();
-                thuoc.TenThuoc = drView["TEN_THUOC"].ToString ();
-                thuoc.DonViTinh = drView["DON_VI_TINH"].ToString ();
-                thuoc.HamLuong = drView["HAM_LUONG"].ToString ();
-                thuoc.DuongDung = drView["DUONG_DUNG"].ToString ();
-                thuoc.LieuDung = drView["LIEU_DUNG"].ToString ();
-                thuoc.SoDK = drView["SO_DANG_KY"].ToString ();
-                thuoc.SoLuong = Utils.ToInt (drView["SO_LUONG"].ToString ());
-                thuoc.DonGia = Utils.ToInt (drView["DON_GIA"].ToString ());
+                thuoc.MaThuoc = drView["MA_THUOC"].ToString();
+                thuoc.TenThuoc = drView["TEN_THUOC"].ToString();
+                thuoc.DonViTinh = drView["DON_VI_TINH"].ToString();
+                thuoc.HamLuong = drView["HAM_LUONG"].ToString();
+                thuoc.DuongDung = drView["DUONG_DUNG"].ToString();
+                thuoc.LieuDung = drView["LIEU_DUNG"].ToString();
+                thuoc.SoDK = drView["SO_DANG_KY"].ToString();
+                thuoc.SoLuong = Utils.ToInt(drView["SO_LUONG"].ToString());
+                thuoc.DonGia = Utils.ToInt(drView["DON_GIA"].ToString());
                 thuoc.TyLeTT = 100;
-                thuoc.ThanhTien = Utils.ToInt (drView["THANH_TIEN"].ToString ());
-                thuoc.MaKhoa = drView["MA_KHOA"].ToString ();
-                thuoc.MaBacSi = drView["MA_BAC_SI"].ToString ();
+                thuoc.ThanhTien = Utils.ToInt(drView["THANH_TIEN"].ToString());
+                thuoc.MaKhoa = drView["MA_KHOA"].ToString();
+                thuoc.MaBacSi = drView["MA_BAC_SI"].ToString();
                 thuoc.MaBenh = maBenhChinh + ";" + thongtinBN.MaBenhKhac;
-                if (drView["NGAY_YL"].ToString ().Contains ("/"))
+                if (drView["NGAY_YL"].ToString().Contains("/"))
                 {
-                    thuoc.NgayYL = DateTime.ParseExact (drView["NGAY_YL"].ToString (), "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture).ToString ("yyyyMMddHHmm");
+                    thuoc.NgayYL = DateTime.ParseExact(drView["NGAY_YL"].ToString(), "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyyMMddHHmm");
                 }
                 else
                 {
-                    thuoc.NgayYL = drView["NGAY_YL"].ToString ();
+                    thuoc.NgayYL = drView["NGAY_YL"].ToString();
                 }
                 thuoc.MaPTTT = 0;
-                thuoc.Nhom = drView["NHOM"].ToString ();
+                thuoc.Nhom = drView["NHOM"].ToString();
                 err = "";
 
-                if (dsThuoc.ContainsKey (thuoc.MaThuoc + "|" + thuoc.TenThuoc))
+                if (dsThuoc.ContainsKey(thuoc.MaThuoc + "|" + thuoc.TenThuoc))
                 {
-                    thongtinCT.SuaThuocCT (ref err, thuoc); //sửa tiền thuốc
+                    thongtinCT.SuaThuocCT(ref err, thuoc); //sửa tiền thuốc
                     dsThuoc[thuoc.MaThuoc + "|" + thuoc.TenThuoc] = true;
                 }
                 else
                 {
-                    thongtinCT.ThemThuocCT (ref err, thuoc);// thêm tiền thuốc
-                    dsThuoc.Add (thuoc.MaThuoc + "|" + thuoc.TenThuoc, true);
+                    thongtinCT.ThemThuocCT(ref err, thuoc);// thêm tiền thuốc
+                    dsThuoc.Add(thuoc.MaThuoc + "|" + thuoc.TenThuoc, true);
                 }
-                if (!string.IsNullOrEmpty (err))
+                if (!string.IsNullOrEmpty(err))
                 {
-                    MessageBox.Show (err);
+                    MessageBox.Show(err);
                 }
             }
 
-            List<string> keys = new List<string> (dsThuoc.Keys);
+            List<string> keys = new List<string>(dsThuoc.Keys);
             foreach (var key in keys)
             {
                 err = "";
                 if (dsThuoc[key] == false)
                 {
-                    thongtinCT.XoaThuocCT (ref err, thongtinBN.MaLK, key.Split ('|')[0], key.Split ('|')[1]);
-                    dsThuoc.Remove (key);
+                    thongtinCT.XoaThuocCT(ref err, thongtinBN.MaLK, key.Split('|')[0], key.Split('|')[1]);
+                    dsThuoc.Remove(key);
                 }
                 else
                 {
                     dsThuoc[key] = false;
                 }
-                if (!string.IsNullOrEmpty (err))
+                if (!string.IsNullOrEmpty(err))
                 {
-                    MessageBox.Show (err);
+                    MessageBox.Show(err);
                 }
             }
             //
             DVKT_CTVO dvkt;
             foreach (DataRowView drView in dvTienDVKT) // dịch vụ kỹ thuật
             {
-                dvkt = new DVKT_CTVO ();
+                dvkt = new DVKT_CTVO();
                 dvkt.MaLK = thongtinBN.MaLK;
-                dvkt.MaDichVu = drView["MA_DICH_VU"].ToString ();
-                dvkt.MaVatTu = drView["MA_VAT_TU"].ToString ();
-                dvkt.MaNhom = drView["MA_NHOM"].ToString ();
-                dvkt.TenDichVu = drView["TEN_DICH_VU"].ToString ();
-                dvkt.DonViTinh = drView["DON_VI_TINH"].ToString ();
-                dvkt.SoLuong = Convert.ToInt32 (drView["SO_LUONG"].ToString ());
-                dvkt.DonGia = Convert.ToInt32 (drView["DON_GIA"].ToString ());
+                dvkt.MaDichVu = drView["MA_DICH_VU"].ToString();
+                dvkt.MaVatTu = drView["MA_VAT_TU"].ToString();
+                dvkt.MaNhom = drView["MA_NHOM"].ToString();
+                dvkt.TenDichVu = drView["TEN_DICH_VU"].ToString();
+                dvkt.DonViTinh = drView["DON_VI_TINH"].ToString();
+                dvkt.SoLuong = Convert.ToInt32(drView["SO_LUONG"].ToString());
+                dvkt.DonGia = Convert.ToInt32(drView["DON_GIA"].ToString());
                 dvkt.TyLeTT = 100;
-                dvkt.ThanhTien = Convert.ToInt32 (drView["THANH_TIEN"].ToString ());
-                dvkt.MaKhoa = drView["MA_KHOA"].ToString ();
-                dvkt.MaBacSi = drView["MA_BAC_SI"].ToString ();
+                dvkt.ThanhTien = Convert.ToInt32(drView["THANH_TIEN"].ToString());
+                dvkt.MaKhoa = drView["MA_KHOA"].ToString();
+                dvkt.MaBacSi = drView["MA_BAC_SI"].ToString();
                 dvkt.MaBenh = maBenhChinh + ";" + thongtinBN.MaBenhKhac;
-                if (drView["NGAY_YL"].ToString ().Contains ("/"))
+                dvkt.KetQua = Utils.ToString(drView["KET_QUA"]);
+                if (drView["NGAY_YL"].ToString().Contains("/"))
                 {
-                    dvkt.NgayYLenh = DateTime.ParseExact (drView["NGAY_YL"].ToString (), "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture).ToString ("yyyyMMddHHmm");
+                    dvkt.NgayYLenh = DateTime.ParseExact(drView["NGAY_YL"].ToString(), "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyyMMddHHmm");
                 }
                 else
                 {
-                    dvkt.NgayYLenh = drView["NGAY_YL"].ToString ();
+                    dvkt.NgayYLenh = drView["NGAY_YL"].ToString();
                 }
                 dvkt.NgayQK = dvkt.NgayYLenh;
                 dvkt.MaPTTT = 0;
                 //
                 err = "";
 
-                if (dsDVKT.ContainsKey (dvkt.MaDichVu))
+                if (dsDVKT.ContainsKey(dvkt.MaDichVu))
                 {
-                    thongtinCT.SuaDVKTCT (ref err, dvkt);
+                    thongtinCT.SuaDVKTCT(ref err, dvkt);
                     dsDVKT[dvkt.MaDichVu] = true;
                 }
                 else
                 {
-                    thongtinCT.ThemDVKTCT (ref err, dvkt);
-                    dsDVKT.Add (dvkt.MaDichVu, true);
-                    if (!string.IsNullOrEmpty (err))
+                    thongtinCT.ThemDVKTCT(ref err, dvkt);
+                    dsDVKT.Add(dvkt.MaDichVu, true);
+                    if (!string.IsNullOrEmpty(err))
                     {
-                        MessageBox.Show (err);
+                        MessageBox.Show(err);
                     }
                 }
             }
             foreach (DataRowView drView in dvTienVTYT) // vật tư y tế
             {
-                dvkt = new DVKT_CTVO ();
+                dvkt = new DVKT_CTVO();
                 dvkt.MaLK = thongtinBN.MaLK;
-                dvkt.MaDichVu = drView["MA_DICH_VU"].ToString ();
-                dvkt.MaVatTu = drView["MA_VAT_TU"].ToString ();
-                dvkt.MaNhom = drView["MA_NHOM"].ToString ();
-                dvkt.TenDichVu = drView["TEN_DICH_VU"].ToString ();
-                dvkt.DonViTinh = drView["DON_VI_TINH"].ToString ();
-                dvkt.SoLuong = Convert.ToInt32 (drView["SO_LUONG"].ToString ());
-                dvkt.DonGia = Convert.ToInt32 (drView["DON_GIA"].ToString ());
+                dvkt.MaDichVu = drView["MA_DICH_VU"].ToString();
+                dvkt.MaVatTu = drView["MA_VAT_TU"].ToString();
+                dvkt.MaNhom = drView["MA_NHOM"].ToString();
+                dvkt.TenDichVu = drView["TEN_DICH_VU"].ToString();
+                dvkt.DonViTinh = drView["DON_VI_TINH"].ToString();
+                dvkt.SoLuong = Convert.ToInt32(drView["SO_LUONG"].ToString());
+                dvkt.DonGia = Convert.ToInt32(drView["DON_GIA"].ToString());
                 dvkt.TyLeTT = 100;
-                dvkt.ThanhTien = Convert.ToInt32 (drView["THANH_TIEN"].ToString ());
-                dvkt.MaKhoa = drView["MA_KHOA"].ToString ();
-                dvkt.MaBacSi = drView["MA_BAC_SI"].ToString ();
+                dvkt.ThanhTien = Convert.ToInt32(drView["THANH_TIEN"].ToString());
+                dvkt.MaKhoa = drView["MA_KHOA"].ToString();
+                dvkt.MaBacSi = drView["MA_BAC_SI"].ToString();
                 dvkt.MaBenh = maBenhChinh + ";" + thongtinBN.MaBenhKhac;
-                if (drView["NGAY_YL"].ToString ().Contains ("/"))
+                if (drView["NGAY_YL"].ToString().Contains("/"))
                 {
-                    dvkt.NgayYLenh = DateTime.ParseExact (drView["NGAY_YL"].ToString (), "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture).ToString ("yyyyMMddHHmm");
+                    dvkt.NgayYLenh = DateTime.ParseExact(drView["NGAY_YL"].ToString(), "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyyMMddHHmm");
                 }
                 else
                 {
-                    dvkt.NgayYLenh = drView["NGAY_YL"].ToString ();
+                    dvkt.NgayYLenh = drView["NGAY_YL"].ToString();
                 }
                 dvkt.NgayQK = dvkt.NgayYLenh;
                 dvkt.MaPTTT = 0;
                 //
                 err = "";
 
-                if (dsDVKT.ContainsKey (dvkt.MaDichVu))
+                if (dsDVKT.ContainsKey(dvkt.MaDichVu))
                 {
-                    thongtinCT.SuaDVKTCT (ref err, dvkt);
+                    thongtinCT.SuaDVKTCT(ref err, dvkt);
                     dsDVKT[dvkt.MaDichVu] = true;
                 }
                 else
                 {
-                    thongtinCT.ThemDVKTCT (ref err, dvkt);
-                    dsDVKT.Add (dvkt.MaDichVu, true);
-                    if (!string.IsNullOrEmpty (err))
+                    thongtinCT.ThemDVKTCT(ref err, dvkt);
+                    dsDVKT.Add(dvkt.MaDichVu, true);
+                    if (!string.IsNullOrEmpty(err))
                     {
-                        MessageBox.Show (err);
+                        MessageBox.Show(err);
                     }
                 }
             }
-            keys = new List<string> (dsDVKT.Keys);
+            keys = new List<string>(dsDVKT.Keys);
             foreach (var key in keys)
             {
                 if (dsDVKT[key] == false)
                 {
-                    thongtinCT.XoaDVKTCT (ref err, thongtinBN.MaLK, key);
-                    dsDVKT.Remove (key);
+                    thongtinCT.XoaDVKTCT(ref err, thongtinBN.MaLK, key);
+                    dsDVKT.Remove(key);
                 }
                 else
                 {
@@ -508,7 +513,6 @@ namespace BHYT
                 }
             }
         }
-
         private bool checkMaBenh (string ma)
         {
             if (ma == maBenhChinh || txtMaBenhKhac.Text.Contains (ma))
@@ -577,6 +581,11 @@ namespace BHYT
                 catch { }
                 this.gridViewVTYT.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler (this.gridViewVTYT_CellValueChanged);
             }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            Luu();
         }
 
         private void FrmKeDon_Load (object sender, EventArgs e)

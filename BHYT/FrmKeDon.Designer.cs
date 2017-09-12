@@ -29,9 +29,9 @@
         private void InitializeComponent ()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKeDon));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lookUpMaBS = new DevExpress.XtraEditors.LookUpEdit();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -103,6 +103,7 @@
             this.Muc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaNhom = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.KetQua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlVTYT = new DevExpress.XtraGrid.GridControl();
             this.gridViewVTYT = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnDelete = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -116,6 +117,7 @@
             this.MucTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThanhTienVTYT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaNhomVTYT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaKhoa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpLoaiChiPhi.Properties)).BeginInit();
@@ -544,7 +546,7 @@
             // btnXoaThuoc
             // 
             this.btnXoaThuoc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoaThuoc.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject7, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoaThuoc.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
             this.btnXoaThuoc.Name = "btnXoaThuoc";
             this.btnXoaThuoc.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnXoaThuoc.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnXoaThuoc_ButtonClick);
@@ -827,11 +829,11 @@
             // txtTenBenh
             // 
             this.txtTenBenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenBenh.Location = new System.Drawing.Point(647, 42);
+            this.txtTenBenh.Location = new System.Drawing.Point(647, 12);
             this.txtTenBenh.Multiline = true;
             this.txtTenBenh.Name = "txtTenBenh";
             this.txtTenBenh.ReadOnly = true;
-            this.txtTenBenh.Size = new System.Drawing.Size(412, 25);
+            this.txtTenBenh.Size = new System.Drawing.Size(325, 55);
             this.txtTenBenh.TabIndex = 3;
             // 
             // label7
@@ -882,7 +884,8 @@
             this.DonGiaDVKT,
             this.Muc,
             this.Tien,
-            this.MaNhom});
+            this.MaNhom,
+            this.KetQua});
             this.gridViewDVKT.GridControl = this.gridControlDVKT;
             this.gridViewDVKT.Name = "gridViewDVKT";
             this.gridViewDVKT.OptionsView.ShowGroupPanel = false;
@@ -901,7 +904,7 @@
             // btnXoaDVKT
             // 
             this.btnXoaDVKT.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoaDVKT.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject8, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoaDVKT.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true)});
             this.btnXoaDVKT.Name = "btnXoaDVKT";
             this.btnXoaDVKT.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnXoaDVKT.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnXoaDVKT_ButtonClick);
@@ -1002,6 +1005,7 @@
             this.DonGiaDVKT.OptionsColumn.FixedWidth = true;
             this.DonGiaDVKT.Visible = true;
             this.DonGiaDVKT.VisibleIndex = 6;
+            this.DonGiaDVKT.Width = 60;
             // 
             // Muc
             // 
@@ -1011,8 +1015,6 @@
             this.Muc.FieldName = "TYLE_TT";
             this.Muc.Name = "Muc";
             this.Muc.OptionsColumn.FixedWidth = true;
-            this.Muc.Visible = true;
-            this.Muc.VisibleIndex = 7;
             this.Muc.Width = 50;
             // 
             // Tien
@@ -1027,7 +1029,8 @@
             this.Tien.OptionsColumn.AllowEdit = false;
             this.Tien.OptionsColumn.FixedWidth = true;
             this.Tien.Visible = true;
-            this.Tien.VisibleIndex = 8;
+            this.Tien.VisibleIndex = 7;
+            this.Tien.Width = 60;
             // 
             // MaNhom
             // 
@@ -1038,9 +1041,17 @@
             this.MaNhom.Name = "MaNhom";
             this.MaNhom.OptionsColumn.AllowEdit = false;
             this.MaNhom.OptionsColumn.FixedWidth = true;
-            this.MaNhom.Visible = true;
-            this.MaNhom.VisibleIndex = 9;
             this.MaNhom.Width = 30;
+            // 
+            // KetQua
+            // 
+            this.KetQua.Caption = "Kết quả";
+            this.KetQua.FieldName = "KET_QUA";
+            this.KetQua.Name = "KetQua";
+            this.KetQua.OptionsColumn.FixedWidth = true;
+            this.KetQua.Visible = true;
+            this.KetQua.VisibleIndex = 8;
+            this.KetQua.Width = 110;
             // 
             // gridControlVTYT
             // 
@@ -1089,7 +1100,7 @@
             // btnXoaVTYT
             // 
             this.btnXoaVTYT.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoaVTYT.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoaVTYT.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", null, null, true)});
             this.btnXoaVTYT.Name = "btnXoaVTYT";
             this.btnXoaVTYT.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnXoaVTYT.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnXoaVTYT_ButtonClick);
@@ -1190,11 +1201,22 @@
             this.MaNhomVTYT.VisibleIndex = 9;
             this.MaNhomVTYT.Width = 30;
             // 
+            // btnLuu
+            // 
+            this.btnLuu.ImageUri.Uri = "Save;Size16x16";
+            this.btnLuu.Location = new System.Drawing.Point(993, 12);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(66, 55);
+            this.btnLuu.TabIndex = 66;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
             // FrmKeDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 624);
+            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.gridControlVTYT);
             this.Controls.Add(this.gridControlDVKT);
             this.Controls.Add(this.txtHoTen);
@@ -1342,5 +1364,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn MucTT;
         private DevExpress.XtraGrid.Columns.GridColumn ThanhTienVTYT;
         private DevExpress.XtraGrid.Columns.GridColumn MaNhomVTYT;
+        private DevExpress.XtraGrid.Columns.GridColumn KetQua;
+        private DevExpress.XtraEditors.SimpleButton btnLuu;
     }
 }

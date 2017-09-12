@@ -28,6 +28,7 @@ namespace BHYT
                 if (conn.State == ConnectionState.Open)
                     conn.Close ();
                 conn.Open ();
+                comm.Parameters.Clear();
                 comm.CommandType = ct;
                 comm.CommandText = strSQL;
                 da = new SqlDataAdapter (comm);

@@ -98,6 +98,7 @@
             this.MucTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThanhTienVTYT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaNhomVTYT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.KetQua = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBS.Properties)).BeginInit();
@@ -499,6 +500,7 @@
             this.KhoaMa,
             this.BacSi,
             this.DonGiaDVKT,
+            this.KetQua,
             this.Muc,
             this.Tien,
             this.MaNhom});
@@ -616,8 +618,6 @@
             this.Muc.FieldName = "TYLE_TT";
             this.Muc.Name = "Muc";
             this.Muc.OptionsColumn.FixedWidth = true;
-            this.Muc.Visible = true;
-            this.Muc.VisibleIndex = 7;
             this.Muc.Width = 50;
             // 
             // Tien
@@ -937,6 +937,16 @@
             this.MaNhomVTYT.VisibleIndex = 9;
             this.MaNhomVTYT.Width = 30;
             // 
+            // KetQua
+            // 
+            this.KetQua.Caption = "Kết quả";
+            this.KetQua.FieldName = "KET_QUA";
+            this.KetQua.Name = "KetQua";
+            this.KetQua.OptionsColumn.FixedWidth = true;
+            this.KetQua.Visible = true;
+            this.KetQua.VisibleIndex = 7;
+            this.KetQua.Width = 50;
+            // 
             // FrmThuocDVKT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1056,5 +1066,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn MaVTYT;
         private DevExpress.XtraGrid.Columns.GridColumn TenVTYT;
         private DevExpress.XtraGrid.Columns.GridColumn TenBV;
+        private DevExpress.XtraGrid.Columns.GridColumn KetQua;
     }
 }

@@ -56,13 +56,13 @@
             this.NGAY_VAO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.STTPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MA_BENH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnKeDonThuoc = new System.Windows.Forms.Button();
             this.btnChuyenNoiTru = new System.Windows.Forms.Button();
             this.btnPhongKham4 = new System.Windows.Forms.Button();
             this.btnPhongKham3 = new System.Windows.Forms.Button();
             this.btnPhongKham2 = new System.Windows.Forms.Button();
             this.btnPhongKham1 = new System.Windows.Forms.Button();
-            this.MA_BENH = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.SuspendLayout();
@@ -370,10 +370,16 @@
             this.STTPHONG.VisibleIndex = 8;
             this.STTPHONG.Width = 91;
             // 
+            // MA_BENH
+            // 
+            this.MA_BENH.Caption = "MA_BENH";
+            this.MA_BENH.FieldName = "MA_BENH";
+            this.MA_BENH.Name = "MA_BENH";
+            // 
             // btnKeDonThuoc
             // 
             this.btnKeDonThuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKeDonThuoc.Location = new System.Drawing.Point(77, 46);
+            this.btnKeDonThuoc.Location = new System.Drawing.Point(58, 46);
             this.btnKeDonThuoc.Name = "btnKeDonThuoc";
             this.btnKeDonThuoc.Size = new System.Drawing.Size(114, 30);
             this.btnKeDonThuoc.TabIndex = 94;
@@ -384,7 +390,7 @@
             // btnChuyenNoiTru
             // 
             this.btnChuyenNoiTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChuyenNoiTru.Location = new System.Drawing.Point(223, 46);
+            this.btnChuyenNoiTru.Location = new System.Drawing.Point(206, 47);
             this.btnChuyenNoiTru.Name = "btnChuyenNoiTru";
             this.btnChuyenNoiTru.Size = new System.Drawing.Size(114, 30);
             this.btnChuyenNoiTru.TabIndex = 94;
@@ -435,12 +441,6 @@
             this.btnPhongKham1.Text = "Chuyển Phòng Khám 1";
             this.btnPhongKham1.UseVisualStyleBackColor = true;
             this.btnPhongKham1.Click += new System.EventHandler(this.btnPhongKham1_Click);
-            // 
-            // MA_BENH
-            // 
-            this.MA_BENH.Caption = "MA_BENH";
-            this.MA_BENH.FieldName = "MA_BENH";
-            this.MA_BENH.Name = "MA_BENH";
             // 
             // FrmDSTiepNhan
             // 
