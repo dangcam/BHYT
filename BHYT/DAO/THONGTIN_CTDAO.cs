@@ -286,7 +286,16 @@ namespace BHYT.DAO
         }
         public DataTable DSCanLamSan(string ngayBD, string ngayKT, int tinhTrang = 0)
         {
-            string sql = "";
+            string sql = "SELECT * FROM  getCanLamSan('" + ngayBD + "','" + ngayKT + "') ";
+            if(tinhTrang==1)
+            {
+                sql += " WHERE LEN(KET_QUA) = 0 OR KET_QUA IS NULL";
+            }
+            else
+                if(tinhTrang==2)
+            {
+                sql += " WHERE LEN(KET_QUA) > 0";
+            }
             return db.ExcuteQuery(sql,
                 CommandType.Text, null);
         }
@@ -601,6 +610,14 @@ namespace BHYT.DAO
                 new SqlParameter ("@NGAY_QK", dvkt.NgayQK),
                 new SqlParameter ("@MA_PTTT", dvkt.MaPTTT),
                 new SqlParameter("@KET_QUA", dvkt.KetQua));
+        }
+        public bool SuaDVKTCTCLS(ref string err, string malk,string madichvu,string kq)
+        {
+            return db.MyExecuteNonQuery("SpSuaDVKT_CTCSL",
+                CommandType.StoredProcedure, ref err,
+                new SqlParameter("@MA_LK", malk),
+                new SqlParameter("@MA_DICH_VU", madichvu),
+                new SqlParameter("@KET_QUA", kq));
         }
         public bool ChuyenLoaiKCB (ref string err, string MaLK, int MaLoaiKCB,string MaKhoa)
         {

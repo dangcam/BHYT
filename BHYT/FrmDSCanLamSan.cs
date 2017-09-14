@@ -15,10 +15,12 @@ namespace BHYT
     {
         DataTable dt = null;
         THONGTIN_CTDAO thongtinCT = null;
+        FrmKQCanLamSan frmCanLamSan;
         public FrmDSCanLamSan(Connection db)
         {
             InitializeComponent();
             thongtinCT = new THONGTIN_CTDAO(db);
+            frmCanLamSan = new FrmKQCanLamSan(db);
         }
 
         private void FrmDSCanLamSan_Load(object sender, EventArgs e)
@@ -26,14 +28,29 @@ namespace BHYT
             dateTu.Value = DateTime.Now;
             dateDen.Value = DateTime.Now;
             cbTinhTrang.SelectedIndex = 1;
-
+            LoadData();
         }
-
-        private void btnTim_Click(object sender, EventArgs e)
+        private void LoadData()
         {
             string ngayBD = DateTime.ParseExact(dateTu.Text.ToString(), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyyMMdd");
             string ngayKT = DateTime.ParseExact(dateDen.Text.ToString(), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyyMMdd");
             dt = thongtinCT.DSCanLamSan(ngayBD, ngayKT, cbTinhTrang.SelectedIndex);
+            if (dt != null)
+            {
+                gridControl.DataSource = dt;
+            }
+        }
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void gridView_DoubleClick(object sender, EventArgs e)
+        {
+            frmCanLamSan.MaLK = (gridView.GetFocusedRow() as DataRowView)["MA_LK"].ToString();
+            frmCanLamSan.HoTen = (gridView.GetFocusedRow() as DataRowView)["HO_TEN"].ToString();
+            frmCanLamSan.ShowDialog();
+            LoadData();
         }
     }
 }

@@ -20,6 +20,8 @@ namespace BHYT
             AppConfig.CoSoKCB = xmlfile.SelectSingleNode ("config/cosokcb").InnerText.ToString ();
             AppConfig.LuongCoBan = int.Parse(xmlfile.SelectSingleNode ("config/luongcoban").InnerText);
             AppConfig.SoPhong = int.Parse (xmlfile.SelectSingleNode ("config/sophong").InnerText);
+            AppConfig.UserBhyt = xmlfile.SelectSingleNode("config/user_bhyt").InnerText.ToString();
+            AppConfig.PassBhyt = xmlfile.SelectSingleNode("config/pass_bhyt").InnerText.ToString();
         }
         public void Write ()
         {

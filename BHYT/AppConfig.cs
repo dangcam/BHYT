@@ -17,6 +17,8 @@ namespace BHYT
         private static string user = "";
         private static string pass = "";
         private static int soPhong = 0;
+        private static string userBhyt = "";
+        private static string passBhyt = "";
         public static string Database
         {
             get
@@ -135,5 +137,32 @@ namespace BHYT
                 soPhong = value;
             }
         }
+
+        public static string UserBhyt
+        {
+            get
+            {
+                return userBhyt;
+            }
+
+            set
+            {
+                userBhyt = value;
+            }
+        }
+
+        public static string PassBhyt
+        {
+            get
+            {
+                return passBhyt;
+            }
+
+            set
+            {
+                passBhyt = value;
+            }
+        }
+
     }
 }

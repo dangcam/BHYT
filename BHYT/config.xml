@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <config>
-  <server>BVDK-PC\SQLEXPRESS</server>
+  <server>DANGCAM</server>
   <batabase>BV_KHAM_CHUA_BENH</batabase>
   <user>sa</user>
   <password>123456</password>
   <cosokcb>70013</cosokcb>
   <luongcoban>1300000</luongcoban>
   <sophong>0</sophong>
+  <user_bhyt>70013_BV</user_bhyt>
+  <pass_bhyt>Prkt1179</pass_bhyt>
 </config>

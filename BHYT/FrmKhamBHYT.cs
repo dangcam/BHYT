@@ -28,6 +28,9 @@ namespace BHYT
         THONGTIN_CTDAO thongtinCT = null;
         THONGTINVO thongtinThe = new THONGTINVO ();
         THONGTIN_CTVO thongtinBN = new THONGTIN_CTVO ();
+        string token = null;
+        string id_token = null;
+        DateTime expires_in = DateTime.Now;
         public FrmKhamBHYT (Connection db)
         {
             this.db = db;
@@ -163,28 +166,35 @@ namespace BHYT
                 btnKiemTra.Focus ();
             }
         }
-
-        private async void btnKiemTra_Click (object sender, EventArgs e)
+        private bool kiemTraThongTuyen()
         {
             if (txtBHYT.Text.Length != 15)
             {
-                MessageBox.Show ("Nhập mã thẻ (gồm 15 ký tự)!");
-                txtBHYT.SelectAll ();
-                txtBHYT.Focus ();
-                return;
+                MessageBox.Show("Nhập mã thẻ (gồm 15 ký tự)!");
+                txtBHYT.SelectAll();
+                txtBHYT.Focus();
+                return false;
             }
-            if (string.IsNullOrEmpty (txtHoTen.Text))
+            if (string.IsNullOrEmpty(txtHoTen.Text))
             {
-                MessageBox.Show ("Nhập họ tên!");
-                txtHoTen.SelectAll ();
-                txtHoTen.Focus ();
-                return;
+                MessageBox.Show("Nhập họ tên!");
+                txtHoTen.SelectAll();
+                txtHoTen.Focus();
+                return false;
             }
-            if (string.IsNullOrEmpty (txtNgaySinh.Text))
+            if (string.IsNullOrEmpty(txtNgaySinh.Text))
             {
-                MessageBox.Show ("Nhập ngày sinh!");
-                txtNgaySinh.SelectAll ();
-                txtNgaySinh.Focus ();
+                MessageBox.Show("Nhập ngày sinh!");
+                txtNgaySinh.SelectAll();
+                txtNgaySinh.Focus();
+                return false;
+            }
+            return true;
+        }
+        private async void btnKiemTra_Click (object sender, EventArgs e)
+        {
+            if(!kiemTraThongTuyen())
+            {
                 return;
             }
             IEnumerable<KeyValuePair<string, string>> queries = new List<KeyValuePair<string, string>> ()
@@ -724,12 +734,109 @@ namespace BHYT
                 XtraMessageBox.Show ("Vui lòng chọn bệnh nhân!");
             }
         }
-
-        private void label16_Click (object sender, EventArgs e)
+        private bool kiemTraLSKCB()
         {
-
+           if(dateGTBD.Text.Length==0)
+            {
+                dateGTBD.Focus();
+                MessageBox.Show("Vui lòng nhập ngày bắt đầu hạn thẻ!");
+                return false;
+            }
+            return true;
         }
+        private async void btnLSKCB_Click(object sender, EventArgs e)
+        {
+            if(!kiemTraThongTuyen()|| !kiemTraLSKCB())
+            {
+                return;
+            }
+            string gioiTinh = "1";
+            if (cbGioiTinh.SelectedIndex == 0)
+                gioiTinh = "2";
+            IEnumerable<KeyValuePair<string, string>> queries = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("maThe",txtBHYT.Text),
+                new KeyValuePair<string, string>("hoTen",txtHoTen.Text),
+                new KeyValuePair<string, string>("ngaySinh",txtNgaySinh.Text),
+                new KeyValuePair<string, string>("gioiTinh",gioiTinh),
+                new KeyValuePair<string, string>("maCSKCB",txtMaDKKCB.Text),
+                new KeyValuePair<string, string>("ngayBD",dateGTBD.Text),
+                new KeyValuePair<string, string>("ngayKT",dateGTKT.Text)
+            };
+            IEnumerable<KeyValuePair<string, string>> values = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("username",AppConfig.UserBhyt),
+                new KeyValuePair<string, string>("password",Utils.ToMD5(AppConfig.PassBhyt))
+            };
+            HttpContent q = new FormUrlEncodedContent(queries);
+            HttpContent user = new FormUrlEncodedContent(values);
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    client.BaseAddress = new Uri("https://egw.baohiemxahoi.gov.vn/");
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                    if (string.IsNullOrEmpty(token) || string.IsNullOrEmpty(id_token) || expires_in < DateTime.Now)
+                    {
+                        using (HttpResponseMessage response = await client.PostAsync("api/token/take", user))
+                        {
 
-     
+                            if (response.IsSuccessStatusCode)
+                            {
+
+                                using (HttpContent content = response.Content)
+                                {
+                                    //MessageBox.Show (content.Headers.ToString ());
+                                    string mycontent = await content.ReadAsStringAsync();
+                                    mycontent = mycontent.Replace("\"", "").Replace("{", "").Replace("}", "");
+                                    string[] kq = mycontent.Split(',');
+                                    string maKetQua = kq[0].Split(':')[1];
+                                    if(maKetQua.Equals("200"))
+                                    {
+                                        token = kq[1].Split(':')[2];
+                                        id_token = kq[2].Split(':')[1];
+                                        expires_in =Utils.ToDateTime( kq[5].Replace("expires_in:", ""));
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show(maKetQua + "-Lỗi xác thực!", "Lỗi");
+                                        return;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không thể kết nối tới cổng bảo hiểm!" + response.RequestMessage, "Lỗi");
+                                return;
+                            }
+                        }
+                    }
+                    // lấy lịch sử KCB
+                    string data = string.Format("token={0}&id_token={1}&username={2}&password={3}",
+                        token,id_token,AppConfig.UserBhyt,Utils.ToMD5(AppConfig.PassBhyt));
+                    using (HttpResponseMessage response = await client.PostAsync("api/egw/KQNhanLichSuKCB595?"+data, q))
+                    {
+                        if (response.IsSuccessStatusCode)
+                        {
+                            using (HttpContent content = response.Content)
+                            {
+                                //MessageBox.Show (content.Headers.ToString ());
+                                string mycontent = await content.ReadAsStringAsync();
+                              
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể kết nối tới cổng bảo hiểm!" + response.RequestMessage, "Lỗi");
+                        }
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Không có kết nối internet!", "Lỗi");
+                }
+            }
+        }
     }
 }

@@ -96,6 +96,7 @@
             this.dateTu = new System.Windows.Forms.DateTimePicker();
             this.label25 = new System.Windows.Forms.Label();
             this.btnIn = new System.Windows.Forms.Button();
+            this.btnLSKCB = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txtDu5Nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateGTKT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateGTBD.Properties)).BeginInit();
@@ -110,7 +111,7 @@
             // 
             this.btnKiemTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKiemTra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnKiemTra.Location = new System.Drawing.Point(128, 116);
+            this.btnKiemTra.Location = new System.Drawing.Point(114, 116);
             this.btnKiemTra.Name = "btnKiemTra";
             this.btnKiemTra.Size = new System.Drawing.Size(120, 25);
             this.btnKiemTra.TabIndex = 16;
@@ -471,9 +472,9 @@
             // btnPhongKham1
             // 
             this.btnPhongKham1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhongKham1.Location = new System.Drawing.Point(276, 116);
+            this.btnPhongKham1.Location = new System.Drawing.Point(354, 116);
             this.btnPhongKham1.Name = "btnPhongKham1";
-            this.btnPhongKham1.Size = new System.Drawing.Size(193, 25);
+            this.btnPhongKham1.Size = new System.Drawing.Size(180, 25);
             this.btnPhongKham1.TabIndex = 17;
             this.btnPhongKham1.Text = "Chuyển Phòng Khám 1";
             this.btnPhongKham1.UseVisualStyleBackColor = true;
@@ -482,9 +483,9 @@
             // btnPhongKham2
             // 
             this.btnPhongKham2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhongKham2.Location = new System.Drawing.Point(502, 116);
+            this.btnPhongKham2.Location = new System.Drawing.Point(561, 116);
             this.btnPhongKham2.Name = "btnPhongKham2";
-            this.btnPhongKham2.Size = new System.Drawing.Size(193, 25);
+            this.btnPhongKham2.Size = new System.Drawing.Size(180, 25);
             this.btnPhongKham2.TabIndex = 18;
             this.btnPhongKham2.Text = "Chuyển Phòng Khám 2";
             this.btnPhongKham2.UseVisualStyleBackColor = true;
@@ -493,9 +494,9 @@
             // btnPhongKham3
             // 
             this.btnPhongKham3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhongKham3.Location = new System.Drawing.Point(727, 116);
+            this.btnPhongKham3.Location = new System.Drawing.Point(770, 116);
             this.btnPhongKham3.Name = "btnPhongKham3";
-            this.btnPhongKham3.Size = new System.Drawing.Size(193, 25);
+            this.btnPhongKham3.Size = new System.Drawing.Size(180, 25);
             this.btnPhongKham3.TabIndex = 19;
             this.btnPhongKham3.Text = "Chuyển Phòng Khám 3";
             this.btnPhongKham3.UseVisualStyleBackColor = true;
@@ -504,9 +505,9 @@
             // btnPhongKham4
             // 
             this.btnPhongKham4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhongKham4.Location = new System.Drawing.Point(948, 116);
+            this.btnPhongKham4.Location = new System.Drawing.Point(975, 116);
             this.btnPhongKham4.Name = "btnPhongKham4";
-            this.btnPhongKham4.Size = new System.Drawing.Size(193, 25);
+            this.btnPhongKham4.Size = new System.Drawing.Size(180, 25);
             this.btnPhongKham4.TabIndex = 20;
             this.btnPhongKham4.Text = "Chuyển Phòng Khám 4";
             this.btnPhongKham4.UseVisualStyleBackColor = true;
@@ -545,9 +546,9 @@
             this.groupControl.Controls.Add(this.dateTu);
             this.groupControl.Controls.Add(this.label25);
             this.groupControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl.Location = new System.Drawing.Point(0, 157);
+            this.groupControl.Location = new System.Drawing.Point(0, 156);
             this.groupControl.Name = "groupControl";
-            this.groupControl.Size = new System.Drawing.Size(1275, 344);
+            this.groupControl.Size = new System.Drawing.Size(1284, 405);
             this.groupControl.TabIndex = 82;
             this.groupControl.Text = "Danh khách tiếp nhận";
             // 
@@ -569,8 +570,6 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(94, 16);
             this.label16.TabIndex = 77;
-            this.label16.Text = "Phòng khám 3:";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label15
             // 
@@ -635,10 +634,10 @@
             // gridControl
             // 
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl.Location = new System.Drawing.Point(2, 62);
+            this.gridControl.Location = new System.Drawing.Point(2, 123);
             this.gridControl.MainView = this.gridView;
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(1271, 280);
+            this.gridControl.Size = new System.Drawing.Size(1280, 280);
             this.gridControl.TabIndex = 75;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -864,7 +863,7 @@
             // 
             this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnIn.Location = new System.Drawing.Point(1165, 116);
+            this.btnIn.Location = new System.Drawing.Point(1174, 116);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(89, 25);
             this.btnIn.TabIndex = 21;
@@ -872,11 +871,24 @@
             this.btnIn.UseVisualStyleBackColor = true;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
+            // btnLSKCB
+            // 
+            this.btnLSKCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLSKCB.ForeColor = System.Drawing.Color.Maroon;
+            this.btnLSKCB.Location = new System.Drawing.Point(244, 116);
+            this.btnLSKCB.Name = "btnLSKCB";
+            this.btnLSKCB.Size = new System.Drawing.Size(89, 25);
+            this.btnLSKCB.TabIndex = 83;
+            this.btnLSKCB.Text = "Lịch Sử KCB";
+            this.btnLSKCB.UseVisualStyleBackColor = true;
+            this.btnLSKCB.Click += new System.EventHandler(this.btnLSKCB_Click);
+            // 
             // FrmKhamBHYT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1275, 501);
+            this.ClientSize = new System.Drawing.Size(1284, 561);
+            this.Controls.Add(this.btnLSKCB);
             this.Controls.Add(this.groupControl);
             this.Controls.Add(this.btnPhongKham4);
             this.Controls.Add(this.btnPhongKham3);
@@ -1006,5 +1018,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn PHONG;
         private DevExpress.XtraGrid.Columns.GridColumn STTPHONG;
         private System.Windows.Forms.Button btnIn;
+        private System.Windows.Forms.Button btnLSKCB;
     }
 }

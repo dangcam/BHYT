@@ -487,7 +487,7 @@
             // 
             // btnInDon
             // 
-            this.btnInDon.Appearance.Options.UseTextOptions = true;
+            //this.btnInDon.Appearance.Options.UseTextOptions = true;
             this.btnInDon.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnInDon.ImageUri.Uri = "PrintDialog;Size16x16";
             this.btnInDon.Location = new System.Drawing.Point(993, 74);
