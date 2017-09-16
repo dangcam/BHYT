@@ -132,8 +132,8 @@
             this.TenKhac = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridViewMaBenh = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MaBenh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.lookUpMaBenh = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.TenBenh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lookUpMaBenh = new DevExpress.XtraEditors.SearchLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaTaiNan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpNoiChuyenDen.Properties)).BeginInit();
@@ -1042,9 +1042,9 @@
             this.cbKQDTri.Items.AddRange(new object[] {
             "1. Khỏi",
             "2. Đỡ",
-            "4. Không thay đổi",
-            "5. Nặng hơn",
-            "6. Tử vong"});
+            "3. Không thay đổi",
+            "4. Nặng hơn",
+            "5. Tử vong"});
             this.cbKQDTri.Location = new System.Drawing.Point(944, 219);
             this.cbKQDTri.Name = "cbKQDTri";
             this.cbKQDTri.Size = new System.Drawing.Size(114, 24);
@@ -1347,6 +1347,16 @@
             this.MaBenh.VisibleIndex = 0;
             this.MaBenh.Width = 60;
             // 
+            // TenBenh
+            // 
+            this.TenBenh.Caption = "Tên";
+            this.TenBenh.FieldName = "TEN_BENH";
+            this.TenBenh.Name = "TenBenh";
+            this.TenBenh.OptionsColumn.AllowEdit = false;
+            this.TenBenh.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.TenBenh.Visible = true;
+            this.TenBenh.VisibleIndex = 1;
+            // 
             // lookUpMaBenh
             // 
             this.lookUpMaBenh.EditValue = "";
@@ -1363,16 +1373,6 @@
             this.lookUpMaBenh.TabIndex = 19;
             this.lookUpMaBenh.EditValueChanged += new System.EventHandler(this.lookUpMaBenh_EditValueChanged);
             this.lookUpMaBenh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lookUpMaBenh_KeyPress);
-            // 
-            // TenBenh
-            // 
-            this.TenBenh.Caption = "Tên";
-            this.TenBenh.FieldName = "TEN_BENH";
-            this.TenBenh.Name = "TenBenh";
-            this.TenBenh.OptionsColumn.AllowEdit = false;
-            this.TenBenh.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.TenBenh.Visible = true;
-            this.TenBenh.VisibleIndex = 1;
             // 
             // FrmNgoaiNoiTru
             // 

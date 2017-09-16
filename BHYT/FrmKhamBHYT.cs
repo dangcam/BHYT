@@ -31,6 +31,7 @@ namespace BHYT
         string token = null;
         string id_token = null;
         DateTime expires_in = DateTime.Now;
+        FrmLichSuKCB frmLichSu;
         public FrmKhamBHYT (Connection db)
         {
             this.db = db;
@@ -39,6 +40,7 @@ namespace BHYT
             thongtinBHYT = new THONGTINDAO (db);
             thongtinCT = new THONGTIN_CTDAO (db);
             khoa = new KhoaDAO (db);
+            frmLichSu = new FrmLichSuKCB(db);
         }
 
         private void txtQR_KeyPress (object sender, KeyPressEventArgs e)
@@ -225,7 +227,9 @@ namespace BHYT
                                 code = code.Replace ("\"", "").Replace (":", "").Replace (",", "");
                                 string message = mycontent.Substring (iMessage + 7);
                                 StringBuilder sMessage = new StringBuilder (message);
-                                sMessage = sMessage.Replace ("\"", "").Replace ("}", "").Replace ("\\u003c/b\\u003e", "").Replace ("\\u003cb\\u003e", "");
+                                sMessage = sMessage.Replace ("\"", "").Replace ("}", "").Replace ("\\u003cb", "").Replace ("\\u003c", "")
+                                    .Replace("\\u0027", "").Replace("style=", "").Replace("color:", "").Replace("#0070C0", "").Replace("\\u003e","")
+                                    .Replace("/b","");
                                 switch (code)
                                 {
                                     case "1":
@@ -815,15 +819,26 @@ namespace BHYT
                     // lấy lịch sử KCB
                     string data = string.Format("token={0}&id_token={1}&username={2}&password={3}",
                         token,id_token,AppConfig.UserBhyt,Utils.ToMD5(AppConfig.PassBhyt));
-                    using (HttpResponseMessage response = await client.PostAsync("api/egw/KQNhanLichSuKCB595?"+data, q))
+                    using (HttpResponseMessage response = await client.PostAsync("api/egw/KQNhanLichSuKCB595?" + data, q))
                     {
                         if (response.IsSuccessStatusCode)
                         {
                             using (HttpContent content = response.Content)
                             {
-                                //MessageBox.Show (content.Headers.ToString ());
                                 string mycontent = await content.ReadAsStringAsync();
-                              
+                                mycontent = mycontent.Replace("\"", "");
+                                string ketqua = mycontent.Substring(0, mycontent.IndexOf("dsLichSuKCB"));
+                                string danhsach = mycontent.Substring(mycontent.IndexOf("dsLichSuKCB")+11);
+                                frmLichSu.KetQua = ketqua;
+                                frmLichSu.LichSu = danhsach;
+                                frmLichSu.ToKen = token;
+                                frmLichSu.Id_ToKen = id_token;
+                                frmLichSu.Expires_In = expires_in;
+                                frmLichSu.ShowDialog();
+                                //
+                                token = frmLichSu.ToKen;
+                                id_token = frmLichSu.Id_ToKen;
+                                expires_in = frmLichSu.Expires_In;
                             }
                         }
                         else

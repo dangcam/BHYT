@@ -226,6 +226,12 @@
     <Compile Include="FrmKQCanLamSan.Designer.cs">
       <DependentUpon>FrmKQCanLamSan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLichSuKCB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLichSuKCB.Designer.cs">
+      <DependentUpon>FrmLichSuKCB.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLoad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +291,12 @@
     </Compile>
     <Compile Include="FrmThongKeThuoc.Designer.cs">
       <DependentUpon>FrmThongKeThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmThongTinChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThongTinChiTiet.Designer.cs">
+      <DependentUpon>FrmThongTinChiTiet.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmThuoc.cs">
       <SubType>Form</SubType>
@@ -468,6 +480,9 @@
     <EmbeddedResource Include="FrmKQCanLamSan.resx">
       <DependentUpon>FrmKQCanLamSan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLichSuKCB.resx">
+      <DependentUpon>FrmLichSuKCB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLoad.resx">
       <DependentUpon>FrmLoad.cs</DependentUpon>
     </EmbeddedResource>
@@ -507,6 +522,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmThongKeThuoc.resx">
       <DependentUpon>FrmThongKeThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThongTinChiTiet.resx">
+      <DependentUpon>FrmThongTinChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmThuoc.resx">
       <DependentUpon>FrmThuoc.cs</DependentUpon>

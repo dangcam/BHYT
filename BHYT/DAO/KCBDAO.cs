@@ -20,6 +20,11 @@ namespace BHYT.DAO
             return db.ExcuteQuery ("Select * From COSOKCB",
                 CommandType.Text, null);
         }
+        public DataTable DSKhamChuaBenh()
+        {
+            return db.ExcuteQuery("Select MA,TEN From COSOKCB",
+                CommandType.Text, null);
+        }
         public bool ThemCoSoKCB (ref string err, KCBVO kcb)
         {
             return db.MyExecuteNonQuery ("SpThemCoSo",

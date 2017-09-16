@@ -347,7 +347,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(230, 46);
+            this.label6.Location = new System.Drawing.Point(237, 47);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 16);
             this.label6.TabIndex = 60;
@@ -396,9 +396,9 @@
             // 
             this.txtBHYT.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBHYT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBHYT.Location = new System.Drawing.Point(311, 13);
+            this.txtBHYT.Location = new System.Drawing.Point(309, 13);
             this.txtBHYT.Name = "txtBHYT";
-            this.txtBHYT.Size = new System.Drawing.Size(276, 22);
+            this.txtBHYT.Size = new System.Drawing.Size(278, 22);
             this.txtBHYT.TabIndex = 1;
             this.txtBHYT.TextChanged += new System.EventHandler(this.txtBHYT_TextChanged);
             this.txtBHYT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBHYT_KeyPress);
@@ -568,7 +568,7 @@
             this.label16.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(1002, 36);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(94, 16);
+            this.label16.Size = new System.Drawing.Size(0, 16);
             this.label16.TabIndex = 77;
             // 
             // label15
@@ -634,10 +634,10 @@
             // gridControl
             // 
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl.Location = new System.Drawing.Point(2, 123);
+            this.gridControl.Location = new System.Drawing.Point(2, 62);
             this.gridControl.MainView = this.gridView;
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(1280, 280);
+            this.gridControl.Size = new System.Drawing.Size(1280, 341);
             this.gridControl.TabIndex = 75;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});

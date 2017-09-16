@@ -389,7 +389,7 @@ namespace BHYT.DAO
 
         public DataTable DSCoSoKCB ()
         {
-            return db.ExcuteQuery ("Select * From COSOKCB",
+            return db.ExcuteQuery ("Select MA,TEN From COSOKCB",
                 CommandType.Text, null);
         }
 
