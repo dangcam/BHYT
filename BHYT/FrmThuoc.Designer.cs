@@ -29,7 +29,7 @@
         private void InitializeComponent ()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmThuoc));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.bntNhapExcel = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -40,12 +40,14 @@
             this.DuongDung = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lookUpDonViTinh = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.QuyCach = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TieuChuan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DonViTinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DonGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoDK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.QuyetDinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NhaSX = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NuocSX = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HanDung = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NhomThuoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nhom = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TinhTrang = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,8 +55,6 @@
             this.btnItemXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.TieuChuan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HanDung = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpDonViTinh)).BeginInit();
@@ -196,6 +196,15 @@
             this.QuyCach.VisibleIndex = 5;
             this.QuyCach.Width = 80;
             // 
+            // TieuChuan
+            // 
+            this.TieuChuan.Caption = "Tiêu Chuẩn";
+            this.TieuChuan.FieldName = "TIEU_CHUAN";
+            this.TieuChuan.Name = "TieuChuan";
+            this.TieuChuan.OptionsColumn.AllowEdit = false;
+            this.TieuChuan.Visible = true;
+            this.TieuChuan.VisibleIndex = 6;
+            // 
             // DonViTinh
             // 
             this.DonViTinh.Caption = "Đơn Vị Tính";
@@ -254,6 +263,15 @@
             this.NuocSX.Visible = true;
             this.NuocSX.VisibleIndex = 12;
             // 
+            // HanDung
+            // 
+            this.HanDung.Caption = "Hạn Dùng";
+            this.HanDung.FieldName = "HAN_DUNG";
+            this.HanDung.Name = "HanDung";
+            this.HanDung.OptionsColumn.AllowEdit = false;
+            this.HanDung.Visible = true;
+            this.HanDung.VisibleIndex = 13;
+            // 
             // NhomThuoc
             // 
             this.NhomThuoc.Caption = "Nhóm Thuốc";
@@ -298,7 +316,7 @@
             // 
             this.btnItemXoa.AutoHeight = false;
             this.btnItemXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnItemXoa.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnItemXoa.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.btnItemXoa.Name = "btnItemXoa";
             this.btnItemXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnItemXoa.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnItemXoa_ButtonClick);
@@ -324,24 +342,6 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // TieuChuan
-            // 
-            this.TieuChuan.Caption = "Tiêu Chuẩn";
-            this.TieuChuan.FieldName = "TIEU_CHUAN";
-            this.TieuChuan.Name = "TieuChuan";
-            this.TieuChuan.OptionsColumn.AllowEdit = false;
-            this.TieuChuan.Visible = true;
-            this.TieuChuan.VisibleIndex = 6;
-            // 
-            // HanDung
-            // 
-            this.HanDung.Caption = "Hạn Dùng";
-            this.HanDung.FieldName = "HAN_DUNG";
-            this.HanDung.Name = "HanDung";
-            this.HanDung.OptionsColumn.AllowEdit = false;
-            this.HanDung.Visible = true;
-            this.HanDung.VisibleIndex = 13;
             // 
             // FrmThuoc
             // 
@@ -376,7 +376,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn TenThuoc;
         private DevExpress.XtraGrid.Columns.GridColumn HoatChat;
         private DevExpress.XtraGrid.Columns.GridColumn HamLuong;
-        private DevExpress.XtraGrid.Columns.GridColumn DuongDung;
         private DevExpress.XtraGrid.Columns.GridColumn QuyCach;
         private DevExpress.XtraGrid.Columns.GridColumn DonViTinh;
         private DevExpress.XtraGrid.Columns.GridColumn DonGia;
@@ -393,5 +392,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lookUpDonViTinh;
         private DevExpress.XtraGrid.Columns.GridColumn TieuChuan;
         private DevExpress.XtraGrid.Columns.GridColumn HanDung;
+        private DevExpress.XtraGrid.Columns.GridColumn DuongDung;
     }
 }

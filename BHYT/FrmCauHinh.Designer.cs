@@ -88,7 +88,7 @@
             this.txtServerName.Location = new System.Drawing.Point(126, 21);
             this.txtServerName.Name = "txtServerName";
             this.txtServerName.Size = new System.Drawing.Size(200, 22);
-            this.txtServerName.TabIndex = 1;
+            this.txtServerName.TabIndex = 0;
             // 
             // txtDatabaseName
             // 
@@ -104,7 +104,7 @@
             this.txtLogin.Location = new System.Drawing.Point(126, 82);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(159, 22);
-            this.txtLogin.TabIndex = 1;
+            this.txtLogin.TabIndex = 2;
             // 
             // txtPassword
             // 
@@ -113,7 +113,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(159, 22);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 3;
             // 
             // btnLuu
             // 
@@ -121,7 +121,7 @@
             this.btnLuu.Location = new System.Drawing.Point(146, 178);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 25);
-            this.btnLuu.TabIndex = 2;
+            this.btnLuu.TabIndex = 5;
             this.btnLuu.Text = "OK";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -142,7 +142,7 @@
             this.txtSoPhong.Location = new System.Drawing.Point(126, 138);
             this.txtSoPhong.Name = "txtSoPhong";
             this.txtSoPhong.Size = new System.Drawing.Size(159, 22);
-            this.txtSoPhong.TabIndex = 1;
+            this.txtSoPhong.TabIndex = 4;
             // 
             // FrmCauHinh
             // 

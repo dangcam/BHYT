@@ -167,32 +167,24 @@ namespace BHYT
             }
             return true;
         }
-        
 
-        private bool dateNgayVaoNgayRa_ValueChanged ()
+
+        private bool dateNgayVaoNgayRa_ValueChanged()
         {
-            DateTime dateVao = DateTime.ParseExact (dateNgayVao.Text, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
-            DateTime dateRa = DateTime.ParseExact (dateNgayRa.Text, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime dateVao = DateTime.ParseExact(dateNgayVao.Text, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime dateRa = DateTime.ParseExact(dateNgayRa.Text, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
             if (dateVao > dateRa)
             {
-                MessageBox.Show ("Ngày vào phải <= ngày ra!");
-                dateNgayVao.Focus ();
+                MessageBox.Show("Ngày vào phải <= ngày ra!");
+                dateNgayVao.Focus();
                 return false;
             }
             else
             {
-                TimeSpan ngayDTri = dateRa.Subtract (dateVao);
-                //if (cbLoaiKCB.SelectedIndex > 0)
-                //{
-                //    txtSoNgayDTri.Text = (ngayDTri.Days + 2).ToString ();
-                //}
-                //else
-                {
-                    txtSoNgayDTri.Text = (ngayDTri.Days + 1).ToString ();
-                }
+                TimeSpan ngayDTri = dateRa.Subtract(dateVao);
+                txtSoNgayDTri.Text = (ngayDTri.Days + 1).ToString();
                 return true;
             }
-
         }
 
         private bool dateGTBD_KT_ValueChanged ()
@@ -440,7 +432,7 @@ namespace BHYT
                 t_thuoc += int.Parse (drView["THANH_TIEN"].ToString ());
                 if (f)
                 {
-                    dsThuoc.Add (dr["MA_DICH_VU"].ToString () + "|" + dr["TEN_DICH_VU"], false);
+                    dsThuoc.Add (dr["MA_DICH_VU"].ToString () + "|" + dr["TEN_DICH_VU"] + "|" + dr["DON_GIA"], false);
                 }
                 data.Rows.Add (dr);
             }
@@ -781,15 +773,15 @@ namespace BHYT
                     err = "";
                     if (capNhat)
                     {
-                        if (dsThuoc.ContainsKey (thuoc.MaThuoc + "|" + thuoc.TenThuoc))
+                        if (dsThuoc.ContainsKey (thuoc.MaThuoc + "|" + thuoc.TenThuoc + "|" + thuoc.DonGia))
                         {
                             thongtinCT.SuaThuocCT (ref err, thuoc); //sửa tiền thuốc
-                            dsThuoc[thuoc.MaThuoc + "|" + thuoc.TenThuoc] = true;
+                            dsThuoc[thuoc.MaThuoc + "|" + thuoc.TenThuoc + "|" + thuoc.DonGia] = true;
                         }
                         else
                         {
                             thongtinCT.ThemThuocCT (ref err, thuoc);// thêm tiền thuốc
-                            dsThuoc.Add (thuoc.MaThuoc+"|"+thuoc.TenThuoc, true);
+                            dsThuoc.Add (thuoc.MaThuoc+"|"+thuoc.TenThuoc + "|" + thuoc.DonGia, true);
                         }
                         if(!string.IsNullOrEmpty(err))
                         {
@@ -799,7 +791,7 @@ namespace BHYT
                     else
                     {
                         thongtinCT.ThemThuocCT (ref err, thuoc);// thêm tiền thuốc
-                        dsThuoc.Add(thuoc.MaThuoc + "|" + thuoc.TenThuoc,false);
+                        dsThuoc.Add(thuoc.MaThuoc + "|" + thuoc.TenThuoc + "|" + thuoc.DonGia, false);
                         if (!string.IsNullOrEmpty (err))
                         {
                             MessageBox.Show (err);
@@ -814,7 +806,7 @@ namespace BHYT
                     {
                         if (dsThuoc[key] == false)
                         {
-                            thongtinCT.XoaThuocCT (ref err, thongtinBN.MaLK, key.Split('|')[0], key.Split ('|')[1]);
+                            thongtinCT.XoaThuocCT (ref err, thongtinBN.MaLK, key.Split('|')[0], key.Split ('|')[1],Utils.ToInt(key.Split('|')[2]));
                             dsThuoc.Remove (key);
                         }
                         else

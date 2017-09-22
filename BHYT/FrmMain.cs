@@ -11,6 +11,7 @@ namespace BHYT
         public Connection db = null;
 
         ReadConfig readConfig;
+        
         FrmDSCanLamSan frmCanLamSan;
         FrmNgoaiNoiTru frmNgoaiTru;
         FrmNhanVien frmNhanVien;
@@ -320,6 +321,13 @@ namespace BHYT
             }
             frmCanLamSan.WindowState = FormWindowState.Normal;
             frmCanLamSan.Show();
+        }
+
+        private void nhomCamLamSanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmNhomCanLamSan frmNhomCanLamSan;
+            frmNhomCanLamSan = new FrmNhomCanLamSan(db);
+            frmNhomCanLamSan.ShowDialog();
         }
     }
 }

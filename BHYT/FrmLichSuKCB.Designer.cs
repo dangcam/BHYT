@@ -208,7 +208,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmLichSuKCB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lịch sử Khám chửa bệnh";
+            this.Text = "Lịch sử Khám chữa bệnh";
             this.Load += new System.EventHandler(this.FrmLichSuKCB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();

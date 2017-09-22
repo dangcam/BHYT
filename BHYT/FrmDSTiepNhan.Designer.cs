@@ -63,6 +63,7 @@
             this.btnPhongKham3 = new System.Windows.Forms.Button();
             this.btnPhongKham2 = new System.Windows.Forms.Button();
             this.btnPhongKham1 = new System.Windows.Forms.Button();
+            this.btnCanLamSan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.SuspendLayout();
@@ -379,9 +380,9 @@
             // btnKeDonThuoc
             // 
             this.btnKeDonThuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKeDonThuoc.Location = new System.Drawing.Point(58, 46);
+            this.btnKeDonThuoc.Location = new System.Drawing.Point(30, 46);
             this.btnKeDonThuoc.Name = "btnKeDonThuoc";
-            this.btnKeDonThuoc.Size = new System.Drawing.Size(114, 30);
+            this.btnKeDonThuoc.Size = new System.Drawing.Size(110, 30);
             this.btnKeDonThuoc.TabIndex = 94;
             this.btnKeDonThuoc.Text = "Kê đơn thuốc";
             this.btnKeDonThuoc.UseVisualStyleBackColor = true;
@@ -390,9 +391,9 @@
             // btnChuyenNoiTru
             // 
             this.btnChuyenNoiTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChuyenNoiTru.Location = new System.Drawing.Point(206, 47);
+            this.btnChuyenNoiTru.Location = new System.Drawing.Point(161, 46);
             this.btnChuyenNoiTru.Name = "btnChuyenNoiTru";
-            this.btnChuyenNoiTru.Size = new System.Drawing.Size(114, 30);
+            this.btnChuyenNoiTru.Size = new System.Drawing.Size(110, 30);
             this.btnChuyenNoiTru.TabIndex = 94;
             this.btnChuyenNoiTru.Text = "Chuyển nội trú";
             this.btnChuyenNoiTru.UseVisualStyleBackColor = true;
@@ -442,6 +443,17 @@
             this.btnPhongKham1.UseVisualStyleBackColor = true;
             this.btnPhongKham1.Click += new System.EventHandler(this.btnPhongKham1_Click);
             // 
+            // btnCanLamSan
+            // 
+            this.btnCanLamSan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCanLamSan.Location = new System.Drawing.Point(295, 46);
+            this.btnCanLamSan.Name = "btnCanLamSan";
+            this.btnCanLamSan.Size = new System.Drawing.Size(110, 30);
+            this.btnCanLamSan.TabIndex = 94;
+            this.btnCanLamSan.Text = "Cận lâm sàn";
+            this.btnCanLamSan.UseVisualStyleBackColor = true;
+            this.btnCanLamSan.Click += new System.EventHandler(this.btnCanLamSan_Click);
+            // 
             // FrmDSTiepNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,6 +463,7 @@
             this.Controls.Add(this.btnPhongKham3);
             this.Controls.Add(this.btnPhongKham2);
             this.Controls.Add(this.btnPhongKham1);
+            this.Controls.Add(this.btnCanLamSan);
             this.Controls.Add(this.btnChuyenNoiTru);
             this.Controls.Add(this.btnKeDonThuoc);
             this.Controls.Add(this.gridControl);
@@ -517,5 +530,6 @@
         private System.Windows.Forms.Button btnPhongKham2;
         private System.Windows.Forms.Button btnPhongKham1;
         private DevExpress.XtraGrid.Columns.GridColumn MA_BENH;
+        private System.Windows.Forms.Button btnCanLamSan;
     }
 }

@@ -271,15 +271,15 @@ namespace BHYT
                                         try
                                         {
                                             string xml2 = "", xml3 = "";
-                                            if (mycontent.IndexOf("Xml2") > 0)
+                                            if (mycontent.IndexOf("Xml2") > 0 && mycontent.IndexOf("Xml2\":[]")<0)
                                             {
-                                                xml2 = mycontent.Substring(mycontent.IndexOf("Xml2"), mycontent.IndexOf("}]") - mycontent.IndexOf("Xml2") + 1);
+                                                xml2 = mycontent.Substring(mycontent.IndexOf("Xml2"), mycontent.IndexOf("]}") - mycontent.IndexOf("Xml2")+1);
                                                 xml2 = xml2.Replace("Xml2\":[", "");
-                                                mycontent=mycontent.Substring(mycontent.IndexOf("}]")+2);
+                                                mycontent=mycontent.Substring(mycontent.IndexOf("]}")+2);
                                             }
-                                            if (mycontent.IndexOf("Xml3") > 0)
+                                            if (mycontent.IndexOf("Xml3") > 0 && mycontent.IndexOf("Xml3\":[]") < 0)
                                             {
-                                                xml3 = mycontent.Substring(mycontent.IndexOf("Xml3"), mycontent.IndexOf("}]") - mycontent.IndexOf("Xml3") + 1);
+                                                xml3 = mycontent.Substring(mycontent.IndexOf("Xml3"), mycontent.IndexOf("]}") - mycontent.IndexOf("Xml3")+1);
                                                 xml3 = xml3.Replace("Xml3\":[", "");
                                             }
                                             frm.XML2 = xml2;

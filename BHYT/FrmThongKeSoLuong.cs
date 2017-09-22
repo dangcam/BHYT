@@ -28,6 +28,7 @@ namespace BHYT
             cbThang.SelectedIndex = 0;
             cbQuy.SelectedIndex = 0;
             cbTieuChi.SelectedIndex = 0;
+            cbLoaiKCB.SelectedIndex = 0;
 
             cbNam.Hide ();
             cbQuy.Hide ();
@@ -155,7 +156,7 @@ namespace BHYT
             switch (loai)
             {
                 case 0:
-                    dt = thongke.DSThongKeThuocSL (soLuong, ngayBD, ngayKT);
+                    dt = thongke.DSThongKeThuocSL (soLuong, ngayBD, ngayKT,cbLoaiKCB.SelectedIndex);
                     createThuoc (rpt, dt);
                     break;
                 case 1:

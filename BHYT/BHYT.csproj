@@ -128,6 +128,7 @@
     <Compile Include="Connection.cs" />
     <Compile Include="ConnectionDB.cs" />
     <Compile Include="DAO\BenhDAO.cs" />
+    <Compile Include="DAO\CanLamSanDAO.cs" />
     <Compile Include="DAO\DataBaseDAO.cs" />
     <Compile Include="DAO\KCBDAO.cs" />
     <Compile Include="DAO\ThongKeDAO.cs" />
@@ -249,6 +250,12 @@
     </Compile>
     <Compile Include="FrmMatKhau.Designer.cs">
       <DependentUpon>FrmMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNhomCanLamSan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNhomCanLamSan.Designer.cs">
+      <DependentUpon>FrmNhomCanLamSan.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmNV.cs">
       <SubType>Form</SubType>
@@ -501,6 +508,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNhanVien.resx">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNhomCanLamSan.resx">
+      <DependentUpon>FrmNhomCanLamSan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNV.resx">
       <DependentUpon>FrmNV.cs</DependentUpon>

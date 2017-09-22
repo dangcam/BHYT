@@ -462,13 +462,14 @@ namespace BHYT.DAO
                 new SqlParameter ("@MA_LK", maLK),
                  new SqlParameter ("@MA_DICH_VU", maDVKT));
         }
-        public bool XoaThuocCT (ref string err, string maLK, string maThuoc, string tenThuoc)
+        public bool XoaThuocCT (ref string err, string maLK, string maThuoc, string tenThuoc, int donGia)
         {
             return db.MyExecuteNonQuery ("SpXoaThuocCT",
                 CommandType.StoredProcedure, ref err,
                 new SqlParameter ("@MA_LK", maLK),
                 new SqlParameter ("@MA_THUOC", maThuoc),
-                new SqlParameter ("@TEN_THUOC", tenThuoc));
+                new SqlParameter ("@TEN_THUOC", tenThuoc),
+                new SqlParameter("@DON_GIA", donGia));
 
         }
         public bool SuaCheckout(ref string err, string maLK, int c)

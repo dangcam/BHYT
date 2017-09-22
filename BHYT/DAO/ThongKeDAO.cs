@@ -45,9 +45,15 @@ namespace BHYT.DAO
             return db.ExcuteQuery ("Select TEN_THUOC,SO_LUONG From THUOC_CT Where MA_LK = '" + maLK + "'",
                  CommandType.Text, null);
         }
-        public DataTable DSThongKeThuocSL (int soLuong, string ngayBD, string ngayKT)
+        public DataTable DSThongKeThuocSL (int soLuong, string ngayBD, string ngayKT, int loaiKCB)
         {
-            return db.ExcuteQuery ("SELECT * FROM getThongKeThuoc('" + soLuong + "','" + ngayBD + "','" + ngayKT + "') ORDER BY SO_LUONG DESC",
+            string sql = "SELECT * FROM getThongKeThuoc('" + soLuong + "','" + ngayBD + "','" + ngayKT + "') ";
+            if(loaiKCB!=0)
+            {
+                sql += " WHERE MA_LOAI_KCB=" + loaiKCB;
+            }
+            sql += " ORDER BY SO_LUONG DESC";
+            return db.ExcuteQuery (sql,
                 CommandType.Text, null);
         }
         public DataTable DSThongKeThuocCP (int soLuong, string ngayBD, string ngayKT)

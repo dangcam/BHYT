@@ -53,7 +53,10 @@ namespace BHYT
                 {
                     gridControl.DataSource = dt.Select ("PHONG = " + AppConfig.SoPhong).CopyToDataTable ();
                 }
-                catch { }
+                catch
+                {
+                    gridControl.DataSource = null;
+                }
             }
             else
             {
@@ -178,6 +181,11 @@ namespace BHYT
                     LoadData ();
                 }
             }
+        }
+
+        private void btnCanLamSan_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

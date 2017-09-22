@@ -195,20 +195,21 @@ namespace BHYT
                 {
                     string maDichVu = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[0].ToString ();
                     string tenDV = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[1].ToString ();
+                    string hamLuong = (lookUpLoaiChiPhi.GetSelectedDataRow() as DataRowView)[3].ToString();
                     foreach (DataRowView dr in (gridControlThuoc.DataSource as DataView))
                     {
-                        if (dr["MA_THUOC"].ToString () == maDichVu && dr["TEN_THUOC"].ToString () == tenDV)
+                        if (dr["MA_THUOC"].ToString () == maDichVu && dr["TEN_THUOC"].ToString () == tenDV && hamLuong == dr["HAM_LUONG"].ToString())
                         {
                             MessageBox.Show ("Thuốc đã chọn, nhập lại số lượng!");
                             return;
                         }
                     }
                     DataRowView drNew = (gridControlThuoc.DataSource as DataView).AddNew ();
-                    drNew["MA_THUOC"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[0].ToString ();
-                    drNew["TEN_THUOC"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[1].ToString ();
+                    drNew["MA_THUOC"] = maDichVu;
+                    drNew["TEN_THUOC"] = tenDV;
                     drNew["DON_GIA"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[8].ToString ();
                     drNew["DON_VI_TINH"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[7].ToString ();
-                    drNew["HAM_LUONG"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[3].ToString ();
+                    drNew["HAM_LUONG"] = hamLuong;
                     drNew["DUONG_DUNG"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[4].ToString ();
                     drNew["SO_DANG_KY"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[9].ToString ();
                     drNew["NHOM"] = (lookUpLoaiChiPhi.GetSelectedDataRow () as DataRowView)[15].ToString ();
@@ -374,15 +375,15 @@ namespace BHYT
                 thuoc.Nhom = drView["NHOM"].ToString();
                 err = "";
 
-                if (dsThuoc.ContainsKey(thuoc.MaThuoc + "|" + thuoc.TenThuoc))
+                if (dsThuoc.ContainsKey(thuoc.MaThuoc + "|" + thuoc.TenThuoc + "|" + thuoc.DonGia))
                 {
                     thongtinCT.SuaThuocCT(ref err, thuoc); //sửa tiền thuốc
-                    dsThuoc[thuoc.MaThuoc + "|" + thuoc.TenThuoc] = true;
+                    dsThuoc[thuoc.MaThuoc + "|" + thuoc.TenThuoc + "|" + thuoc.DonGia] = true;
                 }
                 else
                 {
                     thongtinCT.ThemThuocCT(ref err, thuoc);// thêm tiền thuốc
-                    dsThuoc.Add(thuoc.MaThuoc + "|" + thuoc.TenThuoc, true);
+                    dsThuoc.Add(thuoc.MaThuoc + "|" + thuoc.TenThuoc + "|" + thuoc.DonGia, true);
                 }
                 if (!string.IsNullOrEmpty(err))
                 {
@@ -396,7 +397,7 @@ namespace BHYT
                 err = "";
                 if (dsThuoc[key] == false)
                 {
-                    thongtinCT.XoaThuocCT(ref err, thongtinBN.MaLK, key.Split('|')[0], key.Split('|')[1]);
+                    thongtinCT.XoaThuocCT(ref err, thongtinBN.MaLK, key.Split('|')[0], key.Split('|')[1],Utils.ToInt(key.Split('|')[2]));
                     dsThuoc.Remove(key);
                 }
                 else
@@ -643,7 +644,7 @@ namespace BHYT
                     foreach (DataRowView drView in dvTienThuoc)
                     {
 
-                        dsThuoc.Add (drView["MA_THUOC"].ToString () + "|" + drView["TEN_THUOC"], false);
+                        dsThuoc.Add (drView["MA_THUOC"].ToString () + "|" + drView["TEN_THUOC"] + "|" + drView["DON_GIA"], false);
                     }
                     foreach(DataRowView drView in dvTienDVKT)
                     {

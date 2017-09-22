@@ -41,6 +41,8 @@
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.dateDenNgay = new System.Windows.Forms.DateTimePicker();
             this.dateTuNgay = new System.Windows.Forms.DateTimePicker();
+            this.cbLoaiKCB = new System.Windows.Forms.ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnTongHop
@@ -196,11 +198,37 @@
             this.dateTuNgay.Size = new System.Drawing.Size(114, 22);
             this.dateTuNgay.TabIndex = 16;
             // 
+            // cbLoaiKCB
+            // 
+            this.cbLoaiKCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLoaiKCB.FormattingEnabled = true;
+            this.cbLoaiKCB.Items.AddRange(new object[] {
+            "0. Tất Cả",
+            "1. Khám bệnh",
+            "2. Điều trị ngoại trú",
+            "3. Điều trị nội trú"});
+            this.cbLoaiKCB.Location = new System.Drawing.Point(361, 91);
+            this.cbLoaiKCB.Name = "cbLoaiKCB";
+            this.cbLoaiKCB.Size = new System.Drawing.Size(163, 24);
+            this.cbLoaiKCB.TabIndex = 62;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(292, 95);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(66, 16);
+            this.label31.TabIndex = 63;
+            this.label31.Text = "Loại KCB:";
+            // 
             // FrmThongKeSoLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 181);
+            this.Controls.Add(this.cbLoaiKCB);
+            this.Controls.Add(this.label31);
             this.Controls.Add(this.dateDenNgay);
             this.Controls.Add(this.dateTuNgay);
             this.Controls.Add(this.txtSoLuong);
@@ -239,5 +267,7 @@
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.DateTimePicker dateDenNgay;
         private System.Windows.Forms.DateTimePicker dateTuNgay;
+        private System.Windows.Forms.ComboBox cbLoaiKCB;
+        private System.Windows.Forms.Label label31;
     }
 }
