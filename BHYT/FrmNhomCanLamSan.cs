@@ -51,6 +51,7 @@ namespace BHYT
             txtMaNhom.Text = "";
             txtTenNhom.Text = "";
             txtPhong.Text = "";
+            txtMauSo.Text = "";
             txtMaNhom.Focus();
         }
 
@@ -72,6 +73,7 @@ namespace BHYT
             canlamsan.TenNhom = txtTenNhom.Text;
             canlamsan.Phong = txtPhong.Text;
             canlamsan.Nhom = cbNhom.SelectedValue.ToString();
+            canlamsan.MauSo = txtMauSo.Text;
             string err = "";
             if(them)
             {
@@ -112,11 +114,13 @@ namespace BHYT
             DataRow dr = gridView.GetDataRow(e.RowHandle);
             if(dr!=null)
             {
+                them = false;
                 txtMaNhom.Text = dr["MaNhom"].ToString();
                 canlamsan.MaNhom = txtMaNhom.Text;
                 txtTenNhom.Text = dr["TenNhom"].ToString();
                 txtPhong.Text = dr["Phong"].ToString();
                 cbNhom.SelectedValue = dr["NhomChinh"];
+                txtMauSo.Text = dr["MauSo"].ToString();
             }
         }
     }

@@ -47,6 +47,9 @@
             this.btnMoi = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.MauSo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtMauSo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit)).BeginInit();
@@ -85,14 +88,14 @@
             this.txtTenNhom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenNhom.Location = new System.Drawing.Point(248, 12);
             this.txtTenNhom.Name = "txtTenNhom";
-            this.txtTenNhom.Size = new System.Drawing.Size(154, 22);
+            this.txtTenNhom.Size = new System.Drawing.Size(185, 22);
             this.txtTenNhom.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(408, 14);
+            this.label3.Location = new System.Drawing.Point(301, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 16);
             this.label3.TabIndex = 0;
@@ -101,16 +104,16 @@
             // txtPhong
             // 
             this.txtPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhong.Location = new System.Drawing.Point(464, 12);
+            this.txtPhong.Location = new System.Drawing.Point(357, 42);
             this.txtPhong.Name = "txtPhong";
-            this.txtPhong.Size = new System.Drawing.Size(54, 22);
-            this.txtPhong.TabIndex = 2;
+            this.txtPhong.Size = new System.Drawing.Size(76, 22);
+            this.txtPhong.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(524, 16);
+            this.label4.Location = new System.Drawing.Point(448, 15);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 16);
             this.label4.TabIndex = 0;
@@ -120,10 +123,10 @@
             // 
             this.cbNhom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNhom.FormattingEnabled = true;
-            this.cbNhom.Location = new System.Drawing.Point(577, 12);
+            this.cbNhom.Location = new System.Drawing.Point(504, 12);
             this.cbNhom.Name = "cbNhom";
-            this.cbNhom.Size = new System.Drawing.Size(141, 24);
-            this.cbNhom.TabIndex = 3;
+            this.cbNhom.Size = new System.Drawing.Size(214, 24);
+            this.cbNhom.TabIndex = 2;
             // 
             // gridControl
             // 
@@ -143,6 +146,7 @@
             this.MaNhom,
             this.TenNhom,
             this.Phong,
+            this.MauSo,
             this.NhomChinh});
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
@@ -157,7 +161,7 @@
             this.MaNhom.OptionsColumn.AllowEdit = false;
             this.MaNhom.Visible = true;
             this.MaNhom.VisibleIndex = 0;
-            this.MaNhom.Width = 108;
+            this.MaNhom.Width = 90;
             // 
             // TenNhom
             // 
@@ -167,7 +171,7 @@
             this.TenNhom.OptionsColumn.AllowEdit = false;
             this.TenNhom.Visible = true;
             this.TenNhom.VisibleIndex = 1;
-            this.TenNhom.Width = 277;
+            this.TenNhom.Width = 264;
             // 
             // Phong
             // 
@@ -177,7 +181,7 @@
             this.Phong.OptionsColumn.AllowEdit = false;
             this.Phong.Visible = true;
             this.Phong.VisibleIndex = 2;
-            this.Phong.Width = 103;
+            this.Phong.Width = 71;
             // 
             // NhomChinh
             // 
@@ -187,8 +191,8 @@
             this.NhomChinh.Name = "NhomChinh";
             this.NhomChinh.OptionsColumn.AllowEdit = false;
             this.NhomChinh.Visible = true;
-            this.NhomChinh.VisibleIndex = 3;
-            this.NhomChinh.Width = 208;
+            this.NhomChinh.VisibleIndex = 4;
+            this.NhomChinh.Width = 203;
             // 
             // repositoryItemLookUpEdit
             // 
@@ -204,7 +208,7 @@
             this.btnMoi.Location = new System.Drawing.Point(504, 42);
             this.btnMoi.Name = "btnMoi";
             this.btnMoi.Size = new System.Drawing.Size(70, 23);
-            this.btnMoi.TabIndex = 5;
+            this.btnMoi.TabIndex = 6;
             this.btnMoi.Text = "Mới";
             this.btnMoi.UseVisualStyleBackColor = true;
             this.btnMoi.Click += new System.EventHandler(this.btnMoi_Click);
@@ -215,7 +219,7 @@
             this.btnLuu.Location = new System.Drawing.Point(580, 42);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(70, 23);
-            this.btnLuu.TabIndex = 4;
+            this.btnLuu.TabIndex = 5;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -226,10 +230,38 @@
             this.btnXoa.Location = new System.Drawing.Point(656, 42);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(70, 23);
-            this.btnXoa.TabIndex = 6;
+            this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // MauSo
+            // 
+            this.MauSo.Caption = "Mẫu số";
+            this.MauSo.FieldName = "MauSo";
+            this.MauSo.Name = "MauSo";
+            this.MauSo.OptionsColumn.AllowEdit = false;
+            this.MauSo.Visible = true;
+            this.MauSo.VisibleIndex = 3;
+            this.MauSo.Width = 68;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(15, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 16);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Mẫu số:";
+            // 
+            // txtMauSo
+            // 
+            this.txtMauSo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMauSo.Location = new System.Drawing.Point(84, 43);
+            this.txtMauSo.Name = "txtMauSo";
+            this.txtMauSo.Size = new System.Drawing.Size(195, 22);
+            this.txtMauSo.TabIndex = 3;
             // 
             // FrmNhomCanLamSan
             // 
@@ -245,7 +277,9 @@
             this.Controls.Add(this.txtTenNhom);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtMauSo);
             this.Controls.Add(this.txtMaNhom);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -283,5 +317,8 @@
         private System.Windows.Forms.Button btnMoi;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnXoa;
+        private DevExpress.XtraGrid.Columns.GridColumn MauSo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtMauSo;
     }
 }

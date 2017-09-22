@@ -450,6 +450,7 @@ namespace BHYT
             txtMaBN.Text = thongtinCT.getMaBN (1 + DateTime.Now.ToString ("yyyyMMdd"));
             thongtinBN.MaLK = AppConfig.CoSoKCB + "PR" + DateTime.Now.Hour.ToString ().Substring (0, 1) + DateTime.Now.Minute.ToString ().Substring (0, 1) + DateTime.Now.Millisecond.ToString ().Substring (0, 1) + txtMaBN.Text;
             them = true;
+            txtQR.ReadOnly = !them;
             LoadData ();
             txtMucHuong.Text = "100";
         }
@@ -635,6 +636,7 @@ namespace BHYT
                     MessageBox.Show (err);
                 }
                 them = false;
+                txtQR.ReadOnly = !them;
                 LoadData ();
                 InSoPhieu ();
                 btnMoi_Click (null, null);
@@ -652,6 +654,7 @@ namespace BHYT
             txtMaBN.Text = thongtinCT.getMaBN (1 + DateTime.Now.ToString ("yyyyMMdd"));
             thongtinBN.MaLK = AppConfig.CoSoKCB + "PR" + DateTime.Now.Hour.ToString ().Substring (0, 1) + DateTime.Now.Minute.ToString ().Substring (0, 1) + DateTime.Now.Millisecond.ToString ().Substring (0, 1) + txtMaBN.Text;
             them = true;
+            txtQR.ReadOnly = !them;
             txtQR.Focus ();
             txtQR.Text = "";
             txtBHYT.Text = "";
@@ -698,6 +701,7 @@ namespace BHYT
         private void gridView_RowClick (object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             them = false;
+            txtQR.ReadOnly = !them;
             thongtinBN = thongtinCT.getThongTin (gridView.GetDataRow (e.RowHandle)["MA_LK"].ToString());
             if (thongtinBN != null)
             {
@@ -719,6 +723,7 @@ namespace BHYT
         }
         private void InSoPhieu()
         {
+            dr = null;
             if (them == false)
             {
                 rptSoPhieu rpt = new rptSoPhieu ();

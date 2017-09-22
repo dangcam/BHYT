@@ -9,6 +9,7 @@ namespace BHYT
     public partial class FrmDSTiepNhan : Form
     {
         FrmKeDon frmKeDon;
+        FrmChiDinhCLS frmChiDinh;
         DataTable dt = null;
         THONGTIN_CTDAO thongtinCT = null;
         DataRow dr = null;
@@ -17,6 +18,7 @@ namespace BHYT
             InitializeComponent ();
             thongtinCT = new THONGTIN_CTDAO (db);
             frmKeDon = new FrmKeDon (db);
+            frmChiDinh = new FrmChiDinhCLS(db);
         }
 
         private void FrmDSTiepNhan_Load (object sender, EventArgs e)
@@ -185,7 +187,18 @@ namespace BHYT
 
         private void btnCanLamSan_Click(object sender, EventArgs e)
         {
-
+            dr = gridView.GetFocusedDataRow();
+            if (dr != null)
+            {
+                if (dr["NGAY_RA"].ToString().Length > 0)
+                {
+                    XtraMessageBox.Show("Bệnh nhân này đã ra viện!");
+                    return;
+                }
+                frmChiDinh.MaLienKet = dr["MA_LK"].ToString();
+                frmChiDinh.HoTen = dr["HO_TEN"].ToString();
+                frmChiDinh.ShowDialog();
+            }
         }
     }
 }
