@@ -197,6 +197,10 @@ namespace BHYT
                 }
                 frmChiDinh.MaLienKet = dr["MA_LK"].ToString();
                 frmChiDinh.HoTen = dr["HO_TEN"].ToString();
+                frmChiDinh.DiaChi = dr["DIA_CHI"].ToString();
+                frmChiDinh.NamSinh = dr["NGAY_SINH"].ToString();
+                frmChiDinh.TheBHYT = dr["MA_THE"].ToString();
+                frmChiDinh.GioiTinh = dr["GIOI_TINH"].ToString();
                 frmChiDinh.ShowDialog();
             }
         }

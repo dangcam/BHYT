@@ -42,12 +42,12 @@
             this.MaNhom = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenNhom = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Phong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MauSo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NhomChinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.btnMoi = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.MauSo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMauSo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
@@ -183,6 +183,16 @@
             this.Phong.VisibleIndex = 2;
             this.Phong.Width = 71;
             // 
+            // MauSo
+            // 
+            this.MauSo.Caption = "Mẫu số";
+            this.MauSo.FieldName = "MauSo";
+            this.MauSo.Name = "MauSo";
+            this.MauSo.OptionsColumn.AllowEdit = false;
+            this.MauSo.Visible = true;
+            this.MauSo.VisibleIndex = 3;
+            this.MauSo.Width = 68;
+            // 
             // NhomChinh
             // 
             this.NhomChinh.Caption = "Nhóm DVKT";
@@ -235,16 +245,6 @@
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // MauSo
-            // 
-            this.MauSo.Caption = "Mẫu số";
-            this.MauSo.FieldName = "MauSo";
-            this.MauSo.Name = "MauSo";
-            this.MauSo.OptionsColumn.AllowEdit = false;
-            this.MauSo.Visible = true;
-            this.MauSo.VisibleIndex = 3;
-            this.MauSo.Width = 68;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -260,7 +260,7 @@
             this.txtMauSo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMauSo.Location = new System.Drawing.Point(84, 43);
             this.txtMauSo.Name = "txtMauSo";
-            this.txtMauSo.Size = new System.Drawing.Size(195, 22);
+            this.txtMauSo.Size = new System.Drawing.Size(196, 22);
             this.txtMauSo.TabIndex = 3;
             // 
             // FrmNhomCanLamSan

@@ -97,6 +97,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.btnIn = new System.Windows.Forms.Button();
             this.btnLSKCB = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtDu5Nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateGTKT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateGTBD.Properties)).BeginInit();
@@ -531,6 +532,7 @@
             this.groupControl.AppearanceCaption.Options.UseFont = true;
             this.groupControl.Controls.Add(this.label17);
             this.groupControl.Controls.Add(this.label16);
+            this.groupControl.Controls.Add(this.label18);
             this.groupControl.Controls.Add(this.label15);
             this.groupControl.Controls.Add(this.label14);
             this.groupControl.Controls.Add(this.lblPhongKham4);
@@ -883,6 +885,16 @@
             this.btnLSKCB.UseVisualStyleBackColor = true;
             this.btnLSKCB.Click += new System.EventHandler(this.btnLSKCB_Click);
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(1002, 36);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(94, 16);
+            this.label18.TabIndex = 77;
+            this.label18.Text = "Phòng khám 3:";
+            // 
             // FrmKhamBHYT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1019,5 +1031,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn STTPHONG;
         private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.Button btnLSKCB;
+        private System.Windows.Forms.Label label18;
     }
 }

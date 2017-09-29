@@ -25,7 +25,9 @@ namespace BHYT
             {
                 Application.Run (new FrmLoad ());
             }
-            catch { }
+            catch (ThreadAbortException e) {
+                Thread.ResetAbort();
+            }
         }
         public static void Stop()
         {

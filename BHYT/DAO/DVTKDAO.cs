@@ -23,18 +23,18 @@ namespace BHYT.DAO
 
         public DataTable DSCanLamSan ()
         {
-            return db.ExcuteQuery ("Select MA_DVKT,TEN_DVKT,MA_NHOM From DVKT WHERE CLS IS NULL OR CLS = 0",
+            return db.ExcuteQuery ("Select MA_DVKT,TEN_DVKT,MA_NHOM From DVKT WHERE CLS IS NULL",
                 CommandType.Text, null);
         }
 
-        public DataTable DSCanLamSan (int id)
+        public DataTable DSCanLamSan (string id)
         {
-            return db.ExcuteQuery ("Select MA_DVKT,TEN_DVKT,MA_NHOM From DVKT WHERE CLS = " + id,
+            return db.ExcuteQuery ("Select MA_DVKT,TEN_DVKT,MA_NHOM From DVKT WHERE CLS = '" + id+"'",
                 CommandType.Text, null);
         }
         public DataTable DSCLS ()
         {
-            return db.ExcuteQuery ("Select * From CANLAMSAN",
+            return db.ExcuteQuery ("Select * From NHOMCLS",
                 CommandType.Text, null);
         }
 
@@ -90,7 +90,7 @@ namespace BHYT.DAO
                 new SqlParameter ("@ID", id),
                 new SqlParameter ("@TEN", ten));
         }
-        public bool SuaDVKTCLS (ref string err, string maDVKT, int cls)
+        public bool SuaDVKTCLS (ref string err, string maDVKT, string cls)
         {
             return db.MyExecuteNonQuery ("SpSuaDVKTCLS",
                 CommandType.StoredProcedure, ref err,

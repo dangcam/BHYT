@@ -588,7 +588,8 @@ namespace BHYT.DAO
                 new SqlParameter ("@NGAY_YL", dvkt.NgayYLenh),
                 new SqlParameter ("@NGAY_QK", dvkt.NgayQK),
                 new SqlParameter ("@MA_PTTT", dvkt.MaPTTT),
-                new SqlParameter("@KET_QUA", dvkt.KetQua));
+                new SqlParameter("@KET_QUA", dvkt.KetQua),
+                new SqlParameter("@MaNhom", dvkt.MaNhomCLS));
         }
         public bool SuaDVKTCT (ref string err, DVKT_CTVO dvkt)
         {
@@ -610,7 +611,8 @@ namespace BHYT.DAO
                 new SqlParameter ("@NGAY_YL", dvkt.NgayYLenh),
                 new SqlParameter ("@NGAY_QK", dvkt.NgayQK),
                 new SqlParameter ("@MA_PTTT", dvkt.MaPTTT),
-                new SqlParameter("@KET_QUA", dvkt.KetQua));
+                new SqlParameter("@KET_QUA", dvkt.KetQua),
+                new SqlParameter("@MaNhom", dvkt.MaNhomCLS));
         }
         public bool SuaDVKTCTCLS(ref string err, string malk,string madichvu,string kq)
         {

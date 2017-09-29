@@ -29,8 +29,8 @@ namespace BHYT
         private void FrmCanLamSan_Load (object sender, EventArgs e)
         {
             them = true;
-            lookUpCanLamSan.Properties.DisplayMember = "TEN";
-            lookUpCanLamSan.Properties.ValueMember = "ID";
+            lookUpCanLamSan.Properties.DisplayMember = "TenNhom";
+            lookUpCanLamSan.Properties.ValueMember = "MaNhom";
             repositoryItemLookNhom.DataSource = dvkt.DSNhom ();
             repositoryItemLookNhom.ValueMember = "MA_NHOM";
             repositoryItemLookNhom.DisplayMember = "TEN_NHOM";
@@ -79,7 +79,7 @@ namespace BHYT
             {
                 txtId.Text = dr[0].ToString ();
                 txtTen.Text = dr[1].ToString ();
-                gridControlDS.DataSource = dvkt.DSCanLamSan (Utils.ToInt (txtId.Text));
+                gridControlDS.DataSource = dvkt.DSCanLamSan (txtId.Text);
                 them = false;
             }
         }
@@ -96,7 +96,7 @@ namespace BHYT
                     drAdd["MA_DVKT"] = dr["MA_DVKT"];
                     drAdd["TEN_DVKT"] = dr["TEN_DVKT"];
                     string err = "";
-                    if(!dvkt.SuaDVKTCLS(ref err,drAdd["MA_DVKT"].ToString(),Utils.ToInt(txtId.Text)))
+                    if(!dvkt.SuaDVKTCLS(ref err,drAdd["MA_DVKT"].ToString(),txtId.Text))
                     {
                         XtraMessageBox.Show (err, "Lỗi");
                         return;
@@ -118,7 +118,7 @@ namespace BHYT
                     drAdd["MA_DVKT"] = dr["MA_DVKT"];
                     drAdd["TEN_DVKT"] = dr["TEN_DVKT"];
                     string err = "";
-                    if (!dvkt.SuaDVKTCLS (ref err, drAdd["MA_DVKT"].ToString (), 0))
+                    if (!dvkt.SuaDVKTCLS (ref err, drAdd["MA_DVKT"].ToString (), null))
                     {
                         XtraMessageBox.Show (err, "Lỗi");
                         return;

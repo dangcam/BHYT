@@ -20,6 +20,10 @@ namespace BHYT.DAO
         public string Phong { get; set; }
         public string Nhom { get; set; }
         public string MauSo { get; set; }
+        // CanLamSan CT
+        public string MaLK { get; set; }
+        public string ChuanDoan { get; set; }
+        public string YeuCau { get; set; }
         public DataTable DSNhomDVKT()
         {
             return db.ExcuteQuery("Select MA_NHOM,TEN_NHOM From NHOM WHERE MA_NHOM!='10' AND MA_NHOM!='13'"
@@ -46,6 +50,16 @@ namespace BHYT.DAO
                 new SqlParameter("@Phong", Phong),
                 new SqlParameter("@NhomChinh",Nhom),
                 new SqlParameter("@MauSo", MauSo));
+        }
+        public bool CanLamSan_CT(ref string err, string Action)
+        {
+            return db.MyExecuteNonQuery("SpCanLamSan_CT",
+                CommandType.StoredProcedure, ref err,
+                new SqlParameter("@Action", Action),
+                new SqlParameter("@MA_LK", MaLK),
+                new SqlParameter("@MaNhom", MaNhom),
+                new SqlParameter("@ChuanDoan", ChuanDoan),
+                new SqlParameter("@YeuCau", YeuCau));
         }
     }
 }

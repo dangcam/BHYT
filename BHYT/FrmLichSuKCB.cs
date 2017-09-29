@@ -1,4 +1,6 @@
 ﻿using BHYT.DAO;
+using BHYT.JSON;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -264,6 +266,7 @@ namespace BHYT
                             using (HttpContent content = response.Content)
                             {
                                 string mycontent = await content.ReadAsStringAsync();
+                                //var list = JsonConvert.DeserializeObject<List<LichSuKCB>>(mycontent);
                                 string ketqua = mycontent.Split(',')[0].Split(':')[1].Replace("\"", "");
                                 switch (ketqua)
                                 {
@@ -273,9 +276,9 @@ namespace BHYT
                                             string xml2 = "", xml3 = "";
                                             if (mycontent.IndexOf("Xml2") > 0 && mycontent.IndexOf("Xml2\":[]")<0)
                                             {
-                                                xml2 = mycontent.Substring(mycontent.IndexOf("Xml2"), mycontent.IndexOf("]}") - mycontent.IndexOf("Xml2")+1);
+                                                xml2 = mycontent.Substring(mycontent.IndexOf("Xml2"), mycontent.IndexOf("}]") - mycontent.IndexOf("Xml2")+1);
                                                 xml2 = xml2.Replace("Xml2\":[", "");
-                                                mycontent=mycontent.Substring(mycontent.IndexOf("]}")+2);
+                                                mycontent=mycontent.Substring(mycontent.IndexOf("}]")+2);
                                             }
                                             if (mycontent.IndexOf("Xml3") > 0 && mycontent.IndexOf("Xml3\":[]") < 0)
                                             {
@@ -300,9 +303,9 @@ namespace BHYT
                         }
                     }
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Không có kết nối internet!", "Lỗi");
+                    MessageBox.Show(ex.Message, "Lỗi");
                 }
             }
         }

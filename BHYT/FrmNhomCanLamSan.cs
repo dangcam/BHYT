@@ -115,6 +115,7 @@ namespace BHYT
             if(dr!=null)
             {
                 them = false;
+                txtMaNhom.ReadOnly = true;
                 txtMaNhom.Text = dr["MaNhom"].ToString();
                 canlamsan.MaNhom = txtMaNhom.Text;
                 txtTenNhom.Text = dr["TenNhom"].ToString();

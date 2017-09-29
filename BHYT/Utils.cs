@@ -50,6 +50,17 @@ namespace BHYT
                 return null;
             }
         }
+        public  static bool ToBool(object value, bool defaultvalue = false)
+        {
+            try
+            {
+                return Convert.ToBoolean(value);
+            }
+            catch
+            {
+                return defaultvalue;
+            }
+        }
         public static string ParseDates (string date)
         {
             try

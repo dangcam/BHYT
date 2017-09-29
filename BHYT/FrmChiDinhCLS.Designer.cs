@@ -40,6 +40,7 @@
             this.ChuanDoan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.YeuCau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnIn = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +86,7 @@
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
             this.gridView.OptionsView.ShowGroupPanel = false;
+            this.gridView.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView_CellValueChanged);
             // 
             // MaLK
             // 
@@ -117,7 +119,7 @@
             this.TenNhom.Name = "TenNhom";
             this.TenNhom.OptionsColumn.AllowEdit = false;
             this.TenNhom.Visible = true;
-            this.TenNhom.VisibleIndex = 2;
+            this.TenNhom.VisibleIndex = 1;
             this.TenNhom.Width = 200;
             // 
             // ChuanDoan
@@ -128,7 +130,7 @@
             this.ChuanDoan.FieldName = "ChuanDoan";
             this.ChuanDoan.Name = "ChuanDoan";
             this.ChuanDoan.Visible = true;
-            this.ChuanDoan.VisibleIndex = 3;
+            this.ChuanDoan.VisibleIndex = 2;
             this.ChuanDoan.Width = 200;
             // 
             // YeuCau
@@ -139,7 +141,7 @@
             this.YeuCau.FieldName = "YeuCau";
             this.YeuCau.Name = "YeuCau";
             this.YeuCau.Visible = true;
-            this.YeuCau.VisibleIndex = 4;
+            this.YeuCau.VisibleIndex = 3;
             this.YeuCau.Width = 305;
             // 
             // btnIn
@@ -152,11 +154,22 @@
             this.btnIn.Text = "In phiếu";
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
+            // btnLuu
+            // 
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
+            this.btnLuu.Location = new System.Drawing.Point(637, 13);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(57, 23);
+            this.btnLuu.TabIndex = 4;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
             // FrmChiDinhCLS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(787, 311);
+            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnIn);
             this.Controls.Add(this.gridControl);
             this.Controls.Add(this.txtHoTen);
@@ -188,5 +201,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn ChuanDoan;
         private DevExpress.XtraGrid.Columns.GridColumn YeuCau;
         private DevExpress.XtraEditors.SimpleButton btnIn;
+        private DevExpress.XtraEditors.SimpleButton btnLuu;
     }
 }

@@ -24,6 +24,7 @@ namespace BHYT.VO
         private string ngayQK;
         private int maPTTT;
         private string ketQua=null;
+        private string maNhomCLS = null;
         public string MaLK
         {
             get
@@ -242,6 +243,19 @@ namespace BHYT.VO
             set
             {
                 ketQua = value;
+            }
+        }
+
+        public string MaNhomCLS
+        {
+            get
+            {
+                return maNhomCLS;
+            }
+
+            set
+            {
+                maNhomCLS = value;
             }
         }
     }

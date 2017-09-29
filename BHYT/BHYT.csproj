@@ -348,6 +348,73 @@
       <DependentUpon>FrmVTYT.cs</DependentUpon>
     </Compile>
     <Compile Include="ImportExcel.cs" />
+    <Compile Include="JSON\LichSuKCB.cs" />
+    <Compile Include="MauSo\rptMauSo_19.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_19.Designer.cs">
+      <DependentUpon>rptMauSo_19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_22.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_22.Designer.cs">
+      <DependentUpon>rptMauSo_22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_23.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_23.Designer.cs">
+      <DependentUpon>rptMauSo_23.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_25.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_25.Designer.cs">
+      <DependentUpon>rptMauSo_25.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_27.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_27.Designer.cs">
+      <DependentUpon>rptMauSo_27.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_28.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_28.Designer.cs">
+      <DependentUpon>rptMauSo_28.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_33.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_33.Designer.cs">
+      <DependentUpon>rptMauSo_33.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_340.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_340.Designer.cs">
+      <DependentUpon>rptMauSo_340.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_341.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_341.Designer.cs">
+      <DependentUpon>rptMauSo_341.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_342.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_342.Designer.cs">
+      <DependentUpon>rptMauSo_342.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MauSo\rptPhieuYeuCau.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MauSo\rptPhieuYeuCau.Designer.cs">
+      <DependentUpon>rptPhieuYeuCau.cs</DependentUpon>
+    </Compile>
     <Compile Include="rptChiPhi.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -563,6 +630,39 @@
     <EmbeddedResource Include="FrmVTYT.resx">
       <DependentUpon>FrmVTYT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MauSo\rptMauSo_19.resx">
+      <DependentUpon>rptMauSo_19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MauSo\rptMauSo_22.resx">
+      <DependentUpon>rptMauSo_22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MauSo\rptMauSo_23.resx">
+      <DependentUpon>rptMauSo_23.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MauSo\rptMauSo_25.resx">
+      <DependentUpon>rptMauSo_25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MauSo\rptMauSo_27.resx">
+      <DependentUpon>rptMauSo_27.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MauSo\rptMauSo_28.resx">
+      <DependentUpon>rptMauSo_28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MauSo\rptMauSo_33.resx">
+      <DependentUpon>rptMauSo_33.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MauSo\rptMauSo_340.resx">
+      <DependentUpon>rptMauSo_340.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MauSo\rptMauSo_341.resx">
+      <DependentUpon>rptMauSo_341.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MauSo\rptMauSo_342.resx">
+      <DependentUpon>rptMauSo_342.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MauSo\rptPhieuYeuCau.resx">
+      <DependentUpon>rptPhieuYeuCau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -637,6 +737,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy "$(ProjectDir)\config.xml" "$(ProjectDir)bin\$(ConfigurationName)"
