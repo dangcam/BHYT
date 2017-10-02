@@ -321,7 +321,6 @@ namespace BHYT
 
         private void btnInDon_Click (object sender, EventArgs e)
         {
-
             createReport ();
             Luu();
         }

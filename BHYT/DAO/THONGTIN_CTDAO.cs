@@ -350,13 +350,27 @@ namespace BHYT.DAO
             return db.ExcuteQuery ("Select * From DVKT_CT Where MA_LK = '"+maLK+"' And MA_NHOM = '"+maNhom+"'",
                 CommandType.Text, null);
         }
+        public DataTable DSDVKTCLS(string maLK, string maNhom)
+        {
+            return db.ExcuteQuery("Select * From DVKT_CT Where MA_LK = '" + maLK + "' And MaNhom = '" + maNhom + "'",
+                CommandType.Text, null);
+        }
 
         public DataTable DSNhomDVKT (string maLK)
         {
             return db.ExcuteQuery ("Select * From DVKT_CT Where MA_LK = '" + maLK + "' And MA_NHOM != '15' And MA_NHOM !='13' And MA_NHOM != '10'",
                 CommandType.Text, null);
         }
-
+        public DataTable DSDVKT(string maNhom)
+        {
+            return db.ExcuteQuery("Select * From DVKT WHERE MA_NHOM = '" + maNhom + "'",
+                CommandType.Text, null);
+        }
+        public DataTable DSKhoa()
+        {
+            return db.ExcuteQuery("Select * From KHOA",
+                CommandType.Text, null);
+        }
         public DataTable DSNhanVien ()
         {
             return db.ExcuteQuery ("Select MA_NHANVIEN,TEN_NHANVIEN From NV_YTE",

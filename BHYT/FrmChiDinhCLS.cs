@@ -27,10 +27,17 @@ namespace BHYT
         {
             InitializeComponent();
             canlamsan = new CanLamSanDAO(db);
+            lookUpBacSi.Properties.DataSource = canlamsan.DSBacSi();
+            lookUpBacSi.Properties.ValueMember = "MA_NHANVIEN";
+            lookUpBacSi.Properties.DisplayMember = "TEN_NHANVIEN";
         }
 
         private void FrmChiDinhCLS_Load(object sender, EventArgs e)
         {
+            if (lookUpBacSi.ItemIndex < 0)
+            {
+                lookUpBacSi.ItemIndex = 0;
+            }
             txtHoTen.Text = HoTen;
             data = canlamsan.DSChiDinhCanLamSan(MaLienKet);
             gridControl.DataSource = data;
@@ -48,6 +55,12 @@ namespace BHYT
                 bool chon = Utils.ToBool(e.Value);
                 canlamsan.MaNhom = gridView.GetRowCellValue(e.RowHandle, gridView.Columns["MaNhom"]).ToString();
                 canlamsan.MaLK = MaLienKet;
+                canlamsan.NgayChiDinh = DateTime.Now.ToString("yyyyMMdd");
+                DataRow dr = data.Select("MaNhom = '" + canlamsan.MaNhom+"'").FirstOrDefault();
+                if(dr!=null)
+                {
+                    dr["NgayChiDinh"] = canlamsan.NgayChiDinh;
+                }
                 string err = "";
                 if(chon == true)
                 {
@@ -78,12 +91,14 @@ namespace BHYT
                     canlamsan.ChuanDoan = dr["ChuanDoan"].ToString();
                     canlamsan.MauSo = dr["MauSo"].ToString();
                     canlamsan.TenNhom = dr["TenNhom"].ToString();
+                    canlamsan.NgayChiDinh = dr["NgayChiDinh"].ToString();
                     if(!canlamsan.CanLamSan_CT(ref err,"UPDATE"))
                     {
                         MessageBox.Show(err, "Lỗi");
                         return;
                     }
-                    taoPhieu();
+                    if(report)
+                        taoPhieu();
                 }
             }
         }
@@ -104,6 +119,8 @@ namespace BHYT
             rpt.xrTableCellYeuCau.Text = canlamsan.YeuCau;
             rpt.lblNgayThang.Text = "Ngày " + DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year;
             rpt.lblPhieu.Text ="PHIẾU "+ canlamsan.TenNhom.ToUpper();
+            rpt.lblHoTenBS.Text = "Họ tên: "+lookUpBacSi.Properties.GetDisplayValueByKeyValue(lookUpBacSi.EditValue);
+            //rpt.lblKhoa.Text = lookUpMaKhoa.Properties.GetDisplayValueByKeyValue(lookUpMaKhoa.EditValue).ToString();
             rpt.CreateDocument();
             rpt.ShowPreviewDialog();
         }

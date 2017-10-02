@@ -45,12 +45,21 @@ namespace BHYT
             LoadData();
         }
 
-        private void gridView_DoubleClick(object sender, EventArgs e)
+        private void btnNhapKQ_Click(object sender, EventArgs e)
         {
-            frmCanLamSan.MaLK = (gridView.GetFocusedRow() as DataRowView)["MA_LK"].ToString();
-            frmCanLamSan.HoTen = (gridView.GetFocusedRow() as DataRowView)["HO_TEN"].ToString();
-            frmCanLamSan.ShowDialog();
-            LoadData();
+            DataRowView dr = (gridView.GetFocusedRow() as DataRowView);
+            if (dr != null)
+            {
+                frmCanLamSan.MaLK = dr["MA_LK"].ToString();
+                frmCanLamSan.HoTen = dr["HO_TEN"].ToString();
+                frmCanLamSan.YeuCau = dr["YeuCau"].ToString();
+                frmCanLamSan.ChuanDoan = dr["ChuanDoan"].ToString();
+                frmCanLamSan.CanLamSan = dr["TenNhom"].ToString();
+                frmCanLamSan.NhomChinh = dr["NhomChinh"].ToString();
+                frmCanLamSan.MaNhomChiDinh = dr["MaNhom"].ToString();
+                frmCanLamSan.ShowDialog();
+                LoadData();
+            }
         }
     }
 }

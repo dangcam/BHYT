@@ -392,6 +392,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TEN_NHANVIEN", "Tên Bác Sĩ")});
             this.lookUpMaBS.Properties.DropDownRows = 14;
             this.lookUpMaBS.Properties.NullText = "";
+            this.lookUpMaBS.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.lookUpMaBS.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lookUpMaBS.Size = new System.Drawing.Size(171, 22);
             this.lookUpMaBS.TabIndex = 14;

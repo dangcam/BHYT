@@ -24,6 +24,7 @@ namespace BHYT.DAO
         public string MaLK { get; set; }
         public string ChuanDoan { get; set; }
         public string YeuCau { get; set; }
+        public string NgayChiDinh { get; set; }
         public DataTable DSNhomDVKT()
         {
             return db.ExcuteQuery("Select MA_NHOM,TEN_NHOM From NHOM WHERE MA_NHOM!='10' AND MA_NHOM!='13'"
@@ -33,6 +34,12 @@ namespace BHYT.DAO
         public DataTable DSNhomCanLamSan()
         {
             return db.ExcuteQuery("Select * From NHOMCLS",
+                CommandType.Text, null);
+        }
+
+        public DataTable DSBacSi()
+        {
+            return db.ExcuteQuery("Select MA_NHANVIEN,TEN_NHANVIEN From NV_YTE",
                 CommandType.Text, null);
         }
         public DataTable DSChiDinhCanLamSan(string maLK)
@@ -59,7 +66,8 @@ namespace BHYT.DAO
                 new SqlParameter("@MA_LK", MaLK),
                 new SqlParameter("@MaNhom", MaNhom),
                 new SqlParameter("@ChuanDoan", ChuanDoan),
-                new SqlParameter("@YeuCau", YeuCau));
+                new SqlParameter("@YeuCau", YeuCau),
+                new SqlParameter("@NgayChiDinh", NgayChiDinh));
         }
     }
 }

@@ -41,15 +41,18 @@
             this.YeuCau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnIn = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.lookUpBacSi = new DevExpress.XtraEditors.LookUpEdit();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpBacSi.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 15);
+            this.label1.Location = new System.Drawing.Point(11, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 16);
             this.label1.TabIndex = 0;
@@ -58,10 +61,10 @@
             // txtHoTen
             // 
             this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoTen.Location = new System.Drawing.Point(80, 12);
+            this.txtHoTen.Location = new System.Drawing.Point(67, 12);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.ReadOnly = true;
-            this.txtHoTen.Size = new System.Drawing.Size(267, 22);
+            this.txtHoTen.Size = new System.Drawing.Size(307, 22);
             this.txtHoTen.TabIndex = 1;
             // 
             // gridControl
@@ -69,7 +72,7 @@
             this.gridControl.Location = new System.Drawing.Point(12, 40);
             this.gridControl.MainView = this.gridView;
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(763, 259);
+            this.gridControl.Size = new System.Drawing.Size(860, 259);
             this.gridControl.TabIndex = 2;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -147,7 +150,7 @@
             // btnIn
             // 
             this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
-            this.btnIn.Location = new System.Drawing.Point(700, 12);
+            this.btnIn.Location = new System.Drawing.Point(796, 11);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(75, 23);
             this.btnIn.TabIndex = 3;
@@ -157,18 +160,47 @@
             // btnLuu
             // 
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.Location = new System.Drawing.Point(637, 13);
+            this.btnLuu.Location = new System.Drawing.Point(716, 11);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(57, 23);
             this.btnLuu.TabIndex = 4;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
+            // lookUpBacSi
+            // 
+            this.lookUpBacSi.Location = new System.Drawing.Point(444, 12);
+            this.lookUpBacSi.Name = "lookUpBacSi";
+            this.lookUpBacSi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpBacSi.Properties.Appearance.Options.UseFont = true;
+            this.lookUpBacSi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpBacSi.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MA_NHANVIEN", "Mã BS"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TEN_NHANVIEN", 60, "Tên BS")});
+            this.lookUpBacSi.Properties.NullText = "";
+            this.lookUpBacSi.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
+            this.lookUpBacSi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lookUpBacSi.Size = new System.Drawing.Size(249, 22);
+            this.lookUpBacSi.TabIndex = 55;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(388, 15);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 16);
+            this.label6.TabIndex = 54;
+            this.label6.Text = "Bác sĩ:";
+            // 
             // FrmChiDinhCLS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 311);
+            this.ClientSize = new System.Drawing.Size(884, 311);
+            this.Controls.Add(this.lookUpBacSi);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnIn);
             this.Controls.Add(this.gridControl);
@@ -183,6 +215,7 @@
             this.Load += new System.EventHandler(this.FrmChiDinhCLS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpBacSi.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +235,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn YeuCau;
         private DevExpress.XtraEditors.SimpleButton btnIn;
         private DevExpress.XtraEditors.SimpleButton btnLuu;
+        private DevExpress.XtraEditors.LookUpEdit lookUpBacSi;
+        private System.Windows.Forms.Label label6;
     }
 }
