@@ -57,6 +57,11 @@ namespace BHYT
                 frmCanLamSan.CanLamSan = dr["TenNhom"].ToString();
                 frmCanLamSan.NhomChinh = dr["NhomChinh"].ToString();
                 frmCanLamSan.MaNhomChiDinh = dr["MaNhom"].ToString();
+                frmCanLamSan.MauSo = dr["MauSo"].ToString();
+                frmCanLamSan.NamSinh = dr["NAM_SINH"].ToString();
+                frmCanLamSan.GioiTinh = dr["GIOI_TINH"].ToString();
+                frmCanLamSan.DiaChi = dr["DIA_CHI"].ToString();
+                frmCanLamSan.SoThe = dr["MA_THE"].ToString();
                 frmCanLamSan.ShowDialog();
                 LoadData();
             }

@@ -71,6 +71,7 @@
             this.groupControl = new DevExpress.XtraEditors.GroupControl();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lblPhongKham4 = new System.Windows.Forms.Label();
@@ -97,7 +98,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.btnIn = new System.Windows.Forms.Button();
             this.btnLSKCB = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtDu5Nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateGTKT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateGTBD.Properties)).BeginInit();
@@ -573,6 +573,16 @@
             this.label16.Size = new System.Drawing.Size(0, 16);
             this.label16.TabIndex = 77;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(1002, 36);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(94, 16);
+            this.label18.TabIndex = 77;
+            this.label18.Text = "Phòng khám 3:";
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -646,6 +656,10 @@
             // 
             // gridView
             // 
+            this.gridView.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gridView.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gridView.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gridView.Appearance.SelectedRow.Options.UseBackColor = true;
             this.gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.STT,
             this.MA_BN,
@@ -884,16 +898,6 @@
             this.btnLSKCB.Text = "Lịch Sử KCB";
             this.btnLSKCB.UseVisualStyleBackColor = true;
             this.btnLSKCB.Click += new System.EventHandler(this.btnLSKCB_Click);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(1002, 36);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(94, 16);
-            this.label18.TabIndex = 77;
-            this.label18.Text = "Phòng khám 3:";
             // 
             // FrmKhamBHYT
             // 

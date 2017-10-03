@@ -1045,6 +1045,8 @@
             // 
             // KetQua
             // 
+            this.KetQua.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KetQua.AppearanceCell.Options.UseFont = true;
             this.KetQua.Caption = "Kết quả";
             this.KetQua.FieldName = "KET_QUA";
             this.KetQua.Name = "KetQua";

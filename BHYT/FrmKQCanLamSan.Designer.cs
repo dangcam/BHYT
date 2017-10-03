@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKQCanLamSan));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.label1 = new System.Windows.Forms.Label();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
@@ -67,12 +67,12 @@
             this.Tien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaNhom = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KetQua = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MaNhomCLS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MA_DICH_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnIn = new DevExpress.XtraEditors.SimpleButton();
             this.label12 = new System.Windows.Forms.Label();
             this.lookUpMaKhoa = new DevExpress.XtraEditors.LookUpEdit();
             this.label8 = new System.Windows.Forms.Label();
-            this.MaNhomCLS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MA_DICH_VU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtKetQua = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpDVKT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -386,7 +386,7 @@
             // btnXoaDVKT
             // 
             this.btnXoaDVKT.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoaDVKT.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoaDVKT.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.btnXoaDVKT.Name = "btnXoaDVKT";
             this.btnXoaDVKT.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnXoaDVKT.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnXoaDVKT_ButtonClick);
@@ -505,6 +505,18 @@
             this.KetQua.VisibleIndex = 5;
             this.KetQua.Width = 345;
             // 
+            // MaNhomCLS
+            // 
+            this.MaNhomCLS.Caption = "MaNhom";
+            this.MaNhomCLS.FieldName = "MaNhom";
+            this.MaNhomCLS.Name = "MaNhomCLS";
+            // 
+            // MA_DICH_VU
+            // 
+            this.MA_DICH_VU.Caption = "MA_DICH_VU";
+            this.MA_DICH_VU.FieldName = "MA_DICH_VU";
+            this.MA_DICH_VU.Name = "MA_DICH_VU";
+            // 
             // btnIn
             // 
             this.btnIn.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -515,6 +527,7 @@
             this.btnIn.Size = new System.Drawing.Size(75, 47);
             this.btnIn.TabIndex = 10;
             this.btnIn.Text = "Lưu & In";
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // label12
             // 
@@ -553,18 +566,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Kết quả:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // MaNhomCLS
-            // 
-            this.MaNhomCLS.Caption = "MaNhom";
-            this.MaNhomCLS.FieldName = "MaNhom";
-            this.MaNhomCLS.Name = "MaNhomCLS";
-            // 
-            // MA_DICH_VU
-            // 
-            this.MA_DICH_VU.Caption = "MA_DICH_VU";
-            this.MA_DICH_VU.FieldName = "MA_DICH_VU";
-            this.MA_DICH_VU.Name = "MA_DICH_VU";
             // 
             // txtKetQua
             // 

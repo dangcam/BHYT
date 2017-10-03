@@ -35,8 +35,11 @@
             this.Ma = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ten = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.progressBarControl = new DevExpress.XtraEditors.ProgressBarControl();
+            this.lblTienTrinh = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // bntNhapExcel
@@ -105,11 +108,32 @@
             this.DiaChi.Visible = true;
             this.DiaChi.VisibleIndex = 2;
             // 
+            // progressBarControl
+            // 
+            this.progressBarControl.Location = new System.Drawing.Point(116, 18);
+            this.progressBarControl.Name = "progressBarControl";
+            this.progressBarControl.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progressBarControl.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.progressBarControl.Size = new System.Drawing.Size(600, 23);
+            this.progressBarControl.TabIndex = 5;
+            // 
+            // lblTienTrinh
+            // 
+            this.lblTienTrinh.AutoSize = true;
+            this.lblTienTrinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTienTrinh.Location = new System.Drawing.Point(20, 21);
+            this.lblTienTrinh.Name = "lblTienTrinh";
+            this.lblTienTrinh.Size = new System.Drawing.Size(65, 16);
+            this.lblTienTrinh.TabIndex = 6;
+            this.lblTienTrinh.Text = "Tiến trình:";
+            // 
             // FrmKCB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 575);
+            this.Controls.Add(this.lblTienTrinh);
+            this.Controls.Add(this.progressBarControl);
             this.Controls.Add(this.gridControl);
             this.Controls.Add(this.bntNhapExcel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -121,7 +145,9 @@
             this.Load += new System.EventHandler(this.FrmKCB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -133,5 +159,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Ma;
         private DevExpress.XtraGrid.Columns.GridColumn Ten;
         private DevExpress.XtraGrid.Columns.GridColumn DiaChi;
+        private DevExpress.XtraEditors.ProgressBarControl progressBarControl;
+        private System.Windows.Forms.Label lblTienTrinh;
     }
 }

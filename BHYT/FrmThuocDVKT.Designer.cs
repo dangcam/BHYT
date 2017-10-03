@@ -71,6 +71,7 @@
             this.KhoaMa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BacSi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DonGiaDVKT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.KetQua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Muc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaNhom = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -98,7 +99,6 @@
             this.MucTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ThanhTienVTYT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaNhomVTYT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.KetQua = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBS.Properties)).BeginInit();
@@ -612,6 +612,16 @@
             this.DonGiaDVKT.Visible = true;
             this.DonGiaDVKT.VisibleIndex = 6;
             // 
+            // KetQua
+            // 
+            this.KetQua.Caption = "Kết quả";
+            this.KetQua.FieldName = "KET_QUA";
+            this.KetQua.Name = "KetQua";
+            this.KetQua.OptionsColumn.FixedWidth = true;
+            this.KetQua.Visible = true;
+            this.KetQua.VisibleIndex = 8;
+            this.KetQua.Width = 50;
+            // 
             // Muc
             // 
             this.Muc.Caption = "Mức thanh toán";
@@ -630,7 +640,7 @@
             this.Tien.OptionsColumn.AllowEdit = false;
             this.Tien.OptionsColumn.FixedWidth = true;
             this.Tien.Visible = true;
-            this.Tien.VisibleIndex = 8;
+            this.Tien.VisibleIndex = 7;
             // 
             // MaNhom
             // 
@@ -936,16 +946,6 @@
             this.MaNhomVTYT.Visible = true;
             this.MaNhomVTYT.VisibleIndex = 9;
             this.MaNhomVTYT.Width = 30;
-            // 
-            // KetQua
-            // 
-            this.KetQua.Caption = "Kết quả";
-            this.KetQua.FieldName = "KET_QUA";
-            this.KetQua.Name = "KetQua";
-            this.KetQua.OptionsColumn.FixedWidth = true;
-            this.KetQua.Visible = true;
-            this.KetQua.VisibleIndex = 7;
-            this.KetQua.Width = 50;
             // 
             // FrmThuocDVKT
             // 
