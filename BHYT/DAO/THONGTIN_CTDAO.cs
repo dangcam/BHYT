@@ -47,7 +47,7 @@ namespace BHYT.DAO
                 }
             }
 
-            return null;
+            return kcb;
         }
 
         public THONGTIN_CTVO getThongTin (string maLK)
@@ -286,15 +286,15 @@ namespace BHYT.DAO
         }
         public DataTable DSCanLamSan(string ngayBD, string ngayKT, int tinhTrang = 0)
         {
-            string sql = "SELECT * FROM  getCanLamSan('" + ngayBD + "','" + ngayKT + "') ";
+            string sql = "SELECT * FROM  getCanLamSan('" + ngayBD + "','" + ngayKT + "') WHERE Phong = "+AppConfig.SoPhong;
             if(tinhTrang==1)
             {
-                sql += " WHERE LEN(KET_QUA) = 0 OR KET_QUA IS NULL";
+                sql += " AND LEN(KET_QUA) = 0 OR KET_QUA IS NULL";
             }
             else
                 if(tinhTrang==2)
             {
-                sql += " WHERE LEN(KET_QUA) > 0";
+                sql += " AND LEN(KET_QUA) > 0";
             }
             return db.ExcuteQuery(sql,
                 CommandType.Text, null);
@@ -342,6 +342,7 @@ namespace BHYT.DAO
             {
                 sql += " MA_BENH != '' AND NGAY_RA != '' ";
             }
+            sql += " ORDER BY STTPHONG ASC";
             return db.ExcuteQuery (sql,
                 CommandType.Text, null);
         }
@@ -650,6 +651,59 @@ namespace BHYT.DAO
                 CommandType.StoredProcedure, ref err,
                 new SqlParameter ("@MA_LK", MaLK),
                 new SqlParameter ("@PHONG", SoPhong));
+        }
+        public bool TiepNhan(ref string err, THONGTIN_CTVO thongtin,string action)
+        {
+            SqlParameter outSTT = new SqlParameter();
+            outSTT.SqlDbType = System.Data.SqlDbType.Int;
+            outSTT.ParameterName = "@STT";
+            outSTT.Value = thongtin.Stt;
+            outSTT.Direction = ParameterDirection.InputOutput;
+            return db.MyExecuteNonQuery("SpTiepNhan",
+                CommandType.StoredProcedure, ref err,
+                new SqlParameter("@ACTION", action),
+                new SqlParameter("@MA_LK", thongtin.MaLK),
+                new SqlParameter("@MA_BN", thongtin.MaBN),
+                new SqlParameter("@HO_TEN", thongtin.HoTen),
+                new SqlParameter("@NGAY_SINH", thongtin.NgaySinh),
+                new SqlParameter("@GIOI_TINH", thongtin.GioiTinh),
+                new SqlParameter("@DIA_CHI", thongtin.DiaChi),
+                new SqlParameter("@MA_THE", thongtin.MaThe),
+                new SqlParameter("@MA_DKBD", thongtin.MaDKBD),
+                new SqlParameter("@GT_THE_TU", thongtin.GtTheTu),
+                new SqlParameter("@GT_THE_DEN", thongtin.GtTheDen),
+                new SqlParameter("@TEN_BENH", thongtin.TenBenh),
+                new SqlParameter("@MA_BENH", thongtin.MaBenh),
+                new SqlParameter("@MA_BENHKHAC", thongtin.MaBenhKhac),
+                new SqlParameter("@MA_LYDO_VVIEN", thongtin.MaLyDoVaoVien),
+                new SqlParameter("@MA_NOI_CHUYEN", thongtin.MaNoiChuyen),
+                new SqlParameter("@MA_TAI_NAN", thongtin.MaTaiNan),
+                new SqlParameter("@NGAY_VAO", thongtin.NgayVao),
+                new SqlParameter("@NGAY_RA", thongtin.NgayRa),
+                new SqlParameter("@SO_NGAY_DTRI", thongtin.SoNgayDieuTri),
+                new SqlParameter("@KET_QUA_DTRI", thongtin.KetQuaDieuTri),
+                new SqlParameter("@TINH_TRANG_RV", thongtin.TinhTrangRaVien),
+                new SqlParameter("@NGAY_TTOAN", thongtin.NgayThanhToan),
+                new SqlParameter("@MUC_HUONG", thongtin.MucHuong),
+                new SqlParameter("@T_THUOC", thongtin.TienThuoc),
+                new SqlParameter("@T_VTYT", thongtin.TienVTYT),
+                new SqlParameter("@T_TONGCHI", thongtin.TienTongChiPhi),
+                new SqlParameter("@T_BNTT", thongtin.TienBNTT),
+                new SqlParameter("@T_BHTT", thongtin.TienBHTT),
+                new SqlParameter("@T_NGUONKHAC", thongtin.TienNguonKhac),
+                new SqlParameter("@T_NGOAIDS", thongtin.TienNgoaiDS),
+                new SqlParameter("@NAM_QT", thongtin.NamQT),
+                new SqlParameter("@THANG_QT", thongtin.ThangQT),
+                new SqlParameter("@MA_LOAI_KCB", thongtin.MaLoaiKCB),
+                new SqlParameter("@MA_KHOA", thongtin.MaKhoa),
+                new SqlParameter("@MA_CSKCB", thongtin.MaCSKCB),
+                new SqlParameter("@MA_KHUVUC", thongtin.MaKV),
+                new SqlParameter("@MA_PTTTT_QT", thongtin.MaPTTTQT),
+                new SqlParameter("@CAN_NANG", thongtin.CanNang),
+                new SqlParameter("@CHECK_OUT", thongtin.CheckOut),
+                new SqlParameter("@PHONG", thongtin.Phong),
+                new SqlParameter("@MA_BS", thongtin.MaBS),
+                outSTT);
         }
     }
 

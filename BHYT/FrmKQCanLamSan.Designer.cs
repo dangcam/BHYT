@@ -322,7 +322,7 @@
             this.txtSoLuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoLuong.Properties.Appearance.Options.UseFont = true;
             this.txtSoLuong.Size = new System.Drawing.Size(84, 22);
-            this.txtSoLuong.TabIndex = 9;
+            this.txtSoLuong.TabIndex = 7;
             this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
             // btnChon
@@ -333,7 +333,7 @@
             this.btnChon.Location = new System.Drawing.Point(789, 71);
             this.btnChon.Name = "btnChon";
             this.btnChon.Size = new System.Drawing.Size(84, 23);
-            this.btnChon.TabIndex = 8;
+            this.btnChon.TabIndex = 9;
             this.btnChon.Text = "Chọn";
             this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
@@ -345,7 +345,7 @@
             this.gridControlDVKT.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnXoaDVKT});
             this.gridControlDVKT.Size = new System.Drawing.Size(975, 281);
-            this.gridControlDVKT.TabIndex = 65;
+            this.gridControlDVKT.TabIndex = 12;
             this.gridControlDVKT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDVKT});
             // 
@@ -574,7 +574,7 @@
             this.txtKetQua.Multiline = true;
             this.txtKetQua.Name = "txtKetQua";
             this.txtKetQua.Size = new System.Drawing.Size(358, 46);
-            this.txtKetQua.TabIndex = 73;
+            this.txtKetQua.TabIndex = 8;
             this.txtKetQua.Enter += new System.EventHandler(this.txtKetQua_Enter);
             this.txtKetQua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKetQua_KeyPress);
             // 

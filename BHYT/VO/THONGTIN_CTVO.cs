@@ -48,6 +48,7 @@ namespace BHYT.VO
         private bool checkOut;
         private int phong;
         private string maBS;
+        private int stt;
         public string MaLK
         {
             get
@@ -578,6 +579,19 @@ namespace BHYT.VO
             set
             {
                 maBS = value;
+            }
+        }
+
+        public int Stt
+        {
+            get
+            {
+                return stt;
+            }
+
+            set
+            {
+                stt = value;
             }
         }
     }

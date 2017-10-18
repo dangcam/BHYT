@@ -331,13 +331,13 @@ namespace BHYT
                         txtTenBV.Text = thongtinCT.getCoSoKCB (txtMaDKKCB.Text).Ten;
                     }
                     string hanThe = tmp[2].Split (':')[1].Trim ();
-                    if (dateGTBD.Text != hanThe.Split ('-')[0].Trim ())
+                    if (dateGTBD.Text != hanThe.Split ('-')[0].Trim ().Substring(0, 10))
                     {
-                        dateGTBD.Text = hanThe.Split ('-')[0].Trim ();
+                        dateGTBD.Text = hanThe.Split ('-')[0].Trim ().Substring(0,10);
                     }
-                    if (dateGTKT.Text != hanThe.Split ('-')[1].Trim ())
+                    if (dateGTKT.Text != hanThe.Split ('-')[1].Trim ().Substring(0, 10))
                     {
-                        dateGTKT.Text = hanThe.Split ('-')[1].Trim ();
+                        dateGTKT.Text = hanThe.Split ('-')[1].Trim ().Substring(0,10);
                     }
                 }
                 catch
@@ -622,14 +622,15 @@ namespace BHYT
                 thongtinBN.CheckOut = false;
                 thongtinBN.MaBS = "";
                 thongtinBN.Phong = soPhong;
+                thongtinBN.Stt = 0;
                 string err = "";
                 if (!them)
                 {
-                    thongtinCT.SuaThongTinCT (ref err, thongtinBN);// cập nhật
+                    thongtinCT.TiepNhan (ref err, thongtinBN,"UPDATE");// cập nhật
                 }
                 else
                 {
-                    thongtinCT.ThemThongTinCT (ref err, thongtinBN);// thêm mới
+                    thongtinCT.TiepNhan(ref err, thongtinBN, "INSERT");// thêm mới
                 }
                 if (!string.IsNullOrEmpty (err))
                 {
@@ -735,7 +736,7 @@ namespace BHYT
                 rpt.lblNgay.Text = DateTime.Now.ToString ("HH:mm dd/MM/yyyy");
 
                 rpt.CreateDocument ();
-
+                //rpt.ShowPreviewDialog();
                 rpt.PrintDialog ();
             }
             else
@@ -834,6 +835,7 @@ namespace BHYT
                                 mycontent = mycontent.Replace("\"", "");
                                 string ketqua = mycontent.Substring(0, mycontent.IndexOf("dsLichSuKCB"));
                                 string danhsach = mycontent.Substring(mycontent.IndexOf("dsLichSuKCB")+11);
+                                frmLichSu.TenBN = txtHoTen.Text;
                                 frmLichSu.KetQua = ketqua;
                                 frmLichSu.LichSu = danhsach;
                                 frmLichSu.ToKen = token;

@@ -2506,7 +2506,9 @@ namespace BHYT
                                 code = code.Replace ("\"", "").Replace (":", "").Replace (",", "");
                                 string message = mycontent.Substring (iMessage + 7);
                                 StringBuilder sMessage = new StringBuilder (message);
-                                sMessage = sMessage.Replace ("\"", "").Replace ("}", "").Replace ("\\u003c/b\\u003e", "").Replace ("\\u003cb\\u003e", "");
+                                sMessage = sMessage.Replace("\"", "").Replace("}", "").Replace("\\u003cb", "").Replace("\\u003c", "")
+                                   .Replace("\\u0027", "").Replace("style=", "").Replace("color:", "").Replace("#0070C0", "").Replace("\\u003e", "")
+                                   .Replace("/b", "");
                                 switch (code)
                                 {
                                     case "1":
@@ -2607,13 +2609,13 @@ namespace BHYT
                         txtMaDKKCB.Text = noiDKKCB;
                     }
                     string hanThe = tmp[2].Split (':')[1].Trim ();
-                    if(dateGTBD.Text != hanThe.Split('-')[0].Trim())
+                    if(dateGTBD.Text != hanThe.Split('-')[0].Trim().Substring(0,10))
                     {
-                        dateGTBD.Text = hanThe.Split ('-')[0].Trim();
+                        dateGTBD.Text = hanThe.Split ('-')[0].Trim().Substring(0, 10);
                     }
-                    if (dateGTKT.Text != hanThe.Split ('-')[1].Trim())
+                    if (dateGTKT.Text != hanThe.Split ('-')[1].Trim().Substring(0, 10))
                     {
-                        dateGTKT.Text = hanThe.Split ('-')[1].Trim();
+                        dateGTKT.Text = hanThe.Split ('-')[1].Trim().Substring(0, 10);
                     }
                 }
                 catch

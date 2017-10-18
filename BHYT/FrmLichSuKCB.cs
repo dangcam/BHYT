@@ -16,6 +16,7 @@ namespace BHYT
 {
     public partial class FrmLichSuKCB : Form
     {
+        public string TenBN = null;
         public string KetQua = null;
         public string LichSu = null;
         public string ToKen = null;
@@ -34,6 +35,8 @@ namespace BHYT
 
         private void FrmLichSuKCB_Load(object sender, EventArgs e)
         {
+            gridControl.DataSource = null;
+            lblHoTen.Text = this.TenBN;
             string maKQ = KetQua.Split(',')[0].Split(':')[1];
             switch(maKQ)
             {

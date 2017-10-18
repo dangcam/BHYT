@@ -329,5 +329,13 @@ namespace BHYT
             frmNhomCanLamSan = new FrmNhomCanLamSan(db);
             frmNhomCanLamSan.ShowDialog();
         }
+
+
+        private void baoCao79ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBaoCao79a80a frmBaoCao;
+            frmBaoCao = new FrmBaoCao79a80a(db);
+            frmBaoCao.ShowDialog();
+        }
     }
 }

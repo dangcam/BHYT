@@ -69,6 +69,14 @@ namespace BHYT
             }
             catch { return null; }
         }
+        public static decimal ToDecimal(object value, decimal defaultvalue = 0)
+        {
+            try
+            {
+                return Convert.ToDecimal(value);
+            }
+            catch { return defaultvalue; }
+        }
         public static int ToInt(string value, int defaultvalue = 0)
         {
             try

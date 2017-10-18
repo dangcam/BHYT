@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLichSuKCB));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             this.label1 = new System.Windows.Forms.Label();
             this.lblThongTin = new System.Windows.Forms.Label();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
@@ -44,6 +44,8 @@
             this.kqDieuTri = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnChiTiet = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btneditChiTiet = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblHoTen = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit)).BeginInit();
@@ -189,19 +191,40 @@
             // 
             this.btneditChiTiet.AutoHeight = false;
             this.btneditChiTiet.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btneditChiTiet.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btneditChiTiet.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.btneditChiTiet.ContextImage = ((System.Drawing.Image)(resources.GetObject("btneditChiTiet.ContextImage")));
             this.btneditChiTiet.Name = "btneditChiTiet";
             this.btneditChiTiet.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btneditChiTiet.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btneditChiTiet_ButtonClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(650, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 16);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Họ tên:";
+            // 
+            // lblHoTen
+            // 
+            this.lblHoTen.AutoSize = true;
+            this.lblHoTen.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoTen.Location = new System.Drawing.Point(710, 10);
+            this.lblHoTen.Name = "lblHoTen";
+            this.lblHoTen.Size = new System.Drawing.Size(0, 14);
+            this.lblHoTen.TabIndex = 3;
             // 
             // FrmLichSuKCB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 321);
+            this.Controls.Add(this.lblHoTen);
             this.Controls.Add(this.gridControl);
             this.Controls.Add(this.lblThongTin);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -235,5 +258,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit;
         private DevExpress.XtraGrid.Columns.GridColumn btnChiTiet;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btneditChiTiet;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblHoTen;
     }
 }

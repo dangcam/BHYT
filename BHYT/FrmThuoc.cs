@@ -125,7 +125,7 @@ namespace BHYT
                     tien.HamLuong = dtRow[5].ToString ();
                     tien.DuongDung = dtRow[3].ToString ();
                     tien.QuyCach = dtRow[8].ToString ();
-                        tien.TieuChuan = "";//dtRow[6].ToString ();
+                    tien.TieuChuan = "";//dtRow[6].ToString ();
                     tien.DonViTinh = dtRow[9].ToString ();
                     try
                     {

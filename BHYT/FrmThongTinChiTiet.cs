@@ -20,6 +20,8 @@ namespace BHYT
         public string XML3 = "";
         private void FrmThongTinChiTiet_Load(object sender, EventArgs e)
         {
+            gridControlXML2.DataSource = null;
+            gridControlXML3.DataSource = null;
             DataTable dataxml2 = new DataTable();
             dataxml2.Columns.Add("Stt",typeof(string));
             dataxml2.Columns.Add("MaThuoc", typeof(string));

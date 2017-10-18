@@ -141,6 +141,12 @@
     <Compile Include="DAO\ThuocDAO.cs" />
     <Compile Include="DAO\TienGiuongDAO.cs" />
     <Compile Include="DAO\VTYTDAO.cs" />
+    <Compile Include="FrmBaoCao79a80a.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaoCao79a80a.Designer.cs">
+      <DependentUpon>FrmBaoCao79a80a.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCanLamSan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -419,6 +425,12 @@
     <Compile Include="MauSo\rptPhieuYeuCau.Designer.cs">
       <DependentUpon>rptPhieuYeuCau.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptBaoCao.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBaoCao.Designer.cs">
+      <DependentUpon>rptBaoCao.cs</DependentUpon>
+    </Compile>
     <Compile Include="rptChiPhi.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -516,6 +528,9 @@
     <Compile Include="VO\TienGiuongVO.cs" />
     <Compile Include="VO\TienThuocVO.cs" />
     <Compile Include="VO\VTYTVO.cs" />
+    <EmbeddedResource Include="FrmBaoCao79a80a.resx">
+      <DependentUpon>FrmBaoCao79a80a.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBenhICD.resx">
       <DependentUpon>FrmBenhICD.cs</DependentUpon>
     </EmbeddedResource>
@@ -678,6 +693,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="rptBaoCao.resx">
+      <DependentUpon>rptBaoCao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptChiPhi.resx">
       <DependentUpon>rptChiPhi.cs</DependentUpon>
     </EmbeddedResource>

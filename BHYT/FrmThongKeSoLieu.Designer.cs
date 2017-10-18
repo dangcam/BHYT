@@ -139,7 +139,7 @@
             // btnTongHop
             // 
             this.btnTongHop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTongHop.Location = new System.Drawing.Point(194, 79);
+            this.btnTongHop.Location = new System.Drawing.Point(194, 63);
             this.btnTongHop.Name = "btnTongHop";
             this.btnTongHop.Size = new System.Drawing.Size(84, 34);
             this.btnTongHop.TabIndex = 4;
@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 122);
+            this.ClientSize = new System.Drawing.Size(471, 113);
             this.Controls.Add(this.btnTongHop);
             this.Controls.Add(this.cbNam);
             this.Controls.Add(this.cbQuy);

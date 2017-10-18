@@ -18,6 +18,11 @@ namespace BHYT.DAO
             return db.ExcuteQuery ("SELECT * FROM getThongKe('" + ngayBD + "','" + ngayKT + "')",
                 CommandType.Text, null);
         }
+        public DataTable DSBaoCao(string ngayBD, string ngayKT, int loaiKCB)
+        {
+            return db.ExcuteQuery("SELECT * FROM getBaoCao('" + ngayBD + "','" + ngayKT + "',"+(loaiKCB)+") ORDER BY STT ASC",
+                CommandType.Text, null);
+        }
         public DataTable DSThongTinBN (int loaiKCB, string ngayBD, string ngayKT)
         {
             string sql = "";

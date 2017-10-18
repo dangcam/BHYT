@@ -135,8 +135,8 @@ namespace BHYT
             rpt.lblNgay.Text = "Từ ngày " + ngayBD.Substring (6, 2) + "/" + ngayBD.Substring (4, 2) + "/" + ngayBD.Substring (0, 4) +
                 " đến " + ngayKT.Substring (6, 2) + "/" + ngayKT.Substring (4, 2) + "/" + ngayKT.Substring (0, 4);
             rpt.lblNgayLap.Text = "Tỉnh Bình Phước, ngày "+DateTime.Now.Day + ", tháng "+DateTime.Now.Month+", năm "+DateTime.Now.Year;
-            System.Drawing.Font fontB = new System.Drawing.Font ("Times New Roman", 10, System.Drawing.FontStyle.Bold);
-            System.Drawing.Font font = new System.Drawing.Font ("Times New Roman", 10);
+            System.Drawing.Font fontB = new System.Drawing.Font ("Tahoma", 8, System.Drawing.FontStyle.Bold);
+            System.Drawing.Font font = new System.Drawing.Font ("Tahoma", 8);
             CultureInfo elGR = CultureInfo.CreateSpecificCulture ("el-GR");
             XRTableRow row = new XRTableRow ();
             XRTableCell cell = new XRTableCell ();
@@ -150,7 +150,7 @@ namespace BHYT
                 {
                     row = new XRTableRow ();
                     cell = new XRTableCell ();
-                    cell.Text = dr["NGAYTT"].ToString ().Substring (6, 2) + "/" + dr["NGAYTT"].ToString ().Substring (4, 2) + "/" + dr["NGAYTT"].ToString ().Substring (0, 4);
+                    cell.Text = dr["NGAYTT"].ToString().Substring (6, 2) + "/" + dr["NGAYTT"].ToString ().Substring (4, 2) + "/" + dr["NGAYTT"].ToString ().Substring (0, 4);
                     cell.Font = font;
                     cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
                     cell.WidthF = 70;
@@ -507,7 +507,8 @@ namespace BHYT
             rpt.CreateDocument ();
             
             rpt.ShowPreviewDialog ();
-            
+            SplashScreen.Stop();
+
         }
         private int lastDay(int y, int m)
         {
