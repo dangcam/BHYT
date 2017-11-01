@@ -512,7 +512,8 @@
             this.cbLyDo.Items.AddRange(new object[] {
             "1. Đúng tuyến",
             "2. Cấp cứu",
-            "3. Trái tuyến"});
+            "3. Trái tuyến",
+            "4. Thông tuyến"});
             this.cbLyDo.Location = new System.Drawing.Point(114, 184);
             this.cbLyDo.Name = "cbLyDo";
             this.cbLyDo.Size = new System.Drawing.Size(165, 24);

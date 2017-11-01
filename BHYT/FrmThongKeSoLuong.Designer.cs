@@ -148,12 +148,13 @@
             this.cbTieuChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTieuChi.FormattingEnabled = true;
             this.cbTieuChi.Items.AddRange(new object[] {
-            "Thuốc có số lượng nhiều nhất",
-            "Thuốc có chi phí nhiều nhất",
-            "Dịch vụ kỹ thuật có số lượng nhiều nhất",
-            "Dịch vụ kỹ thuật có chi phí nhiều nhất",
-            "Vật tư y tế có số lượng nhiều nhất",
-            "Vật tư y tế có chi phí nhiều nhất"});
+            "0. Thống kê thuốc",
+            "1. Thuốc có số lượng nhiều nhất",
+            "2. Thuốc có chi phí nhiều nhất",
+            "3. Dịch vụ kỹ thuật có số lượng nhiều nhất",
+            "4. Dịch vụ kỹ thuật có chi phí nhiều nhất",
+            "5. Vật tư y tế có số lượng nhiều nhất",
+            "6. Vật tư y tế có chi phí nhiều nhất"});
             this.cbTieuChi.Location = new System.Drawing.Point(150, 55);
             this.cbTieuChi.Name = "cbTieuChi";
             this.cbTieuChi.Size = new System.Drawing.Size(374, 24);
@@ -176,7 +177,7 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(100, 22);
             this.txtSoLuong.TabIndex = 14;
-            this.txtSoLuong.Text = "10";
+            this.txtSoLuong.Text = "300";
             // 
             // dateDenNgay
             // 

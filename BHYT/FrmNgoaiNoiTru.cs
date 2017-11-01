@@ -619,7 +619,6 @@ namespace BHYT
                     txtMaBN.Text = thongtinCT.getMaBN ((cbLoaiKCB.SelectedIndex + 1) + DateTime.Now.ToString ("yyyyMMdd"));
                     thongtinBN.MaLK = AppConfig.CoSoKCB + "PR" + DateTime.Now.Hour.ToString ().Substring (0, 1) + DateTime.Now.Minute.ToString ().Substring (0, 1) + DateTime.Now.Millisecond.ToString ().Substring (0, 1) + txtMaBN.Text;
                 }
-                //(1) the xml declaration is recommended, but not mandatory
                 XmlDocument doc = new XmlDocument ();
                 XmlDeclaration xmlDeclaration = doc.CreateXmlDeclaration ("1.0", "UTF-8", null);
                 XmlElement root = doc.DocumentElement;

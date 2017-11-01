@@ -85,7 +85,7 @@ namespace BHYT
         {
             return DateTime.DaysInMonth (y, m);
         }
-        private void getData(rptThongKeSoLuong rpt)
+        private void getData(rptThongKeSoLuong rpt,rptThongKeSoLuongThuoc rptThuoc)
         {
             int soLuong = 0;
             try
@@ -156,26 +156,30 @@ namespace BHYT
             switch (loai)
             {
                 case 0:
+                    dt = thongke.DSThongKeThuocSL(soLuong, ngayBD, ngayKT, cbLoaiKCB.SelectedIndex,1);
+                    createSoLuongThuoc(dt,rptThuoc);
+                    break;
+                case 1:
                     dt = thongke.DSThongKeThuocSL (soLuong, ngayBD, ngayKT,cbLoaiKCB.SelectedIndex);
                     createThuoc (rpt, dt);
                     break;
-                case 1:
+                case 2:
                     dt = thongke.DSThongKeThuocCP (soLuong, ngayBD, ngayKT);
                     createThuoc (rpt, dt);
                     break;
-                case 2:
+                case 3:
                     dt = thongke.DSThongKeDVKTSL (soLuong, ngayBD, ngayKT);
                     createDVKT (rpt, dt);
                     break;
-                case 3:
+                case 4:
                     dt = thongke.DSThongKeDVKTCP (soLuong, ngayBD, ngayKT);
                     createDVKT (rpt, dt);
                     break;
-                case 4:
+                case 5:
                     dt = thongke.DSThongKeVTYTSL (soLuong, ngayBD, ngayKT);
                     createVTYT (rpt, dt);
                     break;
-                case 5:
+                case 6:
                     dt = thongke.DSThongKeVTYTCP (soLuong, ngayBD, ngayKT);
                     createVTYT (rpt, dt);
                     break;
@@ -627,11 +631,43 @@ namespace BHYT
         private void createReport()
         {
             rptThongKeSoLuong rpt = new rptThongKeSoLuong ();
+            rptThongKeSoLuongThuoc rptThuoc = new rptThongKeSoLuongThuoc();
+
             rpt.lblTieuDe.Text = cbTieuChi.SelectedItem.ToString().ToUpper ();
             
-            getData (rpt);
-            rpt.CreateDocument ();
-            rpt.ShowPreviewDialog ();
+            getData (rpt,rptThuoc);
+            if (cbTieuChi.SelectedIndex == 0)
+            {
+                rptThuoc.CreateDocument();
+                rptThuoc.ShowPreviewDialog();
+            }
+            else
+            {
+                rpt.CreateDocument();
+                rpt.ShowPreviewDialog();
+            }
+        }
+        private void createSoLuongThuoc(DataTable data, rptThongKeSoLuongThuoc rpt)
+        {
+            rpt.xrlblNgay.Text = "Từ ngày " + dateTuNgay.Text + " đến " + dateDenNgay.Text;
+            if(cbLoaiKCB.SelectedIndex ==0)
+            {
+                rpt.xrlblTieuDe.Text = "THỐNG KÊ THUỐC NỘI/NGOẠI TRÚ";
+            }else
+                if(cbLoaiKCB.SelectedIndex == 1)
+            {
+                rpt.xrlblTieuDe.Text = "THỐNG KÊ THUỐC KHÁM CHỮA BỆNH";
+            }
+            else
+                if(cbLoaiKCB.SelectedIndex == 2)
+            {
+                rpt.xrlblTieuDe.Text = "THỐNG KÊ THUỐC NGOẠI TRÚ";
+            }
+            else
+            {
+                rpt.xrlblTieuDe.Text = "THỐNG KÊ THUỐC NỘI TRÚ";
+            }
+            rpt.DataSource = data;
         }
     }
 }

@@ -461,6 +461,12 @@
     <Compile Include="rptThongKeSoLuong.Designer.cs">
       <DependentUpon>rptThongKeSoLuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptThongKeSoLuongThuoc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptThongKeSoLuongThuoc.Designer.cs">
+      <DependentUpon>rptThongKeSoLuongThuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="rptThongKeThuoc.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -710,6 +716,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rptThongKeSoLuong.resx">
       <DependentUpon>rptThongKeSoLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptThongKeSoLuongThuoc.resx">
+      <DependentUpon>rptThongKeSoLuongThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptThongKeThuoc.resx">
       <DependentUpon>rptThongKeThuoc.cs</DependentUpon>
