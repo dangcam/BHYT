@@ -120,7 +120,7 @@
             // xrTableCellSoLuong
             // 
             this.xrTableCellSoLuong.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SO_LUONG")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SO_LUONG", "{0:#,###}")});
             this.xrTableCellSoLuong.Dpi = 100F;
             this.xrTableCellSoLuong.Name = "xrTableCellSoLuong";
             this.xrTableCellSoLuong.Text = "xrTableCell4";

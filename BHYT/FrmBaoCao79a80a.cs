@@ -156,7 +156,7 @@ namespace BHYT
             rpt.xrCellVanChuyen.Text = Utils.ToDecimal(dt.Compute("SUM(T_VC)", "")).ToString("#,###");
             rpt.xrCellBHTT.Text = Utils.ToDecimal(dt.Compute("SUM(T_BHTT)", "")).ToString("#,###");
             rpt.xrCellBNTT.Text = Utils.ToDecimal(dt.Compute("SUM(T_BNTT)", "")).ToString("#,###");
-
+            rpt.xrCellCDHA.Text = Utils.ToDecimal(dt.Compute("SUM(T_CDHA_TDCN)", "")).ToString("#,###");
             rpt.CreateDocument();
             rpt.ShowPreviewDialog();
 
