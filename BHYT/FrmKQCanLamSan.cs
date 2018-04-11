@@ -222,7 +222,6 @@ namespace BHYT
         }
         private void creatReport()
         {
-            XtraReport rpt;
             switch (MauSo)
             {
                 case "19":

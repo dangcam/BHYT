@@ -453,6 +453,7 @@ namespace BHYT
             txtQR.ReadOnly = !them;
             LoadData ();
             txtMucHuong.Text = "100";
+            checkThe.Checked = true;
         }
 
         private void btnPhongKham1_Click (object sender, EventArgs e)
@@ -798,15 +799,15 @@ namespace BHYT
                                 using (HttpContent content = response.Content)
                                 {
                                     //MessageBox.Show (content.Headers.ToString ());
-                                    string mycontent = await content.ReadAsStringAsync();
-                                    mycontent = mycontent.Replace("\"", "").Replace("{", "").Replace("}", "");
-                                    string[] kq = mycontent.Split(',');
-                                    string maKetQua = kq[0].Split(':')[1];
+                                    KQPhienLamViec mycontent = await content.ReadAsAsync<KQPhienLamViec>();
+                                    //mycontent = mycontent.Replace("\"", "").Replace("{", "").Replace("}", "");
+                                    //string[] kq = mycontent.Split(',');
+                                    string maKetQua = mycontent.maKetQua; //kq[0].Split(':')[1];
                                     if(maKetQua.Equals("200"))
                                     {
-                                        token = kq[1].Split(':')[2];
-                                        id_token = kq[2].Split(':')[1];
-                                        expires_in =Utils.ToDateTime( kq[5].Replace("expires_in:", ""));
+                                        token = mycontent.APIKey.access_token;// kq[1].Split(':')[2];
+                                        id_token = mycontent.APIKey.id_token;// kq[2].Split(':')[1];
+                                        expires_in = mycontent.APIKey.expires_in.AddHours(7);//Utils.ToDateTime( kq[5].Replace("expires_in:", ""));
                                     }
                                     else
                                     {
@@ -858,6 +859,19 @@ namespace BHYT
                 {
                     MessageBox.Show("Không có kết nối internet!", "Lỗi");
                 }
+            }
+        }
+
+        private void checkThe_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkThe.Checked)
+            {
+                txtBHYT.Enabled = true;
+            }
+            else
+            {
+                txtBHYT.Enabled = false;
+                txtBHYT.Text = txtMaBN.Text;
             }
         }
     }

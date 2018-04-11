@@ -134,6 +134,7 @@
             this.MaBenh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenBenh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lookUpMaBenh = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.checkThe = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaTaiNan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpNoiChuyenDen.Properties)).BeginInit();
@@ -370,7 +371,7 @@
             this.lookUpMaTaiNan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpMaTaiNan.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MA", 10, "Mã"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MA", "Mã", 10, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TEN", "Tên")});
             this.lookUpMaTaiNan.Properties.DropDownRows = 9;
             this.lookUpMaTaiNan.Properties.NullText = "";
@@ -419,7 +420,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpNoiChuyenDen.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MA", "Mã"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TEN", 40, "Tên")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TEN", "Tên", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lookUpNoiChuyenDen.Properties.NullText = "";
             this.lookUpNoiChuyenDen.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lookUpNoiChuyenDen.Size = new System.Drawing.Size(335, 22);
@@ -773,8 +774,8 @@
             // 
             this.btnCongKham.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCongKham.Appearance.Options.UseFont = true;
-            this.btnCongKham.Image = ((System.Drawing.Image)(resources.GetObject("btnCongKham.Image")));
-            this.btnCongKham.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnCongKham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCongKham.ImageOptions.Image")));
+            this.btnCongKham.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.btnCongKham.Location = new System.Drawing.Point(351, 215);
             this.btnCongKham.Name = "btnCongKham";
             this.btnCongKham.Size = new System.Drawing.Size(120, 30);
@@ -786,8 +787,8 @@
             // 
             this.btnChiPhiThuoc.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChiPhiThuoc.Appearance.Options.UseFont = true;
-            this.btnChiPhiThuoc.Image = ((System.Drawing.Image)(resources.GetObject("btnChiPhiThuoc.Image")));
-            this.btnChiPhiThuoc.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnChiPhiThuoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChiPhiThuoc.ImageOptions.Image")));
+            this.btnChiPhiThuoc.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.btnChiPhiThuoc.Location = new System.Drawing.Point(621, 215);
             this.btnChiPhiThuoc.Name = "btnChiPhiThuoc";
             this.btnChiPhiThuoc.Size = new System.Drawing.Size(207, 30);
@@ -799,8 +800,8 @@
             // 
             this.btnTienGiuong.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTienGiuong.Appearance.Options.UseFont = true;
-            this.btnTienGiuong.Image = ((System.Drawing.Image)(resources.GetObject("btnTienGiuong.Image")));
-            this.btnTienGiuong.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnTienGiuong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTienGiuong.ImageOptions.Image")));
+            this.btnTienGiuong.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.btnTienGiuong.Location = new System.Drawing.Point(486, 215);
             this.btnTienGiuong.Name = "btnTienGiuong";
             this.btnTienGiuong.Size = new System.Drawing.Size(120, 30);
@@ -888,8 +889,8 @@
             // btnCuoi
             // 
             this.btnCuoi.Enabled = false;
-            this.btnCuoi.Image = ((System.Drawing.Image)(resources.GetObject("btnCuoi.Image")));
-            this.btnCuoi.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnCuoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCuoi.ImageOptions.Image")));
+            this.btnCuoi.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnCuoi.Location = new System.Drawing.Point(164, 12);
             this.btnCuoi.Name = "btnCuoi";
             this.btnCuoi.Size = new System.Drawing.Size(30, 30);
@@ -898,8 +899,8 @@
             // btnTien
             // 
             this.btnTien.Enabled = false;
-            this.btnTien.Image = ((System.Drawing.Image)(resources.GetObject("btnTien.Image")));
-            this.btnTien.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnTien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTien.ImageOptions.Image")));
+            this.btnTien.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnTien.Location = new System.Drawing.Point(128, 12);
             this.btnTien.Name = "btnTien";
             this.btnTien.Size = new System.Drawing.Size(30, 30);
@@ -909,8 +910,8 @@
             // btnLui
             // 
             this.btnLui.Enabled = false;
-            this.btnLui.Image = ((System.Drawing.Image)(resources.GetObject("btnLui.Image")));
-            this.btnLui.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnLui.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLui.ImageOptions.Image")));
+            this.btnLui.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnLui.Location = new System.Drawing.Point(92, 11);
             this.btnLui.Name = "btnLui";
             this.btnLui.Size = new System.Drawing.Size(30, 30);
@@ -920,8 +921,8 @@
             // btnDau
             // 
             this.btnDau.Enabled = false;
-            this.btnDau.Image = ((System.Drawing.Image)(resources.GetObject("btnDau.Image")));
-            this.btnDau.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnDau.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDau.ImageOptions.Image")));
+            this.btnDau.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnDau.Location = new System.Drawing.Point(56, 11);
             this.btnDau.Name = "btnDau";
             this.btnDau.Size = new System.Drawing.Size(30, 30);
@@ -931,8 +932,8 @@
             // 
             this.btnLuuXem.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuuXem.Appearance.Options.UseFont = true;
-            this.btnLuuXem.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuXem.Image")));
-            this.btnLuuXem.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnLuuXem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuXem.ImageOptions.Image")));
+            this.btnLuuXem.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.btnLuuXem.Location = new System.Drawing.Point(773, 12);
             this.btnLuuXem.Name = "btnLuuXem";
             this.btnLuuXem.Size = new System.Drawing.Size(94, 30);
@@ -944,8 +945,8 @@
             // 
             this.btnLuuIn.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuuIn.Appearance.Options.UseFont = true;
-            this.btnLuuIn.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuIn.Image")));
-            this.btnLuuIn.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnLuuIn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuIn.ImageOptions.Image")));
+            this.btnLuuIn.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.btnLuuIn.Location = new System.Drawing.Point(646, 12);
             this.btnLuuIn.Name = "btnLuuIn";
             this.btnLuuIn.Size = new System.Drawing.Size(103, 30);
@@ -957,8 +958,8 @@
             // 
             this.btnTim.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTim.Appearance.Options.UseFont = true;
-            this.btnTim.Image = ((System.Drawing.Image)(resources.GetObject("btnTim.Image")));
-            this.btnTim.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnTim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTim.ImageOptions.Image")));
+            this.btnTim.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.btnTim.Location = new System.Drawing.Point(890, 12);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(70, 30);
@@ -970,8 +971,8 @@
             // 
             this.btnXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Appearance.Options.UseFont = true;
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
+            this.btnXoa.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.btnXoa.Location = new System.Drawing.Point(980, 12);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(91, 30);
@@ -983,8 +984,8 @@
             // 
             this.btnInDonThuoc.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInDonThuoc.Appearance.Options.UseFont = true;
-            this.btnInDonThuoc.Image = ((System.Drawing.Image)(resources.GetObject("btnInDonThuoc.Image")));
-            this.btnInDonThuoc.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnInDonThuoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInDonThuoc.ImageOptions.Image")));
+            this.btnInDonThuoc.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.btnInDonThuoc.Location = new System.Drawing.Point(394, 12);
             this.btnInDonThuoc.Name = "btnInDonThuoc";
             this.btnInDonThuoc.Size = new System.Drawing.Size(128, 30);
@@ -996,8 +997,8 @@
             // 
             this.btnLuu.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Appearance.Options.UseFont = true;
-            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
+            this.btnLuu.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.btnLuu.Location = new System.Drawing.Point(544, 12);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(77, 30);
@@ -1009,8 +1010,8 @@
             // 
             this.btnMoi.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoi.Appearance.Options.UseFont = true;
-            this.btnMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnMoi.Image")));
-            this.btnMoi.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnMoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMoi.ImageOptions.Image")));
+            this.btnMoi.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.btnMoi.Location = new System.Drawing.Point(299, 11);
             this.btnMoi.Name = "btnMoi";
             this.btnMoi.Size = new System.Drawing.Size(72, 30);
@@ -1197,7 +1198,7 @@
             this.txtQR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQR.Location = new System.Drawing.Point(72, 11);
             this.txtQR.Name = "txtQR";
-            this.txtQR.Size = new System.Drawing.Size(155, 22);
+            this.txtQR.Size = new System.Drawing.Size(83, 22);
             this.txtQR.TabIndex = 0;
             this.txtQR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQR_KeyPress);
             // 
@@ -1288,7 +1289,7 @@
             this.lookUpMaBenhKhac.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpMaBenhKhac.Properties.NullText = "";
-            this.lookUpMaBenhKhac.Properties.View = this.gridViewMaBenhKhac;
+            this.lookUpMaBenhKhac.Properties.PopupView = this.gridViewMaBenhKhac;
             this.lookUpMaBenhKhac.Size = new System.Drawing.Size(165, 22);
             this.lookUpMaBenhKhac.TabIndex = 20;
             this.lookUpMaBenhKhac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lookUpMaBenhKhac_KeyPress);
@@ -1370,17 +1371,30 @@
             this.lookUpMaBenh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpMaBenh.Properties.NullText = "";
-            this.lookUpMaBenh.Properties.View = this.gridViewMaBenh;
+            this.lookUpMaBenh.Properties.PopupView = this.gridViewMaBenh;
             this.lookUpMaBenh.Size = new System.Drawing.Size(278, 22);
             this.lookUpMaBenh.TabIndex = 19;
             this.lookUpMaBenh.EditValueChanged += new System.EventHandler(this.lookUpMaBenh_EditValueChanged);
             this.lookUpMaBenh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lookUpMaBenh_KeyPress);
+            // 
+            // checkThe
+            // 
+            this.checkThe.AutoSize = true;
+            this.checkThe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkThe.Location = new System.Drawing.Point(161, 12);
+            this.checkThe.Name = "checkThe";
+            this.checkThe.Size = new System.Drawing.Size(71, 20);
+            this.checkThe.TabIndex = 60;
+            this.checkThe.Text = "Có Thẻ";
+            this.checkThe.UseVisualStyleBackColor = true;
+            this.checkThe.CheckedChanged += new System.EventHandler(this.checkThe_CheckedChanged);
             // 
             // FrmNgoaiNoiTru
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 641);
+            this.Controls.Add(this.checkThe);
             this.Controls.Add(this.label35);
             this.Controls.Add(this.cbPhong);
             this.Controls.Add(this.btnKiemTra);
@@ -1592,5 +1606,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn TenKhac;
         private DevExpress.XtraGrid.Columns.GridColumn MaBenh;
         private DevExpress.XtraGrid.Columns.GridColumn TenBenh;
+        private System.Windows.Forms.CheckBox checkThe;
     }
 }

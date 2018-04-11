@@ -65,7 +65,6 @@
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable});
-            this.Detail.Dpi = 100F;
             this.Detail.HeightF = 25F;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
@@ -75,7 +74,6 @@
             // 
             this.xrTable.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable.Dpi = 100F;
             this.xrTable.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrTable.Name = "xrTable";
             this.xrTable.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -94,33 +92,29 @@
             this.xrTableCellNS,
             this.xrTableCellMH,
             this.xrTableCellST});
-            this.xrTableRow1.Dpi = 100F;
             this.xrTableRow1.Name = "xrTableRow1";
             this.xrTableRow1.Weight = 1D;
             // 
             // xrTableCellSTT
             // 
-            this.xrTableCellSTT.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "STT")});
-            this.xrTableCellSTT.Dpi = 100F;
+            this.xrTableCellSTT.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[STT]")});
             this.xrTableCellSTT.Name = "xrTableCellSTT";
             this.xrTableCellSTT.Text = "STT";
             this.xrTableCellSTT.Weight = 0.49999999999999994D;
             // 
             // xrTableCellMaBN
             // 
-            this.xrTableCellMaBN.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "MA_BN")});
-            this.xrTableCellMaBN.Dpi = 100F;
+            this.xrTableCellMaBN.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MA_BN]")});
             this.xrTableCellMaBN.Name = "xrTableCellMaBN";
             this.xrTableCellMaBN.Text = "Mã BN";
             this.xrTableCellMaBN.Weight = 1.4999998474121095D;
             // 
             // xrTableCellHoTen
             // 
-            this.xrTableCellHoTen.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "HO_TEN")});
-            this.xrTableCellHoTen.Dpi = 100F;
+            this.xrTableCellHoTen.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[HO_TEN]")});
             this.xrTableCellHoTen.Name = "xrTableCellHoTen";
             this.xrTableCellHoTen.StylePriority.UseTextAlignment = false;
             this.xrTableCellHoTen.Text = "Họ Tên";
@@ -129,38 +123,35 @@
             // 
             // xrTableCellNS
             // 
-            this.xrTableCellNS.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "NGAY_SINH")});
-            this.xrTableCellNS.Dpi = 100F;
+            this.xrTableCellNS.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NGAY_SINH]")});
             this.xrTableCellNS.Name = "xrTableCellNS";
             this.xrTableCellNS.Text = "Năm Sinh";
             this.xrTableCellNS.Weight = 0.8D;
             // 
             // xrTableCellMH
             // 
-            this.xrTableCellMH.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "MUC_HUONG")});
-            this.xrTableCellMH.Dpi = 100F;
+            this.xrTableCellMH.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MUC_HUONG]")});
             this.xrTableCellMH.Name = "xrTableCellMH";
             this.xrTableCellMH.Text = "Mức Hưởng";
             this.xrTableCellMH.Weight = 1.0000000000000002D;
             // 
             // xrTableCellST
             // 
-            this.xrTableCellST.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "T_BNTT", "{0:#,###}")});
-            this.xrTableCellST.Dpi = 100F;
+            this.xrTableCellST.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[T_BNTT]")});
             this.xrTableCellST.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCellST.Name = "xrTableCellST";
             this.xrTableCellST.StylePriority.UseFont = false;
             this.xrTableCellST.StylePriority.UseTextAlignment = false;
             this.xrTableCellST.Text = "Số Tiền";
             this.xrTableCellST.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCellST.TextFormatString = "{0:#,###}";
             this.xrTableCellST.Weight = 1.3700001525878904D;
             // 
             // lblNgay
             // 
-            this.lblNgay.Dpi = 100F;
             this.lblNgay.LocationFloat = new DevExpress.Utils.PointFloat(302.2918F, 25F);
             this.lblNgay.Name = "lblNgay";
             this.lblNgay.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -171,7 +162,6 @@
             // 
             // xrLabel1
             // 
-            this.xrLabel1.Dpi = 100F;
             this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(230F, 0F);
             this.xrLabel1.Name = "xrLabel1";
@@ -184,7 +174,6 @@
             // 
             // TopMargin
             // 
-            this.TopMargin.Dpi = 100F;
             this.TopMargin.HeightF = 30F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
@@ -192,7 +181,6 @@
             // 
             // BottomMargin
             // 
-            this.BottomMargin.Dpi = 100F;
             this.BottomMargin.HeightF = 30F;
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
@@ -206,13 +194,11 @@
             this.xrLabel3,
             this.xrLabel1,
             this.lblNgay});
-            this.ReportHeader.Dpi = 100F;
             this.ReportHeader.HeightF = 60F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // lblLoai
             // 
-            this.lblLoai.Dpi = 100F;
             this.lblLoai.LocationFloat = new DevExpress.Utils.PointFloat(647.0001F, 35F);
             this.lblLoai.Name = "lblLoai";
             this.lblLoai.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -223,7 +209,6 @@
             // 
             // xrLabel4
             // 
-            this.xrLabel4.Dpi = 100F;
             this.xrLabel4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(7.947286E-06F, 1.999998F);
             this.xrLabel4.Name = "xrLabel4";
@@ -236,7 +221,6 @@
             // 
             // xrLabel3
             // 
-            this.xrLabel3.Dpi = 100F;
             this.xrLabel3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 25F);
             this.xrLabel3.Name = "xrLabel3";
@@ -251,7 +235,6 @@
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTableHeader});
-            this.PageHeader.Dpi = 100F;
             this.PageHeader.HeightF = 25F;
             this.PageHeader.Name = "PageHeader";
             // 
@@ -260,7 +243,6 @@
             this.xrTableHeader.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableHeader.Dpi = 100F;
             this.xrTableHeader.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrTableHeader.Name = "xrTableHeader";
             this.xrTableHeader.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -279,48 +261,41 @@
             this.xrTableCell11,
             this.xrTableCell9,
             this.xrTableCell10});
-            this.xrTableRow2.Dpi = 100F;
             this.xrTableRow2.Name = "xrTableRow2";
             this.xrTableRow2.Weight = 1D;
             // 
             // xrTableCell6
             // 
-            this.xrTableCell6.Dpi = 100F;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.Text = "STT";
             this.xrTableCell6.Weight = 0.49999999999999994D;
             // 
             // xrTableCell7
             // 
-            this.xrTableCell7.Dpi = 100F;
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.Text = "Mã BN";
             this.xrTableCell7.Weight = 1.4999998474121095D;
             // 
             // xrTableCell8
             // 
-            this.xrTableCell8.Dpi = 100F;
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.Text = "Họ Tên";
             this.xrTableCell8.Weight = 2.5D;
             // 
             // xrTableCell11
             // 
-            this.xrTableCell11.Dpi = 100F;
             this.xrTableCell11.Name = "xrTableCell11";
             this.xrTableCell11.Text = "Năm Sinh";
             this.xrTableCell11.Weight = 0.8D;
             // 
             // xrTableCell9
             // 
-            this.xrTableCell9.Dpi = 100F;
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.Text = "Mức Hưởng";
             this.xrTableCell9.Weight = 1.0000000000000002D;
             // 
             // xrTableCell10
             // 
-            this.xrTableCell10.Dpi = 100F;
             this.xrTableCell10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.StylePriority.UseFont = false;
@@ -332,13 +307,11 @@
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel2,
             this.lblTong});
-            this.ReportFooter.Dpi = 100F;
             this.ReportFooter.HeightF = 25F;
             this.ReportFooter.Name = "ReportFooter";
             // 
             // xrLabel2
             // 
-            this.xrLabel2.Dpi = 100F;
             this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(530.0001F, 0F);
             this.xrLabel2.Name = "xrLabel2";
@@ -351,7 +324,6 @@
             // 
             // lblTong
             // 
-            this.lblTong.Dpi = 100F;
             this.lblTong.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTong.LocationFloat = new DevExpress.Utils.PointFloat(630.0001F, 0F);
             this.lblTong.Name = "lblTong";
@@ -375,7 +347,7 @@
             this.PageHeight = 1169;
             this.PageWidth = 827;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
-            this.Version = "16.2";
+            this.Version = "17.2";
             this.ParametersRequestBeforeShow += new System.EventHandler<DevExpress.XtraReports.Parameters.ParametersRequestEventArgs>(this.rptThongKeBNTT_ParametersRequestBeforeShow);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTableHeader)).EndInit();

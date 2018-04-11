@@ -462,7 +462,8 @@ namespace BHYT.DAO
                 new SqlParameter ("@CAN_NANG", thongtin.CanNang),
                 new SqlParameter ("@CHECK_OUT", thongtin.CheckOut),
                 new SqlParameter ("@PHONG", thongtin.Phong),
-                new SqlParameter ("@MA_BS", thongtin.MaBS));
+                new SqlParameter ("@MA_BS", thongtin.MaBS),
+                new SqlParameter("@CO_THE", thongtin.CoThe));
         }
         public bool XoaThongTinCT (ref string err, string maLK)
         {
@@ -535,7 +536,8 @@ namespace BHYT.DAO
                 new SqlParameter ("@CAN_NANG", thongtin.CanNang),
                 new SqlParameter ("@CHECK_OUT", thongtin.CheckOut),
                 new SqlParameter ("@PHONG", thongtin.Phong),
-                new SqlParameter ("@MA_BS", thongtin.MaBS));
+                new SqlParameter ("@MA_BS", thongtin.MaBS),
+                new SqlParameter("@CO_THE", thongtin.CoThe));
         }
         public bool SuaThuocCT (ref string err, Thuoc_CTVO thuoc)
         {
@@ -703,7 +705,8 @@ namespace BHYT.DAO
                 new SqlParameter("@CHECK_OUT", thongtin.CheckOut),
                 new SqlParameter("@PHONG", thongtin.Phong),
                 new SqlParameter("@MA_BS", thongtin.MaBS),
-                outSTT);
+                outSTT,
+                new SqlParameter("@CO_THE", thongtin.CoThe));
         }
     }
 

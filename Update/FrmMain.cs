@@ -136,7 +136,7 @@ namespace Update
                     }
                     catch (Exception e)
                     {
-                        //MessageBox.Show("An error occurred: " + e.Message);
+                        MessageBox.Show("An error occurred: " + e.Message);
                     }
                 }
             }

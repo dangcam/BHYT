@@ -150,10 +150,11 @@ namespace BHYT
             }
             this.ActiveControl = txtQR;
             //this.ActiveControl = txtBHYT; //version nông trường
+            checkThe.Checked = true;
         }
         private bool checkInput ()
         {
-            if (string.IsNullOrEmpty (txtBHYT.Text) || txtBHYT.Text.Length != 15)
+            if (string.IsNullOrEmpty (txtBHYT.Text) || txtBHYT.Text.Length != 15 && checkThe.Checked)
             {
                 MessageBox.Show ("Vui lòng nhập mã thẻ (15 ký tự).");
                 txtBHYT.Focus ();
@@ -439,18 +440,23 @@ namespace BHYT
             tongTien = t_thuoc + t_vtyt;
             
             txtTongTien.Text = tongTien.ToString ("0,0", elGR);
-            if (tongTien < luongCoso)
+            if (checkThe.Checked == false)
+            {
+                thongtinBN.MucHuong = 0;
+                txtTyLe.Text = "0";
+            }
+            else if (tongTien < luongCoso)
             {
                 thongtinBN.MucHuong = 100;
                 txtTyLe.Text = "100";
             }
             else
             {
-                int maSo = int.Parse (txtBHYT.Text.Substring (2, 1));
-                BHYTVO bh = new BHYTVO ();
-                bh = bhyt.getBHYT (maSo);
+                int maSo = int.Parse(txtBHYT.Text.Substring(2, 1));
+                BHYTVO bh = new BHYTVO();
+                bh = bhyt.getBHYT(maSo);
                 thongtinBN.MucHuong = bh.TyLe;
-                txtTyLe.Text = bh.TyLe.ToString ();
+                txtTyLe.Text = bh.TyLe.ToString();
             }
             foreach (DataRow drow in data.Rows)
             {
@@ -478,7 +484,7 @@ namespace BHYT
                 txtBHYT.Focus ();
                 return false;
             }
-            if(dateGTBD_KT_ValueChanged () == false)
+            if(checkThe.Checked && dateGTBD_KT_ValueChanged () == false)
             {
                 return false;
             }
@@ -685,6 +691,7 @@ namespace BHYT
                 thongtinBN.MaBenh = maBenhChinh;
                 thongtinBN.MaBenhKhac = txtMaBenhKhac.Text;
                 thongtinBN.MaLyDoVaoVien = cbLyDo.SelectedIndex + 1;
+                thongtinBN.CoThe = checkThe.Checked;
                 try
                 {
                     thongtinBN.MaNoiChuyen = lookUpNoiChuyenDen.EditValue.ToString ();
@@ -832,7 +839,7 @@ namespace BHYT
                     dvkt.MaBacSi = drView["MA_BAC_SI"].ToString ();
                     dvkt.MaBenh = maBenhChinh + ";" + thongtinBN.MaBenhKhac;
                     dvkt.KetQua = Utils.ToString(drView["KET_QUA"]);
-                    dvkt.MaNhomCLS = drView["MaNhom"].ToString();
+                    //dvkt.MaNhomCLS = drView["MaNhom"].ToString();
                     if (drView["NGAY_YL"].ToString ().Contains ("/"))
                     {
                         dvkt.NgayYLenh = DateTime.ParseExact (drView["NGAY_YL"].ToString (), "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture).ToString ("yyyyMMddHHmm");
@@ -2629,6 +2636,31 @@ namespace BHYT
         private void hienThongBao (string color, string mess)
         {
             MessageBox.Show (mess.Replace (":", ""),"Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void checkThe_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkThe.Checked)
+            {
+                txtBHYT.Enabled = true;
+                dateGTBD.Enabled = true;
+                dateGTKT.Enabled = true;
+                txtQR.Enabled = true;
+                btnKiemTra.Enabled = true;
+            }
+            else
+            {
+                txtBHYT.Enabled = false;
+                txtBHYT.Text = txtMaBN.Text;
+                dateGTBD.Enabled = false;
+                dateGTKT.Enabled = false;
+                txtQR.Enabled = false;
+                btnKiemTra.Enabled = false;
+                txtMucHuong.Text = "0";
+                txtTyLe.Text = "0";
+                dateGTBD.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                dateGTKT.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            }
         }
     }
 }

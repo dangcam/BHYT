@@ -49,6 +49,7 @@ namespace BHYT.VO
         private int phong;
         private string maBS;
         private int stt;
+        private bool coThe;
         public string MaLK
         {
             get
@@ -594,5 +595,7 @@ namespace BHYT.VO
                 stt = value;
             }
         }
+
+        public bool CoThe { get => coThe; set => coThe = value; }
     }
 }

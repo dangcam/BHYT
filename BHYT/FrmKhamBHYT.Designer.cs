@@ -98,6 +98,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.btnIn = new System.Windows.Forms.Button();
             this.btnLSKCB = new System.Windows.Forms.Button();
+            this.checkThe = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtDu5Nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateGTKT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateGTBD.Properties)).BeginInit();
@@ -409,7 +410,7 @@
             this.txtQR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQR.Location = new System.Drawing.Point(69, 14);
             this.txtQR.Name = "txtQR";
-            this.txtQR.Size = new System.Drawing.Size(155, 22);
+            this.txtQR.Size = new System.Drawing.Size(82, 22);
             this.txtQR.TabIndex = 0;
             this.txtQR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQR_KeyPress);
             // 
@@ -899,11 +900,24 @@
             this.btnLSKCB.UseVisualStyleBackColor = true;
             this.btnLSKCB.Click += new System.EventHandler(this.btnLSKCB_Click);
             // 
+            // checkThe
+            // 
+            this.checkThe.AutoSize = true;
+            this.checkThe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkThe.Location = new System.Drawing.Point(157, 16);
+            this.checkThe.Name = "checkThe";
+            this.checkThe.Size = new System.Drawing.Size(71, 20);
+            this.checkThe.TabIndex = 84;
+            this.checkThe.Text = "Có Thẻ";
+            this.checkThe.UseVisualStyleBackColor = true;
+            this.checkThe.CheckedChanged += new System.EventHandler(this.checkThe_CheckedChanged);
+            // 
             // FrmKhamBHYT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 561);
+            this.Controls.Add(this.checkThe);
             this.Controls.Add(this.btnLSKCB);
             this.Controls.Add(this.groupControl);
             this.Controls.Add(this.btnPhongKham4);
@@ -1036,5 +1050,6 @@
         private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.Button btnLSKCB;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.CheckBox checkThe;
     }
 }
