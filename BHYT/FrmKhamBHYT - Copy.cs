@@ -624,7 +624,6 @@ namespace BHYT
                 thongtinBN.MaBS = "";
                 thongtinBN.Phong = soPhong;
                 thongtinBN.Stt = 0;
-                thongtinBN.CoThe = checkThe.Checked;
                 string err = "";
                 if (!them)
                 {

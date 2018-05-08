@@ -207,6 +207,12 @@
     <Compile Include="FrmKeDon.Designer.cs">
       <DependentUpon>FrmKeDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmKhamSucKhoe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKhamSucKhoe.Designer.cs">
+      <DependentUpon>FrmKhamSucKhoe.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmKhamBHYT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -589,6 +595,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmKeDon.resx">
       <DependentUpon>FrmKeDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKhamSucKhoe.resx">
+      <DependentUpon>FrmKhamSucKhoe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmKhamBHYT.resx">
       <DependentUpon>FrmKhamBHYT.cs</DependentUpon>

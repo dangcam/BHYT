@@ -18,6 +18,7 @@ namespace BHYT
         FrmDSTiepNhan frmDSTiepNhan;
         FrmBenhICD frmBenh;
         FrmKhamBHYT frmKhamBHYT;
+        FrmKhamSucKhoe frmKhamSucKhoe;
         FrmTienGiuong frmTienGiuong;
         FrmCongKham frmTienKham;
         FrmDVKT frmDVKT;
@@ -336,6 +337,20 @@ namespace BHYT
             FrmBaoCao79a80a frmBaoCao;
             frmBaoCao = new FrmBaoCao79a80a(db);
             frmBaoCao.ShowDialog();
+        }
+
+        private void khamSucKhoeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!this.panelMain.Controls.Contains(frmKhamSucKhoe))
+            {
+                frmKhamSucKhoe = new FrmKhamSucKhoe(db);
+                frmKhamSucKhoe.TopLevel = false;
+                frmKhamSucKhoe.AutoScroll = true;
+                frmKhamSucKhoe.StartPosition = FormStartPosition.CenterScreen;
+                this.panelMain.Controls.Add(frmKhamSucKhoe);
+            }
+            frmKhamSucKhoe.WindowState = FormWindowState.Normal;
+            frmKhamSucKhoe.Show();
         }
     }
 }

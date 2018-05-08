@@ -1941,7 +1941,7 @@ namespace BHYT
                         txtTenBV.Text = (lookUpNoiChuyenDen.Properties.GetDataSourceRowByKeyValue (txtMaDKKCB.Text) as DataRowView)[1].ToString ();
                     }
                     catch { }
-
+                    checkThe.Checked = thongtinBN.CoThe;
                     //txtQR.ReadOnly = true;
                 }
             }
@@ -2647,6 +2647,8 @@ namespace BHYT
                 dateGTKT.Enabled = true;
                 txtQR.Enabled = true;
                 btnKiemTra.Enabled = true;
+                txtQR.Focus();
+                txtMaBN.ReadOnly = true;
             }
             else
             {
@@ -2660,7 +2662,20 @@ namespace BHYT
                 txtTyLe.Text = "0";
                 dateGTBD.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 dateGTKT.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                txtHoTen.Focus();
+                txtMaBN.ReadOnly = false;
             }
+        }
+
+        private void TimTT_Click(object sender, EventArgs e)
+        {
+            // hiện form danh sách thông tin
+            // gọi hàm lấy thông tin
+        }
+
+        private void txtMaBN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // gọi hàm lấy thông tin 
         }
     }
 }

@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace BHYT
 {
-    public partial class FrmKhamBHYT : Form
+    public partial class FrmKhamSucKhoe : Form
     {
         Connection db;
         bool them = false;
@@ -32,7 +32,7 @@ namespace BHYT
         string id_token = null;
         DateTime expires_in = DateTime.Now;
         FrmLichSuKCB frmLichSu;
-        public FrmKhamBHYT (Connection db)
+        public FrmKhamSucKhoe (Connection db)
         {
             this.db = db;
             InitializeComponent ();
@@ -403,7 +403,7 @@ namespace BHYT
                                     dateGTBD.Text = Utils.ParseDate (thongtinThe.GtTheTu, true);
                                     dateGTKT.Text = Utils.ParseDate (thongtinThe.GtTheDen, true);
                                     cbKhuVuc.Text = thongtinThe.MaKV;
-                                    btnPhongKham1.Focus ();
+                                    btnKhamSucKhoe.Focus ();
                                 }
                                 return;
                             }
@@ -443,6 +443,11 @@ namespace BHYT
             lookUpMaKhoa.Properties.DisplayMember = "TEN_KHOA";
             lookUpMaKhoa.Properties.ValueMember = "MA_KHOA";
             lookUpMaKhoa.ItemIndex = 0;
+            //
+            lookUpDonVi.Properties.DataSource = khoa.DSDonVi();
+            lookUpDonVi.Properties.DisplayMember = "DONVI";
+            lookUpDonVi.Properties.ValueMember = "MADV";
+            lookUpDonVi.ItemIndex = 0;
 
             cbPhong.SelectedIndex = 0;
             dateTu.Text = DateTime.Now.ToShortDateString();
@@ -461,20 +466,6 @@ namespace BHYT
             LuuThongTin (0);
         }
 
-        private void btnPhongKham2_Click (object sender, EventArgs e)
-        {
-            LuuThongTin (1);
-        }
-
-        private void btnPhongKham3_Click (object sender, EventArgs e)
-        {
-            LuuThongTin (2);
-        }
-
-        private void btnPhongKham4_Click (object sender, EventArgs e)
-        {
-            LuuThongTin (3);
-        }
         private bool KiemTraDauVao()
         {
             if (string.IsNullOrEmpty (txtBHYT.Text))
@@ -483,7 +474,7 @@ namespace BHYT
                 txtBHYT.Focus ();
                 return false;
             }
-            if (dateGTBD_KT_ValueChanged () == false)
+            if (checkThe.Checked && dateGTBD_KT_ValueChanged () == false)
             {
                 return false;
             }
@@ -571,6 +562,37 @@ namespace BHYT
             }
             if(KiemTraDauVao())
             {
+                string err = "";
+                // lưu thông tin bệnh nhân
+                THONGTINVO benhnhan = new THONGTINVO();
+                benhnhan.MaThe = txtBHYT.Text;
+                benhnhan.HoTen = txtHoTen.Text;
+                try
+                {
+                    benhnhan.NgaySinh = DateTime.ParseExact(txtNgaySinh.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyyMMdd");
+                }
+                catch
+                {
+                    benhnhan.NgaySinh = txtNgaySinh.Text;
+                }
+                benhnhan.GioiTinh = cbGioiTinh.SelectedIndex;
+                benhnhan.DiaChi = txtDiaChi.Text;
+                benhnhan.GtTheTu = DateTime.ParseExact(dateGTBD.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyyMMdd");
+                benhnhan.GtTheDen = DateTime.ParseExact(dateGTKT.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyyMMdd");
+                benhnhan.MaKV = cbKhuVuc.Text;
+                benhnhan.MaDV = lookUpDonVi.EditValue.ToString();
+                benhnhan.ChucVu = cbChucVu.SelectedText;
+                benhnhan.ToNT = cbTo.SelectedText;
+                benhnhan.CoQuan = txtCoQuan.Text;
+                if (thongtinBHYT.getBHYT(benhnhan.MaThe) != null)
+                {
+                    thongtinBHYT.SuaThongTin(ref err, benhnhan); // lưu thông tin
+                }
+                else
+                {
+                    thongtinBHYT.ThemThongTin(ref err, benhnhan);// thêm thông tin
+                }
+                // tiếp nhận
                 if (them == true)
                 {
                     txtMaBN.Text = thongtinCT.getMaBN (1 + DateTime.Now.ToString ("yyyyMMdd"));
@@ -625,7 +647,7 @@ namespace BHYT
                 thongtinBN.Phong = soPhong;
                 thongtinBN.Stt = 0;
                 thongtinBN.CoThe = checkThe.Checked;
-                string err = "";
+
                 if (!them)
                 {
                     thongtinCT.TiepNhan (ref err, thongtinBN,"UPDATE");// cập nhật
@@ -641,7 +663,7 @@ namespace BHYT
                 them = false;
                 txtQR.ReadOnly = !them;
                 LoadData ();
-                InSoPhieu ();
+                //InSoPhieu ();
                 btnMoi_Click (null, null);
             }
         }
@@ -696,10 +718,6 @@ namespace BHYT
             catch { }
         }
 
-        private void btnIn_Click (object sender, EventArgs e)
-        {
-            InSoPhieu ();
-        }
 
         private void gridView_RowClick (object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
@@ -868,11 +886,17 @@ namespace BHYT
             if(checkThe.Checked)
             {
                 txtBHYT.Enabled = true;
+                dateGTBD.Enabled = true;
+                dateGTKT.Enabled = true;
             }
             else
             {
                 txtBHYT.Enabled = false;
                 txtBHYT.Text = txtMaBN.Text;
+                dateGTBD.Enabled = false;
+                dateGTKT.Enabled = false;
+                dateGTBD.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                dateGTKT.Text = dateGTBD.Text;
             }
         }
     }

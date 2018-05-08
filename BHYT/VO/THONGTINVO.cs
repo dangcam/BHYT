@@ -132,5 +132,12 @@ namespace BHYT.VO
                 maLK = value;
             }
         }
+        public string MaDV
+        {
+            get; set;
+        }
+        public string ChucVu { get; set; }
+        public string ToNT { get; set; }
+        public string CoQuan { get; set; }
     }
 }

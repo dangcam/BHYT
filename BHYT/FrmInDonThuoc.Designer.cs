@@ -182,7 +182,6 @@
             this.LieuDung.Caption = "Ghi Chú";
             this.LieuDung.FieldName = "LIEU_DUNG";
             this.LieuDung.Name = "LieuDung";
-            this.LieuDung.OptionsColumn.AllowEdit = false;
             this.LieuDung.OptionsColumn.FixedWidth = true;
             this.LieuDung.Visible = true;
             this.LieuDung.VisibleIndex = 6;
@@ -192,8 +191,8 @@
             // 
             this.btnInDonThuoc.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInDonThuoc.Appearance.Options.UseFont = true;
-            this.btnInDonThuoc.Image = ((System.Drawing.Image)(resources.GetObject("btnInDonThuoc.Image")));
-            this.btnInDonThuoc.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnInDonThuoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInDonThuoc.ImageOptions.Image")));
+            this.btnInDonThuoc.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.btnInDonThuoc.Location = new System.Drawing.Point(540, 395);
             this.btnInDonThuoc.Name = "btnInDonThuoc";
             this.btnInDonThuoc.Size = new System.Drawing.Size(128, 30);
@@ -234,7 +233,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmInDonThuoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "In Đơn Thuốc";
+            this.Text = " 2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmInDonThuoc_FormClosing);
             this.Load += new System.EventHandler(this.FrmInDonThuoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();

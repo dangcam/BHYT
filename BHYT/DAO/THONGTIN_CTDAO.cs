@@ -101,6 +101,7 @@ namespace BHYT.DAO
                     thongtin.CheckOut = bool.Parse(dr[38].ToString ());
                     thongtin.Phong = ToInt(dr[39].ToString ());
                     thongtin.MaBS = dr[40].ToString ();
+                    thongtin.CoThe = Convert.ToBoolean(dr["CO_THE"]);
                     return thongtin;
                 }
             }

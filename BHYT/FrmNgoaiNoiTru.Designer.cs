@@ -135,6 +135,7 @@
             this.TenBenh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lookUpMaBenh = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.checkThe = new System.Windows.Forms.CheckBox();
+            this.TimTT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaTaiNan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpNoiChuyenDen.Properties)).BeginInit();
@@ -167,8 +168,9 @@
             this.txtMaBN.Location = new System.Drawing.Point(114, 42);
             this.txtMaBN.Name = "txtMaBN";
             this.txtMaBN.ReadOnly = true;
-            this.txtMaBN.Size = new System.Drawing.Size(113, 22);
+            this.txtMaBN.Size = new System.Drawing.Size(100, 22);
             this.txtMaBN.TabIndex = 7;
+            this.txtMaBN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaBN_KeyPress);
             // 
             // label2
             // 
@@ -234,7 +236,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(233, 43);
+            this.label6.Location = new System.Drawing.Point(277, 44);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 16);
             this.label6.TabIndex = 8;
@@ -243,9 +245,9 @@
             // txtHoTen
             // 
             this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoTen.Location = new System.Drawing.Point(312, 41);
+            this.txtHoTen.Location = new System.Drawing.Point(347, 41);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(278, 22);
+            this.txtHoTen.Size = new System.Drawing.Size(243, 22);
             this.txtHoTen.TabIndex = 8;
             this.txtHoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoTen_KeyPress);
             this.txtHoTen.Leave += new System.EventHandler(this.txtHoTen_Leave);
@@ -1389,11 +1391,23 @@
             this.checkThe.UseVisualStyleBackColor = true;
             this.checkThe.CheckedChanged += new System.EventHandler(this.checkThe_CheckedChanged);
             // 
+            // TimTT
+            // 
+            this.TimTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimTT.Location = new System.Drawing.Point(220, 42);
+            this.TimTT.Name = "TimTT";
+            this.TimTT.Size = new System.Drawing.Size(51, 23);
+            this.TimTT.TabIndex = 61;
+            this.TimTT.Text = "Tìm";
+            this.TimTT.UseVisualStyleBackColor = true;
+            this.TimTT.Click += new System.EventHandler(this.TimTT_Click);
+            // 
             // FrmNgoaiNoiTru
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 641);
+            this.Controls.Add(this.TimTT);
             this.Controls.Add(this.checkThe);
             this.Controls.Add(this.label35);
             this.Controls.Add(this.cbPhong);
@@ -1607,5 +1621,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn MaBenh;
         private DevExpress.XtraGrid.Columns.GridColumn TenBenh;
         private System.Windows.Forms.CheckBox checkThe;
+        private System.Windows.Forms.Button TimTT;
     }
 }

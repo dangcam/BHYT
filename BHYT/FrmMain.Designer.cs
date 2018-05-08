@@ -65,6 +65,7 @@
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.huongDanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.khamSucKhoeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,7 +134,8 @@
             // tiepNhanToolStripMenuItem
             // 
             this.tiepNhanToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.khamBHYTToolStripMenuItem});
+            this.khamBHYTToolStripMenuItem,
+            this.khamSucKhoeToolStripMenuItem});
             this.tiepNhanToolStripMenuItem.Name = "tiepNhanToolStripMenuItem";
             this.tiepNhanToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.tiepNhanToolStripMenuItem.Text = "Tiếp Nhận";
@@ -141,7 +143,7 @@
             // khamBHYTToolStripMenuItem
             // 
             this.khamBHYTToolStripMenuItem.Name = "khamBHYTToolStripMenuItem";
-            this.khamBHYTToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.khamBHYTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.khamBHYTToolStripMenuItem.Text = "Khám BHYT";
             this.khamBHYTToolStripMenuItem.Click += new System.EventHandler(this.khamBHYTToolStripMenuItem_Click);
             // 
@@ -357,6 +359,13 @@
             this.panelMain.Size = new System.Drawing.Size(931, 478);
             this.panelMain.TabIndex = 1;
             // 
+            // khamSucKhoeToolStripMenuItem
+            // 
+            this.khamSucKhoeToolStripMenuItem.Name = "khamSucKhoeToolStripMenuItem";
+            this.khamSucKhoeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.khamSucKhoeToolStripMenuItem.Text = "Khám Sức Khỏe";
+            this.khamSucKhoeToolStripMenuItem.Click += new System.EventHandler(this.khamSucKhoeToolStripMenuItem_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,6 +424,7 @@
         private System.Windows.Forms.ToolStripMenuItem canLamSanToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem nhomCamLamSanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem baoCao79ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem khamSucKhoeToolStripMenuItem;
     }
 }
 
