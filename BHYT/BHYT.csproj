@@ -141,6 +141,7 @@
     <Compile Include="DAO\CanLamSanDAO.cs" />
     <Compile Include="DAO\DataBaseDAO.cs" />
     <Compile Include="DAO\KCBDAO.cs" />
+    <Compile Include="DAO\KhamSucKhoeDAO.cs" />
     <Compile Include="DAO\ThongKeDAO.cs" />
     <Compile Include="DAO\TienKhamDAO.cs" />
     <Compile Include="DAO\DVTKDAO.cs" />
@@ -296,6 +297,12 @@
     </Compile>
     <Compile Include="FrmPhimTat.Designer.cs">
       <DependentUpon>FrmPhimTat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmKQKhamSucKhoe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKQKhamSucKhoe.Designer.cs">
+      <DependentUpon>FrmKQKhamSucKhoe.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmThemThuoc.cs">
       <SubType>Form</SubType>
@@ -540,6 +547,7 @@
     <Compile Include="VO\DVKTVO.cs" />
     <Compile Include="VO\DVKT_CTVO.cs" />
     <Compile Include="VO\KCBVO.cs" />
+    <Compile Include="VO\KhamSucKhoeVO.cs" />
     <Compile Include="VO\KhoaVO.cs" />
     <Compile Include="VO\NhanVienVO.cs" />
     <Compile Include="VO\THONGTINVO.cs" />
@@ -607,6 +615,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmKQCanLamSan.resx">
       <DependentUpon>FrmKQCanLamSan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKQKhamSucKhoe.resx">
+      <DependentUpon>FrmKQKhamSucKhoe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLichSuKCB.resx">
       <DependentUpon>FrmLichSuKCB.cs</DependentUpon>

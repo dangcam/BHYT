@@ -85,6 +85,14 @@ namespace BHYT
             }
             catch { return defaultvalue; }
         }
+        public static double ToDouble(string value, double defaultvalue = 0)
+        {
+            try
+            {
+                return double.Parse(value);
+            }
+            catch { return defaultvalue; }
+        }
         public static string ToString(object value, string defaultvalue = null)
         {
             try

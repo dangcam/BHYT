@@ -10,6 +10,7 @@ namespace BHYT
     {
         FrmKeDon frmKeDon;
         FrmChiDinhCLS frmChiDinh;
+        FrmKQKhamSucKhoe frmKhamSucKhoe = new FrmKQKhamSucKhoe();
         DataTable dt = null;
         THONGTIN_CTDAO thongtinCT = null;
         DataRow dr = null;
@@ -202,6 +203,20 @@ namespace BHYT
                 frmChiDinh.TheBHYT = dr["MA_THE"].ToString();
                 frmChiDinh.GioiTinh = dr["GIOI_TINH"].ToString();
                 frmChiDinh.ShowDialog();
+            }
+        }
+
+        private void btnKhamSucKhoe_Click(object sender, EventArgs e)
+        {
+            dr = gridView.GetFocusedDataRow();
+            if (dr != null)
+            {
+                frmKhamSucKhoe.MaLienKet = dr["MA_LK"].ToString();
+                frmKhamSucKhoe.HoTen = dr["HO_TEN"].ToString();
+                frmKhamSucKhoe.NamSinh = dr["NGAY_SINH"].ToString();
+                frmKhamSucKhoe.TheBHYT = dr["MA_THE"].ToString();
+                frmKhamSucKhoe.GioiTinh = dr["GIOI_TINH"].ToString();
+                frmKhamSucKhoe.ShowDialog();
             }
         }
     }

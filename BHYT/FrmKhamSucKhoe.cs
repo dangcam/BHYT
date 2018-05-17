@@ -28,6 +28,8 @@ namespace BHYT
         THONGTIN_CTDAO thongtinCT = null;
         THONGTINVO thongtinThe = new THONGTINVO ();
         THONGTIN_CTVO thongtinBN = new THONGTIN_CTVO ();
+        KhamSucKhoeVO khamSucKhoeVO = new KhamSucKhoeVO();
+        KhamSucKhoeDAO khamSucKhoeDAO = null;
         string token = null;
         string id_token = null;
         DateTime expires_in = DateTime.Now;
@@ -41,6 +43,7 @@ namespace BHYT
             thongtinCT = new THONGTIN_CTDAO (db);
             khoa = new KhoaDAO (db);
             frmLichSu = new FrmLichSuKCB(db);
+            khamSucKhoeDAO = new KhamSucKhoeDAO(db);
         }
 
         private void txtQR_KeyPress (object sender, KeyPressEventArgs e)
@@ -459,6 +462,11 @@ namespace BHYT
             LoadData ();
             txtMucHuong.Text = "100";
             checkThe.Checked = true;
+            //
+            cbChucVu.SelectedIndex = 0;
+            cbTo.SelectedIndex = 0;
+            cbLoaiKham.SelectedIndex = 0;
+
         }
 
         private void btnPhongKham1_Click (object sender, EventArgs e)
@@ -581,8 +589,8 @@ namespace BHYT
                 benhnhan.GtTheDen = DateTime.ParseExact(dateGTKT.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyyMMdd");
                 benhnhan.MaKV = cbKhuVuc.Text;
                 benhnhan.MaDV = lookUpDonVi.EditValue.ToString();
-                benhnhan.ChucVu = cbChucVu.SelectedText;
-                benhnhan.ToNT = cbTo.SelectedText;
+                benhnhan.ChucVu = cbChucVu.SelectedItem.ToString();
+                benhnhan.ToNT = cbTo.SelectedItem.ToString();
                 benhnhan.CoQuan = txtCoQuan.Text;
                 if (thongtinBHYT.getBHYT(benhnhan.MaThe) != null)
                 {
@@ -647,14 +655,18 @@ namespace BHYT
                 thongtinBN.Phong = soPhong;
                 thongtinBN.Stt = 0;
                 thongtinBN.CoThe = checkThe.Checked;
-
+                //
+                khamSucKhoeVO.MA_LK = thongtinBN.MaLK;
+                khamSucKhoeVO.CAN_NANG = thongtinBN.CanNang;
                 if (!them)
                 {
                     thongtinCT.TiepNhan (ref err, thongtinBN,"UPDATE");// cập nhật
+                    khamSucKhoeDAO.SpKhamSucKhoe(ref err, "UPDATE",khamSucKhoeVO);
                 }
                 else
                 {
                     thongtinCT.TiepNhan(ref err, thongtinBN, "INSERT");// thêm mới
+                    khamSucKhoeDAO.SpKhamSucKhoe(ref err, "INSERT", khamSucKhoeVO);
                 }
                 if (!string.IsNullOrEmpty (err))
                 {

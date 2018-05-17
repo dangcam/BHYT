@@ -64,6 +64,7 @@
             this.btnPhongKham2 = new System.Windows.Forms.Button();
             this.btnPhongKham1 = new System.Windows.Forms.Button();
             this.btnCanLamSan = new System.Windows.Forms.Button();
+            this.btnKhamSucKhoe = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.SuspendLayout();
@@ -395,7 +396,7 @@
             // btnChuyenNoiTru
             // 
             this.btnChuyenNoiTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChuyenNoiTru.Location = new System.Drawing.Point(161, 46);
+            this.btnChuyenNoiTru.Location = new System.Drawing.Point(149, 46);
             this.btnChuyenNoiTru.Name = "btnChuyenNoiTru";
             this.btnChuyenNoiTru.Size = new System.Drawing.Size(110, 30);
             this.btnChuyenNoiTru.TabIndex = 94;
@@ -406,7 +407,7 @@
             // btnPhongKham4
             // 
             this.btnPhongKham4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhongKham4.Location = new System.Drawing.Point(1044, 46);
+            this.btnPhongKham4.Location = new System.Drawing.Point(1067, 46);
             this.btnPhongKham4.Name = "btnPhongKham4";
             this.btnPhongKham4.Size = new System.Drawing.Size(170, 30);
             this.btnPhongKham4.TabIndex = 98;
@@ -417,7 +418,7 @@
             // btnPhongKham3
             // 
             this.btnPhongKham3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhongKham3.Location = new System.Drawing.Point(845, 46);
+            this.btnPhongKham3.Location = new System.Drawing.Point(888, 46);
             this.btnPhongKham3.Name = "btnPhongKham3";
             this.btnPhongKham3.Size = new System.Drawing.Size(170, 30);
             this.btnPhongKham3.TabIndex = 97;
@@ -428,7 +429,7 @@
             // btnPhongKham2
             // 
             this.btnPhongKham2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhongKham2.Location = new System.Drawing.Point(644, 46);
+            this.btnPhongKham2.Location = new System.Drawing.Point(710, 46);
             this.btnPhongKham2.Name = "btnPhongKham2";
             this.btnPhongKham2.Size = new System.Drawing.Size(170, 30);
             this.btnPhongKham2.TabIndex = 96;
@@ -439,7 +440,7 @@
             // btnPhongKham1
             // 
             this.btnPhongKham1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhongKham1.Location = new System.Drawing.Point(445, 46);
+            this.btnPhongKham1.Location = new System.Drawing.Point(531, 46);
             this.btnPhongKham1.Name = "btnPhongKham1";
             this.btnPhongKham1.Size = new System.Drawing.Size(170, 30);
             this.btnPhongKham1.TabIndex = 95;
@@ -450,13 +451,24 @@
             // btnCanLamSan
             // 
             this.btnCanLamSan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCanLamSan.Location = new System.Drawing.Point(295, 46);
+            this.btnCanLamSan.Location = new System.Drawing.Point(268, 46);
             this.btnCanLamSan.Name = "btnCanLamSan";
             this.btnCanLamSan.Size = new System.Drawing.Size(110, 30);
             this.btnCanLamSan.TabIndex = 94;
             this.btnCanLamSan.Text = "Cận lâm sàn";
             this.btnCanLamSan.UseVisualStyleBackColor = true;
             this.btnCanLamSan.Click += new System.EventHandler(this.btnCanLamSan_Click);
+            // 
+            // btnKhamSucKhoe
+            // 
+            this.btnKhamSucKhoe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhamSucKhoe.Location = new System.Drawing.Point(387, 46);
+            this.btnKhamSucKhoe.Name = "btnKhamSucKhoe";
+            this.btnKhamSucKhoe.Size = new System.Drawing.Size(110, 30);
+            this.btnKhamSucKhoe.TabIndex = 94;
+            this.btnKhamSucKhoe.Text = "Khám Sức Khỏe";
+            this.btnKhamSucKhoe.UseVisualStyleBackColor = true;
+            this.btnKhamSucKhoe.Click += new System.EventHandler(this.btnKhamSucKhoe_Click);
             // 
             // FrmDSTiepNhan
             // 
@@ -467,6 +479,7 @@
             this.Controls.Add(this.btnPhongKham3);
             this.Controls.Add(this.btnPhongKham2);
             this.Controls.Add(this.btnPhongKham1);
+            this.Controls.Add(this.btnKhamSucKhoe);
             this.Controls.Add(this.btnCanLamSan);
             this.Controls.Add(this.btnChuyenNoiTru);
             this.Controls.Add(this.btnKeDonThuoc);
@@ -535,5 +548,6 @@
         private System.Windows.Forms.Button btnPhongKham1;
         private DevExpress.XtraGrid.Columns.GridColumn MA_BENH;
         private System.Windows.Forms.Button btnCanLamSan;
+        private System.Windows.Forms.Button btnKhamSucKhoe;
     }
 }

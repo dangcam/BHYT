@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <config>
-  <server>DANGCAM</server>
+  <server>192.168.1.40</server>
   <batabase>BV_KHAM_CHUA_BENH</batabase>
-  <user>sa</user>
+  <user>dangcam.pr</user>
   <password>123456</password>
   <cosokcb>70013</cosokcb>
   <luongcoban>1300000</luongcoban>
