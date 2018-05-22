@@ -216,6 +216,7 @@ namespace BHYT
                 frmKhamSucKhoe.NamSinh = dr["NGAY_SINH"].ToString();
                 frmKhamSucKhoe.TheBHYT = dr["MA_THE"].ToString();
                 frmKhamSucKhoe.GioiTinh = dr["GIOI_TINH"].ToString();
+                frmKhamSucKhoe.NgayVao = dr["NGAY_VAO"].ToString();
                 frmKhamSucKhoe.ShowDialog();
             }
         }

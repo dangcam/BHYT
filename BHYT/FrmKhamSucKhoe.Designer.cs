@@ -1007,9 +1007,9 @@
             this.cbLoaiKham.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoaiKham.FormattingEnabled = true;
             this.cbLoaiKham.Items.AddRange(new object[] {
-            "Cho CBQL",
-            "Phân Loại",
-            "Tầm Soát"});
+            "1. Cho CBQL",
+            "2. Phân Loại",
+            "3. Tầm Soát"});
             this.cbLoaiKham.Location = new System.Drawing.Point(676, 113);
             this.cbLoaiKham.Name = "cbLoaiKham";
             this.cbLoaiKham.Size = new System.Drawing.Size(118, 24);

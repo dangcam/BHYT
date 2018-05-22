@@ -9,6 +9,7 @@ namespace BHYT.VO
     public class KhamSucKhoeVO
     {
         public string MA_LK { get; set; }
+        public int LOAI_KHAM { get; set; }
         public int CHIEU_CAO { get; set; }
         public float CAN_NANG { get; set; }
         public int MACH { get; set; }

@@ -25,13 +25,23 @@ namespace BHYT.DAO
             return db.ExcuteQuery("Select * From THONGTIN Where MA_THE ='"+MaThe+"'",
                 CommandType.Text, null);
         }
-
+        public DataTable ThongTinKSK(string MaLK)
+        {
+            return db.ExcuteQuery("Select * From KHAM_SUC_KHOE Where MA_LK ='" + MaLK + "'",
+                CommandType.Text, null);
+        }
+        public DataTable DSDonVi()
+        {
+            return db.ExcuteQuery("Select  * From DONVI",
+                CommandType.Text, null);
+        }
         public bool SpKhamSucKhoe(ref string err, string Action, KhamSucKhoeVO ksk)
         {
             return db.MyExecuteNonQuery("SpKhamSucKhoe",
                 CommandType.StoredProcedure, ref err,
                 new SqlParameter("@Action", Action),
                 new SqlParameter("@MA_LK", ksk.MA_LK),
+                new SqlParameter("@LOAI_KHAM", ksk.LOAI_KHAM),
                 new SqlParameter("@CHIEU_CAO", ksk.CHIEU_CAO),
                 new SqlParameter("@CAN_NANG", ksk.CAN_NANG),
                 new SqlParameter("@MACH", ksk.MACH),
@@ -105,6 +115,15 @@ namespace BHYT.DAO
                 new SqlParameter("@DIEU_TRI", ksk.DIEU_TRI),
                 new SqlParameter("@KET_LUAN", ksk.KET_LUAN),
                 new SqlParameter("@DE_NGHI", ksk.DE_NGHI));
+        }
+        public bool SuaThongTinKSK(ref string err, string MaThe, string MaDV, string ChucVu,string ToNT)
+        {
+            return db.MyExecuteNonQuery("SpSuaThongTinKSK",
+                CommandType.StoredProcedure, ref err,
+                new SqlParameter("@MA_THE", MaThe),
+                 new SqlParameter("@MADV", MaDV),
+                new SqlParameter("@CHUC_VU", ChucVu),
+                new SqlParameter("@TO_NT", ToNT));
         }
     }
 }

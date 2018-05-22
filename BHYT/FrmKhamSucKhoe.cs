@@ -658,6 +658,8 @@ namespace BHYT
                 //
                 khamSucKhoeVO.MA_LK = thongtinBN.MaLK;
                 khamSucKhoeVO.CAN_NANG = thongtinBN.CanNang;
+                khamSucKhoeVO.LOAI_KHAM = cbLoaiKham.SelectedIndex;
+
                 if (!them)
                 {
                     thongtinCT.TiepNhan (ref err, thongtinBN,"UPDATE");// cập nhật
