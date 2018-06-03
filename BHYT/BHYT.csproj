@@ -142,6 +142,7 @@
     <Compile Include="DAO\DataBaseDAO.cs" />
     <Compile Include="DAO\KCBDAO.cs" />
     <Compile Include="DAO\KhamSucKhoeDAO.cs" />
+    <Compile Include="DAO\SoLuongDAO.cs" />
     <Compile Include="DAO\ThongKeDAO.cs" />
     <Compile Include="DAO\TienKhamDAO.cs" />
     <Compile Include="DAO\DVTKDAO.cs" />
@@ -304,6 +305,12 @@
     <Compile Include="FrmKQKhamSucKhoe.Designer.cs">
       <DependentUpon>FrmKQKhamSucKhoe.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSoLuongCBCNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSoLuongCBCNV.Designer.cs">
+      <DependentUpon>FrmSoLuongCBCNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmThemThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -453,6 +460,12 @@
     <Compile Include="rptBaoCao.Designer.cs">
       <DependentUpon>rptBaoCao.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptCanLamSanKSK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptCanLamSanKSK.Designer.cs">
+      <DependentUpon>rptCanLamSanKSK.cs</DependentUpon>
+    </Compile>
     <Compile Include="rptChiPhi.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -464,6 +477,18 @@
     </Compile>
     <Compile Include="rptDonThuoc.Designer.cs">
       <DependentUpon>rptDonThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptKQKhamSucKhoe.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptKQKhamSucKhoe.Designer.cs">
+      <DependentUpon>rptKQKhamSucKhoe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptTTKhamSucKhoe.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptTTKhamSucKhoe.Designer.cs">
+      <DependentUpon>rptTTKhamSucKhoe.cs</DependentUpon>
     </Compile>
     <Compile Include="rptSoPhieu.cs">
       <SubType>Component</SubType>
@@ -650,6 +675,9 @@
     <EmbeddedResource Include="FrmPhimTat.resx">
       <DependentUpon>FrmPhimTat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmSoLuongCBCNV.resx">
+      <DependentUpon>FrmSoLuongCBCNV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmThemThuoc.resx">
       <DependentUpon>FrmThemThuoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -733,11 +761,20 @@
     <EmbeddedResource Include="rptBaoCao.resx">
       <DependentUpon>rptBaoCao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptCanLamSanKSK.resx">
+      <DependentUpon>rptCanLamSanKSK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptChiPhi.resx">
       <DependentUpon>rptChiPhi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptDonThuoc.resx">
       <DependentUpon>rptDonThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptKQKhamSucKhoe.resx">
+      <DependentUpon>rptKQKhamSucKhoe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptTTKhamSucKhoe.resx">
+      <DependentUpon>rptTTKhamSucKhoe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptSoPhieu.resx">
       <DependentUpon>rptSoPhieu.cs</DependentUpon>

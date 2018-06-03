@@ -69,6 +69,22 @@ namespace BHYT
             }
             catch { return null; }
         }
+        public static string ParseDates(string date,string format)
+        {
+            try
+            {
+                return DateTime.ParseExact(date, "yyyyMMddHHmm", System.Globalization.CultureInfo.InvariantCulture).ToString(format);
+            }
+            catch { return null; }
+        }
+        public static DateTime ParseDate(string date)
+        {
+            try
+            {
+                return DateTime.ParseExact(date, "yyyyMMddHHmm", System.Globalization.CultureInfo.InvariantCulture);
+            }
+            catch { return DateTime.Now; }
+        }
         public static decimal ToDecimal(object value, decimal defaultvalue = 0)
         {
             try

@@ -198,6 +198,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnThongTin = new System.Windows.Forms.Button();
+            this.btnCanLamSan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpDonVi.Properties)).BeginInit();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
@@ -439,6 +441,7 @@
             this.btnXemKQ.TabIndex = 11;
             this.btnXemKQ.Text = "Xem KQ";
             this.btnXemKQ.UseVisualStyleBackColor = true;
+            this.btnXemKQ.Click += new System.EventHandler(this.btnXemKQ_Click);
             // 
             // groupBox
             // 
@@ -2168,12 +2171,36 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Chiều cao:";
             // 
+            // btnThongTin
+            // 
+            this.btnThongTin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongTin.Location = new System.Drawing.Point(969, 8);
+            this.btnThongTin.Name = "btnThongTin";
+            this.btnThongTin.Size = new System.Drawing.Size(111, 24);
+            this.btnThongTin.TabIndex = 11;
+            this.btnThongTin.Text = "Thông Tin";
+            this.btnThongTin.UseVisualStyleBackColor = true;
+            this.btnThongTin.Click += new System.EventHandler(this.btnThongTin_Click);
+            // 
+            // btnCanLamSan
+            // 
+            this.btnCanLamSan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCanLamSan.Location = new System.Drawing.Point(969, 37);
+            this.btnCanLamSan.Name = "btnCanLamSan";
+            this.btnCanLamSan.Size = new System.Drawing.Size(111, 24);
+            this.btnCanLamSan.TabIndex = 11;
+            this.btnCanLamSan.Text = "Cận Lâm Sàn";
+            this.btnCanLamSan.UseVisualStyleBackColor = true;
+            this.btnCanLamSan.Click += new System.EventHandler(this.btnCanLamSan_Click);
+            // 
             // FrmKQKhamSucKhoe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 576);
             this.Controls.Add(this.groupBox);
+            this.Controls.Add(this.btnCanLamSan);
+            this.Controls.Add(this.btnThongTin);
             this.Controls.Add(this.btnXemKQ);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.lookUpDonVi);
@@ -2378,5 +2405,7 @@
         private System.Windows.Forms.CheckBox checkTayGiun;
         private System.Windows.Forms.CheckBox checkGynofar;
         private System.Windows.Forms.CheckBox checkDatVong;
+        private System.Windows.Forms.Button btnThongTin;
+        private System.Windows.Forms.Button btnCanLamSan;
     }
 }

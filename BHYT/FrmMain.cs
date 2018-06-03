@@ -352,5 +352,11 @@ namespace BHYT
             frmKhamSucKhoe.WindowState = FormWindowState.Normal;
             frmKhamSucKhoe.Show();
         }
+
+        private void soLuongCBCNVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSoLuongCBCNV frm = new FrmSoLuongCBCNV();
+            frm.ShowDialog();
+        }
     }
 }
