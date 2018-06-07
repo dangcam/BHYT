@@ -136,6 +136,7 @@
             this.lookUpMaBenh = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.checkThe = new System.Windows.Forms.CheckBox();
             this.TimTT = new System.Windows.Forms.Button();
+            this.btnTTKSK = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaTaiNan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpMaBS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpNoiChuyenDen.Properties)).BeginInit();
@@ -878,6 +879,7 @@
             this.panel1.Controls.Add(this.btnLuuXem);
             this.panel1.Controls.Add(this.btnLuuIn);
             this.panel1.Controls.Add(this.btnTim);
+            this.panel1.Controls.Add(this.btnTTKSK);
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnInDonThuoc);
             this.panel1.Controls.Add(this.btnLuu);
@@ -1402,6 +1404,19 @@
             this.TimTT.UseVisualStyleBackColor = true;
             this.TimTT.Click += new System.EventHandler(this.TimTT_Click);
             // 
+            // btnTTKSK
+            // 
+            this.btnTTKSK.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTTKSK.Appearance.Options.UseFont = true;
+            this.btnTTKSK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnTTKSK.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnTTKSK.Location = new System.Drawing.Point(1173, 10);
+            this.btnTTKSK.Name = "btnTTKSK";
+            this.btnTTKSK.Size = new System.Drawing.Size(116, 30);
+            this.btnTTKSK.TabIndex = 6;
+            this.btnTTKSK.Text = "TT Khám SK";
+            this.btnTTKSK.Click += new System.EventHandler(this.btnTTKSK_Click);
+            // 
             // FrmNgoaiNoiTru
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1622,5 +1637,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn TenBenh;
         private System.Windows.Forms.CheckBox checkThe;
         private System.Windows.Forms.Button TimTT;
+        private DevExpress.XtraEditors.SimpleButton btnTTKSK;
     }
 }

@@ -219,6 +219,8 @@ namespace BHYT
                 frmKhamSucKhoe.NgayVao = dr["NGAY_VAO"].ToString();
                 frmKhamSucKhoe.DiaChi = dr["DIA_CHI"].ToString();
                 frmKhamSucKhoe.ShowDialog();
+
+                LoadData();
             }
         }
     }

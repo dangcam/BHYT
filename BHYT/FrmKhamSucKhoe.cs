@@ -233,6 +233,7 @@ namespace BHYT
                                 sMessage = sMessage.Replace ("\"", "").Replace ("}", "").Replace ("\\u003cb", "").Replace ("\\u003c", "")
                                     .Replace("\\u0027", "").Replace("style=", "").Replace("color:", "").Replace("#0070C0", "").Replace("\\u003e","")
                                     .Replace("/b","");
+                                sMessage = sMessage.Replace("font-family:TNKeyUni-Arial", "");
                                 switch (code)
                                 {
                                     case "1":
@@ -476,10 +477,10 @@ namespace BHYT
 
         private bool KiemTraDauVao()
         {
-            if (string.IsNullOrEmpty (txtBHYT.Text))
+            if (checkThe.Checked && string.IsNullOrEmpty(txtBHYT.Text))
             {
-                MessageBox.Show ("Vui lòng nhập mã thẻ!");
-                txtBHYT.Focus ();
+                MessageBox.Show("Vui lòng nhập mã thẻ!");
+                txtBHYT.Focus();
                 return false;
             }
             if (checkThe.Checked && dateGTBD_KT_ValueChanged () == false)
@@ -527,7 +528,7 @@ namespace BHYT
                     return false;
                 }
             }
-            if (string.IsNullOrEmpty (txtBHYT.Text) || txtBHYT.Text.Length != 15)
+            if (checkThe.Checked && (string.IsNullOrEmpty (txtBHYT.Text) || txtBHYT.Text.Length != 15))
             {
                 MessageBox.Show ("Vui lòng nhập mã thẻ (15 ký tự).");
                 txtBHYT.Focus ();

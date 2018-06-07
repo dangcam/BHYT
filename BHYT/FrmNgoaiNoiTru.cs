@@ -2515,6 +2515,7 @@ namespace BHYT
                                 sMessage = sMessage.Replace("\"", "").Replace("}", "").Replace("\\u003cb", "").Replace("\\u003c", "")
                                    .Replace("\\u0027", "").Replace("style=", "").Replace("color:", "").Replace("#0070C0", "").Replace("\\u003e", "")
                                    .Replace("/b", "");
+                                sMessage = sMessage.Replace("font-family:TNKeyUni-Arial", "");
                                 switch (code)
                                 {
                                     case "1":
@@ -2676,6 +2677,22 @@ namespace BHYT
         private void txtMaBN_KeyPress(object sender, KeyPressEventArgs e)
         {
             // gọi hàm lấy thông tin 
+        }
+
+        private void btnTTKSK_Click(object sender, EventArgs e)
+        {
+            FrmKQKhamSucKhoe frmKhamSucKhoe = new FrmKQKhamSucKhoe();
+            if (!string.IsNullOrEmpty(MaLienKet))
+            {
+                frmKhamSucKhoe.MaLienKet = MaLienKet;
+                frmKhamSucKhoe.HoTen = thongtinBN.HoTen;
+                frmKhamSucKhoe.NamSinh =  Utils.ParseDate(thongtinBN.NgaySinh, true);
+                frmKhamSucKhoe.TheBHYT = thongtinBN.MaThe;
+                frmKhamSucKhoe.GioiTinh = thongtinBN.GioiTinh.ToString();
+                frmKhamSucKhoe.NgayVao = Utils.ParseDates(thongtinBN.NgayVao);
+                frmKhamSucKhoe.DiaChi = thongtinBN.DiaChi;
+                frmKhamSucKhoe.ShowDialog();
+            }
         }
     }
 }

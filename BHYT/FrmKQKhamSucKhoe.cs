@@ -1,4 +1,5 @@
 ﻿using BHYT.DAO;
+using BHYT.MauSo;
 using BHYT.VO;
 using DevExpress.XtraReports.UI;
 using System;
@@ -1072,6 +1073,145 @@ namespace BHYT
             rpt.xrlblCacBenhNeuCo.Text = txtKetLuan.Text;
             rpt.CreateDocument();
             rpt.ShowPreviewDialog();
+        }
+
+        private void btnInXQTimPhoi_Click(object sender, EventArgs e)
+        {
+            rptMauSo_19 rpt = new rptMauSo_19();
+
+            rpt.lblHoTen.Text = txtHoTen.Text;
+            //rpt.lblBHYT.Text = txtSoThe.Text;
+            rpt.lblNamSinh.Text = (txtNgaySinh.Text);
+            rpt.xrlblDiaChi.Text = this.DiaChi;
+            DateTime date = Utils.ParseDate(NgayVao);
+            rpt.lblGioiTinh.Text = this.GioiTinh == "0" ? "Nữ" : "Nam";
+            rpt.xrlblNgay.Text = "Phú Riềng, ngày " + date.Day + ", tháng " + date.Month + ", năm " + date.Year;
+            rpt.lblNgay.Text = "Phú Riềng, ngày " + date.Day + ", tháng " + date.Month + ", năm " + date.Year;
+            rpt.cellYeuCau.Text = "X-Quang Tim Phổi";
+            rpt.cellKetQua.Text =ToStringBT( txtXQTimPhoi.Text);
+            rpt.CreateDocument();
+            rpt.ShowRibbonPreviewDialog();
+        }
+
+        private void btnXQCSTL_Click(object sender, EventArgs e)
+        {
+            rptMauSo_19 rpt = new rptMauSo_19();
+            rpt.lblHoTen.Text = txtHoTen.Text;
+            //rpt.lblBHYT.Text = txtSoThe.Text;
+            rpt.lblNamSinh.Text = (txtNgaySinh.Text);
+            rpt.xrlblDiaChi.Text = this.DiaChi;
+            DateTime date = Utils.ParseDate(NgayVao);
+            rpt.lblGioiTinh.Text = this.GioiTinh == "0" ? "Nữ" : "Nam";
+            rpt.xrlblNgay.Text = "Phú Riềng, ngày " + date.Day + ", tháng " + date.Month + ", năm " + date.Year;
+            rpt.lblNgay.Text = "Phú Riềng, ngày " + date.Day + ", tháng " + date.Month + ", năm " + date.Year;
+            rpt.cellYeuCau.Text = "X-Quang Cột Sống Thắt Lưng";
+            rpt.cellKetQua.Text = ToStringBT(txtXQCSTL.Text);
+            rpt.CreateDocument();
+            rpt.ShowRibbonPreviewDialog();
+        }
+
+        private void btnXQKhac_Click(object sender, EventArgs e)
+        {
+            rptMauSo_19 rpt = new rptMauSo_19();
+            rpt.lblHoTen.Text = txtHoTen.Text;
+            //rpt.lblBHYT.Text = txtSoThe.Text;
+            rpt.lblNamSinh.Text = (txtNgaySinh.Text);
+            rpt.xrlblDiaChi.Text = this.DiaChi;
+            DateTime date = Utils.ParseDate(NgayVao);
+            rpt.lblGioiTinh.Text = this.GioiTinh == "0" ? "Nữ" : "Nam";
+            rpt.xrlblNgay.Text = "Phú Riềng, ngày " + date.Day + ", tháng " + date.Month + ", năm " + date.Year;
+            rpt.lblNgay.Text = "Phú Riềng, ngày " + date.Day + ", tháng " + date.Month + ", năm " + date.Year;
+            rpt.cellYeuCau.Text = "X-Quang Khác";
+            rpt.cellKetQua.Text = ToStringBT(txtXQKhac.Text);
+            rpt.CreateDocument();
+            rpt.ShowRibbonPreviewDialog();
+        }
+
+        private void btnDoDienTim_Click(object sender, EventArgs e)
+        {
+            rptMauSo_23 rpt = new rptMauSo_23();
+            rpt.lblHoTen.Text = txtHoTen.Text;
+            rpt.lblSoThe.Text = txtSoThe.Text;
+            rpt.lblNamSinh.Text = (txtNgaySinh.Text);
+            rpt.lblDiaChi.Text = this.DiaChi;
+            DateTime date = Utils.ParseDate(NgayVao);
+            rpt.lblGioiTinh.Text = this.GioiTinh == "0" ? "Nữ" : "Nam";
+            rpt.lblNgay.Text = "Phú Riềng, ngày " + date.Day + ", tháng " + date.Month + ", năm " + date.Year;
+            rpt.lblKetQua.Text = ToStringBT(txtDoDienTim.Text);
+            rpt.CreateDocument();
+            rpt.ShowRibbonPreviewDialog();
+        }
+
+        private void btnDoLoangX_Click(object sender, EventArgs e)
+        {
+            rptMauSo_27 rpt = new rptMauSo_27();
+            rpt.lblHoTen.Text = txtHoTen.Text;
+            //rpt.lblSoThe.Text = txtSoThe.Text;
+            rpt.lblNamSinh.Text = (txtNgaySinh.Text);
+            //rpt.lblDiaChi.Text = this.DiaChi;
+            DateTime date = Utils.ParseDate(NgayVao);
+            rpt.lblGioiTinh.Text = this.GioiTinh == "0" ? "Nữ" : "Nam";
+            rpt.lblNgay.Text = "Phú Riềng, ngày " + date.Day + ", tháng " + date.Month + ", năm " + date.Year;
+            rpt.cellKetQua.Text = ToStringBT(txtDoLoangX.Text);
+            rpt.CreateDocument();
+            rpt.ShowRibbonPreviewDialog();
+        }
+
+        private void btnXNHH_Click(object sender, EventArgs e)
+        {
+            rptMauSo_28 rpt = new rptMauSo_28();
+            rpt.lblHoTen.Text = txtHoTen.Text;
+            rpt.lblSoThe.Text = txtSoThe.Text;
+            rpt.lblNamSinh.Text = (txtNgaySinh.Text);
+            rpt.lblDiaChi.Text = this.DiaChi;
+            DateTime date = Utils.ParseDate(NgayVao);
+            rpt.lblGioiTinh.Text = this.GioiTinh == "0" ? "Nữ" : "Nam";
+            rpt.lblNgay.Text = "Phú Riềng, ngày " + date.Day + ", tháng " + date.Month + ", năm " + date.Year;
+            //rpt.cellKetQua.Text = ToStringBT(txtDoLoangX.Text);
+            rpt.CreateDocument();
+            rpt.ShowRibbonPreviewDialog();
+        }
+
+        private void btnSHNT_Click(object sender, EventArgs e)
+        {
+            rptMauSo_340 rpt = new rptMauSo_340();
+            rpt.lblHoTen.Text = txtHoTen.Text;
+            rpt.lblSoThe.Text = txtSoThe.Text;
+            rpt.lblNamSinh.Text = (txtNgaySinh.Text);
+            rpt.lblDiaChi.Text = this.DiaChi;
+            DateTime date = Utils.ParseDate(NgayVao);
+            rpt.lblGioiTinh.Text = this.GioiTinh == "0" ? "Nữ" : "Nam";
+            rpt.lblNgay.Text = "Phú Riềng, ngày " + date.Day + ", tháng " + date.Month + ", năm " + date.Year;
+            //rpt.cellKetQua.Text = ToStringBT(txtDoLoangX.Text);
+            rpt.CreateDocument();
+            rpt.ShowRibbonPreviewDialog();
+        }
+
+        private void btnSHM_Click(object sender, EventArgs e)
+        {
+            rptMauSo_33 rpt = new rptMauSo_33();
+            rpt.lblHoTen.Text = txtHoTen.Text;
+            rpt.lblSoThe.Text = txtSoThe.Text;
+            rpt.lblNamSinh.Text = (txtNgaySinh.Text);
+            rpt.lblDiaChi.Text = this.DiaChi;
+            DateTime date = Utils.ParseDate(NgayVao);
+            rpt.lblGioiTinh.Text = this.GioiTinh == "0" ? "Nữ" : "Nam";
+            rpt.lblNgay.Text = "Phú Riềng, ngày " + date.Day + ", tháng " + date.Month + ", năm " + date.Year;
+            //rpt.cellKetQua.Text = ToStringBT(txtDoLoangX.Text);
+            rpt.CreateDocument();
+            rpt.ShowRibbonPreviewDialog();
+        }
+
+        private void btnKeDon_Click(object sender, EventArgs e)
+        {
+            Connection db = new Connection();
+            FrmKeDon frmKeDon = new FrmKeDon(db);
+            if (MaLienKet != null)
+            {
+                frmKeDon.MaLienKet = MaLienKet;
+                frmKeDon.ShowDialog();
+                //LoadData();
+            }
         }
 
         private string ToStringBT(object str, string defaultvalue ="")

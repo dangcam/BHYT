@@ -50,6 +50,14 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXemKQ = new System.Windows.Forms.Button();
             this.groupBox = new System.Windows.Forms.GroupBox();
+            this.btnSHM = new System.Windows.Forms.Button();
+            this.btnSHNT = new System.Windows.Forms.Button();
+            this.btnXNHH = new System.Windows.Forms.Button();
+            this.btnDoLoangX = new System.Windows.Forms.Button();
+            this.btnDoDienTim = new System.Windows.Forms.Button();
+            this.btnXQKhac = new System.Windows.Forms.Button();
+            this.btnXQCSTL = new System.Windows.Forms.Button();
+            this.btnInXQTimPhoi = new System.Windows.Forms.Button();
             this.checkDieuTri = new System.Windows.Forms.CheckBox();
             this.checkTayGiun = new System.Windows.Forms.CheckBox();
             this.checkGynofar = new System.Windows.Forms.CheckBox();
@@ -200,6 +208,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnThongTin = new System.Windows.Forms.Button();
             this.btnCanLamSan = new System.Windows.Forms.Button();
+            this.btnKeDon = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpDonVi.Properties)).BeginInit();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
@@ -445,6 +454,14 @@
             // 
             // groupBox
             // 
+            this.groupBox.Controls.Add(this.btnSHM);
+            this.groupBox.Controls.Add(this.btnSHNT);
+            this.groupBox.Controls.Add(this.btnXNHH);
+            this.groupBox.Controls.Add(this.btnDoLoangX);
+            this.groupBox.Controls.Add(this.btnDoDienTim);
+            this.groupBox.Controls.Add(this.btnXQKhac);
+            this.groupBox.Controls.Add(this.btnXQCSTL);
+            this.groupBox.Controls.Add(this.btnInXQTimPhoi);
             this.groupBox.Controls.Add(this.checkDieuTri);
             this.groupBox.Controls.Add(this.checkTayGiun);
             this.groupBox.Controls.Add(this.checkGynofar);
@@ -599,6 +616,94 @@
             this.groupBox.Size = new System.Drawing.Size(1234, 510);
             this.groupBox.TabIndex = 9;
             this.groupBox.TabStop = false;
+            // 
+            // btnSHM
+            // 
+            this.btnSHM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSHM.Location = new System.Drawing.Point(1159, 354);
+            this.btnSHM.Name = "btnSHM";
+            this.btnSHM.Size = new System.Drawing.Size(63, 23);
+            this.btnSHM.TabIndex = 69;
+            this.btnSHM.Text = "In";
+            this.btnSHM.UseVisualStyleBackColor = true;
+            this.btnSHM.Click += new System.EventHandler(this.btnSHM_Click);
+            // 
+            // btnSHNT
+            // 
+            this.btnSHNT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSHNT.Location = new System.Drawing.Point(1159, 325);
+            this.btnSHNT.Name = "btnSHNT";
+            this.btnSHNT.Size = new System.Drawing.Size(63, 23);
+            this.btnSHNT.TabIndex = 69;
+            this.btnSHNT.Text = "In";
+            this.btnSHNT.UseVisualStyleBackColor = true;
+            this.btnSHNT.Click += new System.EventHandler(this.btnSHNT_Click);
+            // 
+            // btnXNHH
+            // 
+            this.btnXNHH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXNHH.Location = new System.Drawing.Point(1159, 297);
+            this.btnXNHH.Name = "btnXNHH";
+            this.btnXNHH.Size = new System.Drawing.Size(63, 23);
+            this.btnXNHH.TabIndex = 69;
+            this.btnXNHH.Text = "In";
+            this.btnXNHH.UseVisualStyleBackColor = true;
+            this.btnXNHH.Click += new System.EventHandler(this.btnXNHH_Click);
+            // 
+            // btnDoLoangX
+            // 
+            this.btnDoLoangX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoLoangX.Location = new System.Drawing.Point(1159, 151);
+            this.btnDoLoangX.Name = "btnDoLoangX";
+            this.btnDoLoangX.Size = new System.Drawing.Size(63, 23);
+            this.btnDoLoangX.TabIndex = 69;
+            this.btnDoLoangX.Text = "In";
+            this.btnDoLoangX.UseVisualStyleBackColor = true;
+            this.btnDoLoangX.Click += new System.EventHandler(this.btnDoLoangX_Click);
+            // 
+            // btnDoDienTim
+            // 
+            this.btnDoDienTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoDienTim.Location = new System.Drawing.Point(1159, 123);
+            this.btnDoDienTim.Name = "btnDoDienTim";
+            this.btnDoDienTim.Size = new System.Drawing.Size(63, 23);
+            this.btnDoDienTim.TabIndex = 69;
+            this.btnDoDienTim.Text = "In";
+            this.btnDoDienTim.UseVisualStyleBackColor = true;
+            this.btnDoDienTim.Click += new System.EventHandler(this.btnDoDienTim_Click);
+            // 
+            // btnXQKhac
+            // 
+            this.btnXQKhac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXQKhac.Location = new System.Drawing.Point(754, 386);
+            this.btnXQKhac.Name = "btnXQKhac";
+            this.btnXQKhac.Size = new System.Drawing.Size(75, 23);
+            this.btnXQKhac.TabIndex = 69;
+            this.btnXQKhac.Text = "In";
+            this.btnXQKhac.UseVisualStyleBackColor = true;
+            this.btnXQKhac.Click += new System.EventHandler(this.btnXQKhac_Click);
+            // 
+            // btnXQCSTL
+            // 
+            this.btnXQCSTL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXQCSTL.Location = new System.Drawing.Point(754, 357);
+            this.btnXQCSTL.Name = "btnXQCSTL";
+            this.btnXQCSTL.Size = new System.Drawing.Size(75, 23);
+            this.btnXQCSTL.TabIndex = 69;
+            this.btnXQCSTL.Text = "In";
+            this.btnXQCSTL.UseVisualStyleBackColor = true;
+            this.btnXQCSTL.Click += new System.EventHandler(this.btnXQCSTL_Click);
+            // 
+            // btnInXQTimPhoi
+            // 
+            this.btnInXQTimPhoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInXQTimPhoi.Location = new System.Drawing.Point(754, 330);
+            this.btnInXQTimPhoi.Name = "btnInXQTimPhoi";
+            this.btnInXQTimPhoi.Size = new System.Drawing.Size(75, 23);
+            this.btnInXQTimPhoi.TabIndex = 69;
+            this.btnInXQTimPhoi.Text = "In";
+            this.btnInXQTimPhoi.UseVisualStyleBackColor = true;
+            this.btnInXQTimPhoi.Click += new System.EventHandler(this.btnInXQTimPhoi_Click);
             // 
             // checkDieuTri
             // 
@@ -843,7 +948,7 @@
             this.txtXQKhac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtXQKhac.Location = new System.Drawing.Point(522, 386);
             this.txtXQKhac.Name = "txtXQKhac";
-            this.txtXQKhac.Size = new System.Drawing.Size(307, 22);
+            this.txtXQKhac.Size = new System.Drawing.Size(220, 22);
             this.txtXQKhac.TabIndex = 51;
             this.txtXQKhac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtXQKhac_KeyPress);
             // 
@@ -852,7 +957,7 @@
             this.txtXQCSTL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtXQCSTL.Location = new System.Drawing.Point(522, 357);
             this.txtXQCSTL.Name = "txtXQCSTL";
-            this.txtXQCSTL.Size = new System.Drawing.Size(307, 22);
+            this.txtXQCSTL.Size = new System.Drawing.Size(220, 22);
             this.txtXQCSTL.TabIndex = 50;
             this.txtXQCSTL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtXQCSTL_KeyPress);
             // 
@@ -861,7 +966,7 @@
             this.txtXQTimPhoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtXQTimPhoi.Location = new System.Drawing.Point(522, 329);
             this.txtXQTimPhoi.Name = "txtXQTimPhoi";
-            this.txtXQTimPhoi.Size = new System.Drawing.Size(307, 22);
+            this.txtXQTimPhoi.Size = new System.Drawing.Size(220, 22);
             this.txtXQTimPhoi.TabIndex = 49;
             this.txtXQTimPhoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtXQTimPhoi_KeyPress);
             // 
@@ -897,7 +1002,7 @@
             this.txtSinhHM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSinhHM.Location = new System.Drawing.Point(936, 354);
             this.txtSinhHM.Name = "txtSinhHM";
-            this.txtSinhHM.Size = new System.Drawing.Size(286, 22);
+            this.txtSinhHM.Size = new System.Drawing.Size(220, 22);
             this.txtSinhHM.TabIndex = 64;
             this.txtSinhHM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSinhHM_KeyPress);
             // 
@@ -906,7 +1011,7 @@
             this.txtSHNT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSHNT.Location = new System.Drawing.Point(936, 326);
             this.txtSHNT.Name = "txtSHNT";
-            this.txtSHNT.Size = new System.Drawing.Size(286, 22);
+            this.txtSHNT.Size = new System.Drawing.Size(220, 22);
             this.txtSHNT.TabIndex = 63;
             this.txtSHNT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSHNT_KeyPress);
             // 
@@ -915,7 +1020,7 @@
             this.txtXNHH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtXNHH.Location = new System.Drawing.Point(936, 298);
             this.txtXNHH.Name = "txtXNHH";
-            this.txtXNHH.Size = new System.Drawing.Size(286, 22);
+            this.txtXNHH.Size = new System.Drawing.Size(220, 22);
             this.txtXNHH.TabIndex = 62;
             this.txtXNHH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtXNHH_KeyPress);
             // 
@@ -951,7 +1056,7 @@
             this.txtDoLoangX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDoLoangX.Location = new System.Drawing.Point(936, 152);
             this.txtDoLoangX.Name = "txtDoLoangX";
-            this.txtDoLoangX.Size = new System.Drawing.Size(286, 22);
+            this.txtDoLoangX.Size = new System.Drawing.Size(220, 22);
             this.txtDoLoangX.TabIndex = 57;
             this.txtDoLoangX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDoLoangX_KeyPress);
             // 
@@ -960,7 +1065,7 @@
             this.txtDoDienTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDoDienTim.Location = new System.Drawing.Point(936, 124);
             this.txtDoDienTim.Name = "txtDoDienTim";
-            this.txtDoDienTim.Size = new System.Drawing.Size(286, 22);
+            this.txtDoDienTim.Size = new System.Drawing.Size(220, 22);
             this.txtDoDienTim.TabIndex = 56;
             this.txtDoDienTim.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDoDienTim_KeyPress);
             // 
@@ -2193,11 +2298,23 @@
             this.btnCanLamSan.UseVisualStyleBackColor = true;
             this.btnCanLamSan.Click += new System.EventHandler(this.btnCanLamSan_Click);
             // 
+            // btnKeDon
+            // 
+            this.btnKeDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeDon.Location = new System.Drawing.Point(1086, 8);
+            this.btnKeDon.Name = "btnKeDon";
+            this.btnKeDon.Size = new System.Drawing.Size(103, 23);
+            this.btnKeDon.TabIndex = 12;
+            this.btnKeDon.Text = "Kê đơn";
+            this.btnKeDon.UseVisualStyleBackColor = true;
+            this.btnKeDon.Click += new System.EventHandler(this.btnKeDon_Click);
+            // 
             // FrmKQKhamSucKhoe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 576);
+            this.Controls.Add(this.btnKeDon);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.btnCanLamSan);
             this.Controls.Add(this.btnThongTin);
@@ -2407,5 +2524,14 @@
         private System.Windows.Forms.CheckBox checkDatVong;
         private System.Windows.Forms.Button btnThongTin;
         private System.Windows.Forms.Button btnCanLamSan;
+        private System.Windows.Forms.Button btnInXQTimPhoi;
+        private System.Windows.Forms.Button btnSHM;
+        private System.Windows.Forms.Button btnSHNT;
+        private System.Windows.Forms.Button btnXNHH;
+        private System.Windows.Forms.Button btnDoLoangX;
+        private System.Windows.Forms.Button btnDoDienTim;
+        private System.Windows.Forms.Button btnXQKhac;
+        private System.Windows.Forms.Button btnXQCSTL;
+        private System.Windows.Forms.Button btnKeDon;
     }
 }
