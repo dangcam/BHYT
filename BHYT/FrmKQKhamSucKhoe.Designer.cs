@@ -209,6 +209,7 @@
             this.btnThongTin = new System.Windows.Forms.Button();
             this.btnCanLamSan = new System.Windows.Forms.Button();
             this.btnKeDon = new System.Windows.Forms.Button();
+            this.cbBacSi = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpDonVi.Properties)).BeginInit();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
@@ -2281,7 +2282,7 @@
             this.btnThongTin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongTin.Location = new System.Drawing.Point(969, 8);
             this.btnThongTin.Name = "btnThongTin";
-            this.btnThongTin.Size = new System.Drawing.Size(111, 24);
+            this.btnThongTin.Size = new System.Drawing.Size(123, 24);
             this.btnThongTin.TabIndex = 11;
             this.btnThongTin.Text = "Thông Tin";
             this.btnThongTin.UseVisualStyleBackColor = true;
@@ -2290,18 +2291,18 @@
             // btnCanLamSan
             // 
             this.btnCanLamSan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCanLamSan.Location = new System.Drawing.Point(969, 37);
+            this.btnCanLamSan.Location = new System.Drawing.Point(969, 36);
             this.btnCanLamSan.Name = "btnCanLamSan";
-            this.btnCanLamSan.Size = new System.Drawing.Size(111, 24);
+            this.btnCanLamSan.Size = new System.Drawing.Size(123, 24);
             this.btnCanLamSan.TabIndex = 11;
-            this.btnCanLamSan.Text = "Cận Lâm Sàn";
+            this.btnCanLamSan.Text = "Cận Lâm Sàng";
             this.btnCanLamSan.UseVisualStyleBackColor = true;
             this.btnCanLamSan.Click += new System.EventHandler(this.btnCanLamSan_Click);
             // 
             // btnKeDon
             // 
             this.btnKeDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKeDon.Location = new System.Drawing.Point(1086, 8);
+            this.btnKeDon.Location = new System.Drawing.Point(1097, 8);
             this.btnKeDon.Name = "btnKeDon";
             this.btnKeDon.Size = new System.Drawing.Size(103, 23);
             this.btnKeDon.TabIndex = 12;
@@ -2309,11 +2310,25 @@
             this.btnKeDon.UseVisualStyleBackColor = true;
             this.btnKeDon.Click += new System.EventHandler(this.btnKeDon_Click);
             // 
+            // cbBacSi
+            // 
+            this.cbBacSi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBacSi.FormattingEnabled = true;
+            this.cbBacSi.Items.AddRange(new object[] {
+            "Nguyễn Bá Nhàn",
+            "Nguyễn Thanh Huế",
+            "Đỗ Văn Bình"});
+            this.cbBacSi.Location = new System.Drawing.Point(1099, 36);
+            this.cbBacSi.Name = "cbBacSi";
+            this.cbBacSi.Size = new System.Drawing.Size(121, 24);
+            this.cbBacSi.TabIndex = 13;
+            // 
             // FrmKQKhamSucKhoe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 576);
+            this.Controls.Add(this.cbBacSi);
             this.Controls.Add(this.btnKeDon);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.btnCanLamSan);
@@ -2533,5 +2548,6 @@
         private System.Windows.Forms.Button btnXQKhac;
         private System.Windows.Forms.Button btnXQCSTL;
         private System.Windows.Forms.Button btnKeDon;
+        private System.Windows.Forms.ComboBox cbBacSi;
     }
 }

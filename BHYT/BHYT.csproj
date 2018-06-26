@@ -71,7 +71,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -460,11 +460,11 @@
     <Compile Include="rptBaoCao.Designer.cs">
       <DependentUpon>rptBaoCao.cs</DependentUpon>
     </Compile>
-    <Compile Include="rptCanLamSanKSK.cs">
+    <Compile Include="rptCanLamSangKSK.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="rptCanLamSanKSK.Designer.cs">
-      <DependentUpon>rptCanLamSanKSK.cs</DependentUpon>
+    <Compile Include="rptCanLamSangKSK.Designer.cs">
+      <DependentUpon>rptCanLamSangKSK.cs</DependentUpon>
     </Compile>
     <Compile Include="rptChiPhi.cs">
       <SubType>Component</SubType>
@@ -761,8 +761,8 @@
     <EmbeddedResource Include="rptBaoCao.resx">
       <DependentUpon>rptBaoCao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptCanLamSanKSK.resx">
-      <DependentUpon>rptCanLamSanKSK.cs</DependentUpon>
+    <EmbeddedResource Include="rptCanLamSangKSK.resx">
+      <DependentUpon>rptCanLamSangKSK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptChiPhi.resx">
       <DependentUpon>rptChiPhi.cs</DependentUpon>

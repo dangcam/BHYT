@@ -40,6 +40,11 @@ namespace BHYT.DAO
                 thongtin.GtTheDen = data.Rows[0][6].ToString();
                 thongtin.MaKV = data.Rows[0][7].ToString();
                 thongtin.MaLK = data.Rows[0][8].ToString();
+                thongtin.MaDV = data.Rows[0]["MaDV"].ToString();
+                thongtin.ChucVu = data.Rows[0]["CHUC_VU"].ToString();
+                thongtin.ToNT = data.Rows[0]["TO_NT"].ToString();
+                thongtin.CoQuan = data.Rows[0]["CO_QUAN"].ToString();
+
                 return thongtin;
             }
 

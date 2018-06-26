@@ -655,6 +655,14 @@ namespace BHYT
                 // lưu thông tin bệnh nhân
                 THONGTINVO benhnhan = new THONGTINVO ();
                 benhnhan.MaThe = txtBHYT.Text;
+                benhnhan = thongtinBHYT.getBHYT(benhnhan.MaThe);
+                bool flag = false;
+                if (benhnhan == null)
+                {
+                    flag = true;
+                    benhnhan = new THONGTINVO();
+                }
+                benhnhan.MaThe = txtBHYT.Text;
                 benhnhan.HoTen = txtHoTen.Text;
                 try
                 {
@@ -669,7 +677,8 @@ namespace BHYT
                 benhnhan.GtTheTu = DateTime.ParseExact (dateGTBD.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString ("yyyyMMdd");
                 benhnhan.GtTheDen = DateTime.ParseExact (dateGTKT.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString ("yyyyMMdd");
                 benhnhan.MaKV = cbKhuVuc.Text;
-                if (thongtinBHYT.getBHYT (benhnhan.MaThe) != null)
+                // lưu thông tin khám sức khỏe
+                if (!flag)
                 {
                     thongtinBHYT.SuaThongTin (ref err, benhnhan); // lưu thông tin
                 }

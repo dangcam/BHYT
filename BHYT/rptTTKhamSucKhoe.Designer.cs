@@ -105,6 +105,7 @@
             // 
             // xrlblGioiTinh
             // 
+            this.xrlblGioiTinh.EditOptions.Enabled = true;
             this.xrlblGioiTinh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrlblGioiTinh.LocationFloat = new DevExpress.Utils.PointFloat(384.0833F, 432.2501F);
             this.xrlblGioiTinh.Name = "xrlblGioiTinh";
@@ -164,6 +165,7 @@
             // 
             // xrlblBHYT
             // 
+            this.xrlblBHYT.EditOptions.Enabled = true;
             this.xrlblBHYT.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrlblBHYT.LocationFloat = new DevExpress.Utils.PointFloat(550.75F, 398.9167F);
             this.xrlblBHYT.Name = "xrlblBHYT";
@@ -175,6 +177,7 @@
             // 
             // xrlblSoDT
             // 
+            this.xrlblSoDT.EditOptions.Enabled = true;
             this.xrlblSoDT.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrlblSoDT.LocationFloat = new DevExpress.Utils.PointFloat(550.75F, 432.2501F);
             this.xrlblSoDT.Name = "xrlblSoDT";
@@ -186,6 +189,7 @@
             // 
             // xrlblChucVu
             // 
+            this.xrlblChucVu.EditOptions.Enabled = true;
             this.xrlblChucVu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrlblChucVu.LocationFloat = new DevExpress.Utils.PointFloat(550.75F, 467.6667F);
             this.xrlblChucVu.Name = "xrlblChucVu";
@@ -197,6 +201,7 @@
             // 
             // xrlblNgayKham
             // 
+            this.xrlblNgayKham.EditOptions.Enabled = true;
             this.xrlblNgayKham.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrlblNgayKham.LocationFloat = new DevExpress.Utils.PointFloat(583.0416F, 539.5417F);
             this.xrlblNgayKham.Name = "xrlblNgayKham";
@@ -208,6 +213,7 @@
             // 
             // xrlblLoaiKham
             // 
+            this.xrlblLoaiKham.EditOptions.Enabled = true;
             this.xrlblLoaiKham.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrlblLoaiKham.LocationFloat = new DevExpress.Utils.PointFloat(134.0833F, 539.5417F);
             this.xrlblLoaiKham.Name = "xrlblLoaiKham";
@@ -219,6 +225,7 @@
             // 
             // xrlblCoQuan
             // 
+            this.xrlblCoQuan.EditOptions.Enabled = true;
             this.xrlblCoQuan.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrlblCoQuan.LocationFloat = new DevExpress.Utils.PointFloat(134.0833F, 504.1251F);
             this.xrlblCoQuan.Name = "xrlblCoQuan";
@@ -230,6 +237,7 @@
             // 
             // xrlblDonVi
             // 
+            this.xrlblDonVi.EditOptions.Enabled = true;
             this.xrlblDonVi.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrlblDonVi.LocationFloat = new DevExpress.Utils.PointFloat(134.0833F, 467.6667F);
             this.xrlblDonVi.Name = "xrlblDonVi";
@@ -241,6 +249,7 @@
             // 
             // xrlblNgaySinh
             // 
+            this.xrlblNgaySinh.EditOptions.Enabled = true;
             this.xrlblNgaySinh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrlblNgaySinh.LocationFloat = new DevExpress.Utils.PointFloat(134.0833F, 432.25F);
             this.xrlblNgaySinh.Name = "xrlblNgaySinh";
@@ -252,6 +261,7 @@
             // 
             // xrlblHoTen
             // 
+            this.xrlblHoTen.EditOptions.Enabled = true;
             this.xrlblHoTen.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrlblHoTen.LocationFloat = new DevExpress.Utils.PointFloat(134.0833F, 398.9167F);
             this.xrlblHoTen.Name = "xrlblHoTen";

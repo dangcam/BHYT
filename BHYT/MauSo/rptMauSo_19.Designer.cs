@@ -94,7 +94,7 @@
             this.xrLabel8,
             this.lblHoTenBS,
             this.xrTable2});
-            this.Detail.HeightF = 1270.93F;
+            this.Detail.HeightF = 9523F;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -173,7 +173,7 @@
             // xrLabel3
             // 
             this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(530.0003F, 404.0414F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(520F, 405F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel3.SizeF = new System.Drawing.SizeF(200F, 23F);
@@ -185,10 +185,10 @@
             // xrlblNgay
             // 
             this.xrlblNgay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrlblNgay.LocationFloat = new DevExpress.Utils.PointFloat(507.7919F, 381.0415F);
+            this.xrlblNgay.LocationFloat = new DevExpress.Utils.PointFloat(463.0002F, 381.0415F);
             this.xrlblNgay.Name = "xrlblNgay";
             this.xrlblNgay.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrlblNgay.SizeF = new System.Drawing.SizeF(250.2083F, 23F);
+            this.xrlblNgay.SizeF = new System.Drawing.SizeF(294.9999F, 23F);
             this.xrlblNgay.StylePriority.UseFont = false;
             this.xrlblNgay.StylePriority.UseTextAlignment = false;
             this.xrlblNgay.Text = "Ngày ........ tháng ........ năm 20......";
@@ -376,10 +376,10 @@
             // lblNgay
             // 
             this.lblNgay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgay.LocationFloat = new DevExpress.Utils.PointFloat(507.7919F, 849.7914F);
+            this.lblNgay.LocationFloat = new DevExpress.Utils.PointFloat(449.4586F, 849.7914F);
             this.lblNgay.Name = "lblNgay";
             this.lblNgay.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblNgay.SizeF = new System.Drawing.SizeF(250.2083F, 23F);
+            this.lblNgay.SizeF = new System.Drawing.SizeF(308.5416F, 23F);
             this.lblNgay.StylePriority.UseFont = false;
             this.lblNgay.StylePriority.UseTextAlignment = false;
             this.lblNgay.Text = "Ngày ........ tháng ........ năm 20......";
@@ -388,7 +388,7 @@
             // xrLabel8
             // 
             this.xrLabel8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(530.0003F, 872.7914F);
+            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(520F, 872.7914F);
             this.xrLabel8.Name = "xrLabel8";
             this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel8.SizeF = new System.Drawing.SizeF(200F, 23F);
@@ -400,7 +400,7 @@
             // lblHoTenBS
             // 
             this.lblHoTenBS.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoTenBS.LocationFloat = new DevExpress.Utils.PointFloat(500.0002F, 944.7083F);
+            this.lblHoTenBS.LocationFloat = new DevExpress.Utils.PointFloat(490F, 970F);
             this.lblHoTenBS.Name = "lblHoTenBS";
             this.lblHoTenBS.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblHoTenBS.SizeF = new System.Drawing.SizeF(250.2084F, 23F);

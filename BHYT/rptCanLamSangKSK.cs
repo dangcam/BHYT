@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace BHYT
 {
-    public partial class rptCanLamSanKSK : DevExpress.XtraReports.UI.XtraReport
+    public partial class rptCanLamSangKSK : DevExpress.XtraReports.UI.XtraReport
     {
-        public rptCanLamSanKSK()
+        public rptCanLamSangKSK()
         {
             InitializeComponent();
         }

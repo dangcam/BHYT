@@ -193,7 +193,7 @@
             this.xrTableRow15,
             this.xrTableRow16,
             this.xrTableRow17});
-            this.xrTable3.SizeF = new System.Drawing.SizeF(523F, 390F);
+            this.xrTable3.SizeF = new System.Drawing.SizeF(523F, 375F);
             this.xrTable3.StylePriority.UseBorders = false;
             this.xrTable3.StylePriority.UseFont = false;
             this.xrTable3.StylePriority.UseTextAlignment = false;
@@ -513,7 +513,7 @@
             this.xrTableCell31,
             this.xrTableCell32});
             this.xrTableRow17.Name = "xrTableRow17";
-            this.xrTableRow17.Weight = 1.6D;
+            this.xrTableRow17.Weight = 1D;
             // 
             // xrTableCell31
             // 
@@ -532,7 +532,7 @@
             // lblHoTenBS
             // 
             this.lblHoTenBS.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoTenBS.LocationFloat = new DevExpress.Utils.PointFloat(216.0002F, 730F);
+            this.lblHoTenBS.LocationFloat = new DevExpress.Utils.PointFloat(208.0002F, 694F);
             this.lblHoTenBS.Name = "lblHoTenBS";
             this.lblHoTenBS.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblHoTenBS.SizeF = new System.Drawing.SizeF(260F, 23F);
@@ -544,7 +544,7 @@
             // xrLabel27
             // 
             this.xrLabel27.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(216F, 656.1041F);
+            this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(208F, 620.1041F);
             this.xrLabel27.Name = "xrLabel27";
             this.xrLabel27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel27.SizeF = new System.Drawing.SizeF(250F, 23F);
@@ -556,7 +556,7 @@
             // lblNgay
             // 
             this.lblNgay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgay.LocationFloat = new DevExpress.Utils.PointFloat(153F, 626F);
+            this.lblNgay.LocationFloat = new DevExpress.Utils.PointFloat(145F, 590F);
             this.lblNgay.Name = "lblNgay";
             this.lblNgay.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblNgay.SizeF = new System.Drawing.SizeF(370F, 23F);

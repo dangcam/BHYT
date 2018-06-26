@@ -34,6 +34,8 @@ namespace BHYT
         public string DiaChi { get; set; }
         private void FrmKQKhamSucKhoe_Load(object sender, EventArgs e)
         {
+            if (cbBacSi.SelectedIndex < 0)
+                cbBacSi.SelectedIndex = 0;
             lookUpDonVi.Properties.DataSource = khamSucKhoeDAO.DSDonVi();
             lookUpDonVi.Properties.DisplayMember = "DONVI";
             lookUpDonVi.Properties.ValueMember = "MADV";
@@ -51,6 +53,7 @@ namespace BHYT
                 cbChucVu.SelectedItem = dataThongTin.Rows[0]["CHUC_VU"];
                 lookUpDonVi.EditValue = dataThongTin.Rows[0]["MADV"];
             }
+            
             dataKhamSucKhoe = khamSucKhoeDAO.ThongTinKSK(MaLienKet);
             if (dataKhamSucKhoe != null && dataKhamSucKhoe.Rows.Count > 0)
             {
@@ -781,11 +784,14 @@ namespace BHYT
             rpt.xrlblHoTen.Text = txtHoTen.Text.ToUpper();           
             rpt.xrlblNgaySinh.Text = (txtNgaySinh.Text);
             rpt.xrlblGioiTinh.Text = this.GioiTinh == "0" ? "Nữ" : "Nam";
-            rpt.xrlblCoQuan.Text = dataThongTin.Rows[0]["CO_QUAN"].ToString();
+            rpt.xrlblCoQuan.Text = lookUpDonVi.Properties.GetDisplayValueByKeyValue(lookUpDonVi.EditValue).ToString()
+                + " - " + dataThongTin.Rows[0]["CO_QUAN"].ToString();
             DateTime date = Utils.ParseDate(NgayVao);
             rpt.xrlblNgayThangNam.Text = "Phú Riềng, ngày " + date.Day + ", tháng " + date.Month + ", năm " + date.Year;
             //rpt.xrlblNgayThangNam.Text = Utils.ParseDates(NgayVao, "Phú Riềng, ngày dd, tháng MM, năm yyyy");
             rpt.xrlblDiaChi.Text = this.DiaChi;
+            rpt.xrlblHoKhau.Text = this.DiaChi;
+            rpt.xrlblNgheNghiep.Text = Utils.ToString(cbChucVu.SelectedItem);
             // trang 2
             rpt.xrlblTienSuBenhTat.Text = txtTienSuBenh.Text;
             rpt.xrlblCanNang.Text = txtCanNang.Text;
@@ -838,7 +844,7 @@ namespace BHYT
             rpt.xrtabSanPhuKhoa.Text = ToStringBT(txtPhuKhoa.Text);
             //
             rpt.CreateDocument();
-            rpt.ShowPreviewDialog();
+            rpt.ShowRibbonPreviewDialog();
         }
 
         private void btnThongTin_Click(object sender, EventArgs e)
@@ -857,12 +863,12 @@ namespace BHYT
             rpt.xrlblDonVi.Text =lookUpDonVi.Properties.GetDisplayValueByKeyValue(lookUpDonVi.EditValue).ToString();
             rpt.xrlblGioiTinh.Text = this.GioiTinh == "0" ? "Nữ" : "Nam";
             rpt.CreateDocument();
-            rpt.ShowPreviewDialog();
+            rpt.ShowRibbonPreviewDialog();
         }
 
         private void btnCanLamSan_Click(object sender, EventArgs e)
         {
-            rptCanLamSanKSK rpt = new rptCanLamSanKSK();
+            rptCanLamSangKSK rpt = new rptCanLamSangKSK();
             int temp = 0;
             if(!string.IsNullOrEmpty(txtPap.Text))
             {
@@ -1071,8 +1077,9 @@ namespace BHYT
             rpt.xrlblDeNghi.Text = txtDeNghi.Text;
             rpt.xrlblPhanLoaiSK.Text = Utils.ToString(cbPLSK.SelectedItem);
             rpt.xrlblCacBenhNeuCo.Text = txtKetLuan.Text;
+            rpt.xrlblBacSi.Text = cbBacSi.SelectedItem.ToString();
             rpt.CreateDocument();
-            rpt.ShowPreviewDialog();
+            rpt.ShowRibbonPreviewDialog();
         }
 
         private void btnInXQTimPhoi_Click(object sender, EventArgs e)
