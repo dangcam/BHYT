@@ -1,4 +1,5 @@
 ﻿using BHYT.DAO;
+using BHYT.JSON;
 using BHYT.VO;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
@@ -834,17 +835,25 @@ namespace BHYT
                         {
                             using (HttpContent content = response.Content)
                             {
-                                string mycontent = await content.ReadAsStringAsync();
-                                mycontent = mycontent.Replace("\"", "");
-                                string ketqua = mycontent.Substring(0, mycontent.IndexOf("dsLichSuKCB"));
-                                string danhsach = mycontent.Substring(mycontent.IndexOf("dsLichSuKCB")+11);
+                                ThongTinLichSu thongTinLichSu = await content.ReadAsAsync<ThongTinLichSu>();
+                                //string mycontent = await content.ReadAsStringAsync();
+                                //mycontent = mycontent.Replace("\"", "");
+                                //string ketqua = mycontent.Substring(0, mycontent.IndexOf("dsLichSuKCB"));
+                                //string danhsach = mycontent.Substring(mycontent.IndexOf("dsLichSuKCB")+11);
                                 frmLichSu.TenBN = txtHoTen.Text;
-                                frmLichSu.KetQua = ketqua;
-                                frmLichSu.LichSu = danhsach;
+                                //frmLichSu.KetQua = ketqua;
+                                //frmLichSu.LichSu = danhsach;
+                                frmLichSu.thongTin = thongTinLichSu;
                                 frmLichSu.ToKen = token;
                                 frmLichSu.Id_ToKen = id_token;
                                 frmLichSu.Expires_In = expires_in;
                                 frmLichSu.ShowDialog();
+                                if(thongTinLichSu.maKetQua == "000")
+                                {
+                                    txtDiaChi.Text = thongTinLichSu.diaChi;
+                                    dateGTBD.Text = thongTinLichSu.gtTheTu;
+                                    dateGTKT.Text = thongTinLichSu.gtTheDen;
+                                }
                                 //
                                 token = frmLichSu.ToKen;
                                 id_token = frmLichSu.Id_ToKen;

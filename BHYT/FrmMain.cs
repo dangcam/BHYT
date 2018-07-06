@@ -358,5 +358,12 @@ namespace BHYT
             FrmSoLuongCBCNV frm = new FrmSoLuongCBCNV();
             frm.ShowDialog();
         }
+
+        private void baoCaoKSKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBaoCaoKSK frm
+                = new FrmBaoCaoKSK();
+            frm.ShowDialog();
+        }
     }
 }

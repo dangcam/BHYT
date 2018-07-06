@@ -17,8 +17,9 @@ namespace BHYT
     public partial class FrmLichSuKCB : Form
     {
         public string TenBN = null;
-        public string KetQua = null;
-        public string LichSu = null;
+        //public string KetQua = null;
+        //public string LichSu = null;
+        public ThongTinLichSu thongTin = null;
         public string ToKen = null;
         public string Id_ToKen = null;
         public DateTime Expires_In;
@@ -37,8 +38,8 @@ namespace BHYT
         {
             gridControl.DataSource = null;
             lblHoTen.Text = this.TenBN;
-            string maKQ = KetQua.Split(',')[0].Split(':')[1];
-            switch(maKQ)
+            //string maKQ = KetQua.Split(',')[0].Split(':')[1];
+            switch(thongTin.maKetQua)
             {
                 case "000":
                     this.lblThongTin.ForeColor = System.Drawing.Color.Blue;
@@ -129,13 +130,13 @@ namespace BHYT
                     lblThongTin.Text = "Trẻ em không xuất trình thẻ.";
                     break;
                 default:
-                    lblThongTin.Text = "Mã kết quả: " + maKQ;
+                    lblThongTin.Text = "Mã kết quả: " + thongTin.maKetQua;
                     break;
             }
-            if(LichSu.IndexOf('[')>0)
+            if(thongTin.dsLichSuKCB!=null && thongTin.dsLichSuKCB.Count>0)
             {
-                LichSu = LichSu.Substring(LichSu.IndexOf('['), LichSu.IndexOf(']')).Replace("]","").Replace("[","");
-                string[] danhsach = LichSu.Split('}');
+                //LichSu = LichSu.Substring(LichSu.IndexOf('['), LichSu.IndexOf(']')).Replace("]","").Replace("[","");
+                //string[] danhsach = LichSu.Split('}');
                 DataTable data = new DataTable();
                 data.Columns.Add("maHoSo", typeof(string));
                 data.Columns.Add("maCSKCB", typeof(string));
@@ -144,21 +145,28 @@ namespace BHYT
                 data.Columns.Add("tenBenh", typeof(string));
                 data.Columns.Add("tinhTrang", typeof(string));
                 data.Columns.Add("kqDieuTri", typeof(string));
-                foreach(string hoso in danhsach)
+                foreach(var hoso in thongTin.dsLichSuKCB)
                 {
-                    if (hoso.Length > 0)
-                    {
-                        string[] dulieu = hoso.Replace("}", "").Replace("{", "").Split(',');
+                    //if (hoso.Length > 0)
+                    //{
+                    //    string[] dulieu = hoso.Replace("}", "").Replace("{", "").Split(',');
                         DataRow dr = data.NewRow();
-                        foreach (string column in dulieu)
-                        {
-                            if (column.Split(':').Length > 1)
-                            {
-                                dr[column.Split(':')[0]] = column.Split(':')[1];
-                            }
-                        }
-                        data.Rows.Add(dr);
-                    }
+                    //foreach (string column in dulieu)
+                    //{
+                    //    if (column.Split(':').Length > 1)
+                    //    {
+                    //        dr[column.Split(':')[0]] = column.Split(':')[1];
+                    //    }
+                    //}
+                    dr["maHoSo"] = hoso.maHoSo;
+                    dr["maCSKCB"] = hoso.maCSKCB;
+                    dr["tuNgay"] = hoso.tuNgay;
+                    dr["denNgay"] = hoso.denNgay;
+                    dr["tenBenh"] = hoso.tenBenh;
+                    dr["tinhTrang"] = hoso.tinhTrang;
+                    dr["kqDieuTri"] = hoso.kqDieuTri;
+                    data.Rows.Add(dr);
+                    //}
                 }
                 gridControl.DataSource = data;
             }

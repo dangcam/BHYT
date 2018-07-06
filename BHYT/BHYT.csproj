@@ -137,6 +137,7 @@
     <Compile Include="AppConfig.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="ConnectionDB.cs" />
+    <Compile Include="DAO\BaoCaoKSK.cs" />
     <Compile Include="DAO\BenhDAO.cs" />
     <Compile Include="DAO\CanLamSanDAO.cs" />
     <Compile Include="DAO\DataBaseDAO.cs" />
@@ -154,6 +155,12 @@
     </Compile>
     <Compile Include="FrmBaoCao79a80a.Designer.cs">
       <DependentUpon>FrmBaoCao79a80a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBaoCaoKSK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaoCaoKSK.Designer.cs">
+      <DependentUpon>FrmBaoCaoKSK.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCanLamSan.cs">
       <SubType>Form</SubType>
@@ -386,6 +393,8 @@
     <Compile Include="HoSoKCB.cs" />
     <Compile Include="ImportExcel.cs" />
     <Compile Include="JSON\LichSuKCB.cs" />
+    <Compile Include="JSON\LSKCB.cs" />
+    <Compile Include="JSON\ThongTinLichSu.cs" />
     <Compile Include="KQPhienLamViec.cs" />
     <Compile Include="LichSuKCBChiTiet.cs" />
     <Compile Include="MauSo\rptMauSo_19.cs">
@@ -460,6 +469,24 @@
     <Compile Include="rptBaoCao.Designer.cs">
       <DependentUpon>rptBaoCao.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptBCCanLamSanKSK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBCCanLamSanKSK.Designer.cs">
+      <DependentUpon>rptBCCanLamSanKSK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptBCCanLamSanKSKDonVi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBCCanLamSanKSKDonVi.Designer.cs">
+      <DependentUpon>rptBCCanLamSanKSKDonVi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptBCTongHopCanLamSan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBCTongHopCanLamSan.Designer.cs">
+      <DependentUpon>rptBCTongHopCanLamSan.cs</DependentUpon>
+    </Compile>
     <Compile Include="rptCanLamSangKSK.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -471,6 +498,12 @@
     </Compile>
     <Compile Include="rptChiPhi.Designer.cs">
       <DependentUpon>rptChiPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptChiTietKhamTamSoat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptChiTietKhamTamSoat.Designer.cs">
+      <DependentUpon>rptChiTietKhamTamSoat.cs</DependentUpon>
     </Compile>
     <Compile Include="rptDonThuoc.cs">
       <SubType>Component</SubType>
@@ -586,6 +619,9 @@
     <Compile Include="XML3.cs" />
     <EmbeddedResource Include="FrmBaoCao79a80a.resx">
       <DependentUpon>FrmBaoCao79a80a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBaoCaoKSK.resx">
+      <DependentUpon>FrmBaoCaoKSK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBenhICD.resx">
       <DependentUpon>FrmBenhICD.cs</DependentUpon>
@@ -761,11 +797,23 @@
     <EmbeddedResource Include="rptBaoCao.resx">
       <DependentUpon>rptBaoCao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptBCCanLamSanKSK.resx">
+      <DependentUpon>rptBCCanLamSanKSK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBCCanLamSanKSKDonVi.resx">
+      <DependentUpon>rptBCCanLamSanKSKDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBCTongHopCanLamSan.resx">
+      <DependentUpon>rptBCTongHopCanLamSan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptCanLamSangKSK.resx">
       <DependentUpon>rptCanLamSangKSK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptChiPhi.resx">
       <DependentUpon>rptChiPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptChiTietKhamTamSoat.resx">
+      <DependentUpon>rptChiTietKhamTamSoat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptDonThuoc.resx">
       <DependentUpon>rptDonThuoc.cs</DependentUpon>
