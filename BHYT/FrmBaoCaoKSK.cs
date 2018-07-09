@@ -26,7 +26,7 @@ namespace BHYT
             dateDenNgay.DateTime = DateTime.Now;
             dateTuNgay.DateTime = DateTime.Now;
             cbNam.Properties.Items.Clear();
-            for(int i = DateTime.Now.Year-5;i<DateTime.Now.Year+5;i++)
+            for (int i = DateTime.Now.Year - 5; i < DateTime.Now.Year + 5; i++)
             {
                 cbNam.Properties.Items.Add(i);
             }
@@ -53,18 +53,56 @@ namespace BHYT
 
         private void btnTHDonViTheoNam_Click(object sender, EventArgs e)
         {
-            string madonvi =Utils.ToString( lookUpDonVi.EditValue);
+            //string madonvi =Utils.ToString( lookUpDonVi.EditValue);
             //int loaiKham = cbPhanLoai.SelectedIndex;
             string sql = "";
-            if(cbPhanLoai.SelectedIndex ==0)
+            if (cbPhanLoai.SelectedIndex == 0)
             {
                 // 1 là phân loại
+                rptChiTietKhamPhanLoai rpt = new rptChiTietKhamPhanLoai();
+                rpt.xrlblTuNgayDenNgay.Text = "Từ ngày " + dateTuNgay.DateTime.ToString("dd/MM/yyyy") +
+               " đến ngày " + dateDenNgay.DateTime.ToString("dd/MM/yyyy");
+                rpt.xrlblNgayThangNam.Text = "Ngày " + DateTime.Now.Day + " tháng " +
+                    DateTime.Now.Month + " năm " + DateTime.Now.Year;
+
+                sql = "select HO_TEN,NAM,NU,MADV," +
+                        "ROW_NUMBER() OVER(ORDER BY MADV, HO_TEN ASC) AS STT," +
+                        "(CASE WHEN LEN(SA_TQ) > 0 THEN 1 END) as SATQ," +
+                        "(CASE WHEN LEN(DO_DIEN_TIM) > 0 THEN 1 END) as ECG," +
+                        "(CASE WHEN LEN(PHU_KHOA) > 0 THEN 1 END) as PhuKhoa," +
+                        "(CASE WHEN DAT_VONG = 1 THEN 1 END) as DatVong," +
+                        "(CASE WHEN PL_SK = 'I' THEN 1 END) as PhanLoaiI," +
+                        "(CASE WHEN PL_SK = 'II' THEN 1 END) as PhanLoaiII," +
+                        "(CASE WHEN PL_SK = 'III' THEN 1 END) as PhanLoaiIII," +
+                        "(CASE WHEN PL_SK = 'VI' THEN 1 END) as PhanLoaiVI," +
+                        "(CASE WHEN DIEU_TRI = 1 THEN 1 END) as DieuTri," +
+                        "DE_NGHI " +
+                        "from KHAM_SUC_KHOE," +
+                        "(select MA_LK, THONGTIN_CT.HO_TEN," +
+                        "    SUBSTRING(MADV, 4, len(MADV) - 3) as MADV," +
+                        "    (CASE WHEN THONGTIN_CT.GIOI_TINH = 0 THEN SUBSTRING(THONGTIN_CT.NGAY_SINH,1,4)END) as NU," +
+                        "	(CASE WHEN THONGTIN_CT.GIOI_TINH = 1 THEN SUBSTRING(THONGTIN_CT.NGAY_SINH,1,4)END) as NAM " +
+                        "from THONGTIN_CT, THONGTIN " +
+                        "where THONGTIN_CT.MA_THE = THONGTIN.MA_THE and MADV is not null " +
+                        "and(CAST(SUBSTRING(NGAY_VAO, 1, 8) AS DATE) " +
+                        "between '" + dateTuNgay.DateTime.ToString("MM-dd-yyyy") + "' and '" + dateDenNgay.DateTime.ToString("MM-dd-yyyy") + "'))" +
+                        "as TT " +
+                        "Where KHAM_SUC_KHOE.MA_LK = TT.MA_LK " +
+                        "and LOAI_KHAM = 1";
+                rpt.DataSource = baoCaoKSK.BCCanLamSanTungDonVi(sql);
+                //
+                rpt.ShowPreviewDialog();
             }
             else
             {
                 // 2 là tầm soát
                 rptChiTietKhamTamSoat rpt = new rptChiTietKhamTamSoat();
-                sql = "select HO_TEN,NAM,NU,MADV,"+
+                rpt.xrlblTuNgayDenNgay.Text = "Từ ngày " + dateTuNgay.DateTime.ToString("dd/MM/yyyy") +
+               " đến ngày " + dateDenNgay.DateTime.ToString("dd/MM/yyyy");
+                rpt.xrlblNgayThangNam.Text = "Ngày " + DateTime.Now.Day + " tháng " +
+                    DateTime.Now.Month + " năm " + DateTime.Now.Year;
+
+                sql = "select HO_TEN,NAM,NU,MADV," +
                         "ROW_NUMBER() OVER(ORDER BY MADV, HO_TEN ASC) AS STT," +
                         "(CASE WHEN LEN(XQ_TIM_PHOI) > 0 THEN 1 END) as XQuang," +
                         "(CASE WHEN LEN(SA_TQ) > 0 THEN 1 END) as SATQ," +
@@ -114,7 +152,7 @@ namespace BHYT
                             "(select MA_LK, THONGTIN_CT.HO_TEN, THONGTIN_CT.NGAY_SINH, CAST(SUBSTRING(NGAY_VAO, 1, 8) AS DATE)NGAY_VAO, TO_NT, MADV from THONGTIN_CT, THONGTIN " +
                             "where THONGTIN_CT.MA_THE = THONGTIN.MA_THE " +
                             "and(CAST(SUBSTRING(NGAY_VAO, 1, 8) AS DATE) between " +
-                            "'"+dateTuNgay.DateTime.ToString("MM-dd-yyyy")+ "' and '" + dateDenNgay.DateTime.ToString("MM-dd-yyyy") + "') and MADV = '"+lookUpDonVi.EditValue+"') THONGTIN_CT " +
+                            "'" + dateTuNgay.DateTime.ToString("MM-dd-yyyy") + "' and '" + dateDenNgay.DateTime.ToString("MM-dd-yyyy") + "') and MADV = '" + lookUpDonVi.EditValue + "') THONGTIN_CT " +
                             "where KHAM_SUC_KHOE.MA_LK = THONGTIN_CT.MA_LK " +
                             "and ";
             //
@@ -123,7 +161,7 @@ namespace BHYT
             {
                 case 0:
                     //DO_DIEN_TIM
-                    sql = "Select DO_DIEN_TIM as KETQUA" + sql+ "LEN(DO_DIEN_TIM)>0";
+                    sql = "Select DO_DIEN_TIM as KETQUA" + sql + "LEN(DO_DIEN_TIM)>0";
                     canlamsan = "LEN(DO_DIEN_TIM)>0";
                     break;
                 case 1:
@@ -268,12 +306,12 @@ namespace BHYT
         private void LaySoLuong()
         {
             txtSoLuongNam.Text = "0";
-            if(cbNam.SelectedIndex >= 0 && lookUpDonVi.EditValue !=null)
+            if (cbNam.SelectedIndex >= 0 && lookUpDonVi.EditValue != null)
             {
                 int nam = Utils.ToInt(cbNam.SelectedItem.ToString());
                 string madonvi = lookUpDonVi.EditValue.ToString();
                 DataTable dt = baoCaoKSK.LaySoLuong(nam, madonvi);
-                if(dt!=null && dt.Rows.Count>0)
+                if (dt != null && dt.Rows.Count > 0)
                 {
                     txtSoLuongNam.Text = dt.Rows[0]["SOLUONG"].ToString();
                 }
@@ -289,10 +327,10 @@ namespace BHYT
                 DateTime.Now.Month + " năm " + DateTime.Now.Year;
             string sql = "select ROW_NUMBER() OVER(ORDER BY DONVI ASC) AS STT," +
                         "DONVI,COUNT(KHAM_SUC_KHOE.MA_LK) as TongSo," +
-                        "SUM(CASE WHEN GIOI_TINH = 0 THEN 1 END ) as Nu,"+
+                        "SUM(CASE WHEN GIOI_TINH = 0 THEN 1 END ) as Nu," +
                      "SUM(CASE WHEN LEN(XQ_TIM_PHOI) > 0 THEN 1 END) as XQuang," +
                      "SUM(CASE WHEN LEN(SA_TQ) > 0 THEN 1 END) as SATQ," +
-                     "SUM(CASE WHEN LEN(SA_TIM) > 0 THEN 1 END ) as SATim,"+
+                     "SUM(CASE WHEN LEN(SA_TIM) > 0 THEN 1 END ) as SATim," +
                      "SUM(CASE WHEN LEN(DO_DIEN_TIM) > 0 THEN 1 END) as ECG," +
                      "SUM(CASE WHEN LEN(DO_LOANGX) > 0 THEN 1 END) as DoLoangXuong," +
                      "SUM(CASE WHEN LEN(NS_DADAY) > 0 THEN 1 END) as NSDaDay," +
@@ -321,7 +359,89 @@ namespace BHYT
 
         private void btnTHTungDonVi_Click(object sender, EventArgs e)
         {
+            string madonvi = Utils.ToString(lookUpDonVi.EditValue);
+            //int loaiKham = cbPhanLoai.SelectedIndex;
+            string sql = "";
+            if (cbPhanLoai.SelectedIndex == 0)
+            {
+                // 1 là phân loại
+                rptChiTietKhamPhanLoai rpt = new rptChiTietKhamPhanLoai();
+                rpt.xrlblTuNgayDenNgay.Text = "Từ ngày " + dateTuNgay.DateTime.ToString("dd/MM/yyyy") +
+               " đến ngày " + dateDenNgay.DateTime.ToString("dd/MM/yyyy");
+                rpt.xrlblNgayThangNam.Text = "Ngày " + DateTime.Now.Day + " tháng " +
+                    DateTime.Now.Month + " năm " + DateTime.Now.Year;
 
+                sql = "select HO_TEN,NAM,NU,MADV," +
+                        "ROW_NUMBER() OVER(ORDER BY MADV, HO_TEN ASC) AS STT," +
+                        "(CASE WHEN LEN(SA_TQ) > 0 THEN 1 END) as SATQ," +
+                        "(CASE WHEN LEN(DO_DIEN_TIM) > 0 THEN 1 END) as ECG," +
+                        "(CASE WHEN LEN(PHU_KHOA) > 0 THEN 1 END) as PhuKhoa," +
+                        "(CASE WHEN DAT_VONG = 1 THEN 1 END) as DatVong," +
+                        "(CASE WHEN PL_SK = 'I' THEN 1 END) as PhanLoaiI," +
+                        "(CASE WHEN PL_SK = 'II' THEN 1 END) as PhanLoaiII," +
+                        "(CASE WHEN PL_SK = 'III' THEN 1 END) as PhanLoaiIII," +
+                        "(CASE WHEN PL_SK = 'VI' THEN 1 END) as PhanLoaiVI," +
+                        "(CASE WHEN DIEU_TRI = 1 THEN 1 END) as DieuTri," +
+                        "DE_NGHI " +
+                        "from KHAM_SUC_KHOE," +
+                        "(select MA_LK, THONGTIN_CT.HO_TEN," +
+                        "    SUBSTRING(MADV, 4, len(MADV) - 3) as MADV," +
+                        "    (CASE WHEN THONGTIN_CT.GIOI_TINH = 0 THEN SUBSTRING(THONGTIN_CT.NGAY_SINH,1,4)END) as NU," +
+                        "	(CASE WHEN THONGTIN_CT.GIOI_TINH = 1 THEN SUBSTRING(THONGTIN_CT.NGAY_SINH,1,4)END) as NAM " +
+                        "from THONGTIN_CT, THONGTIN " +
+                        "where THONGTIN_CT.MA_THE = THONGTIN.MA_THE and MADV is not null and MADV = '" + madonvi + "' " +
+                        "and(CAST(SUBSTRING(NGAY_VAO, 1, 8) AS DATE) " +
+                        "between '" + dateTuNgay.DateTime.ToString("MM-dd-yyyy") + "' and '" + dateDenNgay.DateTime.ToString("MM-dd-yyyy") + "'))" +
+                        "as TT " +
+                        "Where KHAM_SUC_KHOE.MA_LK = TT.MA_LK " +
+                        "and LOAI_KHAM = 1";
+                rpt.DataSource = baoCaoKSK.BCCanLamSanTungDonVi(sql);
+                //
+                rpt.ShowPreviewDialog();
+            }
+            else
+            {
+                // 2 là tầm soát
+                rptChiTietKhamTamSoat rpt = new rptChiTietKhamTamSoat();
+                rpt.xrlblTuNgayDenNgay.Text = "Từ ngày " + dateTuNgay.DateTime.ToString("dd/MM/yyyy") +
+               " đến ngày " + dateDenNgay.DateTime.ToString("dd/MM/yyyy");
+                rpt.xrlblNgayThangNam.Text = "Ngày " + DateTime.Now.Day + " tháng " +
+                    DateTime.Now.Month + " năm " + DateTime.Now.Year;
+
+                sql = "select HO_TEN,NAM,NU,MADV," +
+                        "ROW_NUMBER() OVER(ORDER BY MADV, HO_TEN ASC) AS STT," +
+                        "(CASE WHEN LEN(XQ_TIM_PHOI) > 0 THEN 1 END) as XQuang," +
+                        "(CASE WHEN LEN(SA_TQ) > 0 THEN 1 END) as SATQ," +
+                        "(CASE WHEN LEN(SA_TIM) > 0 THEN 1 END ) as SATim," +
+                        "(CASE WHEN LEN(DO_DIEN_TIM) > 0 THEN 1 END) as ECG," +
+                        "(CASE WHEN LEN(DO_LOANGX) > 0 THEN 1 END) as DoLoangXuong," +
+                        "(CASE WHEN LEN(NS_DADAY) > 0 THEN 1 END) as NSDaDay," +
+                        "(CASE WHEN LEN(SH_NT) > 0 THEN 1 END) as NuocTieu," +
+                        "(CASE WHEN LEN(SINH_HM) > 0 THEN 1 END) as Mau," +
+                        "(CASE WHEN LEN(PHU_KHOA) > 0 THEN 1 END) as PhuKhoa," +
+                        "(CASE WHEN DAT_VONG = 1 THEN 1 END) as DatVong," +
+                        "(CASE WHEN PL_SK = 'I' THEN 1 END) as PhanLoaiI," +
+                        "(CASE WHEN PL_SK = 'II' THEN 1 END) as PhanLoaiII," +
+                        "(CASE WHEN PL_SK = 'III' THEN 1 END) as PhanLoaiIII," +
+                        "(CASE WHEN PL_SK = 'VI' THEN 1 END) as PhanLoaiVI," +
+                        "(CASE WHEN DIEU_TRI = 1 THEN 1 END) as DieuTri," +
+                        "DE_NGHI " +
+                        "from KHAM_SUC_KHOE," +
+                        "(select MA_LK, THONGTIN_CT.HO_TEN," +
+                        "    SUBSTRING(MADV, 4, len(MADV) - 3) as MADV," +
+                        "    (CASE WHEN THONGTIN_CT.GIOI_TINH = 0 THEN SUBSTRING(THONGTIN_CT.NGAY_SINH,1,4)END) as NU," +
+                        "	(CASE WHEN THONGTIN_CT.GIOI_TINH = 1 THEN SUBSTRING(THONGTIN_CT.NGAY_SINH,1,4)END) as NAM " +
+                        "from THONGTIN_CT, THONGTIN " +
+                        "where THONGTIN_CT.MA_THE = THONGTIN.MA_THE and MADV is not null and MADV = '" + madonvi + "' " +
+                        "and(CAST(SUBSTRING(NGAY_VAO, 1, 8) AS DATE) " +
+                        "between '" + dateTuNgay.DateTime.ToString("MM-dd-yyyy") + "' and '" + dateDenNgay.DateTime.ToString("MM-dd-yyyy") + "'))" +
+                        "as TT " +
+                        "Where KHAM_SUC_KHOE.MA_LK = TT.MA_LK  " +
+                        "and LOAI_KHAM = 2";
+                rpt.DataSource = baoCaoKSK.BCCanLamSanTungDonVi(sql);
+                //
+                rpt.ShowPreviewDialog();
+            }
         }
     }
 }
