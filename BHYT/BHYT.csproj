@@ -481,6 +481,12 @@
     <Compile Include="rptBCCanLamSanKSKDonVi.Designer.cs">
       <DependentUpon>rptBCCanLamSanKSKDonVi.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptBCKetQuaTungDonVi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBCKetQuaTungDonVi.Designer.cs">
+      <DependentUpon>rptBCKetQuaTungDonVi.cs</DependentUpon>
+    </Compile>
     <Compile Include="rptBCTongHopCanLamSan.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -808,6 +814,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rptBCCanLamSanKSKDonVi.resx">
       <DependentUpon>rptBCCanLamSanKSKDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBCKetQuaTungDonVi.resx">
+      <DependentUpon>rptBCKetQuaTungDonVi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptBCTongHopCanLamSan.resx">
       <DependentUpon>rptBCTongHopCanLamSan.cs</DependentUpon>

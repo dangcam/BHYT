@@ -665,7 +665,7 @@ namespace BHYT
                 if (!them)
                 {
                     thongtinCT.TiepNhan (ref err, thongtinBN,"UPDATE");// cập nhật
-                    khamSucKhoeDAO.SpKhamSucKhoe(ref err, "UPDATE",khamSucKhoeVO);
+                    khamSucKhoeDAO.SpKhamSucKhoe(ref err, "UPDATE_TIEPNHAN",khamSucKhoeVO);
                 }
                 else
                 {

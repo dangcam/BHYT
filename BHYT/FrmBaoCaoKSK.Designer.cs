@@ -47,6 +47,7 @@
             this.cbPhanLoai = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnBCLSNhieuDonVi = new System.Windows.Forms.Button();
             this.btnTHNhieuDonVi = new System.Windows.Forms.Button();
+            this.btnBCKetQuaTungDonVi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dateTuNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTuNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay.Properties.CalendarTimeProperties)).BeginInit();
@@ -181,7 +182,7 @@
             // btnTHTungDonVi
             // 
             this.btnTHTungDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTHTungDonVi.Location = new System.Drawing.Point(172, 121);
+            this.btnTHTungDonVi.Location = new System.Drawing.Point(172, 150);
             this.btnTHTungDonVi.Name = "btnTHTungDonVi";
             this.btnTHTungDonVi.Size = new System.Drawing.Size(303, 27);
             this.btnTHTungDonVi.TabIndex = 5;
@@ -193,7 +194,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(152, 194);
+            this.label5.Location = new System.Drawing.Point(152, 223);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 16);
             this.label5.TabIndex = 1;
@@ -201,7 +202,7 @@
             // 
             // cbCanLamSan
             // 
-            this.cbCanLamSan.Location = new System.Drawing.Point(240, 191);
+            this.cbCanLamSan.Location = new System.Drawing.Point(240, 220);
             this.cbCanLamSan.Name = "cbCanLamSan";
             this.cbCanLamSan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCanLamSan.Properties.Appearance.Options.UseFont = true;
@@ -215,7 +216,7 @@
             // btnBCCLStungDonvi
             // 
             this.btnBCCLStungDonvi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBCCLStungDonvi.Location = new System.Drawing.Point(172, 223);
+            this.btnBCCLStungDonvi.Location = new System.Drawing.Point(172, 252);
             this.btnBCCLStungDonvi.Name = "btnBCCLStungDonvi";
             this.btnBCCLStungDonvi.Size = new System.Drawing.Size(303, 27);
             this.btnBCCLStungDonvi.TabIndex = 5;
@@ -226,7 +227,7 @@
             // btnBCTongHopCLSnhieuDonvi
             // 
             this.btnBCTongHopCLSnhieuDonvi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBCTongHopCLSnhieuDonvi.Location = new System.Drawing.Point(172, 294);
+            this.btnBCTongHopCLSnhieuDonvi.Location = new System.Drawing.Point(172, 323);
             this.btnBCTongHopCLSnhieuDonvi.Name = "btnBCTongHopCLSnhieuDonvi";
             this.btnBCTongHopCLSnhieuDonvi.Size = new System.Drawing.Size(303, 27);
             this.btnBCTongHopCLSnhieuDonvi.TabIndex = 5;
@@ -264,7 +265,7 @@
             // btnBCLSNhieuDonVi
             // 
             this.btnBCLSNhieuDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBCLSNhieuDonVi.Location = new System.Drawing.Point(172, 259);
+            this.btnBCLSNhieuDonVi.Location = new System.Drawing.Point(172, 288);
             this.btnBCLSNhieuDonVi.Name = "btnBCLSNhieuDonVi";
             this.btnBCLSNhieuDonVi.Size = new System.Drawing.Size(303, 27);
             this.btnBCLSNhieuDonVi.TabIndex = 5;
@@ -275,7 +276,7 @@
             // btnTHNhieuDonVi
             // 
             this.btnTHNhieuDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTHNhieuDonVi.Location = new System.Drawing.Point(172, 154);
+            this.btnTHNhieuDonVi.Location = new System.Drawing.Point(172, 183);
             this.btnTHNhieuDonVi.Name = "btnTHNhieuDonVi";
             this.btnTHNhieuDonVi.Size = new System.Drawing.Size(303, 27);
             this.btnTHNhieuDonVi.TabIndex = 5;
@@ -283,15 +284,27 @@
             this.btnTHNhieuDonVi.UseVisualStyleBackColor = true;
             this.btnTHNhieuDonVi.Click += new System.EventHandler(this.btnTHDonViTheoNam_Click);
             // 
+            // btnBCKetQuaTungDonVi
+            // 
+            this.btnBCKetQuaTungDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBCKetQuaTungDonVi.Location = new System.Drawing.Point(172, 117);
+            this.btnBCKetQuaTungDonVi.Name = "btnBCKetQuaTungDonVi";
+            this.btnBCKetQuaTungDonVi.Size = new System.Drawing.Size(303, 27);
+            this.btnBCKetQuaTungDonVi.TabIndex = 5;
+            this.btnBCKetQuaTungDonVi.Text = "BC Kết quả từng Đơn vị";
+            this.btnBCKetQuaTungDonVi.UseVisualStyleBackColor = true;
+            this.btnBCKetQuaTungDonVi.Click += new System.EventHandler(this.btnBCKetQuaTungDonVi_Click);
+            // 
             // FrmBaoCaoKSK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 331);
+            this.ClientSize = new System.Drawing.Size(659, 361);
             this.Controls.Add(this.btnBCLSNhieuDonVi);
             this.Controls.Add(this.btnBCTongHopCLSnhieuDonvi);
             this.Controls.Add(this.btnBCCLStungDonvi);
             this.Controls.Add(this.btnTHNhieuDonVi);
+            this.Controls.Add(this.btnBCKetQuaTungDonVi);
             this.Controls.Add(this.btnTHTungDonVi);
             this.Controls.Add(this.lookUpDonVi);
             this.Controls.Add(this.txtSoLuongNam);
@@ -347,5 +360,6 @@
         private DevExpress.XtraEditors.ComboBoxEdit cbPhanLoai;
         private System.Windows.Forms.Button btnBCLSNhieuDonVi;
         private System.Windows.Forms.Button btnTHNhieuDonVi;
+        private System.Windows.Forms.Button btnBCKetQuaTungDonVi;
     }
 }

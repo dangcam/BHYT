@@ -76,7 +76,7 @@ namespace BHYT
                         "(CASE WHEN PL_SK = 'III' THEN 1 END) as PhanLoaiIII," +
                         "(CASE WHEN PL_SK = 'VI' THEN 1 END) as PhanLoaiVI," +
                         "(CASE WHEN DIEU_TRI = 1 THEN 1 END) as DieuTri," +
-                        "DE_NGHI " +
+                        "KET_LUAN " +
                         "from KHAM_SUC_KHOE," +
                         "(select MA_LK, THONGTIN_CT.HO_TEN," +
                         "    SUBSTRING(MADV, 4, len(MADV) - 3) as MADV," +
@@ -119,7 +119,7 @@ namespace BHYT
                         "(CASE WHEN PL_SK = 'III' THEN 1 END) as PhanLoaiIII," +
                         "(CASE WHEN PL_SK = 'VI' THEN 1 END) as PhanLoaiVI," +
                         "(CASE WHEN DIEU_TRI = 1 THEN 1 END) as DieuTri," +
-                        "DE_NGHI " +
+                        "KET_LUAN " +
                         "from KHAM_SUC_KHOE," +
                         "(select MA_LK, THONGTIN_CT.HO_TEN," +
                         "    SUBSTRING(MADV, 4, len(MADV) - 3) as MADV," +
@@ -382,7 +382,7 @@ namespace BHYT
                         "(CASE WHEN PL_SK = 'III' THEN 1 END) as PhanLoaiIII," +
                         "(CASE WHEN PL_SK = 'VI' THEN 1 END) as PhanLoaiVI," +
                         "(CASE WHEN DIEU_TRI = 1 THEN 1 END) as DieuTri," +
-                        "DE_NGHI " +
+                        "KET_LUAN " +
                         "from KHAM_SUC_KHOE," +
                         "(select MA_LK, THONGTIN_CT.HO_TEN," +
                         "    SUBSTRING(MADV, 4, len(MADV) - 3) as MADV," +
@@ -425,7 +425,7 @@ namespace BHYT
                         "(CASE WHEN PL_SK = 'III' THEN 1 END) as PhanLoaiIII," +
                         "(CASE WHEN PL_SK = 'VI' THEN 1 END) as PhanLoaiVI," +
                         "(CASE WHEN DIEU_TRI = 1 THEN 1 END) as DieuTri," +
-                        "DE_NGHI " +
+                        "KET_LUAN " +
                         "from KHAM_SUC_KHOE," +
                         "(select MA_LK, THONGTIN_CT.HO_TEN," +
                         "    SUBSTRING(MADV, 4, len(MADV) - 3) as MADV," +
@@ -442,6 +442,27 @@ namespace BHYT
                 //
                 rpt.ShowPreviewDialog();
             }
+        }
+
+        private void btnBCKetQuaTungDonVi_Click(object sender, EventArgs e)
+        {
+            rptBCKetQuaTungDonVi rpt = new rptBCKetQuaTungDonVi();
+            rpt.xrlblTuNgayDenNgay.Text = "Từ ngày " + dateTuNgay.DateTime.ToString("dd/MM/yyyy") +
+                " đến ngày " + dateDenNgay.DateTime.ToString("dd/MM/yyyy");
+            rpt.xrlblNgayThangNam.Text = "Ngày " + DateTime.Now.Day + " tháng " +
+                DateTime.Now.Month + " năm " + DateTime.Now.Year;
+            rpt.xrlblTieuDe.Text = "DANH SÁCH KHÁM SỨC KHỎE - " +
+                lookUpDonVi.Properties.GetDisplayValueByKeyValue(lookUpDonVi.EditValue);
+            string sql = "Select PL_SK,KET_LUAN,HO_TEN,SUBSTRING(NGAY_SINH,1,4)NGAY_SINH,NGAY_VAO,TO_NT,ROW_NUMBER() OVER(ORDER BY NGAY_VAO,HO_TEN ASC) AS STT from KHAM_SUC_KHOE, " +
+                           "(select MA_LK, THONGTIN_CT.HO_TEN, THONGTIN_CT.NGAY_SINH, CAST(SUBSTRING(NGAY_VAO, 1, 8) AS DATE)NGAY_VAO, TO_NT, MADV from THONGTIN_CT, THONGTIN " +
+                           "where THONGTIN_CT.MA_THE = THONGTIN.MA_THE " +
+                           "and(CAST(SUBSTRING(NGAY_VAO, 1, 8) AS DATE) between " +
+                           "'" + dateTuNgay.DateTime.ToString("MM-dd-yyyy") + "' and '" + dateDenNgay.DateTime.ToString("MM-dd-yyyy") + "') " +
+                           "and MADV = '" + lookUpDonVi.EditValue + "') THONGTIN_CT " +
+                           "where KHAM_SUC_KHOE.MA_LK = THONGTIN_CT.MA_LK ";
+            rpt.DataSource = baoCaoKSK.BCCanLamSanTungDonVi(sql);
+            //
+            rpt.ShowPreviewDialog();
         }
     }
 }

@@ -363,6 +363,16 @@ namespace BHYT.DAO
             return db.ExcuteQuery ("Select * From DVKT_CT Where MA_LK = '" + maLK + "' And MA_NHOM != '15' And MA_NHOM !='13' And MA_NHOM != '10'",
                 CommandType.Text, null);
         }
+        public DataTable DSDVKTChiTiet(string maLK)
+        {
+            return db.ExcuteQuery("Select * From DVKT_CT Where MA_LK = '" + maLK + "' ",
+                CommandType.Text, null);
+        }
+        public DataTable DSThongTinChiTiet(string maLK)
+        {
+            return db.ExcuteQuery("Select * From THONGTIN_CT Where MA_LK = '" + maLK + "' ",
+                CommandType.Text, null);
+        }
         public DataTable DSDVKT(string maNhom)
         {
             return db.ExcuteQuery("Select * From DVKT WHERE MA_NHOM = '" + maNhom + "'",

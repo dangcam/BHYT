@@ -55,6 +55,7 @@
             this.cbTinhTrang = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbLoaiNgay = new System.Windows.Forms.ComboBox();
+            this.btnXuatExcel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheck)).BeginInit();
@@ -68,16 +69,16 @@
             "1. Khám bệnh",
             "2. Điều trị ngoại trú",
             "3. Điều trị nội trú"});
-            this.cbLoaiKCB.Location = new System.Drawing.Point(87, 12);
+            this.cbLoaiKCB.Location = new System.Drawing.Point(75, 12);
             this.cbLoaiKCB.Name = "cbLoaiKCB";
-            this.cbLoaiKCB.Size = new System.Drawing.Size(151, 24);
+            this.cbLoaiKCB.Size = new System.Drawing.Size(130, 24);
             this.cbLoaiKCB.TabIndex = 58;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(21, 16);
+            this.label31.Location = new System.Drawing.Point(10, 16);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(66, 16);
             this.label31.TabIndex = 59;
@@ -89,16 +90,16 @@
             this.dateTu.CustomFormat = "dd/MM/yyyy";
             this.dateTu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTu.Location = new System.Drawing.Point(692, 14);
+            this.dateTu.Location = new System.Drawing.Point(644, 14);
             this.dateTu.Name = "dateTu";
-            this.dateTu.Size = new System.Drawing.Size(129, 22);
+            this.dateTu.Size = new System.Drawing.Size(120, 22);
             this.dateTu.TabIndex = 60;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(663, 17);
+            this.label25.Location = new System.Drawing.Point(617, 17);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(24, 16);
             this.label25.TabIndex = 61;
@@ -110,16 +111,16 @@
             this.dateDen.CustomFormat = "dd/MM/yyyy";
             this.dateDen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateDen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateDen.Location = new System.Drawing.Point(859, 14);
+            this.dateDen.Location = new System.Drawing.Point(806, 14);
             this.dateDen.Name = "dateDen";
-            this.dateDen.Size = new System.Drawing.Size(129, 22);
+            this.dateDen.Size = new System.Drawing.Size(120, 22);
             this.dateDen.TabIndex = 60;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(824, 17);
+            this.label1.Location = new System.Drawing.Point(772, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 16);
             this.label1.TabIndex = 62;
@@ -127,9 +128,9 @@
             // 
             // btnOK
             // 
-            this.btnOK.Image = ((System.Drawing.Image)(resources.GetObject("btnOK.Image")));
-            this.btnOK.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnOK.Location = new System.Drawing.Point(1007, 8);
+            this.btnOK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOK.ImageOptions.Image")));
+            this.btnOK.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnOK.Location = new System.Drawing.Point(940, 8);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(51, 33);
             this.btnOK.TabIndex = 63;
@@ -138,12 +139,12 @@
             // gridControl
             // 
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl.Location = new System.Drawing.Point(0, 57);
+            this.gridControl.Location = new System.Drawing.Point(0, 56);
             this.gridControl.MainView = this.gridView;
             this.gridControl.Name = "gridControl";
             this.gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheck});
-            this.gridControl.Size = new System.Drawing.Size(1154, 515);
+            this.gridControl.Size = new System.Drawing.Size(1164, 515);
             this.gridControl.TabIndex = 64;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -322,7 +323,7 @@
             // 
             this.lblTong.AutoSize = true;
             this.lblTong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTong.Location = new System.Drawing.Point(1066, 16);
+            this.lblTong.Location = new System.Drawing.Point(1082, 16);
             this.lblTong.Name = "lblTong";
             this.lblTong.Size = new System.Drawing.Size(53, 16);
             this.lblTong.TabIndex = 65;
@@ -332,7 +333,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(252, 16);
+            this.label2.Location = new System.Drawing.Point(212, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 16);
             this.label2.TabIndex = 66;
@@ -347,7 +348,7 @@
             "1. Tiếp nhận",
             "2. Đã khám",
             "3. Ra viện"});
-            this.cbTinhTrang.Location = new System.Drawing.Point(334, 12);
+            this.cbTinhTrang.Location = new System.Drawing.Point(291, 12);
             this.cbTinhTrang.Name = "cbTinhTrang";
             this.cbTinhTrang.Size = new System.Drawing.Size(125, 24);
             this.cbTinhTrang.TabIndex = 67;
@@ -356,7 +357,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(465, 16);
+            this.label3.Location = new System.Drawing.Point(425, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 16);
             this.label3.TabIndex = 68;
@@ -369,16 +370,28 @@
             this.cbLoaiNgay.Items.AddRange(new object[] {
             "Ngày vào",
             "Ngày thanh toán"});
-            this.cbLoaiNgay.Location = new System.Drawing.Point(533, 12);
+            this.cbLoaiNgay.Location = new System.Drawing.Point(490, 12);
             this.cbLoaiNgay.Name = "cbLoaiNgay";
-            this.cbLoaiNgay.Size = new System.Drawing.Size(124, 24);
+            this.cbLoaiNgay.Size = new System.Drawing.Size(120, 24);
             this.cbLoaiNgay.TabIndex = 67;
+            // 
+            // btnXuatExcel
+            // 
+            this.btnXuatExcel.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatExcel.Appearance.Options.UseFont = true;
+            this.btnXuatExcel.Location = new System.Drawing.Point(999, 8);
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.Size = new System.Drawing.Size(73, 33);
+            this.btnXuatExcel.TabIndex = 69;
+            this.btnXuatExcel.Text = "Xuất XML";
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
             // FrmDanhSachKCB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1154, 572);
+            this.ClientSize = new System.Drawing.Size(1164, 571);
+            this.Controls.Add(this.btnXuatExcel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbLoaiNgay);
             this.Controls.Add(this.cbTinhTrang);
@@ -435,5 +448,6 @@
         private System.Windows.Forms.ComboBox cbTinhTrang;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbLoaiNgay;
+        private DevExpress.XtraEditors.SimpleButton btnXuatExcel;
     }
 }
