@@ -100,11 +100,12 @@
             this.label20 = new System.Windows.Forms.Label();
             this.cbChucVu = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.cbTo = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.txtCoQuan = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.cbLoaiKham = new System.Windows.Forms.ComboBox();
+            this.txtChucVu = new DevExpress.XtraEditors.TextEdit();
+            this.cbTo = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDu5Nam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateGTKT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateGTBD.Properties)).BeginInit();
@@ -114,6 +115,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpDonVi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChucVu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnKiemTra
@@ -927,7 +930,7 @@
             "Tổ trưởng",
             "Trưởng ban",
             "Y sỹ"});
-            this.cbChucVu.Location = new System.Drawing.Point(344, 113);
+            this.cbChucVu.Location = new System.Drawing.Point(1142, 147);
             this.cbChucVu.Name = "cbChucVu";
             this.cbChucVu.Size = new System.Drawing.Size(121, 24);
             this.cbChucVu.TabIndex = 87;
@@ -936,17 +939,74 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(480, 116);
+            this.label21.Location = new System.Drawing.Point(534, 116);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(28, 16);
             this.label21.TabIndex = 85;
             this.label21.Text = "Tổ:";
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(856, 117);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(61, 16);
+            this.label22.TabIndex = 85;
+            this.label22.Text = "Cơ quan:";
+            // 
+            // txtCoQuan
+            // 
+            this.txtCoQuan.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCoQuan.Location = new System.Drawing.Point(923, 113);
+            this.txtCoQuan.Name = "txtCoQuan";
+            this.txtCoQuan.Size = new System.Drawing.Size(340, 23);
+            this.txtCoQuan.TabIndex = 89;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(647, 116);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(73, 16);
+            this.label23.TabIndex = 63;
+            this.label23.Text = "Loại khám:";
+            // 
+            // cbLoaiKham
+            // 
+            this.cbLoaiKham.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLoaiKham.FormattingEnabled = true;
+            this.cbLoaiKham.Items.AddRange(new object[] {
+            "1. Cho CBQL",
+            "2. Phân Loại",
+            "3. Tầm Soát"});
+            this.cbLoaiKham.Location = new System.Drawing.Point(728, 113);
+            this.cbLoaiKham.Name = "cbLoaiKham";
+            this.cbLoaiKham.Size = new System.Drawing.Size(118, 24);
+            this.cbLoaiKham.TabIndex = 90;
+            // 
+            // txtChucVu
+            // 
+            this.txtChucVu.Location = new System.Drawing.Point(344, 114);
+            this.txtChucVu.Name = "txtChucVu";
+            this.txtChucVu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChucVu.Properties.Appearance.Options.UseFont = true;
+            this.txtChucVu.Size = new System.Drawing.Size(184, 22);
+            this.txtChucVu.TabIndex = 91;
+            // 
             // cbTo
             // 
-            this.cbTo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTo.FormattingEnabled = true;
-            this.cbTo.Items.AddRange(new object[] {
+            this.cbTo.EditValue = "";
+            this.cbTo.Location = new System.Drawing.Point(560, 114);
+            this.cbTo.Name = "cbTo";
+            this.cbTo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTo.Properties.Appearance.Options.UseFont = true;
+            this.cbTo.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTo.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.cbTo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbTo.Properties.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -968,61 +1028,18 @@
             "19",
             "20",
             "CQ"});
-            this.cbTo.Location = new System.Drawing.Point(514, 113);
-            this.cbTo.Name = "cbTo";
-            this.cbTo.Size = new System.Drawing.Size(73, 24);
-            this.cbTo.TabIndex = 88;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(812, 116);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(61, 16);
-            this.label22.TabIndex = 85;
-            this.label22.Text = "Cơ quan:";
-            // 
-            // txtCoQuan
-            // 
-            this.txtCoQuan.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCoQuan.Location = new System.Drawing.Point(879, 113);
-            this.txtCoQuan.Name = "txtCoQuan";
-            this.txtCoQuan.Size = new System.Drawing.Size(384, 23);
-            this.txtCoQuan.TabIndex = 89;
-            this.txtCoQuan.Text = "Công ty TNHH MTV cao su Phú Riềng";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(597, 116);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(73, 16);
-            this.label23.TabIndex = 63;
-            this.label23.Text = "Loại khám:";
-            // 
-            // cbLoaiKham
-            // 
-            this.cbLoaiKham.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbLoaiKham.FormattingEnabled = true;
-            this.cbLoaiKham.Items.AddRange(new object[] {
-            "1. Cho CBQL",
-            "2. Phân Loại",
-            "3. Tầm Soát"});
-            this.cbLoaiKham.Location = new System.Drawing.Point(676, 113);
-            this.cbLoaiKham.Name = "cbLoaiKham";
-            this.cbLoaiKham.Size = new System.Drawing.Size(118, 24);
-            this.cbLoaiKham.TabIndex = 90;
+            this.cbTo.Size = new System.Drawing.Size(82, 22);
+            this.cbTo.TabIndex = 92;
             // 
             // FrmKhamSucKhoe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 561);
+            this.Controls.Add(this.cbTo);
+            this.Controls.Add(this.txtChucVu);
             this.Controls.Add(this.cbLoaiKham);
             this.Controls.Add(this.txtCoQuan);
-            this.Controls.Add(this.cbTo);
             this.Controls.Add(this.cbChucVu);
             this.Controls.Add(this.lookUpDonVi);
             this.Controls.Add(this.label22);
@@ -1084,6 +1101,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpDonVi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChucVu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTo.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1162,10 +1181,11 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cbChucVu;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox cbTo;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtCoQuan;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ComboBox cbLoaiKham;
+        private DevExpress.XtraEditors.TextEdit txtChucVu;
+        private DevExpress.XtraEditors.ComboBoxEdit cbTo;
     }
 }

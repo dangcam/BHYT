@@ -110,13 +110,21 @@ namespace BHYT.DAO
                 new SqlParameter("@XN_HH", ksk.XN_HH),
                 new SqlParameter("@SH_NT", ksk.SH_NT),
                 new SqlParameter("@SINH_HM", ksk.SINH_HM),
-                new SqlParameter("@XN_KHAC", ksk.XN_KHAC),
+                new SqlParameter("@ANTI_HBS", ksk.ANTI_HBS),
+                new SqlParameter("@ANTI_HCV", ksk.ANTI_HCV),
+                new SqlParameter("@CA125", ksk.CA125),
+                new SqlParameter("@CA153", ksk.CA153),
+                new SqlParameter("@AFP", ksk.AFP),
+                new SqlParameter("@CEA", ksk.CEA),
+                new SqlParameter("@PSA", ksk.PSA),
                 new SqlParameter("@PL_SK", ksk.PL_SK),
                 new SqlParameter("@DIEU_TRI", ksk.DIEU_TRI),
                 new SqlParameter("@KET_LUAN", ksk.KET_LUAN),
-                new SqlParameter("@DE_NGHI", ksk.DE_NGHI));
+                new SqlParameter("@DE_NGHI", ksk.DE_NGHI),
+                new SqlParameter("@KET_QUA", ksk.KET_QUA));
         }
-        public bool SuaThongTinKSK(ref string err, string MaThe, string MaDV, string ChucVu,string ToNT)
+        public bool SuaThongTinKSK(ref string err, string MaThe, string MaDV, string ChucVu,string ToNT,
+            string HoTen,int GioiTinh,string NgaySinh)
         {
             return db.MyExecuteNonQuery("SpSuaThongTinKSK",
                 CommandType.StoredProcedure, ref err,

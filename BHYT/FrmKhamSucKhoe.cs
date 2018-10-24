@@ -591,7 +591,7 @@ namespace BHYT
                 benhnhan.GtTheDen = DateTime.ParseExact(dateGTKT.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyyMMdd");
                 benhnhan.MaKV = cbKhuVuc.Text;
                 benhnhan.MaDV = lookUpDonVi.EditValue.ToString();
-                benhnhan.ChucVu = cbChucVu.SelectedItem.ToString();
+                benhnhan.ChucVu = txtChucVu.Text; //cbChucVu.SelectedItem.ToString();
                 benhnhan.ToNT = cbTo.SelectedItem.ToString();
                 benhnhan.CoQuan = txtCoQuan.Text;
                 if (thongtinBHYT.getBHYT(benhnhan.MaThe) != null)

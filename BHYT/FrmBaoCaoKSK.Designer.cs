@@ -48,6 +48,7 @@
             this.btnBCLSNhieuDonVi = new System.Windows.Forms.Button();
             this.btnTHNhieuDonVi = new System.Windows.Forms.Button();
             this.btnBCKetQuaTungDonVi = new System.Windows.Forms.Button();
+            this.btnBCChiTietKSKCNNV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dateTuNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTuNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay.Properties.CalendarTimeProperties)).BeginInit();
@@ -194,7 +195,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(152, 223);
+            this.label5.Location = new System.Drawing.Point(152, 255);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 16);
             this.label5.TabIndex = 1;
@@ -202,7 +203,7 @@
             // 
             // cbCanLamSan
             // 
-            this.cbCanLamSan.Location = new System.Drawing.Point(240, 220);
+            this.cbCanLamSan.Location = new System.Drawing.Point(240, 252);
             this.cbCanLamSan.Name = "cbCanLamSan";
             this.cbCanLamSan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCanLamSan.Properties.Appearance.Options.UseFont = true;
@@ -216,7 +217,7 @@
             // btnBCCLStungDonvi
             // 
             this.btnBCCLStungDonvi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBCCLStungDonvi.Location = new System.Drawing.Point(172, 252);
+            this.btnBCCLStungDonvi.Location = new System.Drawing.Point(172, 284);
             this.btnBCCLStungDonvi.Name = "btnBCCLStungDonvi";
             this.btnBCCLStungDonvi.Size = new System.Drawing.Size(303, 27);
             this.btnBCCLStungDonvi.TabIndex = 5;
@@ -227,7 +228,7 @@
             // btnBCTongHopCLSnhieuDonvi
             // 
             this.btnBCTongHopCLSnhieuDonvi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBCTongHopCLSnhieuDonvi.Location = new System.Drawing.Point(172, 323);
+            this.btnBCTongHopCLSnhieuDonvi.Location = new System.Drawing.Point(172, 355);
             this.btnBCTongHopCLSnhieuDonvi.Name = "btnBCTongHopCLSnhieuDonvi";
             this.btnBCTongHopCLSnhieuDonvi.Size = new System.Drawing.Size(303, 27);
             this.btnBCTongHopCLSnhieuDonvi.TabIndex = 5;
@@ -256,6 +257,7 @@
             this.cbPhanLoai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbPhanLoai.Properties.Items.AddRange(new object[] {
+            "0. Cho CBQL",
             "1. Phân Loại",
             "2. Tầm Soát"});
             this.cbPhanLoai.Size = new System.Drawing.Size(200, 22);
@@ -265,7 +267,7 @@
             // btnBCLSNhieuDonVi
             // 
             this.btnBCLSNhieuDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBCLSNhieuDonVi.Location = new System.Drawing.Point(172, 288);
+            this.btnBCLSNhieuDonVi.Location = new System.Drawing.Point(172, 320);
             this.btnBCLSNhieuDonVi.Name = "btnBCLSNhieuDonVi";
             this.btnBCLSNhieuDonVi.Size = new System.Drawing.Size(303, 27);
             this.btnBCLSNhieuDonVi.TabIndex = 5;
@@ -295,14 +297,26 @@
             this.btnBCKetQuaTungDonVi.UseVisualStyleBackColor = true;
             this.btnBCKetQuaTungDonVi.Click += new System.EventHandler(this.btnBCKetQuaTungDonVi_Click);
             // 
+            // btnBCChiTietKSKCNNV
+            // 
+            this.btnBCChiTietKSKCNNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBCChiTietKSKCNNV.Location = new System.Drawing.Point(172, 217);
+            this.btnBCChiTietKSKCNNV.Name = "btnBCChiTietKSKCNNV";
+            this.btnBCChiTietKSKCNNV.Size = new System.Drawing.Size(303, 27);
+            this.btnBCChiTietKSKCNNV.TabIndex = 5;
+            this.btnBCChiTietKSKCNNV.Text = "BC Chi Tiết KQ Khám Sức Khỏe CBNV";
+            this.btnBCChiTietKSKCNNV.UseVisualStyleBackColor = true;
+            this.btnBCChiTietKSKCNNV.Click += new System.EventHandler(this.btnBCChiTietKSKCNNV_Click);
+            // 
             // FrmBaoCaoKSK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 361);
+            this.ClientSize = new System.Drawing.Size(659, 391);
             this.Controls.Add(this.btnBCLSNhieuDonVi);
             this.Controls.Add(this.btnBCTongHopCLSnhieuDonvi);
             this.Controls.Add(this.btnBCCLStungDonvi);
+            this.Controls.Add(this.btnBCChiTietKSKCNNV);
             this.Controls.Add(this.btnTHNhieuDonVi);
             this.Controls.Add(this.btnBCKetQuaTungDonVi);
             this.Controls.Add(this.btnTHTungDonVi);
@@ -361,5 +375,6 @@
         private System.Windows.Forms.Button btnBCLSNhieuDonVi;
         private System.Windows.Forms.Button btnTHNhieuDonVi;
         private System.Windows.Forms.Button btnBCKetQuaTungDonVi;
+        private System.Windows.Forms.Button btnBCChiTietKSKCNNV;
     }
 }

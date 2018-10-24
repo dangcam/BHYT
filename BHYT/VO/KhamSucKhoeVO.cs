@@ -78,10 +78,17 @@ namespace BHYT.VO
         public string XN_HH { get; set; }
         public string SH_NT { get; set; }
         public string SINH_HM { get; set; }
-        public string XN_KHAC { get; set; }
+        public string ANTI_HBS { get; set; }
+        public string ANTI_HCV { get; set; }
+        public string CA125 { get; set; }
+        public string CA153 { get; set; }
+        public string AFP { get; set; }
+        public string CEA { get; set; }
+        public string PSA { get; set; }
         public string PL_SK { get; set; }
         public bool DIEU_TRI { get; set; }
         public string KET_LUAN { get; set; }
         public string DE_NGHI { get; set; }
+        public string KET_QUA { get; set; }
     }
 }

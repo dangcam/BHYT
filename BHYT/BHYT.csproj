@@ -439,6 +439,12 @@
     <Compile Include="MauSo\rptMauSo_33.Designer.cs">
       <DependentUpon>rptMauSo_33.cs</DependentUpon>
     </Compile>
+    <Compile Include="MauSo\rptMauSo_33File.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MauSo\rptMauSo_33File.Designer.cs">
+      <DependentUpon>rptMauSo_33File.cs</DependentUpon>
+    </Compile>
     <Compile Include="MauSo\rptMauSo_340.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -480,6 +486,12 @@
     </Compile>
     <Compile Include="rptBCCanLamSanKSKDonVi.Designer.cs">
       <DependentUpon>rptBCCanLamSanKSKDonVi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptBCChiTietKSKCBNV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBCChiTietKSKCBNV.Designer.cs">
+      <DependentUpon>rptBCChiTietKSKCBNV.cs</DependentUpon>
     </Compile>
     <Compile Include="rptBCKetQuaTungDonVi.cs">
       <SubType>Component</SubType>
@@ -783,6 +795,9 @@
     <EmbeddedResource Include="MauSo\rptMauSo_33.resx">
       <DependentUpon>rptMauSo_33.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MauSo\rptMauSo_33File.resx">
+      <DependentUpon>rptMauSo_33File.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MauSo\rptMauSo_340.resx">
       <DependentUpon>rptMauSo_340.cs</DependentUpon>
     </EmbeddedResource>
@@ -814,6 +829,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rptBCCanLamSanKSKDonVi.resx">
       <DependentUpon>rptBCCanLamSanKSKDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBCChiTietKSKCBNV.resx">
+      <DependentUpon>rptBCChiTietKSKCBNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptBCKetQuaTungDonVi.resx">
       <DependentUpon>rptBCKetQuaTungDonVi.cs</DependentUpon>

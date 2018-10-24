@@ -20,6 +20,8 @@ namespace BHYT
         KhamSucKhoeDAO khamSucKhoeDAO;
         DataTable dataThongTin,dataKhamSucKhoe;
         bool them = false;
+        System.Drawing.Font fontB = new System.Drawing.Font("Times New Roman", 12, System.Drawing.FontStyle.Bold);
+        System.Drawing.Font font = new System.Drawing.Font("Times New Roman", 12);
         public FrmKQKhamSucKhoe()
         {
             InitializeComponent();
@@ -50,7 +52,8 @@ namespace BHYT
             if (dataThongTin != null && dataThongTin.Rows.Count > 0)
             {
                 cbTo.SelectedItem = dataThongTin.Rows[0]["TO_NT"];
-                cbChucVu.SelectedItem = dataThongTin.Rows[0]["CHUC_VU"];
+                //cbChucVu.SelectedItem = dataThongTin.Rows[0]["CHUC_VU"];
+                txtChucVu.Text = dataThongTin.Rows[0]["CHUC_VU"].ToString();
                 lookUpDonVi.EditValue = dataThongTin.Rows[0]["MADV"];
             }
             
@@ -128,7 +131,13 @@ namespace BHYT
                 txtXNHH.Text = dataKhamSucKhoe.Rows[0]["XN_HH"].ToString();
                 txtSHNT.Text = dataKhamSucKhoe.Rows[0]["SH_NT"].ToString();
                 txtSinhHM.Text = dataKhamSucKhoe.Rows[0]["SINH_HM"].ToString();
-                txtXNKhac.Text = dataKhamSucKhoe.Rows[0]["XN_KHAC"].ToString();
+                txtAntiHBs.Text = dataKhamSucKhoe.Rows[0]["ANTI_HBS"].ToString();//
+                txtAntiHCV.Text = dataKhamSucKhoe.Rows[0]["ANTI_HCV"].ToString();
+                txtCA125.Text = dataKhamSucKhoe.Rows[0]["CA125"].ToString();
+                txtCA153.Text = dataKhamSucKhoe.Rows[0]["CA153"].ToString();
+                txtAFP.Text = dataKhamSucKhoe.Rows[0]["AFP"].ToString();
+                txtCEA.Text = dataKhamSucKhoe.Rows[0]["CEA"].ToString();
+                txtPSA.Text = dataKhamSucKhoe.Rows[0]["PSA"].ToString();
                 cbPLSK.SelectedItem = dataKhamSucKhoe.Rows[0]["PL_SK"].ToString();
                 checkDieuTri.Checked = Utils.ToBool(dataKhamSucKhoe.Rows[0]["DIEU_TRI"]);
                 txtKetLuan.Text = dataKhamSucKhoe.Rows[0]["KET_LUAN"].ToString();
@@ -164,9 +173,18 @@ namespace BHYT
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            string ngaySinh = "";
+            try
+            {
+                ngaySinh = DateTime.ParseExact(txtNgaySinh.Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyyMMdd");
+            }
+            catch
+            {
+                ngaySinh = txtNgaySinh.Text;
+            }
             string err = "";
-            khamSucKhoeDAO.SuaThongTinKSK(ref err, txtSoThe.Text, lookUpDonVi.EditValue.ToString(),
-                cbChucVu.SelectedItem.ToString(), cbTo.SelectedItem.ToString());
+            khamSucKhoeDAO.SuaThongTinKSK(ref err, txtSoThe.Text, lookUpDonVi.EditValue.ToString(),// cbChucVu.SelectedItem.ToString()
+               txtChucVu.Text, cbTo.SelectedItem.ToString(),txtHoTen.Text,cbGioiTinh.SelectedIndex,ngaySinh);
             // Thông tin KSK
             khamSucKhoeVO.MA_LK = MaLienKet;
             khamSucKhoeVO.LOAI_KHAM = cbLoaiKham.SelectedIndex;
@@ -234,11 +252,18 @@ namespace BHYT
             khamSucKhoeVO.XN_HH = ToStringBT(txtXNHH.Text);
             khamSucKhoeVO.SH_NT = ToStringBT(txtSHNT.Text);
             khamSucKhoeVO.SINH_HM = ToStringBT(txtSinhHM.Text);
-            khamSucKhoeVO.XN_KHAC = ToStringBT(txtXNKhac.Text);
+            khamSucKhoeVO.ANTI_HBS = ToStringBT(txtAntiHBs.Text);
+            khamSucKhoeVO.ANTI_HCV = ToStringBT(txtAntiHCV.Text);
+            khamSucKhoeVO.CA125 = ToStringBT(txtCA125.Text);
+            khamSucKhoeVO.CA153 = ToStringBT(txtCA153.Text);
+            khamSucKhoeVO.AFP = ToStringBT(txtAFP.Text);
+            khamSucKhoeVO.CEA = ToStringBT(txtCEA.Text);
+            khamSucKhoeVO.PSA = ToStringBT(txtPSA.Text);
             khamSucKhoeVO.PL_SK = ToStringBT(cbPLSK.SelectedItem);
             khamSucKhoeVO.DIEU_TRI = checkDieuTri.Checked;
             khamSucKhoeVO.KET_LUAN = ToStringBT(txtKetLuan.Text);
             khamSucKhoeVO.DE_NGHI = ToStringBT(txtDeNghi.Text);
+            khamSucKhoeVO.KET_QUA = ToStringBT(txtDieuKien.Text);
 
             if (!them)
             {
@@ -765,7 +790,7 @@ namespace BHYT
         {
             if (e.KeyChar == 13)
             {
-                txtXNKhac.Focus();
+                txtAntiHBs.Focus();
             }
         }
 
@@ -773,7 +798,7 @@ namespace BHYT
         {
             if (e.KeyChar == 13)
             {
-                txtKetLuan.Focus();
+                txtAntiHCV.Focus();
             }
         }
 
@@ -791,7 +816,7 @@ namespace BHYT
             //rpt.xrlblNgayThangNam.Text = Utils.ParseDates(NgayVao, "Phú Riềng, ngày dd, tháng MM, năm yyyy");
             rpt.xrlblDiaChi.Text = this.DiaChi;
             rpt.xrlblHoKhau.Text = this.DiaChi;
-            rpt.xrlblNgheNghiep.Text = Utils.ToString(cbChucVu.SelectedItem);
+            rpt.xrlblNgheNghiep.Text = txtChucVu.Text;// Utils.ToString(cbChucVu.SelectedItem);
             // trang 2
             rpt.xrlblTienSuBenhTat.Text = txtTienSuBenh.Text;
             rpt.xrlblCanNang.Text = txtCanNang.Text;
@@ -856,7 +881,7 @@ namespace BHYT
             rpt.xrlblHoTen.Text = txtHoTen.Text;
             rpt.xrlblBHYT.Text = txtSoThe.Text;
             rpt.xrlblNgaySinh.Text = (txtNgaySinh.Text);
-            rpt.xrlblChucVu.Text =Utils.ToString( cbChucVu.SelectedItem);
+            rpt.xrlblChucVu.Text = txtChucVu.Text;//Utils.ToString( cbChucVu.SelectedItem);
             rpt.xrlblCoQuan.Text = dataThongTin.Rows[0]["CO_QUAN"].ToString();
             rpt.xrlblLoaiKham.Text = Utils.ToString(cbLoaiKham.SelectedItem);
             rpt.xrlblNgayKham.Text = Utils.ParseDates(NgayVao,"dd/MM/yyyy");
@@ -1060,15 +1085,77 @@ namespace BHYT
                 rpt.xrTable.DeleteRow(rpt.xrrowSHMau);
             }
             // 
-            if (!string.IsNullOrEmpty(txtXNKhac.Text))
+            if (!string.IsNullOrEmpty(txtAntiHBs.Text))
             {
-                rpt.xrtabXNKhac.Text = ToStringBT(txtXNKhac.Text);
+                rpt.xrtabAntiHBs.Text = ToStringBT(txtAntiHBs.Text);
                 temp++;
             }
             else
             {
-                rpt.xrTable.DeleteRow(rpt.xrrowXNKhac);
+                rpt.xrTable.DeleteRow(rpt.xrrowAntiHBs);
             }
+            // 
+            if (!string.IsNullOrEmpty(txtAntiHCV.Text))
+            {
+                rpt.xrtabAntiHCV.Text = ToStringBT(txtAntiHCV.Text);
+                temp++;
+            }
+            else
+            {
+                rpt.xrTable.DeleteRow(rpt.xrrowAntiHCV);
+            }
+            // 
+            if (!string.IsNullOrEmpty(txtCA125.Text))
+            {
+                rpt.xrtabCA125.Text = ToStringBT(txtCA125.Text);
+                temp++;
+            }
+            else
+            {
+                rpt.xrTable.DeleteRow(rpt.xrrowCA125);
+            }
+            // 
+            if (!string.IsNullOrEmpty(txtCA153.Text))
+            {
+                rpt.xrTabCA153.Text = ToStringBT(txtCA153.Text);
+                temp++;
+            }
+            else
+            {
+                rpt.xrTable.DeleteRow(rpt.xrrowCA153);
+            }
+            // 
+            if (!string.IsNullOrEmpty(txtAFP.Text))
+            {
+                rpt.xrTabAFP.Text = ToStringBT(txtAFP.Text);
+                temp++;
+            }
+            else
+            {
+                rpt.xrTable.DeleteRow(rpt.xrrowAFP);
+            }
+            // 
+            if (!string.IsNullOrEmpty(txtCEA.Text))
+            {
+                rpt.xrTabCEA.Text = ToStringBT(txtCEA.Text);
+                temp++;
+            }
+            else
+            {
+                rpt.xrTable.DeleteRow(rpt.xrrowCEA);
+            }
+            // 
+            if (!string.IsNullOrEmpty(txtPSA.Text))
+            {
+                rpt.xrTabPSA.Text = ToStringBT(txtPSA.Text);
+                temp++;
+            }
+            else
+            {
+                rpt.xrTable.DeleteRow(rpt.xrrowPSA);
+            }
+            // 
+         
             rpt.Detail.HeightF = ( 60 + temp * 30);
             //rpt.xrTable.WidthF = 722;
             //rpt.xrTable.AdjustSize();
@@ -1077,7 +1164,8 @@ namespace BHYT
             rpt.xrlblDeNghi.Text = txtDeNghi.Text;
             rpt.xrlblPhanLoaiSK.Text = Utils.ToString(cbPLSK.SelectedItem);
             rpt.xrlblCacBenhNeuCo.Text = txtKetLuan.Text;
-            rpt.xrlblBacSi.Text = cbBacSi.SelectedItem.ToString();
+            rpt.xrlblDieuKien.Text = txtDieuKien.Text; // thêm
+            //rpt.xrlblBacSi.Text = cbBacSi.SelectedItem.ToString();
             rpt.CreateDocument();
             rpt.ShowRibbonPreviewDialog();
         }
@@ -1218,6 +1306,137 @@ namespace BHYT
                 frmKeDon.MaLienKet = MaLienKet;
                 frmKeDon.ShowDialog();
                 //LoadData();
+            }
+        }
+
+        private void btnSHMFile_Click(object sender, EventArgs e)
+        {
+            
+            //
+            //
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            //openFileDialog.InitialDirectory = "E:\\";
+            openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog.FilterIndex = 2;
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    if ((openFileDialog.OpenFile()) != null)
+                    {
+                        //
+                        rptMauSo_33File rpt = new rptMauSo_33File();
+                        rpt.lblHoTen.Text = txtHoTen.Text;
+                        rpt.lblSoThe.Text = txtSoThe.Text;
+                        rpt.lblNamSinh.Text = (txtNgaySinh.Text);
+                        rpt.lblDiaChi.Text = this.DiaChi;
+                        DateTime date = Utils.ParseDate(NgayVao);
+                        rpt.lblGioiTinh.Text = this.GioiTinh == "0" ? "Nữ" : "Nam";
+                        rpt.lblNgay.Text = "Phú Riềng, ngày " + date.Day + ", tháng " + date.Month + ", năm " + date.Year;
+                        rpt.lblNgay2.Text = "Phú Riềng, ngày " + date.Day + ", tháng " + date.Month + ", năm " + date.Year;
+                        //rpt.cellKetQua.Text = ToStringBT(txtDoLoangX.Text);
+                        XRTableRow row;
+                        XRTableCell cell;
+                        
+                        //
+                        string file = openFileDialog.FileName;
+                        string[] database = System.IO.File.ReadAllLines(file, Encoding.GetEncoding("ISO-8859-1"));
+
+                        for(int i = 1;i<database.Length;i++)
+                        {
+                            row = new XRTableRow();
+                            //item.Replace('µ', 'u');
+                            string[] items = database[i].Split('\t');
+
+                            cell = new XRTableCell();
+                            cell.Text = items[2];
+                            cell.Font = font;
+                            cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+                            cell.WidthF = 250;
+                            cell.HeightF = 30;
+                            row.Cells.Add(cell);
+
+                            cell = new XRTableCell();
+                            cell.Text = items[6];
+                            cell.Font = font;
+                            cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+                            cell.WidthF = 200;
+                            cell.HeightF = 30;
+                            row.Cells.Add(cell);
+
+                            cell = new XRTableCell();
+                            cell.Text = items[4];
+                            if (items[5].Length > 0)
+                                cell.Font = fontB;
+                            else
+                                cell.Font = font;
+                            cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+                            cell.WidthF = 210;
+                            cell.HeightF = 30;
+                            row.Cells.Add(cell);
+
+                            //row.HeightF = 30;
+                            rpt.xrTable.Rows.Add(row);
+                        }
+                        //rpt.xrTable.HeightF = 30 * (database.Length - 1);
+                        rpt.CreateDocument();
+                        rpt.ShowRibbonPreviewDialog();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message );
+                }
+            }
+            //
+        }
+
+        private void txtAntiHCV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtCA125.Focus();
+            }
+        }
+
+        private void txtCA125_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtCA153.Focus();
+            }
+        }
+
+        private void txtCA153_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtAFP.Focus();
+            }
+        }
+
+        private void txtAFP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtCEA.Focus();
+            }
+        }
+
+        private void txtCEA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtPSA.Focus();
+            }
+        }
+
+        private void txtPSA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtKetLuan.Focus();
             }
         }
 

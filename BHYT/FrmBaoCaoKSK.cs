@@ -362,7 +362,7 @@ namespace BHYT
             string madonvi = Utils.ToString(lookUpDonVi.EditValue);
             //int loaiKham = cbPhanLoai.SelectedIndex;
             string sql = "";
-            if (cbPhanLoai.SelectedIndex == 0)
+            if (cbPhanLoai.SelectedIndex == 1)
             {
                 // 1 là phân loại
                 rptChiTietKhamPhanLoai rpt = new rptChiTietKhamPhanLoai();
@@ -401,7 +401,7 @@ namespace BHYT
             }
             else
             {
-                // 2 là tầm soát
+                // 2 là tầm soát hoặc cán bộ
                 rptChiTietKhamTamSoat rpt = new rptChiTietKhamTamSoat();
                 rpt.xrlblTuNgayDenNgay.Text = "Từ ngày " + dateTuNgay.DateTime.ToString("dd/MM/yyyy") +
                " đến ngày " + dateDenNgay.DateTime.ToString("dd/MM/yyyy");
@@ -437,7 +437,7 @@ namespace BHYT
                         "between '" + dateTuNgay.DateTime.ToString("MM-dd-yyyy") + "' and '" + dateDenNgay.DateTime.ToString("MM-dd-yyyy") + "'))" +
                         "as TT " +
                         "Where KHAM_SUC_KHOE.MA_LK = TT.MA_LK  " +
-                        "and LOAI_KHAM = 2";
+                        "and LOAI_KHAM = "+cbPhanLoai.SelectedIndex;
                 rpt.DataSource = baoCaoKSK.BCCanLamSanTungDonVi(sql);
                 //
                 rpt.ShowPreviewDialog();
@@ -463,6 +463,35 @@ namespace BHYT
             rpt.DataSource = baoCaoKSK.BCCanLamSanTungDonVi(sql);
             //
             rpt.ShowPreviewDialog();
+        }
+
+        private void btnBCChiTietKSKCNNV_Click(object sender, EventArgs e)
+        {
+            string madonvi = Utils.ToString(lookUpDonVi.EditValue);
+            //int loaiKham = cbPhanLoai.SelectedIndex;
+            string sql = "";
+            rptBCChiTietKSKCBNV rpt = new rptBCChiTietKSKCBNV();
+            rpt.xrlblNgay.Text = "Từ ngày " + dateTuNgay.DateTime.ToString("dd/MM/yyyy") +
+           " đến ngày " + dateDenNgay.DateTime.ToString("dd/MM/yyyy");
+            //rpt.xrlblNgayThangNam.Text = "Ngày " + DateTime.Now.Day + " tháng " +
+            //    DateTime.Now.Month + " năm " + DateTime.Now.Year;
+            sql = "select *,ROW_NUMBER() OVER(ORDER BY MADV, HO_TEN ASC) AS STT " +
+                    "from KHAM_SUC_KHOE," +
+                    "(select MA_LK, THONGTIN_CT.HO_TEN," +
+                    "    SUBSTRING(MADV, 4, len(MADV) - 3) as MADV," +
+                    "    (CASE WHEN THONGTIN_CT.GIOI_TINH = 0 THEN SUBSTRING(THONGTIN_CT.NGAY_SINH,1,4)END) as NU," +
+                    "	(CASE WHEN THONGTIN_CT.GIOI_TINH = 1 THEN SUBSTRING(THONGTIN_CT.NGAY_SINH,1,4)END) as NAM " +
+                    "from THONGTIN_CT, THONGTIN " +
+                    "where THONGTIN_CT.MA_THE = THONGTIN.MA_THE and MADV is not null and MADV = '" + madonvi + "' " +
+                    "and(CAST(SUBSTRING(NGAY_VAO, 1, 8) AS DATE) " +
+                    "between '" + dateTuNgay.DateTime.ToString("MM-dd-yyyy") + "' and '" + dateDenNgay.DateTime.ToString("MM-dd-yyyy") + "'))" +
+                    "as TT " +
+                    "Where KHAM_SUC_KHOE.MA_LK = TT.MA_LK " +
+                    "and LOAI_KHAM = " + cbPhanLoai.SelectedIndex;
+            rpt.DataSource = baoCaoKSK.BCCanLamSanTungDonVi(sql);
+            //
+            rpt.ShowPreviewDialog();
+
         }
     }
 }

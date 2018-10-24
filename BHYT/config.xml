@@ -2,7 +2,7 @@
 <config>
   <server>192.168.1.40</server>
   <batabase>BV_KHAM_CHUA_BENH</batabase>
-  <user>dangcam.pr</user>
+  <user>bvdk</user>
   <password>123456</password>
   <cosokcb>70013</cosokcb>
   <luongcoban>1300000</luongcoban>
