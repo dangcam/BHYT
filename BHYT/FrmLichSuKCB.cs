@@ -1,6 +1,5 @@
 ﻿using BHYT.DAO;
 using BHYT.JSON;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
